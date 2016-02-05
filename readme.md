@@ -48,7 +48,17 @@ use Sauladam\ShipmentTracker\ShipmentTracker;
 
 $dhlTracker = ShipmentTracker::get('DHL');
 
+/* track with the standard settings */
 $track = $dhlTracker->track('00340434127681930812');
+// scrapes from http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=de&idc=00340434127681930812
+
+/* override the standard language */
+$track = $dhlTracker->track('00340434127681930812', 'en');
+// scrapes from http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=en&idc=00340434127681930812
+
+/* pass additional params to the URL (or override the default ones) */
+$track = $dhlTracker->track('00340434127681930812', 'en', ['zip' => '12345']);
+// scrapes from http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=en&idc=00340434127681930812&zip=12345
 ```
 
 And that's it. Let's check if this parcel was delivered:
@@ -96,9 +106,9 @@ Oh, you need it to link to the english version? Sure thing:
 $url = $dhlTracker->trackingUrl('00340434127681930812', 'en');
 // http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=en&idc=00340434127681930812
 ```
-"But wait, what if I need that URL with additional parameteres?" - Well, just pass them:
+*"But wait, what if I need that URL with additional parameteres?"* - Well, just pass them:
 ```php
-$url = $dhlTracker->trackingUrl('00340434127681930812', en, ['zip' => '12345']);
+$url = $dhlTracker->trackingUrl('00340434127681930812', 'en', ['zip' => '12345']);
 // http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=en&idc=00340434127681930812&zip=12345
 ```
 
