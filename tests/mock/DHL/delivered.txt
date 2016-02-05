@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>DHL Sendungsverfolgung</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="description" content=""/>
+		<meta name="author" content=""/>
+
+
+
+
+
+				<link href="assets/css/mm_dhl.css" rel="stylesheet">
+				<link href="assets/css/mm_print.css" rel="stylesheet" type="text/css" media="print" >
+
+
+
+
+
+
+			<!--[if lt IE 9]>
+			<script src="assets/js/jquery-1.11.3.min.js"></script>
+			<![endif]-->
+			<!--[if gte IE 9]><!-->
+			<script src="assets/js/jquery-2.1.4.min.js"></script>
+			<!--<![endif]-->
+			<script src="assets/js/iframeResizer/iframeResizer.contentWindow.min.js" type="text/javascript"></script>
+			<link rel="shortcut icon" type="image/x-icon" href="//www.dhl.de/etc/designs/dhlde/common/img/favicon.ico"/>
+
+			<!--[if lt IE 9]>
+			<script src="assets/js/html5.js" type="text/javascript"></script>
+			<script src="assets/js/respond.min.js" type="text/javascript"></script>
+			<![endif]-->
+			<!--[if (gte IE 6)&(lte IE 8)]>
+				<script type="text/javascript" src="assets/js/selectivizr-min.js"></script>
+			<![endif]-->
+
+
+		<script type="text/javascript">
+		<!--
+		function countLinkClick(type) {
+			$.ajax({type: 'POST', url: ""+"count.do?org.apache.catalina.filters.CSRF_NONCE=BDFA8004A0EE44571CA1704FDDC1F213", data : { 'count': type} });
+		}
+		//-->
+		</script>
+
+		<script type="text/javascript"><!--
+
+
+
+		function newWindow(url) {
+			myWindow = open(url, "", "dependend=yes,resizable=yes,height=560,width=760,screenX=40,screenY=40,scrollbars=yes");
+			if(myWindow && myWindow.outerWidth && myWindow.outerHeight) {
+				myWindow.outerWidth = 760;
+				myWindow.outerHeight = 560;
+			}
+			myWindow.focus();
+		}
+
+
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                    results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+
+		var captchaNotLoaded=true;
+
+		function generateNewCaptcha(){
+
+
+
+
+
+			if (captchaNotLoaded){
+				$('.captchaImg').attr('src', prepareUrl('admin/image.captcha?org.apache.catalina.filters.CSRF_NONCE=BDFA8004A0EE44571CA1704FDDC1F213') + 'generateNew=' + new Date());
+				captchaNotLoaded=false;
+			}
+
+		// -->
+
+		}
+
+	 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript"><!--
+
+function prepareUrl(url) {
+    if (url.lastIndexOf('&') == url.length - 1) {
+        return url;
+    }
+
+    if (url.indexOf('?') > 0) {
+        return url + '&';
+    }
+
+    return url + '?';
+}
+
+function gotoLogin() {
+    location.replace("" + "set_identcodes.do?org.apache.catalina.filters.CSRF_NONCE=BDFA8004A0EE44571CA1704FDDC1F213");
+}
+
+function openLayer(selectBoxId) {
+
+    $('#actionSelectionErrorNothingSelected').hide();
+    $('#actionSelectionErrorPleaseChooseAction').hide();
+
+    var selection = document.getElementById(selectBoxId).value;
+    var spA = [];
+    spA = document.getElementsByName("selectedPiece");
+
+    var param = "";
+    var delim = "";
+
+    for (i = 0; i < spA.length; i++) {
+        if (spA[i].checked == true) {
+            param = param + delim + "submitPieceId=" + spA[i].value;
+            delim = "&";
+        }
+    }
+
+    if (param == '') {
+        $('#actionSelectionErrorNothingSelected').show();
+    }
+
+    if (selection != 'download') {
+        $('#actionSelectionErrorPleaseChooseAction').show();
+    }
+
+    if (param != '' && selection == 'download') {
+
+        $('#pieceRendererFoot').attr('action', $('#pieceRendererFoot').attr('action') + "&" + param + '&pageActionSelect=download' );
+        $('#pieceRendererFoot').submit();
+
+    }
+
+
+}
+
+function downloadSinglePiece(pieceId) {
+    $('#pieceRendererFoot').attr('action', $('#pieceRendererFoot').attr('action') + "&submitPieceId=" + pieceId + '&pageActionSelect=download' );
+    $('#pieceRendererFoot').submit();
+}
+
+function showEvents(eventId) {
+    //$("#toggle-" + eventId).attr({style: ""});
+    //$("#toggle-link-" + eventId).attr({style: ""});
+
+    $("#progress-" + eventId).show();
+    $("#toggle-" + eventId).show();
+    $("#toggle-link-" + eventId).show();
+    $("#toggle-int-" + eventId).show();
+    $("#ashow" + eventId).hide();
+    $("#ahide" + eventId).show();
+}
+
+function hideEvents(eventId) {
+    //$("#toggle-" + eventId).attr({style: "display: none;"});
+    //$("#toggle-link-" + eventId).attr({style: "display: none;"});
+
+    $("#progress-" + eventId).hide();
+    $("#toggle-" + eventId).hide();
+    $("#toggle-link-" + eventId).hide();
+    $("#toggle-int-" + eventId).hide();
+    $("#ashow" + eventId).show();
+    $("#ahide" + eventId).hide();
+}
+
+function hideRecipientInput(identCode) {
+    $("#zip-request-" + identCode).hide();
+    $("#ashowZip" + identCode).show();
+    $("#ahideZip" + identCode).hide();
+}
+
+function showRecipientInput(identCode) {
+    $("#zip-request-" + identCode).toggle();
+    $("#ashowZip" + identCode).hide();
+    $("#ahideZip" + identCode).show();
+}
+
+function loadRecipient(formId, identCode, delivered) {
+    $.getJSON(""+prepareUrl("recipent.do?org.apache.catalina.filters.CSRF_NONCE=BDFA8004A0EE44571CA1704FDDC1F213") + $("#" + formId).serialize(), function (jason) {
+        fillRecipient(jason, identCode, delivered);
+        reloadCaptcha();
+    });
+
+}
+
+function loadRecipientForShipment(formId, identCode, delivered) {
+    $.getJSON(""+prepareUrl("recipent.do?org.apache.catalina.filters.CSRF_NONCE=BDFA8004A0EE44571CA1704FDDC1F213") + $("#" + formId).serialize(), function (jason) {
+        if (jason.recipient.error == true) {
+            $('#error_' + identCode).html(jason.recipient.responseMsg);
+            $('#div_error_' + identCode).removeAttr("style");
+            if (jason.recipient.reload == true) {
+                gotoLogin();
+            }
+            return;
+        }
+        $('#tr_panrecipient').removeAttr("style");
+        $('#panrecipient').html(jason.recipient.responseObject.panRecipient);
+        if (delivered == 1) {
+            $('#recipient_' + identCode).html(jason.recipient.responseObject.recipient);
+        }
+        $('#zip-link_' + identCode).remove();
+        $('#zip-request-' + identCode).remove();
+        reloadCaptcha();
+    });
+}
+
+function hideIntRecipient(identCode) {
+    hideRecipientInput(identCode);
+    $('#tr_panrecipient_' + identCode).hide();
+    $('#tr_recipient_' + identCode).hide();
+}
+
+function showIntRecipient(identCode, delivered) {
+    showRecipientInput(identCode);
+    $.getJSON(""+prepareUrl("recipent.do?org.apache.catalina.filters.CSRF_NONCE=BDFA8004A0EE44571CA1704FDDC1F213") + "international=&sid=" + identCode, function (jason) {
+        fillRecipient(jason, identCode, delivered);
+    });
+}
+
+function fillRecipient(jason, identCode, delivered) {
+    if (jason.recipient.error == true) {
+        $('#error_' + identCode).html(jason.recipient.responseMsg);
+        $('#div_error_' + identCode).removeAttr("style");
+        if (jason.recipient.reload == true) {
+            gotoLogin();
+        }
+        return;
+    }
+
+    if ($('#panrecipient_' + identCode).length > 0) {
+        $('#tr_panrecipient_' + identCode).removeAttr("style");
+        $('#panrecipient_' + identCode).html(jason.recipient.responseObject.panRecipient);
+    }
+
+    if (delivered == 1) {
+        if ($('#recipient_' + identCode).length > 0) {
+            $('#recipient_' + identCode).html(jason.recipient.responseObject.recipient);
+            $('#tr_recipient_' + identCode).removeAttr("style");
+        }
+    }
+
+    if ($('#zip-link_' + identCode).length > 0) {
+        $('#zip-link_' + identCode).remove();
+    }
+
+    if ($('#zip-request-' + identCode).length > 0) {
+        $('#zip-request-' + identCode).remove();
+    }
+}
+
+function getSelectionParams(onlySelected) {
+    var spA = [];
+    spA = document.getElementsByName("selectedPiece");
+    var param = "";
+    var delim = ""
+    for (i = 0; i < spA.length; i++) {
+        if ((onlySelected == false) || (spA[i].checked == true)) {
+            param = param + delim + "submitPieceId=" + spA[i].value;
+            if (i + 1 < spA.length) {
+                delim = "&";
+            }
+        }
+    }
+    return param;
+}
+
+function contact(pieceId) {
+    countLinkClick('contact_dhl');
+    window.open("", "", "dependend=yes,resizable=yes,height=580,width=1012,screenX=40,screenY=40,scrollbars=yes");
+}
+
+function submitEDICC(pieceId) {
+    var spA = [];
+    var param = "";
+
+
+    if (pieceId == null) {
+        spA = document.getElementsByName("alertPiece");
+        param = $("#parcelAlert").serialize();
+    } else {
+        spA = [
+            {'id': pieceId},
+            {'id': pieceId}
+        ];
+        param = $("#parcel-alert-form-" + pieceId).serialize();
+    }
+
+
+
+    param = param.replace("currentState=&", "currentState=on&")
+    param = param.replace("estimatedDeliveryNotificationChosen=&", "estimatedDeliveryNotificationChosen=on&")
+    param = param.replace("deliveredNotificationChosen=&", "deliveredNotificationChosen=on&")
+
+    var delim = "&";
+    for (i = 0; i < spA.length; i++) {
+        param = param + delim + "submitPieceId=" + spA[i].id;
+    }
+    param = param + "&confirm=true"  + "&intern=" + isInternCall() + "&lang=de";
+
+    $.ajax({
+        type: "GET",
+        url: ""+prepareUrl("parcel_alert.do?org.apache.catalina.filters.CSRF_NONCE=BDFA8004A0EE44571CA1704FDDC1F213"),
+        async: false,
+        data: param,
+        success: function (jason) {
+
+            var errors = false;
+            var errorContainer = "";
+            if (pieceId == null) {
+                errorContainer = "#errors";
+            } else {
+                errorContainer = "#errors-parcel-alert-" + pieceId;
+            }
+
+            $(errorContainer).html("");
+
+
+            if (pieceId == null) {
+                $("#parcelAlert" + " input").removeClass("mm_alert");
+            } else {
+                $("#parcel-alert-form-" + pieceId + " input").removeClass("mm_alert");
+            }
+
+
+            if (typeof jason.errorResponse !== "undefined") {
+                if (typeof jason.errorResponse.responseObject !== "undefined") {
+
+                    if (typeof jason.errorResponse.responseObject.errors.id !== "undefined") {
+                        errors = true;
+                        id = jason.errorResponse.responseObject.errors.id;
+                        message = jason.errorResponse.responseObject.errors.message;
+
+                        $(errorContainer).append("<p class='mm_alert'>" + message + "</p>");
+
+
+                        if (pieceId == null) {
+                            $("#" + id).addClass("mm_alert");
+                        } else {
+                            $("#" + id + "-" + pieceId).addClass("mm_alert");
+                        }
+                    } else {
+                        $.each(jason.errorResponse.responseObject.errors, function (index, error) {
+                            errors = true;
+                            id = error.id;
+                            message = error.message;
+
+                            $(errorContainer).append("<p class='mm_alert'>" + message + "</p>");
+
+
+                            if (pieceId == null) {
+                                $("#" + id).addClass("mm_alert");
+                            } else {
+                                $("#" + id + "-" + pieceId).addClass("mm_alert");
+                            }
+                        });
+                    }
+                }
+            }
+
+
+
+
+            if (errors == false) {
+                $('#collapse-parcel-alert-' + pieceId).collapse('hide');
+                $('#parcel-alert-success-' + pieceId).show();
+
+                clearParcelAlertFields(pieceId);
+
+
+            }
+
+
+            return;
+        }
+    });
+
+}
+
+function updateOffers(pieceId) {
+
+    if (pieceId == null) {
+    }
+
+    param = "&pieceId=" + pieceId;
+
+    $.ajax({
+        type: "GET",
+        url: ""+prepareUrl("update_offers.do?org.apache.catalina.filters.CSRF_NONCE=BDFA8004A0EE44571CA1704FDDC1F213"),
+        async: true,
+        data: param,
+        success: function (json) {
+
+            var $servicesElements = $('tr[data-piece-id=' + pieceId + ']');
+            var $servicesTooltipElements = $('a[data-piece-id=' + pieceId + ']');
+
+            if (json.updateOffersInfo.responseObject.offersAvailable) {
+
+                $servicesElements.show();
+
+                $servicesTooltipElements
+                        .attr('title', json.updateOffersInfo.responseObject.tooltip)
+                        .attr('data-original-title', json.updateOffersInfo.responseObject.tooltip);
+
+            } else {
+                $servicesElements.hide();
+            }
+
+
+        }
+    });
+
+}
+
+
+function clearParcelAlertFields(pieceId) {
+    $("#parcelAlert" + " input").removeClass("mm_alert");
+    $("#parcel-alert-form-" + pieceId + " input").removeClass("mm_alert");
+    $("#errors-parcel-alert-" + pieceId).html("");
+    $('#parcel-alert-form-' + pieceId + " input").val('');
+    $('#parcel-alert-form-' + pieceId + " input").prop('checked', false);
+
+}
+
+function fillAliasIfNecessary(pieceId) {
+    var alias;
+    if (pieceId == null) {
+        alias = $('[name=alias]')
+    } else {
+        alias = $('#alias-');
+    }
+
+    if (alias.val() == "") {
+        alias.val(" ");
+    }
+}
+
+function closeLayer() {
+    displayBanners();
+    $("#layer").hide();
+    $("#dialog").hide();
+}
+
+
+
+function isInternCall() {
+    handleInternalCall();
+    return getInternValue();
+}
+
+
+function displayBanners() {
+    if ($.browser.msie || $.browser.webkit) {
+        var flashElement = document.getElementById('topBanner');
+        if (flashElement != null) {
+            flashElement.style.display = 'block';
+        }
+
+        var werbungsElement = document.getElementById('werbung');
+        if (werbungsElement != null) {
+            werbungsElement.style.display = 'block';
+        }
+    }
+}
+
+function hideBanners() {
+    if ($.browser.msie || $.browser.webkit) {
+        var flashElement = document.getElementById('topBanner');
+        if (flashElement != null) {
+            flashElement.style.display = 'none';
+        }
+
+        var werbungsElement = document.getElementById('werbung');
+        if (werbungsElement != null) {
+            werbungsElement.style.display = 'none';
+        }
+    }
+}
+
+--></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+	try {
+		$(document).ready(function() {
+			handleInternalCall();
+		});
+	} catch (e) {  }
+
+	function handleInternalCall() {
+
+
+		changeLayoutByInternalCall();
+	}
+
+	function changeLayoutByInternalCall() {
+
+
+
+
+		allInternButtons = new Array();
+
+		var internValue = getInternValue();
+
+
+		if (internValue == true) {
+
+
+			$('[name=agreement]').hide();
+
+
+			$('[id=werbung]').hide();
+
+
+
+
+
+
+
+			$('[name=multiple_tab]').hide();
+			$('[name=multiple]').hide();
+
+
+			for ( var i = 0; i < allInternButtons.length; i++) {
+				changeCssOptions(allInternButtons[i]);
+			}
+		} else {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		}
+
+	}
+
+
+
+	function changeCssOptions(element) {
+		$(element).css({
+			'background-color' : '#FFCC00'
+		});
+		$(element).css({
+			'color' : '#000000'
+		});
+		$(element).css({
+			'border-color' : '#FFCC00'
+		});
+
+	}
+
+	function getInternValue() {
+
+	return false;
+
+	}
+</script>
+
+
+
+
+		<script type="text/javascript">
+		function reloadCaptcha() {
+			var captchaurl=prepareUrl('admin/image.captcha?org.apache.catalina.filters.CSRF_NONCE=BDFA8004A0EE44571CA1704FDDC1F213') + 'generateNew=' + new Date();
+			$('.captchaImg').attr('src',captchaurl);
+		}
+		</script>
+
+		<script type="text/javascript">
+			/* <![CDATA[ */
+			function openEVSWindow(action, pieceId) {
+				var lang = 'de';
+                var email = $("[name='email1']").val();
+				var pageRequest = "sendEmail.do?status=" + action + "&lang=" + lang + "&email=" + email;
+				$( action + "Blacklist-" + pieceId).attr("href",pageRequest);
+				return true;
+			}
+			/* ]]> */
+		</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<script type="text/javascript">
+
+				$(document).ready(function() {
+
+	var fxOffers = $("a[data-piece-id]");
+	if (fxOffers.length > 0) {
+		updateOffers(fxOffers.attr('data-piece-id'));
+	}
+
+	var mmCaptchaInputs = $("input[name*='zaptchaCode']");
+	if (mmCaptchaInputs.length > 0) {
+		$(mmCaptchaInputs).each(function() {
+    		$(this).attr('autocorrect', 'off');
+    		$(this).attr('autocapitalize', 'none');
+		});
+	}
+
+	var mmCheckboxes = $("input[type*='checkbox']");
+	if (mmCheckboxes.length == 1) {
+		$(mmCheckboxes).prop('checked', true);
+	}
+
+	$.extend({
+		getUrlVars: function () {
+			var vars = [], hash;
+			var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+			for (var i = 0; i < hashes.length; i++) {
+				hash = hashes[i].split('=');
+				vars.push(hash[0]);
+				vars[hash[0]] = hash[1];
+			}
+			return vars;
+		},
+		getUrlVar: function (name) {
+			return $.getUrlVars()[name];
+		}
+	});
+
+	if ($.getUrlVar("rfnSearch") != null) {
+		$('#single').click();
+		$('#singleRFN').click();
+	}
+});
+
+
+			</script>
+
+			<style type="text/css">
+
+				/* NOLP */
+
+
+			</style>
+
+
+
+
+
+
+
+
+	</head>
+	<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<div class="hero-unit">
+
+					<a class="mm_logo"><img src="/nextt-online-public/assets/img/logo-print_sw.gif?org.apache.catalina.filters.CSRF_NONCE=BDFA8004A0EE44571CA1704FDDC1F213" alt="DHL" /></a>
+					<h1>DHL Sendungsverfolgung</h1>
+
+						<script type="text/javascript"><!--
+/* <![CDATA[ */
+  function changeLanguage(langvar){
+	  jQuery.post( '/nextt-online-public/changeLanguage',
+            { lng: langvar },
+            function(data){
+              var baseUrl = window.location.href.split('?')[0];
+            	var query = window.location.search.substring(1);
+            	var newQuery = "";
+            	var params = query.split('&')
+            	var delim = "?";
+              for (var i = 0; i < params.length; i++) {
+            	  var param = params[i];
+            	  var keyvalue = param.split("=");
+            	  if (keyvalue[0] == 'lang') {
+              	  newQuery = newQuery + delim + "lang=" + langvar;
+                } else {
+                	newQuery = newQuery + delim + param;
+                }
+                delim = "&";
+              }
+            	window.location.href=baseUrl + newQuery;
+           }
+      );
+    }
+/* ]]> */
+// --></script>
+
+<ul class="mm_metanavigation">
+<li class="mm_languageswitcher">
+
+<a class="mm_activelanguage" href="javascript:changeLanguage('de');">Deutsch</a>
+
+<a href="javascript:changeLanguage('es');">Español</a>
+
+<a href="javascript:changeLanguage('nl');">Nederlands</a>
+
+<a href="javascript:changeLanguage('en');">English</a>
+
+<a href="javascript:changeLanguage('fr');">Fran&ccedil;ais</a>
+
+<a href="javascript:changeLanguage('cs');">&#268;e&#353;tina</a>
+
+<a href="javascript:changeLanguage('pl');">Polski</a>
+
+</li>
+</ul>
+
+				</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<section id="mm_container">
+			<div id="mm_main">
+				<div class="mm_72_28">
+					<div class="mm_details_left">
+						<div class="row">
+							<div class="col col-lg-12">
+								<h2>Suchergebnis</h2>
+								<p class="mm_gray">Hier finden Sie die Informationen zu Ihren gesuchten Sendungen.</p>
+
+
+										<span name="agreement" class="mm_gray"><p>Benötigen Sie <a href="http://www.dhl.de/de/paket/information/sendungsverfolgung.html" target="_blank" class="mm_arrowlink">Hilfe</a> oder haben Sie <a href="http://www.dhl.de/de/paket/information/sendungsverfolgung.html" target="_blank" class="mm_arrowlink">Fragen</a> zur DHL Sendungsverfolgung?</p></span>
+
+
+
+							</div>
+						</div>
+
+
+
+						<div class="mm_search_results">
+
+
+							    <h4>Suchergebnis</h4><div class="mm_trackicon"></div>
+                            <table class="table mm_table_search_results">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+								<thead>
+
+
+
+
+
+
+
+
+
+
+
+                                    <tr>
+										<th class="first-child"><!-- IE8fix --></th>
+										<th class="mm_sendungsnummer_label">Sendungsnummer</th>
+										<th class="mm_sendungsnummer">00340433924192908894</th>
+										<th class="last-child">
+											<div class="mm_float_right">
+
+
+
+
+
+
+
+
+
+
+											</div>
+										</th>
+									</tr>
+
+
+								</thead>
+								<tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+											<tr class="mm_mailing_process ">
+												<td><!-- IE8fix --></td>
+												<td class="mm_bold text-right">Verlauf Ihrer Sendung</td>
+												<td colspan="2">
+													<ul>
+
+
+
+
+																<li><img src="img/piece_details_icons/Icon_01_DatenErhaltenACTIVE_58x58.gif?org.apache.catalina.filters.CSRF_NONCE=BDFA8004A0EE44571CA1704FDDC1F213" alt="Auftragsdaten elektronisch an DHL übermittelt" /></li>
+
+
+
+
+
+
+
+																<li><img src="img/piece_details_icons/Icon_02_TransportACTIVE_58x58.gif?org.apache.catalina.filters.CSRF_NONCE=BDFA8004A0EE44571CA1704FDDC1F213" alt="Transport" /></li>
+
+
+
+
+
+
+
+																<li><img src="img/piece_details_icons/Icon_03_PaketzentrumACTIVE_58x58.gif?org.apache.catalina.filters.CSRF_NONCE=BDFA8004A0EE44571CA1704FDDC1F213" alt="Bearbeitung in Paketzentrum" /></li>
+
+
+
+
+
+
+
+																<li><img src="img/piece_details_icons/Icon_04_ZustellungACTIVE_58x58.gif?org.apache.catalina.filters.CSRF_NONCE=BDFA8004A0EE44571CA1704FDDC1F213" alt="Zustellung" /></li>
+
+
+
+
+
+
+
+
+																<li class="mm_last"><img src="img/piece_details_icons/Icon_05_ZugestelltACTIVE_58x58.gif?org.apache.catalina.filters.CSRF_NONCE=BDFA8004A0EE44571CA1704FDDC1F213" alt="Sendung wurde erfolgreich zugestellt"/></li>
+
+
+
+													</ul>
+												</td>
+											</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+														<tr class="mm_service_offers" data-piece-id="36d1c100-2e0f-4ab9-b02d-f811c53cca86" style="display:none">
+																<td><!-- IE8fix --></td>
+																<td class="mm_bold text-right">Zustellservice</td>
+																<td colspan="2"><a  target="_blank" class="mm_arrowlink" href="https://www.paket.de/empfangen/00340433924192908894" onclick="javascript:countLinkClick('offers');">Jetzt Zustellservice buchen</a> <a class="mm_round_icon mm_question" data-piece-id="36d1c100-2e0f-4ab9-b02d-f811c53cca86" data-toggle="tooltip" data-placement="right" title="Es stehen Ihnen aktuell leider keine Zustellservices zu dieser Sendung zur Verfügung." data-original-title="Es stehen Ihnen aktuell leider keine Zustellservices zu dieser Sendung zur Verfügung."></a></td>
+															</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+											<tr>
+												<td><!-- IE8fix --></td>
+												<td class="mm_bold text-right">Produkt / Service</td>
+												<td colspan="2">
+													DHL PAKET, Vorausverfügung UZN (für primär EDI)
+
+												</td>
+											</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+										<tr>
+											<td><!-- IE8fix --></td>
+											<td class="mm_bold text-right">Status vom Di, 12.01.2016 13:28</td>
+											<td colspan="2" class="mm_delivered">
+
+
+													Die Sendung wurde erfolgreich zugestellt.
+
+
+
+												<img src="assets/img/bg-delivered.png" alt="Zugestellt" />
+											</td>
+										</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+										<tr id="tr_panrecipient_00340433924192908894" style="display: none;">
+											<td><!-- IE8fix --></td>
+											<td class="mm_bold text-right">Empfänger</td>
+											<td colspan="2" id="panrecipient_00340433924192908894"></td>
+										</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+										  <tr style="" id="tr_recipient_00340433924192908894">
+											<td><!-- IE8fix --></td>
+											<td class="mm_bold text-right">Zugestellt an</td>
+											<td colspan="2" id="recipient_00340433924192908894">Empfänger (orig.)</td>
+										  </tr>
+
+
+
+
+
+
+
+
+
+
+
+                                                <tr id="zip-link_00340433924192908894" class="mm_print_hidden">
+                                                    <td><!-- IE8fix --></td>
+                                                    <td><!-- IE8fix --></td>
+                                                    <td colspan="2">
+                                                        <div class="accordion">
+                                                            <div class="accordion-group">
+                                                                <div class="accordion-heading" id="zip-link_00340433924192908894">
+                                                                    <a class="accordion-toggle collapsed" data-toggle="collapse" onclick="generateNewCaptcha();" data-closeothers=""  href="#collapse-00340433924192908894" id="ashowZip00340433924192908894">Detaillierte Empfängerinformationen anzeigen</a>
+                                                                </div>
+
+                                                                <div class="accordion-body collapse" id="collapse-00340433924192908894">
+                                                                    <div class="accordion-inner">
+                                                                        <form id="plzEingrenzung_1" action="recipent.do?org.apache.catalina.filters.CSRF_NONCE=BDFA8004A0EE44571CA1704FDDC1F213" class="plzEingrenzung" method="post" onsubmit="return false;">
+                                                                            <div class="mm_alert" style="display:none" id="div_error_00340433924192908894">
+                                                                                <p id="error_00340433924192908894"></p>
+                                                                            </div>
+                                                                            <fieldset>
+
+
+                                                                                    <label for="zip1">Bitte geben Sie die Postleitzahl des Empfängers an.</label>
+
+
+
+                                                                                    <div class="mm_row">
+                                                                                        <div class="mm_left_col">
+                                                                                            <input class="mm_height_input" type="text" name="validationzip" id="zip1" placeholder="Postleitzahl eingeben"  size="6"/>
+                                                                                        </div>
+                                                                                        <div class="mm_right_col">
+
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                            </fieldset>
+
+
+
+                                                                                <a href="http://www.postdirekt.de/plzserver/PlzSearchServlet" class="mm_arrowlink" title="Postleitzahl vergessen?" target="_blank">Postleitzahl vergessen?</a>
+
+
+                                                                            <fieldset>
+
+
+                                                                                    <label for="captchaCode1">Sicherheitscode</label>
+
+                                                                                <div class="captcha">
+                                                                                    <div class="label_area captchaImage" >
+
+
+                                                                                            <img class="captchaImg" width="180" height="40" alt="Bitte geben Sie diesen Sicherheitscode in das Eingabefeld unten ein."/>
+
+                                                                                    </div>
+                                                                                    <div class="input_area captchaCode" style="_padding:10px;">
+
+
+                                                                                    </div>
+                                                                                    <br/>
+                                                                                    <div class="mm_row">
+
+
+                                                                                            <div class="mm_left_col">
+                                                                                                <input class="mm_height_input" id="captchaCode1" name="zaptchaCode" type="text" onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;" placeholder="Bitte geben Sie den Sicherheitscode ein."/>
+                                                                                            </div>
+
+                                                                                    </div>
+                                                                                    <div class="mm_right_col">
+
+                                                                                    </div>
+                                                                                </div>
+                                                                            </fieldset>
+
+
+                                                                                <a class="mm_arrowlink" onclick="javascript:reloadCaptcha();">Neuen Sicherheitscode generieren</a>
+
+
+                                                                            <br/>
+                                                                            <input name="sid" value="00340433924192908894" type="hidden" />
+                                                                            <input name="fromShipment" value="false" type="hidden" />
+
+
+                                                                                <button class="btn btn-primary mm_btn_arrow" name="onConfirmZip" onclick="javascript:loadRecipient('plzEingrenzung_' + 1, '00340433924192908894', 1);">
+                                                                                    Weiter <span>&nbsp;</span>
+                                                                                </button>
+
+                                                                        <div style="display: none;"><input type="hidden" name="_sourcePage" value="/WEB-INF/jsp/searchresult_multiple.jsp" /><input type="hidden" name="__fp" value="rBN2qMscyqPk9m/Oa9MKPw==" /></div></form>
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+
+
+
+
+
+
+
+
+
+
+										<tr>
+											<td><!-- IE8fix --></td>
+											<td colspan="3" class="mm_nopadding" width="590">
+												<div class="accordion" id="events">
+													<div class="accordion-group">
+														<div class="accordion-heading mm_tableaccordion">
+															<a class="accordion-toggle collapsed" data-toggle="collapse" data-closeothers="" data-parent="#postleitzahl" href="#collapse-events-00340433924192908894_1">Detaillierter Verlauf Ihrer Sendung</a>
+														</div>
+														<div class="accordion-body collapse" id="collapse-events-00340433924192908894_1">
+															<div class="accordion-inner">
+																<table class="mm_event_table">
+																	<thead>
+																		<tr>
+																			<th class="mm_bold">Datum/Uhrzeit</th>
+																			<th class="mm_bold">Ort</th>
+																			<th class="mm_bold">Status</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+
+																		<tr>
+
+
+																			<td class="" data-label="Datum/Uhrzeit">
+
+																				Mo, 11.01.2016 15:56 Uhr
+
+
+																			</td>
+
+
+
+																				<td class="" data-label="Ort">
+
+
+
+
+																							--
+
+
+
+
+																				</td>
+																				<td class="" data-label="Status">
+
+
+																						Die Auftragsdaten zu dieser Sendung wurden vom Absender elektronisch an DHL übermittelt.
+
+
+
+																				</td>
+
+
+																		</tr>
+
+																		<tr>
+
+
+																			<td class="" data-label="Datum/Uhrzeit">
+
+																				Mo, 11.01.2016 16:48 Uhr
+
+
+																			</td>
+
+
+
+																				<td class="" data-label="Ort">
+
+
+
+																							Köln
+
+
+
+
+
+																				</td>
+																				<td class="" data-label="Status">
+
+
+																						Die Sendung wurde im Start-Paketzentrum bearbeitet.
+
+
+
+																				</td>
+
+
+																		</tr>
+
+																		<tr>
+
+
+																			<td class="" data-label="Datum/Uhrzeit">
+
+																				Di, 12.01.2016 03:35 Uhr
+
+
+																			</td>
+
+
+
+																				<td class="" data-label="Ort">
+
+
+
+																							Bielefeld
+
+
+
+
+
+																				</td>
+																				<td class="" data-label="Status">
+
+
+																						Die Sendung wurde im Ziel-Paketzentrum bearbeitet.
+
+
+
+																				</td>
+
+
+																		</tr>
+
+																		<tr>
+
+
+																			<td class="" data-label="Datum/Uhrzeit">
+
+																				Di, 12.01.2016 08:21 Uhr
+
+
+																			</td>
+
+
+
+																				<td class="" data-label="Ort">
+
+
+
+
+																							--
+
+
+
+
+																				</td>
+																				<td class="" data-label="Status">
+
+
+																						Die Sendung wurde in das Zustellfahrzeug geladen.
+
+
+
+																				</td>
+
+
+																		</tr>
+
+																		<tr>
+
+
+																			<td class="" data-label="Datum/Uhrzeit">
+
+																				Di, 12.01.2016 13:28 Uhr
+
+
+																			</td>
+
+
+
+																				<td class="" data-label="Ort">
+
+
+
+
+																							--
+
+
+
+
+																				</td>
+																				<td class="" data-label="Status">
+
+
+																						Die Sendung wurde erfolgreich zugestellt.
+
+
+
+																				</td>
+
+
+																		</tr>
+
+
+																	</tbody>
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
+											</td>
+										</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+										<tr class="mm_print_hidden">
+                      						<td><!-- IE8fix --></td>
+											<td colspan="3" class="mm_nopadding" width="590">
+												<div class="accordion" id="parcel-alert-00340433924192908894">
+													<div class="accordion-group mm_tableaccordion">
+														<div class="accordion-heading">
+															<a class="accordion-toggle last collapsed" onclick="generateNewCaptcha();" data-toggle="collapse" data-closeothers="" data-parent="#event" href="#collapse-parcel-alert-00340433924192908894" onclick="clearParcelAlertFields('00340433924192908894');$('#parcel-alert-success-00340433924192908894').hide();">
+																Kostenlose Statusbenachrichtigungen verschicken<span id="parcel-alert-success-00340433924192908894" style="display: none;"> <img src="assets/img/bg-delivered.png" alt="Zugestellt"> </span>
+															</a>
+														</div>
+
+														<div class="accordion-body collapse" id="collapse-parcel-alert-00340433924192908894">
+															<div class="accordion-inner">
+
+
+																<form id="parcel-alert-form-00340433924192908894" action="parcel_alert.do?org.apache.catalina.filters.CSRF_NONCE=BDFA8004A0EE44571CA1704FDDC1F213" method="post">
+																	<p class="mm_gray">Versenden Sie kostenlos Benachrichtigungen zum Status Ihrer nationalen Paket-Sendungen.<br>Bitte beachten Sie, dass abhängig vom derzeitigen Sendungsstatus bei einigen Sendungen nicht alle Benachrichtigungtypen möglich sind (zum Beispiel bei bereits zugestellten Sendungen).</p>
+
+																	<div id="errors-parcel-alert-00340433924192908894">
+																	</div>
+
+																	<div class="row mm_infoheadline">
+																		<h4 class="pull-left">Benachrichtigungstypen</h4>
+																		<span class="mm_round_icon mm_question pull-left" data-toggle="tooltip" data-html='true' data-placement="right" title="<u>Derzeitiger Status</u><br>Sie erhalten den derzeitigen Status der Sendung via Email. Der Status entspricht der aktuellen Anzeige der Sendungsverfolgung und eignet sich zur Weiterleitung an Kunden oder den Empfänger der Sendung.<br><br><u>Paketankündigung</u><br>Die Paketankündigung beinhaltet die Ankündigung des vsl. Zustellzeitpunkts der Sendung via Email. Sollte sich der Zustellzeitpunkt ändern oder der Empfänger wird nicht angetroffen, erhalten Sie ebenfalls eine Nachricht über den Verbleib der Sendung.<br><br> <u>Zustellnachricht</u><br> Die Zustellnachricht informiert sie über die Zustellung der Sendung. Hier erhalten Sie eine Nachricht unabhängig davon, ob der Empfänger persönlich angetroffen, die Sendung umgeleitet oder an einen Wunschort bzw. Nachbarn zugestellt wurde."
+																		   data-original-title="<u>Derzeitiger Status</u><br>Sie erhalten den derzeitigen Status der Sendung via Email. Der Status entspricht der aktuellen Anzeige der Sendungsverfolgung und eignet sich zur Weiterleitung an Kunden oder den Empfänger der Sendung.<br><br><u>Paketankündigung</u><br>Die Paketankündigung beinhaltet die Ankündigung des vsl. Zustellzeitpunkts der Sendung via Email. Sollte sich der Zustellzeitpunkt ändern oder der Empfänger wird nicht angetroffen, erhalten Sie ebenfalls eine Nachricht über den Verbleib der Sendung.<br><br> <u>Zustellnachricht</u><br> Die Zustellnachricht informiert sie über die Zustellung der Sendung. Hier erhalten Sie eine Nachricht unabhängig davon, ob der Empfänger persönlich angetroffen, die Sendung umgeleitet oder an einen Wunschort bzw. Nachbarn zugestellt wurde.">
+																		</span>
+																	</div>
+
+
+
+
+
+
+																			<div class="checkbox">
+																				<label>
+																					<input type="checkbox" name="packageNotificationOrders[0].currentState"  id="currentState-00340433924192908894" value="1"> Derzeitiger Status
+																				</label>
+																			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+																	<div class="row">
+																		<div class="mm_first_col">
+																			<label>Sendungsnummer</label>
+																		</div>
+																		<div class="mm_third_col">
+																			00340433924192908894
+																		</div>
+																	</div>
+
+																	<div class="row">
+																		<div class="mm_first_col">
+																			<label for="alias-00340433924192908894">
+																				Sendungsname
+																			</label>
+																			<span class="mm_round_icon mm_question" data-toggle="tooltip" data-placement="right" title="Bitte vergeben Sie einen Sendungsnamen, um den Sendungsstatus besser zuordnen zu können." data-original-title="Bitte vergeben Sie einen Sendungsnamen, um den Sendungsstatus besser zuordnen zu können." ></span>
+																		</div>
+																		<div class="mm_third_col">
+																			<input type="text" maxlength="50" name="packageNotificationOrders[0].alias" value="" id="alias-00340433924192908894" class="mm_height_input "/>
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="mm_first_col">
+																			<label for="email1-00340433924192908894">E-Mail-Adresse</label>
+																		</div>
+																		<div class="mm_third_col">
+																			<input type="email" placeholder="E-Mail-Adresse" name="email1" id="email1-00340433924192908894" class="mm_height_input "/>
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="mm_first_col">
+																			<label for="email2-00340433924192908894">Weitere E-Mail-Adresse</label>
+																		</div>
+																		<div class="mm_third_col">
+																			<input type="email" placeholder="Weitere E-Mail-Adresse" name="email2" id="email2-00340433924192908894" class="mm_height_input "/>
+																		</div>
+																	</div>
+
+																	<div class="row">
+																		<div class="mm_first_col">
+																			<label for="captchaCode-parcel-00340433924192908894">Sicherheitscode</label>
+																		</div>
+																		<div class="mm_third_col">
+																			<div class="captcha">
+																				<div class="label_area captchaImage" >
+																					<img class="captchaImg" width="180" height="40" alt="Bitte geben Sie diesen Sicherheitscode in das Eingabefeld unten ein."/>
+																				</div>
+																				<div class="input_area captchaCode" style="_padding:10px;"></div>
+																				<br/>
+																				<div>
+																					<input class="mm_height_input" id="captchaCode-parcel-00340433924192908894" name="zaptchaCode" type="text" onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;" placeholder="Bitte geben Sie den Sicherheitscode ein."/>
+
+																					<a class="mm_arrowlink" onclick="javascript:reloadCaptcha();" >Neuen Sicherheitscode generieren</a>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+
+																	<br/>
+
+																	<div class="row">
+																		<button type="button" class="btn btn-primary mm_btn_arrow" id="nolp_parcelAlertInput_bauftragen_button-00340433924192908894"  onclick="javascript:fillAliasIfNecessary('00340433924192908894'); submitEDICC('00340433924192908894'); reloadCaptcha();">Benachrichtigung(en) anfordern<span>&nbsp;</span></button>
+																	</div>
+
+																	<div class="row pull-left">
+																		<div class="mm_tip_no_padding">
+																			<div class="mm_tip">
+																				<h4>Hinweis</h4>
+																				<p class="mm_gray">Wenn Sie möchten, können Sie den Benachrichtigungsservice
+																					<a id="addBlacklist-00340433924192908894"  href="sendEmail.do?status=add" target="_blank" class="mm_arrowlink">sperren</a>
+																				<!--onclick="javascript:openEVSWindow('add', '00340433924192908894');"-->
+																						oder auch wieder
+																					<a id="removeBlacklist-00340433924192908894" href="sendEmail.do?status=remove" target="_blank" class="mm_arrowlink">entsperren</a> , um keine weiteren oder wieder Benachrichtigungen zu erhalten.
+																				</p>
+																			</div>
+																		</div>
+																	</div>
+																<div style="display: none;"><input type="hidden" name="_sourcePage" value="/WEB-INF/jsp/searchresult_multiple.jsp" /><input type="hidden" name="__fp" value="rBN2qMscyqPk9m/Oa9MKPw==" /></div></form>
+
+
+
+															</div>
+														</div>
+													</div>
+												</div>
+											</td>
+										</tr>
+
+
+
+								</tbody>
+
+
+
+
+
+                                <tfoot>
+									<tr>
+										<td colspan="4" class="mm_controlfoot">
+											<ul>
+												<li class="mm_subtree mm_footer">
+													<div class="row">
+														<div class="col col-lg-6">
+														</div>
+														<div class="col col-lg-6">
+															<ul class="mm_export">
+
+
+																    <li><a class="mm_print" href="javascript:window.print(); countLinkClick('print');" title="Drucken">print</a></li>
+
+
+
+                                                                    <li><form id="pieceRendererFoot" style="white-space: nowrap;" action="piece_renderer.do?org.apache.catalina.filters.CSRF_NONCE=BDFA8004A0EE44571CA1704FDDC1F213" method="POST"><a class="mm_pdf" href="javascript:downloadSinglePiece('36d1c100-2e0f-4ab9-b02d-f811c53cca86');" title="PDF-Download">pdf</a><div style="display: none;"><input type="hidden" name="_sourcePage" value="/WEB-INF/jsp/searchresult_multiple.jsp" /><input type="hidden" name="__fp" value="rBN2qMscyqPk9m/Oa9MKPw==" /></div></form></li>
+
+
+															</ul>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</td>
+									</tr>
+								</tfoot>
+
+
+
+
+							</table>
+
+							<form action="set_identcodes.do?org.apache.catalina.filters.CSRF_NONCE=BDFA8004A0EE44571CA1704FDDC1F213" method="get">
+
+								  <input name="idc" value="00340433924192908894" type="hidden" />
+						          <input name="rfn" value="" type="hidden" />
+						          <input name="tas" value="" type="hidden" />
+						          <input name="idcMultiple" value="" type="hidden" />
+						          <input name="rfnMultiple" value="" type="hidden" />
+						          <input name="tasMultiple" value="" type="hidden" />
+						          <input name="multiple" value="false" type="hidden" />
+						          <input name="zip" value="" type="hidden" />
+						          <div class="mm_button_group">
+
+
+								        <button class="btn mm_btn_arrow_back" type="submit" name="back" data-dismiss="modal"><span>&nbsp;</span> Zurück</button>
+
+
+
+                                        <button class="btn mm_btn_reload_arrow" type="submit">Suche wiederholen <span>&nbsp;</span></button>
+
+
+								</div>
+							<div style="display: none;"><input type="hidden" name="_sourcePage" value="/WEB-INF/jsp/searchresult_multiple.jsp" /><input type="hidden" name="__fp" value="rBN2qMscyqPk9m/Oa9MKPw==" /></div></form>
+						</div>
+
+						<br/>
+						<div class="mm_alert" id="actionSelectionErrorNothingSelected" style="display: none"><p>Es wurde keine Sendungsnummer ausgewählt.</p></div>
+						<div class="mm_alert" id="actionSelectionErrorPleaseChooseAction" style="display: none"><p>Bitte wählen Sie eine Aktion aus.</p></div>
+						<br/>
+
+
+
+
+
+
+								<div  id ="werbung">
+									<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" data="https://www.dhl.de/content/dam/dhlde/external/paket/dhl-banner-nolp.swf"  WIDTH="468" HEIGHT="60" class="mm_banner"  id="objectFlashId-Top"><PARAM NAME=movie VALUE="https://www.dhl.de/content/dam/dhlde/external/paket/dhl-banner-nolp.swf"><param name="wmode" value="transparent"> <PARAM NAME=quality VALUE=high>  <PARAM NAME="SCALE" value="noborder"><EMBED wmode="transparent" src="https://www.dhl.de/content/dam/dhlde/external/paket/dhl-banner-nolp.swf" quality=high WIDTH="468" HEIGHT="60" TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer" />  </OBJECT>
+								</div>
+
+
+
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer">
+	<div class="mm_footer_sitemap">
+
+
+			<ul>
+
+
+
+
+
+
+				<li><a href="http://www.dhl.de/">DHL Deutschland</a>
+
+
+
+
+
+
+
+
+
+				<ul>
+				<li><a href="http://www.dhl.de/dhl-paket">DHL Paket</a></li>
+
+
+
+
+
+
+
+
+
+					<li><a href="http://www.dhl.de/express">DHL Express</a></li>
+
+
+
+
+
+
+
+
+					<li><a href="http://www.dhl.de/logistik">DHL Logistik</a></li>
+
+
+				</ul>
+				</li>
+
+
+
+
+
+
+
+
+
+
+
+				<li><a href="http://www.dhl.de/kundenservice">Hilfe & Kundenservice</a>
+
+
+
+
+
+
+
+
+
+				<ul>
+				<li><a href="http://www.dhl.de/trackandtrace">So funktioniert's</a></li>
+
+
+
+
+
+
+
+
+
+					<li><a href="http://www.dhl.de/kontaktformular-sendungsstatus">Kontakt</a></li>
+
+
+
+
+
+
+
+
+					<li><a href="http://www.dhl.de/mobil">Mobile Apps</a></li>
+
+
+				</ul>
+				</li>
+
+
+
+
+
+
+
+
+
+
+
+				<li><a href="http://www.dpdhl.de">Deutsche Post DHL</a>
+
+
+
+
+
+
+
+
+
+				<ul>
+				<li><a href="http://www.dpdhl.de/about">Über uns</a></li>
+
+
+
+
+
+
+
+
+
+					<li><a href="http://www.dpdhl.de/verantwortung">Verantwortung</a></li>
+
+
+
+
+
+
+
+
+					<li><a href="http://www.dpdhl.de/presse">Presse</a></li>
+
+
+
+
+
+
+
+
+					<li><a href="http://www.dpdhl.de/karriere">Karriere</a></li>
+
+
+				</ul>
+				</li>
+
+
+
+
+			</ul>
+
+
+	</div>
+	<div class="navbar">
+
+
+			<ul class="nav">
+
+
+
+
+
+
+
+
+					<li><a href="http://www.dhl.de/footer-sicherheitshinweise" title="Sicherheitshinweise">Sicherheitshinweise</a></li>
+
+
+
+
+
+
+
+
+
+					<li><a href="http://www.dhl.de/de/toolbar/footer/datenschutz.html" title="Datenschutz">Datenschutz</a></li>
+
+
+
+
+
+
+
+
+
+					<li><a href="http://www.dhl.de/de/toolbar/footer/impressum/deutsche-post-ag.html" title="Impressum">Impressum</a></li>
+
+
+
+
+			</ul>
+
+			<ul class="nav">
+
+
+
+
+
+
+					<li><a href="http://www.dhl.de/de/toolbar/footer/rechtliche-hinweise.html" title="Copyright">&copy; 2016 DHL.de - Alle Rechte vorbehalten.</a></li>
+
+
+
+
+
+			</ul>
+
+	</div>
+</div>
+
+
+
+		<script src="assets/js/mm_dhl_combined.js"></script>
+
+	</body>
+</html>

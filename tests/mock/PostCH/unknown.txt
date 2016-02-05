@@ -1,0 +1,448 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html class="no-js" lang="en">
+	<head>
+		<title>Track & Trace</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1"/>
+        <meta http-equiv="description" content="EasySign, &copy; Swisspost">
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<script type="text/javascript"> </script>
+
+        <link rel="stylesheet" href="https://www.post.ch/api/staticasset?serviceId=ttb&file=post.css" type="text/css"/>
+        <link rel="stylesheet" href="https://www.post.ch/api/staticasset?serviceId=ttb&file=post-modules.css" type="text/css"/>
+
+		<link rel="stylesheet" href="/EasyTrack/css/jquery-ui.css" type="text/css">
+		<link rel="stylesheet" href="/EasyTrack/css/chosen.css" type="text/css">
+		<link rel="stylesheet" href="/EasyTrack/css/trackAndTrace.css?version=04.12.09.06" type="text/css">
+		<link rel="stylesheet" href="/EasyTrack/css/print.css" type="text/css" media="print">
+		<script type="text/javascript" src="/EasyTrack/js/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="/EasyTrack/js/chosen.jquery.js"></script>
+        <script src="https://www.post.ch/api/staticasset?serviceId=ttb&file=head.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            var isUserLogged = false ;
+            var klpIdpLoginUrl='https://account.post.ch/idp/?app=ttb';
+        </script>
+		<script type="text/javascript">
+
+
+
+
+
+if(window.MESSAGE === undefined) {MESSAGE = {};}
+
+MESSAGE.as_common_break = 'Cancel';
+MESSAGE.as_monitor_status_nodatafound = 'No consignments were found that match the search criteria.';
+MESSAGE.as_monitor_status_noorderfound = 'No orders were found that match the search criteria.';
+MESSAGE.as_monitor_status_genericerror = 'The system is not available at the moment. Please try again later.'
+MESSAGE.parcelDataResult_txt_openAll = 'Open all';
+MESSAGE.parcelDataResult_txt_closeAll = 'Close all';
+MESSAGE.resource_language = 'en';
+MESSAGE.notSupported_ie6 = '\u003Cp\u003EYou are currently using Internet Explorer 6.  As this browser is obsolete, layout problems may occur, and the functionality may be restricted. However, you can continue to use \"Track consignment\".\u003C\/p\u003EIn order to avoid problems with using the tool and to improve your security, we recommend that you update your browser.';
+MESSAGE.hide_timeline = 'Hide timeline';
+MESSAGE.view_timeline = 'Show Timeline';
+MESSAGE.as_monitor_status_numberentriesfound = '{0} consignments found.';
+MESSAGE.as_monitor_status_paginated = '{0} consignments are displayed per page.';
+MESSAGE.PaginationControlsTag_previous = 'Previous page';
+MESSAGE.PaginationControlsTag_next = 'Next page';
+MESSAGE.PaginationControlsTag_selectPage = 'Direct page selection';
+MESSAGE.abrid_failure_or_0_found = 'No consignments found';
+MESSAGE.result_notification_sending_label_email='E-mail';
+MESSAGE.result_notification_sending_success_message='The monitoring order has been saved successfully.';
+MESSAGE.result_notification_notified_to_ekp_success='The monitoring order has been saved successfully. The consignment will be displayed in the \u003Ca href=\"\/ekp-web\/external\/view\/{searchParam}?lang=en\" target=\"_blank\"\u003E“My consignments”\u003C\/a\u003E overview.';
+MESSAGE.result_notification_sending_success_anonymous_message='The monitoring order has been saved successfully. Log in as a private customer to view your consignment under \u003Ca href=\"\/ekp-web\/external\/view\/{searchParam}?lang=en\" target=\"_blank\"\u003E“My consignments”\u003C\/a\u003E.';
+
+
+
+		</script>
+		  <!--[if lte IE 6]>
+		  	<script type="text/javascript">
+		  		//specific ie6 or less message...
+		  		$(function() {$("body").prepend("<div id='notSupported'>"+MESSAGE.notSupported_ie6+"</div>");});
+
+		  	</script>
+		  <![endif]-->
+		  <!--
+Artifact Id: tt-web-app
+Version: 04.12.09.06
+Environment: prod
+Container: weblogic
+Instance: sso_left
+Start Time: Mon Jan 04 17:13:46 CET 2016 -->
+		  <!-- current user is : anonymousUser -->
+
+
+    </head>
+	<body>
+          <div id="os_content" >
+
+
+<script type="text/javascript" src="/EasyTrack/js/jquery.simple-tooltip.js"></script>
+
+
+<script type="text/javascript" src="/EasyTrack/js/jquery.simple-tooltip.js"></script>
+<script type="text/javascript" src="/EasyTrack/js/application.js?version=04.12.09.06"></script>
+
+<script type="text/javascript">
+
+var SEARCH_ID = "84fb96d3-22c5-45f0-9e79-8a2086087f09";
+
+//for open/close found results
+
+function buildWinParams(height, width, topPosition, leftPosition) {
+	return "resizable=yes,scrollbars=yes,status,height=" + height + ",width=" + width + ",left=" + leftPosition + ", top =" + topPosition;
+}
+
+function displayParcelImage(parcelCode,timestamp,shipmentImageId,startRotation) {
+
+	var winparams = buildWinParams(680, 850, parseInt((screen.height-410)/2), parseInt((screen.width-600)/2));
+	window.open("/EasyTrack/parcelViewer.image?identCode=" + parcelCode +
+			"&timestamp=" + timestamp +
+			"&shipmentImageId=" + shipmentImageId +
+			"&startRotation=" + startRotation +
+			"&searchId=" + SEARCH_ID, "ParcelImageWindow", winparams);
+}
+
+function displayLetterImage(barcode, timestamp, sendTagId, umi, sirName) {
+	var url = "/EasyTrack/bmbViewer.image?identCode="
+            + barcode
+			+ "&startRotation=0&searchId=" + SEARCH_ID + "&sirName=" + sirName;
+    if (sendTagId != "null") {
+        url += "&sendTagId=" + sendTagId
+    }
+    ;
+    if (timestamp != "null") {
+        url += "&timestamp=" + timestamp
+    }
+    ;
+    if (umi != "null") {
+		url += "&umi=" + encodeURIComponent(umi)
+    }
+    ;
+	window.open(url, "ParcelImageWindow",
+			buildWinParams(680, 850, parseInt((screen.height-410)/2), parseInt((screen.width-600)/2)));
+}
+
+function displayElvisImage(barcode, timestamp, sendTagId, umi, sirName, rrn) {
+	var url = "/EasyTrack/bmbViewer.image?identCode="
+			+ barcode
+			+ "&startRotation=0&searchId=" + SEARCH_ID + "&sirName=" + sirName;
+	if (sendTagId != "null") {
+		url += "&sendTagId=" + sendTagId
+	}
+	;
+	if (timestamp != "null") {
+		url += "&timestamp=" + timestamp
+	}
+	;
+	if (umi != "null") {
+		url += "&umi=" + encodeURIComponent(umi)
+	}
+	if (rrn != "null") {
+		url += "&rrn=" + rrn
+	}
+	;
+	window.open(url, "ParcelImageWindow",
+			buildWinParams(680, 850, parseInt((screen.height - 410) / 2), parseInt((screen.width - 600) / 2)));
+}
+
+function displayLieferschein(shipmentLieferscheinHash) {
+	var winparams = buildWinParams(600, 645, parseInt((screen.height - 410)/2), parseInt((screen.width - 600)/2));
+	var parcelGroupWindow = window.open("/EasyTrack/stuckGutLieferschein.do?shipmentLieferscheinHash=" + shipmentLieferscheinHash +
+			"&searchId=" + SEARCH_ID, "ParcelGroupWindow", winparams);
+}
+
+function renderSignatureImage(shipmentNumber,signaturePfad,timestamp) {
+
+	var winparamsImage = buildWinParams(450, 355, parseInt((screen.height - 450)/2), parseInt((screen.width - 355)/2));
+	var w = window.open("/EasyTrack/renderSignatureImage.do?shipmentNumber=" + shipmentNumber +
+			"&timestamp=" + timestamp +
+			"&signaturePfad=" + signaturePfad +
+			"&searchId="+SEARCH_ID +
+			"&enableFunctionality=", "ParcelImageWindow", winparamsImage);
+	w.focus();
+}
+
+function renderSignatureImageWithSignatureHash(shipmentNumber, signatureHash, timestamp) {
+
+	var winparamsImage = buildWinParams(450, 520, parseInt((screen.height-450)/2), parseInt((screen.width-520)/2));
+	var w = window.open("/EasyTrack/renderSignatureImage.do?shipmentNumber=" + shipmentNumber +
+			"&timestamp=" + timestamp +
+			"&signatureIdHash=" + signatureHash +
+			"&searchId="+SEARCH_ID +
+			"&enableFunctionality=", "ParcelImageWindow", winparamsImage);
+	w.focus();
+}
+
+//direkt open signature pdf
+function doOnPrintSignature(shipmentNumber,signaturePfad,timestamp) {
+
+	var varImage =("/EasyTrack/signature.report?imageId=" + signaturePfad  +
+		"&ic=" + shipmentNumber +
+		"&searchId=" + SEARCH_ID +
+		"&resetCache=" + (new Date().getTime())+
+		"&enableFunctionality=");
+	var w = window.open(varImage, "PDFPrint");
+}
+
+function doOnPrintSignatureWithHash(shipmentNumber,signatureHash,timestamp) {
+
+	var image = "/EasyTrack/signatureH.report?signatureHash=" + signatureHash +
+		"&ic=" + shipmentNumber +
+		"&searchId=" + SEARCH_ID +
+		"&resetCache="+(new Date().getTime());
+	var w = window.open(image, "PDFPrint");
+}
+//
+
+function renderPdfWithShipmentNumberAndShipmentId(shipmentNumber, shipmentId) {
+
+	var reportUrl ="/EasyTrack/shipmentReport.report?shipmentId=" + shipmentId +
+		"&shipmentNumber=" + shipmentNumber +
+		"&resetCache=" +(new Date().getTime());
+
+	var w = window.open(reportUrl, "PDFPrint");
+	w.focus();
+}
+
+function renderSignatureForm(shipmentNumber,timestamp) {
+
+	var winparamsImage = buildWinParams(650, 615, parseInt((screen.height-650)/2), parseInt((screen.width-615)/2));
+	var w = window.open("/EasyTrack/renderSignatureForm.do?shipmentNumber=" + shipmentNumber +
+			"&timestamp=" + timestamp +
+			"&searchId=" + SEARCH_ID , "ParcelImageWindow", winparamsImage);
+	w.focus();
+}
+
+function displaySendingInvestigationPopup() {
+    jqueryUnic.fancybox({href: "#sending-investigation-ausland-import-popup"});
+}
+
+</script>
+<script type="text/javascript">
+
+    window.onload=function(){
+
+        if((''== ('STANDARD_SIMPLE' || 'BUSINESS_SIMPLE')) || ''==''){
+            $('#os_content').weppheader('updateHeader', {'os_lang': [
+                {lang: 'de',
+                    url: '?lang=de&fromSearch=&formattedParcelCodes=RB36689096DE'
+                },
+                {lang: 'fr',
+                    url: '?lang=fr&fromSearch=&formattedParcelCodes=RB36689096DE'
+                },
+                {lang: 'it',
+                    url: '?lang=it&fromSearch=&formattedParcelCodes=RB36689096DE'
+                },
+                {lang: 'en',
+                    url: '?lang=en&fromSearch=&formattedParcelCodes=RB36689096DE'
+                }
+            ]});
+        };
+        if(''== 'BUSINESS_ADVANCED'){
+
+            $('#os_content').weppheader('updateHeader', {'os_lang': [
+                {lang: 'de',
+                    url: '?lang=de&fromSearch=&searchId=84fb96d3-22c5-45f0-9e79-8a2086087f09'
+                },
+                {lang: 'fr',
+                    url: '?lang=fr&fromSearch=&searchId=84fb96d3-22c5-45f0-9e79-8a2086087f09'
+                },
+                {lang: 'it',
+                    url: '?lang=it&fromSearch=&searchId=84fb96d3-22c5-45f0-9e79-8a2086087f09'
+                },
+                {lang: 'en',
+                    url: '?lang=en&fromSearch=&searchId=84fb96d3-22c5-45f0-9e79-8a2086087f09'
+                }
+            ]});
+        }
+
+    }
+
+$(function() {
+	initNotifications();
+	parcelDataresult();
+	var foundShipments = $(".shipments-list");
+	fliterAbridShipmentInfo(foundShipments);
+});
+
+$(document).on('click',"#switch_view_mode", function() {
+	if(this.value == MESSAGE.view_timeline) {
+		this.value = MESSAGE.hide_timeline;
+		$(".iconTimeline").show();
+	} else {
+		this.value = MESSAGE.view_timeline;
+		$(".iconTimeline").hide();
+	}
+	resizeIframeIfPresent();
+});
+
+$(document).on("click", ".filterEntry input[type=checkbox]", function() {
+	var filterType = $(this).attr("class");
+	var identifiers = $("."+filterType+"[type=checkbox]:checked");
+
+	var otherIdentifiers = $(".filterEntry input[type=checkbox]:not(."+filterType+"):checked");
+
+	var idsToSearch = 0;
+
+	$.each(identifiers.prev(), function() {
+		idsToSearch += parseInt(this.value);
+	});
+
+	if(idsToSearch == 0) {
+		//ev. add alert.
+		return false;
+	} else {
+		loadShipmentsForPage(SEARCH_ID, 0, "", $.merge(otherIdentifiers,identifiers).serialize());
+		return true;
+	}
+});
+
+$(document).on('click','#infoIconToFAQ', function() {
+    window.open($(this).attr("data-linktofaq"));
+}).on('hover', '#infoIconToFAQ', function() {
+		$(this).css("cursor", "pointer");
+	});
+
+</script>
+<script type="text/javascript" src="/EasyTrack/js/application.js?version=04.12.09.06"></script>
+
+
+
+
+
+<div id="parcelDataResultTop">
+
+		<h1>Search results</h1>
+
+
+	<input type="button" class="commandButton" value="Print" onClick="window.print(); return 0;" id="printButton">
+
+</div>
+
+
+
+
+    <div class="business_link">
+        NB:
+        <br />
+        As a private recipient, you have the option of being automatically notified of the status of the consignments that are on their way to you. More information under <a href="https://www.post.ch/en/meine-sendungen" target="_blank">“My consignments”</a>
+        <br />
+        If you are a business customer and the sender of this consignment, you can log in and view more details, such as the consignment image (if available).
+    </div>
+
+
+<div id="resultContainer">
+<div id="resultContent">
+
+
+
+
+
+
+
+
+
+
+
+<ul id="resultList" class="shipments-list">
+
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<ul class="notFoundShipments shipments-list" id="resultList">
+
+
+
+
+
+
+
+	                <li class="notFoundTitle"><strong>RB36689096DE</strong></li>
+
+
+
+	</ul>
+
+	<div class="notFoundMessage">
+
+
+
+				<p>Unfortunately your search was unsuccessful. The causes of this could be:<br>- Consignment has not yet been handed over to Swiss Post or scanned.<br>- Shipping dates back more than 180 days (public search) or 360 days (search for logged-in business customers with a billing relationship)<br>- Typing error in the number<br>- Incorrect format for consignment number (see "Frequently Asked Questions" link)</p>
+				<p>Please check your details and/or try again in a few hours.<br>Useful information can be found above under "Info".</p>
+				<p>We would be pleased to help if you have any questions.
+                <a class="mail" href='mailto:custcare@swisspost.ch?subject=Investigation for Track %26 Trace&body=In order to process your request as fast as possible, please complete the following information:%0D%0A- Consignment number:%0D%0A- Address of delivery:%0D%0A- Address of sender:%0D%0A- Date of posting:%0D%0A- Contact person:%0D%0A- Sender:%0D%0A- Telephone number (for additional queries):'>
+                    custcare@swisspost.ch
+                </a>
+                <br>Thank you.
+                </p>
+				<p>International consignments can also be tracked via our partners:<br>- <a href="http://www.tnt.com/webtracker/tracker.do?navigation=1&respLang=en&respCountry=GENERIC&genericSiteIdent=.en_ch" target="_blank"><span style="font-size: 8pt">TNT Swiss Post SA</span></a>, leading provider of international courier and express services<br>- <a href="https://gls-group.eu/EU/en/parcel-tracking" target="_blank"><span style="font-size: 8pt">Swiss Post GLS</span></a>, transport specialist for business-to-business goods shipments</p>
+
+
+	</div>
+
+    <div id="sending-investigation-ausland-import-popup">
+        <div class="u_global_warning">
+            <div class="u_global_content">
+                <p>For import consignments, the enquiry must be initiated by the sender abroad via his or her postal company. Please contact the sender to ensure that he or she requests the enquiry.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+</div>
+
+        </div>
+      <script id="os_config" type="application/json">
+        {
+            "os_config": {
+                "currentLang": "en"
+            },
+            "os_lang": [
+                         {
+                             "lang" : "de",
+                             "url" : "?lang=de"
+                           },{
+                             "lang" : "fr",
+                             "url" : "?lang=fr"
+                           },{
+                             "lang" : "it",
+                             "url" : "?lang=it"
+                           },{
+                             "lang" : "en",
+                             "url" : "?lang=en"
+                             }
+                     ]
+        }
+    </script>
+    <script src="https://www.post.ch/api/headerjs?serviceid=ttb" type="text/javascript"></script>
+    <script>  $ = jQuery;   </script>
+    <script type="text/javascript">
+        if(!isUserLogged){
+            $(document).on('wepploginwidget_widget_ready', function(){
+                var widget = jqueryUnic("[data-wepploginwidget=init]").wepploginwidget("getWidget");
+                if(typeof(widget) !== undefined) {
+                    widget.registerLoginCallback(function(){
+                            window.location=klpIdpLoginUrl+"&targetURL="+window.location.href;
+                    });
+                }
+            });
+        }
+    </script>
+	</body>
+</html>

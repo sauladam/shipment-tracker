@@ -1,0 +1,3089 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+
+
+
+
+
+<html xmlns:fb="http://www.facebook.com/2008/fbml">
+
+
+<HEAD>
+
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<meta name="DCSext.pgf_Site" content="Country">
+ <meta name="DCSext.pCC" content="US">
+ <meta name="DCSext.pLL" content="en">
+ <meta name="DCSext.pSA" content="Tracking">
+ <meta name="DCSext.pSU" content="com.ups.trackWeb">
+ <meta name="DCSext.pPID" content="tracking/trackWeb/tra(3det).html">
+ <meta name="DCSext.pPS" content="0">
+ <meta name="DCSext.pCS" content="Unknown">
+ <meta name="DCSext.pSS" content="/styles/V4,3">
+ <meta name="DCSext.pJSV" content="0116">
+ <meta name="DCSext.pCV" content="0116">
+ <meta name="DCSext.pLI" content="1">
+
+
+<link rel="stylesheet" type="text/css"  href="/styles/v4/master.css?V=0116">
+<link rel="stylesheet" type="text/css"  href="/styles/v4/app/com.ups.trackWeb.css?V=0116">
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css"  href="/styles/v4/browser/ie.css?V=0116">
+<![endif]-->
+
+
+<script  src="/assets/framework/jquery/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script  src="/assets/framework/jquery/plugin/jqueryui/jquery-ui-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script  src="/assets/framework/jquery/plugin/jqprint/jqprint-obf-0.3.cache.js" type="text/javascript" charset="utf-8"></script>
+<script  src="/assets/framework/jquery/plugin/thickbox/thickbox-obf-3.1.2.cache.js" type="text/javascript" charset="utf-8"></script>
+
+
+<meta name="description" content="Use your UPS InfoNotice or tracking number to get updates on your delivery or sign up for UPS My Choice for even more convenient services.">
+
+<META NAME='DCSext.sType' CONTENT='SML_PKG'>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css"  href="/assets/framework/jquery/plugin/jqueryui/jquery-ui.css?V=0116">
+<script  src="/assets/calendar/201601_03_03/calendar_201601_03_03_en_US.obf.cache.js" type="text/javascript" charset="utf-8"></script>
+
+
+<SCRIPT LANGUAGE="JavaScript1.2" SRC="/javascript/global.js?V=0116" TYPE="text/javascript"></SCRIPT>
+<TITLE>UPS: Tracking Information</TITLE>
+<SCRIPT LANGUAGE="JavaScript1.2" SRC="/javascript/webtrends.load.js?V=0116" TYPE="text/javascript"></SCRIPT>
+<script  src="/assets/cclamp/cfevents.js?V=0116" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+<body>
+
+
+
+
+
+
+
+
+<div id="ccGloBnr" class="tabon">
+
+
+		<noscript>
+        <link rel="stylesheet" href="/stylesheets/master.css?V=0108" type="text/css">
+	</noscript>
+	<div class="bnrGtr">
+        <div class="bnrBrand">
+			<a href="https://www.ups.com/content/us/en/index.jsx?WT.svl=BrndMrk">
+<img src="/img/glo_ups_brandmark.gif" width="42" height="55" alt="UPS" border="0" ></a>		</div>
+	</div>
+
+
+
+
+
+		<!-- begin primary navigation -->
+	<div class="taboff" id="ccGloBnr">
+			<div class="bnrGtr2">
+				<div class="navHeader">
+					<h1>
+						United States
+					</h1>
+				</div>
+			</div>
+		<div class="nav1GloBnr">
+			<ul id="nav1">
+									<li class="tab-off" id="navList0">
+<a id="navImg0" href="https://www.ups.com/myWorkspace/home?loc=en_US&WT.svl=PriNav">My UPS<img align="bottom" alt="" border="0" src="/img/1.gif" height="7" width="0"><img align="bottom" alt="" border="0" src="/img/icn_lock_white.gif" height="8" width="12"></a>
+		 						</li>
+									<li class="tab-off" id="navList1">
+<a id="navImg1" href="https://www.ups.com/content/us/en/shipping/index.html?WT.svl=PriNav">Shipping</a>
+		 						</li>
+									<li class="tab-on" id="navList2">
+
+<a id="navImg2" href="https://www.ups.com/WebTracking/track?loc=en_US&WT.svl=PriNav">Tracking</a>
+		 						</li>
+									<li class="tab-off" id="navList3">
+<a id="navImg3" href="https://www.ups.com/content/us/en/freight/index.html?WT.svl=PriNav">Freight</a>
+		 						</li>
+									<li class="tab-off" id="navList4">
+<a id="navImg4" href="https://www.ups.com/dropoff?loc=en_US&WT.svl=PriNav">Locations</a>
+		 						</li>
+									<li class="tab-off" id="navList5">
+<a id="navImg5" href="https://www.ups.com/content/us/en/resources/index.html?WT.svl=PriNav">Support</a>
+		 						</li>
+									<li class="tab-off" id="navList6">
+<a id="navImg6" href="https://www.ups.com/content/us/en/bussol/browse/solutions/index.html?WT.svl=PriNav">UPS Solutions</a>
+		 						</li>
+			</ul>
+		</div>
+	</div>
+	<div style="clear:both"></div>
+			<iframe src="/img/1.gif" class="ccpnframe" id="ccpnframe0" scrolling="no"></iframe>
+			<div class="ccpnmenu" id="ccpnmenu0"><a href="https://www.ups.com/one-to-one/loginSettings?loc=en_US&WT.svl=PNRO_L1">Login Settings<img align="bottom" alt="" border="0" src="/img/1.gif" height="7" width="0"><img align="bottom" alt="" border="0" src="/img/icn_lock_white.gif" height="8" width="12"></a><a href="https://www.ups.com/myups/profile?loc=en_US&WT.svl=PNRO_L1">Profile<img align="bottom" alt="" border="0" src="/img/1.gif" height="7" width="0"><img align="bottom" alt="" border="0" src="/img/icn_lock_white.gif" height="8" width="12"></a><a href="https://www.ups.com/myups/acctsummary?loc=en_US&WT.svl=PNRO_L1">Account Summary<img align="bottom" alt="" border="0" src="/img/1.gif" height="7" width="0"><img align="bottom" alt="" border="0" src="/img/icn_lock_white.gif" height="8" width="12"></a><a href="https://www.ups.com/content/us/en/myups/billing/index.html?WT.svl=PNRO_L1">Billing</a><a href="https://www.ups.com/qvadmin/admin?loc=en_US&WT.svl=PNRO_L1">Administration<img align="bottom" alt="" border="0" src="/img/1.gif" height="7" width="0"><img align="bottom" alt="" border="0" src="/img/icn_lock_white.gif" height="8" width="12"></a><a href="https://www.ups.com/myups/addresses?loc=en_US&WT.svl=PNRO_L1">Address Book<img align="bottom" alt="" border="0" src="/img/1.gif" height="7" width="0"><img align="bottom" alt="" border="0" src="/img/icn_lock_white.gif" height="8" width="12"></a><a href="https://www.ups.com/content/us/en/bussol/browse/mobile_tracking.html?WT.svl=PNRO_L1">Mobile Solutions</a><a href="https://www.ups.com/account/am/start?loc=en_US&WT.svl=PNRO_L1">Maintain Your UPS Account<img align="bottom" alt="" border="0" src="/img/1.gif" height="7" width="0"><img align="bottom" alt="" border="0" src="/img/icn_lock_white.gif" height="8" width="12"></a>			</div>
+			<iframe src="/img/1.gif" class="ccpnframe" id="ccpnframe1" scrolling="no"></iframe>
+			<div class="ccpnmenu" id="ccpnmenu1"><a href="https://www.ups.com/uis/create?loc=en_US&WT.svl=PNRO_L1">Create a Shipment<img align="bottom" alt="" border="0" src="/img/1.gif" height="7" width="0"><img align="bottom" alt="" border="0" src="/img/icn_lock_white.gif" height="8" width="12"></a><a href="https://www.ups.com/uis/create?ActionOriginPair=ShippingHistory___StartSession&loc=en_US&srcLink=HISTORY&WT.svl=PNRO_L1">View History<img align="bottom" alt="" border="0" src="/img/1.gif" height="7" width="0"><img align="bottom" alt="" border="0" src="/img/icn_lock_white.gif" height="8" width="12"></a><a href="https://www.ups.com/uis/create?ActionOriginPair=ShippingHistory___StartSession&loc=en_US&srcLink=VOID&WT.svl=PNRO_L1">Void Shipment<img align="bottom" alt="" border="0" src="/img/1.gif" height="7" width="0"><img align="bottom" alt="" border="0" src="/img/icn_lock_white.gif" height="8" width="12"></a><a href="https://www.ups.com/uis/create?ActionOriginPair=CreateAReturn___StartSession&loc=en_US&WT.svl=PNRO_L1">Create a Return<img align="bottom" alt="" border="0" src="/img/1.gif" height="7" width="0"><img align="bottom" alt="" border="0" src="/img/icn_lock_white.gif" height="8" width="12"></a><a href="https://www.ups.com/uis/create?ActionOriginPair=BatchImportPage___StartSession&loc=en_US&WT.svl=PNRO_L1">Ship Using a Batch File<img align="bottom" alt="" border="0" src="/img/1.gif" height="7" width="0"><img align="bottom" alt="" border="0" src="/img/icn_lock_white.gif" height="8" width="12"></a><a href="https://www.ups.com/uis/create?ActionOriginPair=CreateAnImport___StartSession&loc=en_US&WT.svl=PNRO_L1">Create an Import<img align="bottom" alt="" border="0" src="/img/1.gif" height="7" width="0"><img align="bottom" alt="" border="0" src="/img/icn_lock_white.gif" height="8" width="12"></a><a href="https://www.ups.com/marketplaceshipping/order?loc=en_US&WT.svl=PNRO_L1">Ship Marketplace Orders<img align="bottom" alt="" border="0" src="/img/1.gif" height="7" width="0"><img align="bottom" alt="" border="0" src="/img/icn_lock_white.gif" height="8" width="12"></a><a href="https://wwwapps.ups.com/calTimeCost?loc=en_US&WT.svl=PNRO_L1">Calculate Time and Cost</a><a href="https://wwwapps.ups.com/pickup/schedule?loc=en_US&WT.svl=PNRO_L1">Schedule a Pickup</a><a href="https://wwwapps.ups.com/tradeability?loc=en_US&WT.svl=PNRO_L1">Use International Tools</a><a href="https://www.ups.com/osa/orderSupplies?loc=en_US&WT.svl=PNRO_L1">Order Supplies<img align="bottom" alt="" border="0" src="/img/1.gif" height="7" width="0"><img align="bottom" alt="" border="0" src="/img/icn_lock_white.gif" height="8" width="12"></a><a href="https://www.ups.com/account/us/start?loc=en_US&WT.svl=PNRO_L1">Open a UPS Account<img align="bottom" alt="" border="0" src="/img/1.gif" height="7" width="0"><img align="bottom" alt="" border="0" src="/img/icn_lock_white.gif" height="8" width="12"></a><a href="https://www.ups.com/sharp/prefapp?appid=pp&loc=en_US&WT.svl=PNRO_L1">Set Preferences<img align="bottom" alt="" border="0" src="/img/1.gif" height="7" width="0"><img align="bottom" alt="" border="0" src="/img/icn_lock_white.gif" height="8" width="12"></a><a href="https://www.ups.com/content/us/en/shipping/time/service/index.html?WT.svl=PNRO_L1">Service Guide</a>					</div>
+			<iframe src="/img/1.gif" class="ccpnframe" id="ccpnframe2" scrolling="no"></iframe>
+			<div class="ccpnmenu" id="ccpnmenu2"><a href="https://www.ups.com/WebTracking/track?loc=en_US&WT.svl=PNRO_L1">Track Shipments</a><a href="https://wwwapps.ups.com/mcdp?loc=en_US&WT.svl=PNRO_L1">Access UPS My Choice</a><a href="https://www.ups.com/content/us/en/tracking/quantumview/index.html?WT.svl=PNRO_L1">Learn About Quantum View</a><a href="https://www.ups.com/qvadmin/admin?loc=en_US&WT.svl=PNRO_L1">Administration<img align="bottom" alt="" border="0" src="/img/1.gif" height="7" width="0"><img align="bottom" alt="" border="0" src="/img/icn_lock_white.gif" height="8" width="12"></a><a href="https://www.ups.com/cva?loc=en_US&WT.svl=PNRO_L1">Quantum View Manage<img align="bottom" alt="" border="0" src="/img/1.gif" height="7" width="0"><img align="bottom" alt="" border="0" src="/img/icn_lock_white.gif" height="8" width="12"></a><a href="https://wwwapps.ups.com/qvn/track_input?loc=en_US&WT.svl=PNRO_L1">Quantum View Notify<img align="bottom" alt="" border="0" src="/img/1.gif" height="7" width="0"><img align="bottom" alt="" border="0" src="/img/icn_lock_white.gif" height="8" width="12"></a><a href="https://www.ups.com/quantum_services/download?loc=en_US&WT.svl=PNRO_L1">Quantum View Data<img align="bottom" alt="" border="0" src="/img/1.gif" height="7" width="0"><img align="bottom" alt="" border="0" src="/img/icn_lock_white.gif" height="8" width="12"></a><a href="https://www.ups.com/content/us/en/tracking/fgv/index.html?WT.svl=PNRO_L1">Access Flex Global View</a><a href="https://wwwapps.ups.com/voids/start?loc=en_US&WT.svl=PNRO_L1">Void a Shipment<img align="bottom" alt="" border="0" src="/img/1.gif" height="7" width="0"><img align="bottom" alt="" border="0" src="/img/icn_lock_white.gif" height="8" width="12"></a><a href="https://www.ups.com/content/us/en/tracking/customs-brokerage-compliance.html?WT.svl=PNRO_L1">Brokerage and Compliance</a>					</div>
+			<iframe src="/img/1.gif" class="ccpnframe" id="ccpnframe3" scrolling="no"></iframe>
+			<div class="ccpnmenu" id="ccpnmenu3"><a href="https://www.ups.com/content/us/en/freight/expedite.html?WT.svl=PNRO_L1">Critical Freight</a><a href="https://www.ups.com/content/us/en/freight/air_freight.html?WT.svl=PNRO_L1">Air Freight</a><a href="https://www.ups.com/content/us/en/freight/road_freight.html?WT.svl=PNRO_L1">LTL and Truckload</a><a href="https://www.ups.com/content/us/en/freight/ocean_freight.html?WT.svl=PNRO_L1">Ocean Freight</a><a href="https://www.ups.com/content/us/en/freight/full_truckload.html?WT.svl=PNRO_L1">U.S. - Mexico Full Truckload Services</a>			</div>
+			<iframe src="/img/1.gif" class="ccpnframe" id="ccpnframe5" scrolling="no"></iframe>
+			<div class="ccpnmenu" id="ccpnmenu5"><a href="https://www.ups.com/content/us/en/resources/help-center.html?WT.svl=PNRO_L1">Help Center</a><a href="https://www.ups.com/content/us/en/resources/start/index.html?WT.svl=PNRO_L1">Getting Started</a><a href="https://www.ups.com/content/us/en/resources/ship/index.html?WT.svl=PNRO_L1">Shipping</a><a href="https://www.ups.com/content/us/en/resources/track/index.html?WT.svl=PNRO_L1">Tracking</a><a href="https://www.ups.com/content/us/en/resources/service/index.html?WT.svl=PNRO_L1">Receiving Your Shipment</a><a href="https://www.ups.com/content/us/en/resources/pay/index.html?WT.svl=PNRO_L1">Billing and Payment</a><a href="https://www.ups.com/content/us/en/resources/techsupport/index.html?WT.svl=PNRO_L1">Technology Support</a><a href="https://wwwapps.ups.com/webClaims/create?loc=en_US&report_type=1&WT.svl=PNRO_L1">File a Claim</a>					</div>
+			<iframe src="/img/1.gif" class="ccpnframe" id="ccpnframe6" scrolling="no"></iframe>
+			<div class="ccpnmenu" id="ccpnmenu6"><a href="https://www.ups.com/content/us/en/bussol/browse/solutions/explore.html?WT.svl=PNRO_L1">Explore UPS Portfolio</a><a href="https://www.ups.com/content/us/en/bussol/browse/industries/industries.html?WT.svl=PNRO_L1">Industry Focus</a><a href="https://www.ups.com/content/us/en/bussol/browse/ups-small-business.html?WT.svl=PNRO_L1">Small Business</a><a href="https://www.ups.com/content/us/en/bussol/browse/international_trade.html?WT.svl=PNRO_L1">International Trade</a>					</div>
+	<script type="text/JavaScript">crtccMenu(7)</script>
+	<!-- end primary navigation -->
+
+
+
+		<div class="bnrGtr2">
+
+
+			<div id="contactUPSmenu" class="perTooltip hidden">
+							<div class="perTooltipArrowTop">
+								<div class="wedgeUP"></div>
+							</div>
+							<div class="appLvl clearfix">
+								<fieldset>
+								<div>
+									<div class="secLvl mod floatBegin marginBegin">
+										<div class="secBody">
+											<div class="accountRepImg">
+											</div>
+												<div class="accountRepInfo">
+													<strong>Your Support Team</strong>
+													<br>1-800-234-1121
+													<div><a href="mailto:sendemail@example.com?Subject=EXAMPLE20%SUBJUECT20%LINE " target="_top" onclick="dcsMultiTrack('WT.z_mktmsite','2014_Peak','WT.dl','99','WT.z_CTAid','AcctRepEmailTop__ContactCustSvsPg')">Send an Email</a></div>
+												</div>
+												<div class="accountRepInfo">
+													<strong>Technical Support:</strong>
+													<br>1-877-234-1111
+												</div>
+										</div>
+									</div>
+									<div class="secLvl secLvlPlain floatEnd">
+										<div class="secHead clearfix">
+											<ul>
+												<li><input type="button" class="btnlnkL closeIconBrn" title="Close" id="perT_contacUPS_close"></li>
+											</ul>
+										</div>
+										<div class="secBody secLvlPad">
+											<ul class="lstIcon">
+													<li>
+<img src="/img/search_16_water.png" width="16" height="16" alt="" border="0" >
+																<a href="
+https://www.ups.com/content/us/en/resources/index.html
+">
+																	Browse Online Support
+																</a>													</li>
+													<li>
+<img src="/img/chat_16_water.png" width="16" height="16" alt="" border="0" >
+																<a href="
+javascript:popWrapper('https://ups6.custhelp.com/app/home/p_data/','pop_up_full_page')
+" id= "ChatLinkIdHeader" >
+																	Live Chat
+																</a>
+													</li>
+													<li>
+<img src="/img/mail_16_water.png" width="16" height="16" alt="" border="0" >
+																<a href="
+https://www.ups.com/upsemail/input?loc=en_US
+">
+																	Email UPS
+																</a>													</li>
+													<li>
+<img src="/img/phone_16_water.png" width="16" height="16" alt="" border="0" >
+																<a href="
+https://www.ups.com/content/us/en/contact/index.html
+">
+																	Call Customer Service
+																</a>													</li>
+											</ul>
+										</div>
+										<div class="secFooter"><a href="https://www.ups.com/content/us/en/contact/index.html">See all contact options</a></div>
+									</div>
+								</div>
+								</fieldset>
+							</div>
+						</div>
+<script language="JavaScript1.2" type="text/javascript">
+    function encode64(input) {
+        var keyStr = "ABCDEFGHIJKLMNOP" +
+                "QRSTUVWXYZabcdef" +
+                "ghijklmnopqrstuv" +
+                "wxyz0123456789+/" +
+                "=";
+        var output = "";
+        var chr1, chr2, chr3 = "";
+        var enc1, enc2, enc3, enc4 = "";
+        var i = 0;
+        do {
+            chr1 = input.charCodeAt(i++);
+            chr2 = input.charCodeAt(i++);
+            chr3 = input.charCodeAt(i++);
+            enc1 = chr1 >> 2;
+            enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+            enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+            enc4 = chr3 & 63;
+            if (isNaN(chr2)) {
+                enc3 = enc4 = 64;
+            } else if (isNaN(chr3)) {
+                enc4 = 64;
+            }
+            output = output +
+                    keyStr.charAt(enc1) +
+                    keyStr.charAt(enc2) +
+                    keyStr.charAt(enc3) +
+                    keyStr.charAt(enc4);
+            chr1 = chr2 = chr3 = "";
+            enc1 = enc2 = enc3 = enc4 = "";
+        } while (i < input.length);
+        return output;
+    }
+    $(document).ready(function(){
+        var str = "";
+        if ( $('meta[name="DCSext.pCC"]').attr("content") == undefined )
+            str = "?&p_country=" + "";
+        else
+            str = "?&p_country=" + $('meta[name="DCSext.pCC"]').attr("content");
+        if ( $('meta[name="DCSext.pPID"]').attr("content") == undefined )
+            str = str+ "&p_pageid=" + "";
+        else
+            str = str+ "&p_pageid=" + $('meta[name="DCSext.pPID"]').attr("content");
+        if ( $('meta[name="DCSext.pSU"]').attr("content") == undefined )
+            str = str+ "&p_appid=" + "";
+        else
+            str = str+ "&p_appid=" + $('meta[name="DCSext.pSU"]').attr("content");
+        if ( $('meta[name="DCSext.pLL"]').attr("content") == undefined )
+            str = str+ "&p_lang=" + "";
+        else
+            str = str+ "&p_lang=" + $('meta[name="DCSext.pLL"]').attr("content");
+        if ( $('input[name=trackNums]').val() == undefined )
+            str = str+ "&p_trk=" + "";
+        else
+            str = str+ "&p_trk=" + $('input[name=trackNums]').val();
+        str = encode64(str);
+        var chatHref = $('a#ChatLinkIdHeader').attr('href');
+         if (chatHref != undefined) {
+			if (chatHref.indexOf("javascript:popWrapper") > -1 ){
+                            var the_char=chatHref.charAt(chatHref.indexOf(",")-1);
+                var strFirst = chatHref.substring(0,chatHref.indexOf("\("));
+                                var strSecond = "";
+                if (chatHref.indexOf("?") > -1)
+                                        strSecond = chatHref.substring(chatHref.indexOf("\("),chatHref.indexOf("?"));
+                                else
+                                        strSecond = chatHref.substring(chatHref.indexOf("\("),chatHref.indexOf(",")-1);
+
+                var strThird = chatHref.substring(chatHref.indexOf(","));
+                strThird = strFirst + strSecond + str + the_char + strThird;
+                $('a#ChatLinkIdHeader').attr('href',strThird);
+            }
+            else {
+                            if (chatHref.indexOf("?") > -1)
+                                        chatHref = chatHref.substring(0,chatHref.indexOf("?")) + str;
+                                else
+                                        chatHref = chatHref + str;
+                $('a#ChatLinkIdHeader').attr('href',chatHref);
+            }
+        }
+            //Chat Buttons
+            var buttonChatURL =  $(':button#ChatLinkIdHeader').attr('onclick');
+            if(buttonChatURL !== undefined){
+                winOpen = "window.open('";
+                buttonChatURL = winOpen + buttonChatURL +str +"')";
+                $(':button#ChatLinkIdHeader').attr('onclick',buttonChatURL)
+            }
+    });
+</script>
+					 <script language="JavaScript1.2" type="text/javascript" >
+						 $(document).ready(function() {
+						 $('.perT_contactUPS').click(function () {
+							var contactUPSlink_position = $('.perT_contactUPS').position();
+							var contactUPSlink_width = $('.perT_contactUPS').width();
+							var contactUPSmenu_width = $('#contactUPSmenu').width();
+							$('#contactUPSmenu').css('left', contactUPSlink_position.left + (contactUPSlink_width / 2) - (contactUPSmenu_width / 2));
+							$('#contactUPSmenu').css('top', contactUPSlink_position.top + 15);
+							$('#contactUPSmenu').toggle();
+							});
+							$('#perT_contacUPS_close').click(function () {
+								$('#contactUPSmenu').toggle();
+							});
+						});
+					 </script>
+
+
+
+
+
+<div class="navSearch" id="sec_nav_wrap">
+<form name="searchForm" method="post" action=
+"https://www.ups.com/search/quick">
+<input type="hidden" name="loc" value="en_US">
+<input type="hidden" name="results" value="25">
+<input type="hidden" name="view" value="both">
+<dl>
+
+
+
+
+
+  					<dd> |	</dd>
+
+						<dd><a class="perT_contactUPS" href="javascript: void(0);" style="top: 0px; left: 0px;">Contact UPS<img width="3" height="1" border="0" src="/img/1.gif" alt=""><img width="9" height="6" border="0" alt="" src="/img/icn_arw_dwn_wht.gif"></a></dd>
+
+
+
+
+
+
+  					<dd> |	</dd>
+
+  						<dd><a href="http://www.theupsstore.com?WT.svl=SecNav">The UPS Store</a></dd>
+
+
+
+<dd><input alt="query" name="query" value="Search" maxlength="512" type="text" onclick="this.value = '';" onkeypress="if(event.keyCode == 13)document.forms['searchForm'].submit();" /><input type="submit" value="" name="searchButton" class="btn_a"></dd>
+</dl>
+</form>
+</div>
+<script language="JavaScript1.2" src="/javascript/chng_lang.js?V=0708" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="navLogin" id="usb_login">
+  <dl>
+  	<dd><a href="http://www.ups.com/content/us/en/bussol/browse/get_started/index.html?loc=en_US&returnto=https%3A%2F%2Fwwwapps.ups.com%2FWebTracking%2FreturnToDetails%3Floc%3Den_US&sysid=myups">New User</a><img alt="" border="0" height="1" src="/img/1.gif" width="3"></dd>
+  	<dd>|</dd>
+	<dd><a class="login" id="usb_login_link" href="https://www.ups.com/one-to-one/login?loc=en_US&returnto=https%3A%2F%2Fwwwapps.ups.com%2FWebTracking%2FreturnToDetails%3Floc%3Den_US&mcp=true">Log-In</a><img alt="" border="0" height="1" src="/img/1.gif" width="3"></dd>
+  </dl>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+
+
+
+</div>
+
+
+
+
+
+
+<div style="clear:both"></div>
+
+
+
+
+    <div style="clear:both"></div>
+    <div id="ccGloBdy">
+		<div id="ccCntMod">
+
+
+		<!-- SearchBodyStart -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/assets/tracking/trackModalDialog-1.25.cache.js" type="text/javascript" charset="utf-8" language="JavaScript1.2"></script>
+<script type="text/javascript" src="/assets/tracking/tracktooltip-1.02.js" language="JavaScript"></script>
+<script type="text/javascript" src="/assets/mnm/mnm.js" language="JavaScript"></script>
+<script type="text/javascript" src="/assets/sociallink/js/ups_social.js" > </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="main">
+
+
+			<div>
+
+
+
+				<!-- cms: id="ct1_shi_tra_1add_prm_BON_hh_01_pg_en_us" actiontype="0" -->
+		<div class="secLvl cmsMsg group1 cmsMsgGradient1  seccol24  clearfix  marginBegin">
+
+				<fieldset>
+					<div class="secHead clearfix">
+						<h3>Save up to 18% on UPS shipping for your business.</h3>
+					</div>
+				<div class="secBody">
+					<h4>Sign up and start saving in your first week of shipping.</h4>
+
+				</div>
+				</fieldset>
+						<div class="secFooter">
+							<div class="btnBar"><a href="https://www.ups.com/mrd/promodiscount?loc=en_US&promoCd=BONPQ5RI8&WT.ac=UPS_TRA_SmallBusinessWebDiscountJan2015_PX_U1_en_us">Sign Up Now</a>							</div>
+						</div>
+		</div>
+		<div class="clear"></div>
+
+
+
+
+			</div>
+
+
+
+
+
+
+
+
+
+<script src="/assets/tracking/tracking-2.23.cache.js" type="text/javascript" charset="utf-8" language="JavaScript1.2"></script>
+
+
+
+<form name="trkBar" action="https://wwwapps.ups.com/WebTracking/track?loc=en_US" METHOD="POST" >
+<input type="image" name="track" src="/img/1.gif" width="1" height="1">
+<input type="hidden" name="loc" value="en_US">
+<input type="hidden" name="tbifl" value="1">
+
+
+<div class="appLvl appLvlPlain col24 clearfix">
+
+
+    <div style="display:none">
+    <input type="text" name="hiddenText"/>
+    </div>
+
+
+
+
+		<div class="appBody clearfix">
+
+
+
+			<div class="secLvl step trkBar seccol24 marginBegin clearfix">
+
+
+
+					<div class="secBody">
+
+
+
+						<fieldset>
+						<legend></legend>
+
+
+
+
+
+
+
+
+						<div class="subcol9 marginBegin group">
+							<input size="26" value="Tracking Number" type="text" id="trackNums" name="tracknum" class="floatBegin" onblur="Tracking.addInstructionTextForInputPage('Tracking Number', 'n')" onfocus="Tracking.removeInstructionTextForInputPage()"><input class="button btnGroup6 arrowIconRight" name="track.x" type="submit" onClick="Tracking.removeInstructionTextForInputPage()" value="Track">
+						</div>
+
+
+
+
+
+						<div class="subcol7 marginEnd alignCenter group">
+							<p><a href="https://www.ups.com/myups/login?loc=en_US&returnto=https://www.ups.com/WebTracking/returnToDetails?loc=en_US" id="tb_logon" name="ims_page">Log-In</a>&nbsp;for additional tracking details.</p>
+						</div>
+
+
+
+
+
+
+						<div class="subcol9 floatEnd alignEnd group">
+							<select name="trackSelectedOption" id="" class="floatBegin" onchange="if(this.options[this.selectedIndex].value != ''){window.top.location.href=this.options[this.selectedIndex].value}">
+									<option value="" selected>Other Tracking Options</option>
+									<option value="https://wwwapps.ups.com/WebTracking/track?loc=en_US&actpan=1" >Track by Reference</option>
+									<option value="https://wwwapps.ups.com/WebTracking/track?loc=en_US&actpan=2" >Track by E-mail</option>
+
+
+										<option value="https://wwwapps.ups.com/WebTracking/track?loc=en_US&actpan=3" >Import Tracking Numbers</option>
+
+
+
+										<option value="https://wwwapps.ups.com/WebTracking/track?loc=en_US&actpan=4" >SMS Tracking</option>
+
+								</select>
+
+								<noscript><input type="submit" class="button btnGroup6 arrowIconRight" name="nonjs_go" value="Go"></noscript>
+						</div>
+
+
+						</fieldset>
+
+
+
+
+
+
+
+					</div>
+
+
+
+			</div>
+
+
+
+		</div>
+
+
+
+
+</div>
+
+</form>
+
+
+<script language="JavaScript1.2" type="text/javascript">
+
+$(function()
+{
+	Tracking.addInstructionTextForInputPage("Tracking Number", 'y');
+});
+
+
+</script>
+
+
+
+				<div class="appLvl appLvlGradient appLvlGradientGroup7 col24 clearfix" id="fontControl">
+				<fieldset>
+					<div class="appHead clearfix">
+
+					<h2>Tracking Detail</h2>
+						<ul id="fontControlButtons" class="clearfix">
+							<li class="indent"><a href="javascript:doZoom('8');" id="fontSmall" class="fontSmall" title="Small Font">A</a><a href="javascript:doZoom('10');" id="fontMedium" class="fontMedium" title="Medium Font">A</a><a href="javascript:doZoom('12');" id="fontLarge" class="fontLarge" title="Large Font">A</a></li>
+							<li><a href="javascript:helpModLvl('https://www.ups.com/content/us/en/tracking/tracking/detail_help.html')" class="btnIconL helpIcon">Help</a></li>
+							<li><a href="#" class="btnIconL printIcon" onclick="javascript:window.print()">Print</a></li>
+
+
+
+
+							<li>
+                            	<span class="social outdent clearfix">
+                            		<script> $(document).ready(function(){window.fbAsyncInit = function() {FB.Event.subscribe('edge.create', function(response) {if(typeof window.dcsMultiTrack === 'function') {dcsMultiTrack('DCS.dcsuri', '/fbLike', 'DCSext.pPID', 'fb_TRACKING_SP_Detail');};});};}); </script><div class="fb-like" data-href="https://www.facebook.com/ups" data-send="false" data-width="20" data-show-faces="false" layout="button_count" ref="fb_TRACKING_SP_Detail" ></div>
+
+                        			 <button title="UPS will not reveal any package information
+ which you send privately to a friend" type="button" onclick="javascript:ups.openFBSendDlg('423058457789860', 'UPS Tracking', '', 'https://www.ups.com/sociallink/close', 'Never track again! Get emails and texts telling you that your package is on its way. Join for FREE!', '', 'fb_TRACKING_SP_Detail', 'null')" >Share</button>
+
+                                </span>
+						        <div class="clear"></div>
+						    </li>
+						     <div id="fb-root"></div> <script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/en_US/sdk.js#version=v2.0&xfbml=1"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+						</ul>
+					</div>
+					<div><p class="error">
+
+
+
+
+
+
+
+				    </p></div>
+
+					<div class="appBody clearfix fontControlBody" >
+
+						<fieldset>
+
+					      <div class="secLvl detail clearfix">
+					      <fieldset>
+						<label id="imsErr" >
+
+						</label>
+
+                 <form name="detailForm" id="detailFormid" action="https://wwwapps.ups.com/WebTracking/detail" method="post">
+	                <input type="hidden" name="loc" value="en_US" >
+	                <input type="hidden" name="USER_HISTORY_LIST" value="">
+	                <input type="hidden" name="progressIsLoaded" value="Y">
+	                <input type="hidden" name="refresh_sii" value="" id="refresh_sii_id">
+	                <input type="hidden" name="showSpPkgProg1" value="" id="showSpPkgProg_id">
+                       <input type="hidden" name="datakey" value="line1" >
+	                <INPUT name="HIDDEN_FIELD_SESSION" type="HIDDEN" value="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A125670622">
+
+
+
+
+
+
+
+          	<div class="secLvl secLvlPlain detail clearfix">
+          	 <fieldset>
+            <div><p class="error">
+            <label id="descErr1ZW5244V6870129110" >
+			</label></p>
+            </div>
+
+          	<input type="hidden" name="descValue1ZW5244V6870129110" value="" >
+					<div class="secHead clearfix">
+
+						<h3 id="trkNum"><img alt="" border="0" height="1" src="/img/1.gif" width="1">
+
+
+						 <label id="descText1ZW5244V6870129110" >
+
+						 </label>
+
+
+
+							<input type="hidden" name="trackNums" value="1ZW5244V6870129110">
+
+							1ZW5244V6870129110
+
+							</h3>
+
+
+
+						<ul class="clearfix">
+							<li>Updated:&nbsp;01/13/2016 11:04 A.M.&nbsp;Eastern Time
+		  					  </li>
+						</ul>
+
+
+
+
+
+
+
+
+
+
+					</div>
+					</fieldset>
+					</div>
+
+                 </form>
+
+
+			      <div class="secBody clearfix">
+
+			      <fieldset>
+										<div class="seccol18 marginBegin">
+
+
+
+											<div class="secLvl gradient gradientGroup2 clearfix">
+
+
+												<fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+														<fieldset>
+
+ 															<div class="newpkgProgress">
+
+ 																<div class="newstatus">
+
+ 																			<div class="pkgstep current complete2 exception">
+ 																			<div class="pkgstep1">
+
+
+ 																			<span>
+ 																			<a href="javascript:void(0)" onclick="javascript:return false;" class="infoAnchor btnIconR hozAnchor" id="tt_spStatus" >
+																				Exception: Action Required
+																			</a>
+ 																			<div id='ttc_bullpenspStatus'  style="display:none">
+ 			    															<div id="ttc_tt_spStatus" >
+
+ 									    										<!-- cms: id="st_exc_act_req_en_us" actiontype="0" -->
+		<h3>
+			Exception: Action Required
+		</h3>
+				Your shipment is currently within the UPS network; however, more information regarding the delivery address is needed. Once the delivery address information is complete, a change to the scheduled delivery date may occur.
+
+ 									    									</div>
+ 									    									</div>
+
+
+																			</span>
+																			</div>
+ 																			</div>
+
+
+ 																			<div class="pkgstep complete">
+ 																			<div class="pkgstep2">
+  																			<span><!-- cms: id="ct1_fra_track_prog_ship_stp1_en_us" actiontype="0" -->
+				Shipped</span>
+ 																			</div>
+ 																			</div>
+
+
+ 																			<div class="pkgstep complete">
+ 																			<div class="pkgstep3">
+   																			<span><!-- cms: id="ct1_fra_track_prog_trans_stp3_en_us" actiontype="0" -->
+				In Transit</span>
+ 																			</div>
+ 																			</div>
+
+
+ 																			<div class="pkgstep" >
+ 																			<div class="pkgstep4">
+  																			<span><!-- cms: id="ct1_fra_track_prog_out_stp4_en_us" actiontype="0" -->
+				Out for Delivery</span>
+ 																			</div>
+ 																			</div>
+
+
+ 																			<div class="pkgstep delivery" >
+ 																			<div class="pkgstep5">
+ 																			<br>
+  																			<span>
+  																				<!-- cms: id="ct1_fra_track_prog_del_stp5_en_us" actiontype="0" -->
+				Delivered<br>
+
+
+
+
+																			</span>
+																			<div class ="arrow"></div>
+
+
+																			</div></div>
+
+ 																</div>
+
+
+ 															<div class ="newstatusR">
+
+ 																	<div class ="pkgstep delivery">&nbsp;
+ 																		<div class="pkgstep2R">
+   																			<span><!-- cms: id="ct1_fra_track_prog_ret_stp6_en_us" actiontype="0" -->
+				Returned
+ 																			<br>
+
+
+
+
+																			</span>
+																		</div>
+ 																	</div>
+
+
+ 																	<div class ="pkgstep current">&nbsp;
+ 																		<div class="pkgstep1R">
+
+
+
+
+ 																			<span>
+ 																			<a href="javascript:void(0)" onclick="javascript:return false;" class="infoAnchor btnIconR hozAnchor" id="tt_spStatus" >
+																			Exception: Action Required
+ 																			</a></span>
+
+
+
+ 																		</div>
+ 																	</div>
+
+
+ 															</div>
+ 															</div>
+
+
+ 														</fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 			<div class="clearfix">
+
+
+
+
+
+	 					<!-- cms: id="st_std_msg_exc_act_req_us_en_us" actiontype="0" -->
+
+<div class="cmsMsgTrk">
+
+
+
+
+
+			    	<div class="secLvl seccol14 message group2 clearfix">
+					<fieldset>
+			    		<div class="secBody clearfix alignBegin">
+
+
+			      		<p class="criticalMessage">The shipping address provided may be incorrect or incomplete. Please provide the correct shipping address by selecting the <STRONG>Correct My Address</STRONG> button below.</p>
+
+
+
+
+
+
+
+
+
+			    		</div>
+			    	</fieldset>
+					</div>
+
+
+</div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+<DIV class="secBody clearfix">
+<FIELDSET>
+	<LEGEND></LEGEND>
+
+<DIV class=marginBegin>
+
+	<DIV class="floatEnd col7 marginEnd secLvlPad">
+		<DIV class=btnBar>
+
+
+
+
+
+
+<form name="statusUpdatesform" action="/tracksec/status" method="post" id="statusUpdatesformid">
+
+<input type="hidden" name="request_status_updates" value="1">
+<input type="hidden" name="trackNum" value="1ZW5244V6870129110" >
+<input type="hidden" name="loc" value="en_US" >
+<input type="hidden" name="pkgStatus" value="X">
+<input type="hidden" name="packageType" value="1">
+<input type="hidden" name="flg" value="Y">
+
+<input type="hidden" name="inactive" value="N">
+
+
+<input type="hidden" name="lineItem" value="line1">
+
+<INPUT name="HIDDEN_FIELD_SESSION" type="HIDDEN" value="op+bGOZ2Pky+wpy+IOiL5Q5tIL/mzYpfMdJRK7BxGWjdZdg+OgJHf3tsEBo78NLsXiLYUzAyt3lx9JojKpcrLlyniMsvNyUj/mPmFnatA20RTqu3kt1TfLwwQGg4LWEMLnbg9srB9BUm2qYlny0HBZGrN9+b/4yV+glkxO2EV25v6AyniVxHAKKYSWUK0ZTJ6HTEyHwVA2bjoHBjYELUfOo/ZlyLQk85BARJEEPU7pOemiwHqmnfzMR8lG24gDakvZS9nn4Wu+nZCvrw5SyE/icQqritSGxsGIDUYtCr8e9yUbt5AsboBn8xISopwe0EPUcQbmFukSQxNx2lsdkuwt8c4wnEZ4n1sEDoul4XSNCemesCQh1q1mac2Urg2f0kY/VkrN/xdHdwZOpcM7tG7SruJ8G0xQNfVB8x1MraV08YEFw16uPqHMvezDQC8rFOznq90NjJpn7KEhdbslIDX8gLRZIq74nxQOUSrB4pYRYra5wvJhow+rtLeEP/TJbXm/OS/z2NiO8LxzeZhNTqftXQ2h9FBBfZ9HXKWTFwcAIWh5VGg4iV3V5lxCBaM58DcFnFmNpDQpFK0UqIpxynp5I5wXSxhZxs3zrl++C3X1AC0w5bqoZEWEnM8KQKFJplCXVEmd6MqzR8N2+j+UnxVaUxIV4wmb5g46LWFHYAsD/jXc/kgz2K8wme7sVXnV9nchMMv0SNZAG+QDgJ3OlAUnMNb9XMFQRqIFXjfNWbjI3ABQKi8lo3nIFR7rLNykONe7aZzyu+U9hPVkPzrUdjSKNxf9oJcashQ2rvyydreCoS+onhhPGy0j37FmNqS42BeTl3IbD9FGZSGd7Q1UrMmZqc7bxl8RIKMrB3ivojX5tIABb80OaP/WgS0UoI1bfEciMTly/dEIywHr4aeAy3Yp9HZRO0KBgXR7IhEvHn744D5HDA9olkBH5U67VQWw+sXa+vd1kLMXh0GebPtsxtEPXbbVrqEk2j75UfRcMixktJemzLC+WpLjUJN0zuUG91vWk0wb1vKx4N9rTlWxZScOUtdoQvCHoipEzWR3rNdKED6ZlOQeitR4Bs+g7uQFkQ3D4JeMsrsTzJQM0iyneX1ftK7n4bKa7zTElenYVV16egJBxu1z7PvPSQZZFmvYmbxZpueGPsG3ILdjcB8EBR5KpwqBEa0JPxPa5JpIUzlyjN8v5FadsfLPDnQWmpxoxvAPOUzUMa35TuC8+DBm8K6iZi9MkCxVIKliqyIM4s14C38CSMzRRX7Mw5u+nuIAuuNJLs5FsDiS2pt+ABnRtMnx5TAoChXSRnNSXc3Oh6zDI5GimxmFMQ7ZLl8d+69en3vVKBeDJlHyrbYl07EEczGki15YN5pstdcXshbMC0l5RYzVA9SZe8HQLt3fIwIJntxjpvp7IV/07yiMuufWgVDEnaqeN21GgpHbY1nRJ6lby+hzqYB6L9JqcVNTxHevmTBRM6jYg6IJt8FVVo3AXYSDKB+OiDQ7r+y35CkJ3o7a/bVv0e/mUnDD7hrRsAvURk6zW/Sjkp515OI51JJJinCbXD5Yc1aBiUAqa7SVWIw8lIN8so+BondT9pyOXH5l3IZDijU2+JgOkfG+pL2lDE8/qmsNU+FL+PnHXrov5sZNlt7R/Fx1zc8iq/f1+hlh+wQ1Eh1qVo6/f8ydIXeG0fHLhOsuDaZb8aYV5vri8mRevhHQiOdALbzpQyZ1j15OumR8QIofI7u3X8z6ZP3v7iHTA8t5Dlr4kdISnWXacQ3oMnLO/cZzrZan0R2l8L12HRc/yaGH+T8anBQNmuzjI/zZOGOUWALwjopFadXp8v7oZIU//4MdlpT2D1kjDpWYp2TNsqsRxAG4PIoAjjWIHcrK+Kq/ARfJOm2W9xsxXtP/iVgsCtnzIY+HsOlzfkFUeKDcaWKxiYeT7sqJFN/YVjAYj7N6CA9V4WAO/AzFlmg4vKKOX3XMa4/oFWOCk6iGAUpTdyQCUh7C++4Oy+YWJSzbpEHM0uurjanPw169Plht2Jd/IeNR0oFIesTCcraklfFj4IRZ+Fvu9lz1oWsyVxYZelONGdzBIhOrHwb8YELSW+Oc0lRu3WNMENH3T+iAhdLnLfTdFTD/k9aNdp/YYpm2Lqa/a3o0f4pIgP6rlaU6X7lzkcH5BnhzThAWAT4vsJrWHMZpsC1c8SFo6R0RpsqCT4w79+9EOaif0lz8gjAylXPwUlnGejjrxFP88Lq6wHigPy9XZtvZz6HcYuDW9wUh1aLHFQAdr6PKP95OTgRvTwUs1IY/yaT0+4v0UdpxmyyQ8n3wZg/YjA4qeWK+U35A==A1371b0bb9">
+
+
+		<BUTTON class="button btnGroup7 btnGradient btnGradient7 arrowIconRight" a href="#" onClick="return popupMC('qvn', ''); return false;">Notify me with Updates</a></BUTTON>
+
+</form>
+
+
+
+
+	      <form name="upsellform" action="/tracksec/upsell" method="post" id="upsellformid">
+
+	   	   <input type="hidden" name="loc" value="en_US" >
+	   	   <input type="hidden" name="sel_index" value="" >
+	   	   <input type="hidden" name="enrollmentNumber" value="" >
+	       <input type="hidden" name="mycnmiqvd" value="" >
+	       <input type="hidden" name="trackNumber" value="1ZW5244V6870129110" >
+	       <input type="hidden" name="enrollmentStatus" value="" >
+
+
+
+
+	      </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<BUTTON onClick="javascript:return popupUpsell('');return false;" a href="#" class="button btnGroup7 btnGradient btnGradient7 arrowIconRight">Change Delivery</a></BUTTON>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<form name="imsform" id="imsformid_addrcorctn" action="https://www.ups.com/myups/login" method="get">
+	   <input type="hidden" name="loc" value="en_US">
+
+
+	   		<input type="hidden" name="returnto" value="https://www.ups.com/WebTracking/returnToDetails?loc=en_US&adrcrctnmodal=true">
+
+
+	</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<form name="deliveryInstructionsform" action="/WebTracking/detail" method="post" id="deliveryInstructionsformid">
+	<input type="hidden" name="request_delivery_instructions" value="1" >
+	<input type="hidden" name="trackNum" value="1ZW5244V6870129110" >
+	<input type="hidden" name="loc" value="en_US" >
+	<input type="hidden" name="lineItem" value="line1">
+
+
+		<input type="hidden" name="returntoURL" value="https://wwwapps.ups.com/tracksec/returnToDetails?loc=en_US&asrmodal=true">
+
+
+	<INPUT name="HIDDEN_FIELD_SESSION" type="HIDDEN" value="C1Rc1+rUAYYwfhEESOvx41iOTnoITlOd354F52XPacPvwb5PNJhykGHCt8NGCeeIZopKlqDT05fXEzFy1MyvPPXaiOkyTnXgCvIuAWNvJ77ChTG9TqtEesU3DMKqDQ25faCgQkz/PhmtS/o6DR4+HO9eTe+ZJbE6I2/FsauuYwr4IsbheRDZAOme9KgC0GkhQvQNrza1yzLdRvVtpttke8Gd8/UJS4nE3vYrzSDqOUevCfLOGe06DZnXJdBcD3lO9BUy4Z/CrN2JOhhom2zBnkLLHbkY+FHB+BSvVmucAi5v1hyctC4LS/hZyfpyZjLimjXRu09uAt8LB/EIBje8R8GzSKBTlvKEG5ZTwy0s5X8JuzXgWB2O+jrZEgDY064nhBIA40Ridq5EpIXbIoimZRKrbMItZ+TYrtOXII+eHmuaVPUEjq3EcQZET7dab25HONohmtRV3zVScFnQZQJxIdbUCWe6Ioe/GjnS37Xm3igN9vtoO8qJvO3WxADtdWMskIj2FMfVbuwzmWiBlUjUJFhWDqhiBV7MyL+Z3rz8N1CFtbutCClf9SdmhAeZR1Fgi+H32vxOd/+Mhqy4AO7MWhd/uTJMpoVVYZewfJYWsKR4VaCaA4ARH8LG57Y5N/j+t5H1D5gmTaWKWdEZp7yAlO4ZTnXqkM+fDNAAw/57TrA/0vWFbbzRkg/uPwK958dH+9cLivYKpeY/S4ORf86fo+mCUz5/dgxW22+viR5/rZBXl6TS4a4hYWyWmhIYiU3HYCR7ifTbVqSdK4sBwEJDsVgyyZC2TQv0tDUiNidGLprP/sIOKvlBTb0DLClZsrxksu79rQnTMwuQYQCCxQ6zFIO9Rthtn4Pcrh1ZCucy27DTc00iwnf3BThvjZ7bpcfgqJ/3NHJfy9AbgFd/aixySnJ8LGz4zxnQeJNn+85g5XpUD6NlHbYsSlKzg7reij7sZefVYC0M2d9wG5XSvGy5zSX0s5cuo3Z4OaQaXuossql+2JYg3S/RlPpdWhFaS81JrfDKl6iPv4s9dArvNtbXt/IY9lCs+v7JAMvn/9Yxv4mTfO8ARF2Js9ICF3zpWD8i0j9D7LLYbjuGNZayxS2/xHA3v89+cV6pQGRd8vVzD/x4Njas8gZjMt5c5rS1p99yUD7VvLJhJ6sIvzLu7CXccUebN20iv/9zQ5En9Xux0apDF6SferzGqRBWhMNooEjAZV9RqyIlkA2MDlQEjy2xLkgC8l1Kuv9Z+ANr8YBLuTOO7iw/aDFiyHd3mtIDoUcaZ+Ew164mnNBqbdSXRFUFJOJJI4hY/jR+ECTgLvLFnvMH3+oKRwxIbOp/2fsXh6W5rbDbiRMIublw0h0tu/kQK1nXapDnoP+0X0YZ6UrAyaEdSiwRhXc0sfOl0ICB+NQ7TiAzrWvm5PcJg7JwV8RFYx1sbX0J2LU89Z9qx4ysHbB7weauHv8QwRMVt5Bsc2DWCNomy2AdtmJRzA43Sb/JXZH70IIB2Q/smGPkuOK/at5wEuu49kbr8rv+IiLYc1z9JXQ+kZBG1hJ3laviGozdcVhJJVNVVzZsWFdj9mHGATExinf8XuKysy9tI1EM13UMFZSCJjaAx/R++AlgVHaQVGOgqVqtmlNiJjTcCuGSlJLyd8VaKuzZ2jOOfVPu9WGxckVU93rq3vjXPYNhSGFJWHfJYuBfeeSHnGXXLOtwlo5V+qoWwyPVrNh6ZLGHOzNcYyNCYGdn62P1opL9W4UjcfX0HQvDBMZNmTWqFGtHnkOKogVk/scMKu43ivL3sRefW8pxWC1H5x53OQ/wfxD6n7WtVl+PYfZbXkMdsKjHf4tKASbG6LYlVy637wtutdNx6Vbc5rRp0v9z1xwqww/haeY3a+OFPKMi1GNdY0Oxlf4Y4LKhvE8fmKhM9gWpJb/3uVQEFEUsEVT+RKasIkTcze0dJs+Ku2MfiFPzWg/VK3tiwIQEu+PsU4jcyhtIlIKIu7lGG7haqoZapZ0jX8Vo7u7JTcdN6Lx6Xs85V3GwNXqgkdxWiEHLVi8OdiN5/jejlZiAGmb4Gon0PQKjo1PAA2SJKxBFYlpwZHq08AM22oR1DQKgz3eC08mNGy7zw+NOWOapUFvMHwAIK9hyOTYq6GF4FNFHdbRBX4Y6igkYuuRjzOHwv1/o+YGNZmRv9tPxw20eFMMXKW/TC2JYZGbA0HLnVavC5e9HBelW3tltSyqiPU5kusMQNBiRR8M6+LbXeLMs4Y5lXugBrwTNUzui/PgtMfpdlBNGed+adgGQsp6G92WrZ3ieegC5MDQtSsPUOSFM7rrfNJ4PXT+8i7BtTA==A1f2220887">
+	</form>
+
+
+
+
+		</DIV>
+	</DIV>
+
+
+
+
+
+
+
+
+<dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dt><label>Scheduled Delivery:</label></dt>
+<dt>Scheduled delivery information is not available at this time. Please check back later.</dt>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+
+
+
+
+
+<dl>
+	<dt><label for="">Last Location:</label></dt>
+	<dd>
+
+
+
+
+			  	Contern,
+
+
+
+
+
+		      	Luxembourg,
+
+
+
+			    Tuesday,&nbsp;11/25/2014
+
+
+	</dd>
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<form name="cancelShipmentReleaseform" action="/WebTracking/detail" method="post" id="cancelShipmentReleaseformid">
+	<input type="hidden" name="cancel_shipment_release" value="1" >
+	<input type="hidden" name="loc" value="en_US" >
+	<input type="hidden" name="trackNum" value="1ZW5244V6870129110" >
+	<input type="hidden" name="lineItem" value="line1">
+	<INPUT name="HIDDEN_FIELD_SESSION" type="HIDDEN" value="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A11b75028f">
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<div>
+
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</DIV>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<br>
+
+	<div class="subcol6 marginBegin">
+		<div class="alignCenter group" style="font-size:1.25em">
+			<p>What time will your package be delivered to your home? Get  <b class="highlight" >FREE</b> estimated Delivery Windows on most UPS packages.</p>
+		</div>
+	</div>
+	<div style="font-size:1.25em">&nbsp;<button class="buttonArwGroup2" onClick="return redirectmycenroll(); return false;"  a href="#">Continue</button> </div>
+	<br>
+	<p><a href="{}" id="mc_logon" name="mcims_page" onClick="javascript:return mc_login();return false;">I am already a UPS My Choice<sup>&#174;</sup> Member</a></p>
+
+
+
+
+
+
+
+
+
+<form name="mc_enrollform" id="mc_enrollformid" action="/WebTracking/mcenroll" method="post">
+	   <input type="hidden" name="mc_request_type" value="enroll">
+	   <input type="hidden" name="trackingnumber" value="1ZW5244V6870129110">
+	   <input type="hidden" name="lineItem" value="line1">
+	   <INPUT name="HIDDEN_FIELD_SESSION" type="HIDDEN" value="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A10ceb085b">
+	   <input type="hidden" name="loc" value="en_US">
+</form>
+
+<form name="mc_imsform" id="mc_imsformid" action="https://www.ups.com/myups/login" method="get">
+	   <input type="hidden" name="loc" value="en_US">
+	   <input type="hidden" name="returnto" value="https://www.ups.com/WebTracking/returnToDetails?loc=en_US">
+	   <input type="hidden" name="WT.z_CTAid" value="is_My_Choice_member__Track_Info">
+
+</form>
+
+<script language="javascript" type="text/JavaScript">
+
+	function redirectmycenroll(){
+		var mcEnrollForm = document.getElementById("mc_enrollformid");
+       	mcEnrollForm.submit();
+		return false;
+	}//redirectmycenroll
+
+
+
+
+
+
+
+
+
+	function mc_login(){
+        	var mc_imsid = document.getElementById("mc_imsformid");
+            mc_imsid.submit();
+     return false;
+
+
+	}
+	</script>
+</FIELDSET>
+</DIV>
+
+<script type="text/javascript">
+	$(function()  {
+		var cdwDialog;
+		var diDialog;
+		var srCancelDialog;
+		var dcrDialog;
+	});
+
+	function myChoiceCallBackFunction(dialogName, statusCode){
+
+		if (dialogName == "qvDialog"){
+			qvDialog.dialog('close');
+			qvDialog.remove();
+		}
+		else if (dialogName == "cdwDialog"){
+			cdwDialog.dialog('close');
+			cdwDialog.remove();
+		}
+		else if (dialogName == "diDialog"){
+			diDialog.dialog('close');
+			diDialog.remove();
+		}
+		else if (dialogName == "srCancelDialog"){
+			srCancelDialog.dialog('close');
+			srCancelDialog.remove();
+		}
+		else if (dialogName == "DCO"){
+			dcrDialog.dialog('close');
+			dcrDialog.remove();
+		}
+		if ((statusCode != "null" || statusCode != "") && statusCode == "00"){
+			if (dialogName == "diDialog"){
+				$("#asr").css("display","none");
+				$("#csr").css("display","block");
+			}
+			if (dialogName == "srCancelDialog"){
+				$("#asr").css("display","block");
+				$("#csr").css("display","none");
+			}
+			if (dialogName == "DCO")
+			{
+				redirectdetDCO('');
+				}
+			else
+			{
+			  	var url = window.location.href;
+				var ctaT = "null";
+
+				if(ctaT == "null")
+				    location.reload(true);
+				else
+				{
+
+				     var alturl = url;
+				     if(url.search("type=") != -1)
+				     {
+				       alturl = url.replace("type=" + ctaT, "type=" );
+				     }
+
+
+				     window.location.href = alturl;
+				}
+			}
+		}
+		return false;
+	}
+
+	function popupSII(count){
+      	window.scroll(0,50);
+	  	var width = 970;
+	  	siiDialog=$('<div class="VB_Dialog appLvl mod modal dialog"></div>').html("").dialog({autoOpen:false,modal:true,bgiframe:true,width:970,position:"center",dialogClass:'modal'});
+	  	var sii_form = document.getElementById("siiformid"+count);
+      	var URL =  $(sii_form).attr("action");
+      	var params = $(sii_form).serialize();
+	  	siiDialog.load(URL+"?"+params, function(){siiDialog.dialog('open');} );
+	  	$('.ui-dialog').css("top", "72");
+	  	$('.ui-dialog').css("overflow","visible");
+	  	$('.ui-dialog-titlebar').css("display","none");
+      	var adjustedWidth = screen.width * 0.05;
+      	$('.ui-dialog').css("left",adjustedWidth);
+      	$('.ui-dialog').css('z-index',103);
+        $('.ui-widget-overlay').css('z-index',102);
+        $('.ui-widget-overlay').css("position","fixed");
+	  	return false;
+	}
+
+	function popupSIIfromAIA(){
+		window.scroll(0,50);
+     	var URL = "/sii/wtrack?" + "request_sii=1&loc=en_US&ReturnToURL=/sii/wtrack&Requester=SII&KeepThis=true&id=aia";
+      	siiDialog.load(URL, function(){siiDialog.dialog('open');} );
+		$('.ui-dialog').css("width", "970");
+		$('.ui-dialog').css("top", "72");
+		siiDialog.dialog( 'option', 'position', 'center' );
+      	$('.ui-dialog').css("overflow","visible");
+      	$('.ui-dialog-titlebar').css("display","none");
+      	var adjustedWidth = screen.width * 0.05;
+      	$('.ui-dialog').css("left",adjustedWidth);
+      	$('.ui-dialog').css('z-index',103);
+        $('.ui-widget-overlay').css('z-index',102);
+        $('.ui-widget-overlay').css("position","fixed");
+      	return false;
+	}
+
+	function aiaCompleted(){
+    	popupSIIfromAIA();
+      	return false;
+    }
+
+	function submitCOWForm(form){
+	    form.submit();
+	    return false;
+ 	}
+
+
+	function podPopup1(count, id){
+    	try{
+			var pod_form = document.getElementById("podFormid"+count);
+			var data;
+			if(id == "retailStore")
+			{
+       		    data = "lineData=" + pod_form.retailLineData.value  + "&Requester=" + pod_form.Requester.value + "&refNumbers=" + pod_form.refNumbers.value + "&loc=" + pod_form.podLoc.value;
+            }
+            else
+            {
+                data = "Requester=" + pod_form.Requester.value + "&tracknum=" + pod_form.tracknum.value + "&refNumbers=" + pod_form.refNumbers.value + "&loc=" + pod_form.podLoc.value;
+            }
+            var p_url = pod_form.podURL.value;
+
+          		printerFriend(p_url + "/processPOD?" + data);
+
+
+
+      	}
+      	catch(error){
+
+      	}
+	}
+
+
+	function popupUpsell(count){
+		window.scroll(0,50);
+		upsellDialog=$('<div class="UPSELL_Dialog appLvl mod modal dialog"></div>').html("").dialog({autoOpen:false,modal:true,bgiframe:true,width:710,position:"center"});
+        upsellDialog.dialog( "option", "resizable", false );
+        var upsell_form = document.getElementById("upsellformid"+count);
+        var URL =  $(upsell_form).attr("action");
+        var params = $(upsell_form).serialize();
+        if(count == "" || count == "null"){
+        	params += "&detail_page=true";
+        }
+        var multi_form = document.getElementById("multiformid" + count);
+        if(multi_form != null){
+        	params += "&multi_page=true";
+        }
+		upsellDialog.load(URL, params);
+		$('.ui-dialog').css("top", "72");
+		$('.ui-dialog').css("overflow","visible");
+		$('.ui-dialog-titlebar').css("display","none");
+        var adjustedWidth = screen.width * 0.05;
+        $('.ui-dialog').css("left",adjustedWidth);
+        upsellDialog.dialog('open');
+        $('.ui-dialog').css('z-index',103);
+        $('.ui-widget-overlay').css('z-index',102);
+        $('.ui-widget-overlay').css("position","fixed");
+		return false;
+	}
+
+
+	function redirectdet(count){
+			if(count == "" || count == "null"){
+          	document.location.href="https://wwwapps.ups.com/tracksec/returnToDetails?loc=en_US&dcrmodal=true";
+        }
+        else{
+        	document.location.href="https://wwwapps.ups.com/tracksec/returnToSummary?loc=en_US&dcrmodal=true&sel_index=" + count;
+        }
+        return false;
+	}
+
+
+	function redirectdetDCO(count){
+    	if(count == "" || count == "null"){
+        	document.location.href="https://wwwapps.ups.com/tracksec/returnToDetails?loc=en_US";
+        }
+        else{
+        	document.location.href="https://wwwapps.ups.com/tracksec/returnToSummary?loc=en_US&sel_index=" + count;
+        }
+		return false;
+	}
+
+	function redirectsii(count){
+        if(count == "" || count == "null"){
+        	document.location.href="https://wwwapps.ups.com/tracksec/returnToDetails?loc=en_US&siimodal=true";
+        }
+        else{
+        	document.location.href="https://wwwapps.ups.com/tracksec/returnToSummary?loc=en_US&siimodal=true&sel_index=" + count;
+        }
+		return false;
+	}
+
+	function popupMC( id, count ){
+
+	  var mcStatus = "";
+	  var bb = "";
+
+        if(mcStatus == "05"){
+            var tt = "https://www.ups.com/pea/managedeliveryaddresses";
+
+           if(count == "" || count == "null"){
+            	bb = "https://wwwapps.ups.com/WebTracking/returnToDetails?loc=en_US&btnid=" + id;
+
+            }else{
+            	bb = "https://wwwapps.ups.com/WebTracking/returnToSummary?loc=en_US&btnid=" + id + "&sel_index=" + count;
+            }
+           bb="";
+            tt = tt +  encodeURIComponent(bb);
+
+        	document.location.href=tt;
+        }
+        else{
+
+
+
+           if(id == "mcdi")
+		     {
+		      TrackingModal.popupDeliveryInstructions(count);
+		      }
+		     else if(id == "dco")
+		     {
+		         TrackingModal.popupDCR(count, 'dcoformid');
+		     }
+		     else if(id == "cdw")
+		     {
+		         TrackingModal.popupTwoHourDeliveryWindow(count);
+		      }
+		      else if(id == "csr")
+		     {
+		         TrackingModal.popupCancelShipmentRelease(count);
+		      }
+		      else if(id == "asr")
+		      {
+		         TrackingModal.popupDeliveryInstructions(count);
+		      }
+		      else if(id == "qvn")
+		      {
+
+		    	  if(count!='null' && count!=""){
+		  	 		var qvn_form = $('#statusUpdatesformid'+count);
+
+		  	 	  }
+			  	 	else{
+			  	 		var qvn_form = $('#statusUpdatesformid');
+			  	 	}
+		    	  TrackingModal.popupDialogViaForm(qvn_form,  790);
+		      }
+
+
+        }
+
+        return false;
+
+
+	}
+
+
+	function imsLogin_addC()
+	{
+		var imsid = document.getElementById("imsformid_addrcorctn");
+   		imsid.submit();
+		return false;
+   	}
+
+
+
+</script>
+
+												</fieldset>
+											</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="secLvl gradient gradientGroup7 module3">
+	<fieldset>
+
+
+
+		<div id="collapse3" class="secHead expandible collapsible clearfix">
+			<h4 class="btnlnkL collapseIcon">Shipment Progress</h4>
+			<ul class="indent">
+				<li><a href="javascript:helpModLvl('https://www.ups.com/content/us/en/tracking/tracking/description.html')" class="btnlnkR helpIconR">What's This?</a></li>
+			</ul>
+		</div>
+
+		<div class="secBody" >
+
+
+
+
+			<table border="0" cellpadding="0" cellspacing="0" class="dataTable">
+				<tr>
+	        		<th>Location</th>
+	        		<th>Date</th>
+	        		<th>Local Time</th>
+	        		<th class="full">Activity</th>
+	           	</tr>
+
+
+
+
+		       	<tr class="odd">
+		          	<td class="nowrap">
+
+
+		              		Contern,
+
+
+
+
+
+			            	Luxembourg
+
+
+		          	</td>
+
+
+
+					<td class="nowrap">
+
+				        11/25/2014
+
+			        </td>
+
+
+		          	<td class="nowrap">
+
+	            		10:44 A.M.
+
+					</td>
+
+
+	          		<td>The street number is incorrect. This may delay delivery. We're attempting to update the address.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	          		</td>
+	        	</tr>
+
+
+
+
+		       	<tr >
+		          	<td class="nowrap">
+
+
+		              		Contern,
+
+
+
+
+
+			            	Luxembourg
+
+
+		          	</td>
+
+
+
+					<td class="nowrap">
+
+				        11/24/2014
+
+			        </td>
+
+
+		          	<td class="nowrap">
+
+	            		10:27 A.M.
+
+					</td>
+
+
+	          		<td>The company or receiver name is incorrect. This will delay delivery. We're attempting to update this information.
+
+
+
+
+
+
+
+
+	          		</td>
+	        	</tr>
+
+			</table>
+		</div>
+
+		</fieldset>
+	</div>
+
+
+
+
+
+
+
+<script language="javascript" type="text/JavaScript">
+
+	$(document).ready(function() {
+
+
+
+
+
+	   $('#collapse3 h4').click(function(){
+
+	     $('.module3 div.secBody').toggle();
+
+	     $('.module4 div.secBody').toggle();
+	     $('.module4 div.secBody').toggle();
+
+			 $('#collapse3 h4').toggleClass('collapseIcon').toggleClass('expandIcon');
+			 $('#collapse3').toggleClass('collapsed').toggleClass('');
+
+
+	   });
+
+
+
+ });
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+											<div class="secLvl gradient gradientGroup7 module1">
+												<fieldset>
+
+												<div id="collapse1" class="secHead collapsible clearfix">
+													<h4 class="btnlnkL collapseIcon">Additional Information</h4>
+												</div>
+
+
+
+
+
+
+
+												<div class="secBody">
+													<dl class="outHozFixed1 clearfix">
+
+
+
+
+
+
+
+													           		<dt><label for="">Shipment Category: </label></dt>
+
+													            <dd>Package</dd>
+
+
+
+													</dl>
+												</div>
+
+
+
+												</fieldset>
+											</div>
+
+
+
+	                </div>
+									<div class="seccol6 marginEnd">
+
+
+
+
+												<div class="secLvl gradient gradientGroup7 clearfix">
+													<fieldset>
+
+													<div class ="secBody chat">
+
+														<a id="TrackChatLinkId" class ="divLink" href="javascript:popWrapper('https://ups6.custhelp.com/app/home/p_data/?WT.svl=Footer','pop_up_full_page')"
+														 title="Find online support or get shipment help from a UPS representative with UPS Live Chat" >
+														<div class="alignCenter clearfix">
+														<div class="chatHead">
+															<h4>Need more information?</h4>
+														</div>
+
+															<span class="button btnGroup6">Get Help</span>
+														</div>
+						<script language="JavaScript1.2" type="text/javascript">
+						function encode64(input) {
+							 var keyStr = "ABCDEFGHIJKLMNOP" +
+					       "QRSTUVWXYZabcdef" +
+					       "ghijklmnopqrstuv" +
+					       "wxyz0123456789+/" +
+					       "=";
+						      var output = "";
+						      var chr1, chr2, chr3 = "";
+						      var enc1, enc2, enc3, enc4 = "";
+						      var i = 0;
+						      do {
+						         chr1 = input.charCodeAt(i++);
+						         chr2 = input.charCodeAt(i++);
+						         chr3 = input.charCodeAt(i++);
+						         enc1 = chr1 >> 2;
+						         enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+						         enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+						         enc4 = chr3 & 63;
+						         if (isNaN(chr2)) {
+						            enc3 = enc4 = 64;
+						         } else if (isNaN(chr3)) {
+						            enc4 = 64;
+						         }
+						         output = output +
+						            keyStr.charAt(enc1) +
+						            keyStr.charAt(enc2) +
+						            keyStr.charAt(enc3) +
+						            keyStr.charAt(enc4);
+						         chr1 = chr2 = chr3 = "";
+						         enc1 = enc2 = enc3 = enc4 = "";
+						      } while (i < input.length);
+						      return output;
+						   }
+
+						$(document).ready(function(){
+					    	var str = "";
+					    	var chatHref = $('a#TrackChatLinkId').prop('href');
+					    	if (chatHref != undefined)
+					    	{
+					    		if ( $('meta[name="DCSext.pCC"]').prop("content") == undefined )
+					    			str = "?&p_country=" + "";
+					    		else
+					        		str = "?&p_country=" + $('meta[name="DCSext.pCC"]').prop("content");
+
+					    		if ( $('meta[name="DCSext.pPID"]').prop("content") == undefined )
+					    			str = str+ "&p_pageid=" + "";
+					    		else
+					        		str = str+ "&p_pageid=" + $('meta[name="DCSext.pPID"]').prop("content");
+
+				        		str = str + "&p_appid=com.ups.trackWebLiveChatModule";
+
+					    		if ( $('meta[name="DCSext.pLL"]').prop("content") == undefined )
+					    			str = str+ "&p_lang=" + "";
+					    		else
+					        		str = str+ "&p_lang=" + $('meta[name="DCSext.pLL"]').prop("content");
+
+					    		if ( $('input[name=trackNums]').val() == undefined )
+					    			str = str+ "&p_trk=" + "";
+					    		else
+					        		str = str+ "&p_trk=" + $('input[name=trackNums]').val();
+					    		str = encode64(str);
+								if (chatHref.indexOf("javascript:popWrapper") > -1 )
+								{
+									var the_char=chatHref.charAt(chatHref.indexOf(",")-1);
+									var strFirst = chatHref.substring(0,chatHref.indexOf("\("));
+									var strSecond = chatHref.substring(chatHref.indexOf("\("),chatHref.indexOf("?"));
+									var strThird = chatHref.substring(chatHref.indexOf(","));
+									strThird = strFirst + strSecond + str + the_char + strThird;
+									$('a#TrackChatLinkId').prop('href',strThird);
+								}
+								else
+								{
+									chatHref = chatHref + str;
+									$('a#TrackChatLinkId').prop('href',chatHref);
+								}
+					    	}
+					    });
+					</script>
+
+													</a>
+													</div>
+
+													</fieldset>
+												</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="secLvl gradient gradientGroup7 clearfix">
+		<fieldset>
+
+						<div class="secHead clearfix">
+							<h4>Shipping Information</h4>
+							</div>
+
+
+
+
+
+
+
+
+
+
+</fieldset>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/assets/tracking/tracktooltip-1.02.js" language="JavaScript"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+										<div class="secLvl gradient gradientGroup7 clearfix">
+											<fieldset>
+
+													<div class="secHead clearfix">
+														<h4>Service</h4>
+													</div>
+
+
+													<div class="secBody">
+														<fieldset>
+
+															<div class="subcol4 marginBegin">
+
+
+
+
+
+															<p><a href="javascript:helpModLvl('https://www.ups.com/content/us/en/shipping/time/service/index.html')" class="service">UPS STANDARD</a></p>
+
+
+															   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+														 </fieldset>
+													</div>
+
+											</fieldset>
+										</div>
+
+
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+     $(".infoAnchor").upstooltip({
+			tooltipID: "primary_tt",
+			tooltipClasses: "col12",
+			hoverDelay: 500,
+			clickable: false,
+			orientation: "vert",
+			pointerLimit: 10,
+			persist: false,
+			contentPrefix: "ttc_"
+	   });
+
+
+
+});
+
+</script>
+
+
+
+
+
+
+
+
+											<div class="secLvlPad">
+
+											 <table class="ccbmmbg1" border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tr><td><img alt="" border="0" height="10" src="/img/1.gif" width="1"></td></tr>
+		<tr><td>
+			    <a href="https://www.ups.com/pea/preferences?loc=en_US &updateType=20&
+WT.ac=UPS_IB_MyCINTrackingTab_Mrktg_PX_U1_en_us&WT.mc_id=UPS_IB_MyCINTrackingTab&WT.svl=BnrMsg" style="null">
+
+
+		<img src="/img/en/bnr_mychoice_pickup_174x140.jpg" width="174" height="140" alt="Sign up for UPS My Choice" border="0" >
+</a>		</td></tr>
+	</table>
+
+
+											</div>
+
+
+										</div>
+
+									</fieldset>
+					</div>
+
+      </fieldset>
+      </div>
+      </fieldset>
+      </div>
+		</fieldset>
+	</div>
+
+	</div>
+
+
+<form name="detailForm"  action="https://wwwapps.ups.com/WebTracking/detail" method="post">
+	<input type="hidden" name="loc" value="en_US" >
+
+	<INPUT name="HIDDEN_FIELD_SESSION" type="HIDDEN" value="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A190fb1212">
+
+
+
+
+
+
+
+
+
+
+</form>
+
+<form name="changeDelBridgeForm" id="changeDelBridgeFormid"
+	action="/WebTracking/upsell" method="post">
+	<input type="hidden" name="loc" value="en_US" >
+	 <input type="hidden" name="WT.z_eCTAid" value="null">
+	 <input type="hidden" name="shortDesc" value="" >
+	<input type="hidden" name="ctaData" value="NOT" >
+
+</form>
+
+<form name="mc_enrollfCTAorm" id="mc_enrollCTAformid" action="https://www.ups.com/pea/register" method="get">
+	   <input type="hidden" name="loc" value="en_US">
+	   <input type="hidden" name="appid" value="TRK_MC_CTA">
+
+	    <input type="hidden" name="returntotext" value="Change+Delivery">
+	     <input type="hidden" name="WT.z_eCTAid" value="null">
+	   <input type="hidden" name="returnto" value="https://www.ups.com/WebTracking/mcRequest?loc=en_US&type=null&tracknum=1ZW5244V6870129110">
+
+</form>
+
+
+
+
+
+
+
+
+<script language="javascript" type="text/JavaScript">
+
+var test = 0;
+
+function doZoom(size) {
+
+if ((size == '10') && (test == 0))
+ {
+    return;
+ }
+  var p = document.getElementById('fontControl').getElementsByTagName('*');
+
+
+   for(i=0;i<p.length;i++) {
+
+      if(p[i].tagName == "H4")
+      {
+          if(size == '8')
+          {
+            p[i].style.fontSize = 10 +"pt"
+          }
+          else if(size == '10')
+   		  {
+   		    p[i].style.fontSize = 12 +"pt"
+   		  }
+   		  else if(size == '12')
+  		  {
+             p[i].style.fontSize = 14 +"pt"
+   		  }
+      }
+      else if((p[i].id == "tt_spStatus") || (p[i].id == "tt_ovntStatus")|| (p[i].id == "tt_pgfStatus") ||(p[i].id == "trkNum") )
+      {
+          if(size == '8')
+          {
+            p[i].style.fontSize = 14 +"pt"
+          }
+          else if(size == '10')
+   		  {
+   		    p[i].style.fontSize = 16 +"pt"
+   		  }
+   		  else if(size == '12')
+  		  {
+             p[i].style.fontSize = 18 +"pt"
+   		  }
+      }
+      else if((p[i].id != "fontLarge") && (p[i].id != "fontMedium") && (p[i].id != "fontSmall"))
+      {
+       	p[i].style.fontSize = size +"pt"
+      }
+
+
+   }
+
+   if(size == '8')
+   {
+      test =1;
+      document.getElementById('fontSmall').style.backgroundColor ='#D8D8D8';
+      document.getElementById('fontMedium').style.backgroundColor ='#F2F2F2';
+      document.getElementById('fontLarge').style.backgroundColor ='#F2F2F2';
+   }
+   else if(size == '10')
+   {
+      document.getElementById('fontSmall').style.backgroundColor ='#F2F2F2';
+      document.getElementById('fontMedium').style.backgroundColor ='#D8D8D8';
+      document.getElementById('fontLarge').style.backgroundColor ='#F2F2F2';
+   }
+   else if(size == '12')
+   {
+     test = 1;
+      document.getElementById('fontSmall').style.backgroundColor ='#F2F2F2';
+      document.getElementById('fontMedium').style.backgroundColor ='#F2F2F2';
+      document.getElementById('fontLarge').style.backgroundColor ='#D8D8D8';
+   }
+
+}
+
+function podPopup(form)
+    {
+    	try
+      	{
+
+       		var data = "lineData=" + form.lineData.value  + "&Requester=" + form.Requester.value + "&refNumbers=" + form.refNumbers.value + "&loc=" + form.podLoc.value;
+
+
+          		printerFriend("/WebTracking/processPOD?" + data);
+
+
+
+
+      }
+      catch(error)
+      {
+
+      }
+    }
+
+function popupDescription(trackingNumber)
+	{
+	    var desVal;
+	    var p = document.getElementsByTagName('input');
+	    var desName = "descValue" + trackingNumber;
+	    for(i=0;i<p.length;i++)
+	     {
+	      if(p[i].name == desName)
+	      {
+	       	desVal = p[i].value;
+	      }
+	   }
+    	 var URL1;
+    	 if(desVal != "")
+    	 {
+
+    		URL1 = "&trackingNumber=" + trackingNumber + "&descStatus=Y&description=" + encodeURIComponent(desVal);
+
+    	 }
+    	 else
+    	 {
+    	    URL1 = "&trackingNumber=" + trackingNumber + "&descStatus=N";
+
+    	 }
+
+    	var URL = "/WebTracking/desc?loc=en_US";
+    	URL += URL1;
+
+     	TrackingModal.popupDialog(URL, 560);
+
+    	return false;
+	}
+
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+TrackingModal.initDlgModule('Enter recipient phone', 'Enter recipient e-mail');
+
+
+   $('#collapse1').click(function(){
+		 $('.module1 div.secBody').toggle();
+
+	     $('.module4 div.secBody').toggle();
+	     $('.module4 div.secBody').toggle();
+		 $('#collapse1 h4').toggleClass('collapseIcon').toggleClass('expandIcon');
+		 $('#collapse1').toggleClass('collapsed').toggleClass('');
+   });
+
+
+   $(".infoAnchor").upstooltip({
+			tooltipID: "primary_tt",
+			tooltipClasses: "col12",
+			hoverDelay: 500,
+			clickable: false,
+			orientation: "vert",
+			pointerLimit: 10,
+			persist: false,
+			contentPrefix: "ttc_"
+	   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+ });
+</script>
+
+<script type="text/javascript">
+
+</script>
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	TrackingModal.determineIfModalPopup('null','null', 'null', 'null', 'null', 'null');
+
+
+
+
+
+
+
+	$('a.btnGradient').hover(function(){
+		$(this).css("background-position","0 -10px");
+
+	},function(){
+
+		$(this).css("background-position","0 0px");
+	});
+
+});
+
+   	function redirectmycenrollCTA(){
+		var mcEnrollForm = document.getElementById("mc_enrollCTAformid");
+       	mcEnrollForm.submit();
+		return false;
+	}
+
+	function popupCTA(ctaRe){
+		window.scroll(0,50);
+		ctaDialog=$('<div class="UPSELL_CTA_Dialog appLvl mod modal dialog"></div>').html("").dialog({autoOpen:false,modal:true,bgiframe:true,width:750,position:"center"});
+        ctaDialog.dialog( "option", "resizable", false );
+        var upsell_form = document.getElementById("changeDelBridgeFormid");
+        var URL =  $(upsell_form).attr("action");
+        var params = $(upsell_form).serialize();
+         var pa1 = "&Requester=" + "" + "&type=" + ctaRe;
+
+
+		params += pa1;
+		ctaDialog.load(URL, params);
+		ctaDialog.dialog('open');
+		$('.ui-dialog').css("top", "72");
+		$('.ui-dialog').css("overflow","visible");
+		$('.ui-dialog-titlebar').css("display","none");
+        var adjustedWidth = screen.width * 0.05;
+        $('.ui-dialog').css("left",adjustedWidth);
+		return false;
+	}
+
+
+
+function handleTrackDetailShowShipments() {
+
+			document.getElementById("showPackages").style.display="none";
+			document.progressForm.showAssociatedPkgs1.value = "true";
+			document.getElementById("progressFormid").submit();
+	}
+
+
+function handleCTAReturns()
+	{
+	var ctbRe = "null";
+
+	var selog = "false";
+	var ctad = "NOT";
+
+	var show_sii = document.getElementById("CTA_SII");
+	var show_dco = document.getElementById("CTA_DCO");
+
+	var show_qvd = document.getElementById("CTA_QVD");
+	var show_asr = document.getElementById("CTA_MCDI");
+
+	//Jul2015-RFC 7405: adding constants for CTA-NES Interface - type
+	var chdl = "CHDL";
+	var mdco = "MDCO";
+	var mfd = "MFD";
+	var nmfd = "NMFD";
+	var masr = "MASR";
+	var nmasr = "NMASR";
+	var udco = "UDCO";
+
+	 if(ctbRe == "null")
+     {
+     return;
+     }
+
+	if((ctbRe.search(chdl) != -1)  && ("true" == selog))
+	{
+	    ctbRe = mdco;
+	    if(document.getElementById("upsellErrType") != null)
+     	{
+         document.getElementById("upsellErrType").value = mdco;
+     	}
+	}
+
+	if(ctad == "NOT")
+	  return;
+
+		     if((ctbRe.search(chdl) != -1) && ("false" == selog) && (ctad != ""))
+		     {
+		        popupCTA(ctbRe);
+		     }
+		      else if ((mfd == ctbRe) || (nmfd == ctbRe))
+		      {
+
+		     if(show_sii != null) {
+
+					 popupSII('');
+
+
+		     }
+		     else if(show_qvd != null)
+		   {
+				popupUpsell('');
+		   }
+		   else if(show_dco != null )
+		     {
+
+
+
+		     TrackingModal.popupDCR('', 'dcoformid');
+
+	         }
+	         else
+	         {
+
+
+	     	   redirectmycenrollCTA();
+
+	         }
+	         }
+	         else if(mdco == ctbRe)
+	         {
+
+		       if(show_sii != null ) {
+
+					 popupSII('');
+
+
+		     }
+		     else if(show_qvd != null)
+		   {
+				popupUpsell('');
+			 }
+	          else if(show_dco != null  )
+		     {
+
+
+		       popupMC('dco', '');
+
+
+	         }else{
+
+
+	     	   redirectmycenrollCTA();
+
+	         }
+	         }
+	         else if((masr  == ctbRe) || (nmasr  == ctbRe))
+	         {
+
+		      if( show_asr != null ) {
+
+
+		        popupMC('asr', '');
+
+		     }
+		     else if(show_qvd != null)
+		   	{
+				popupUpsell('');
+			}
+			else{
+
+
+
+	     	   redirectmycenrollCTA();
+
+	         }
+	         }
+	         else if(udco  == ctbRe)
+	         {
+	             if(show_dco != null  )
+			     {
+
+
+			       popupMC('dco', '');
+
+
+		         }
+	         }
+	}
+
+
+
+</script>
+
+
+		<!-- SearchBodyEnd -->
+
+
+		</div>
+	</div>
+   <div style="clear:both"></div>
+
+
+
+
+
+
+
+
+
+
+<!-- If applicable Ghostery script goes here -->
+<!-- Locale: en_US -->
+<!-- IsLocaleEnabled false -->
+
+
+
+<script type="text/javascript">
+    // Answers Cloud Services Embed Script v1.02
+    // DO NOT MODIFY BELOW THIS LINE *****************************************
+    ;(function (g) {
+        var d = document, i, am = d.createElement('script'), h = d.head || d.getElementsByTagName("head")[0],
+                aex = {
+                    "src": "//gateway.answerscloud.com/ups/production/gateway.min.js",
+                    "type": "text/javascript",
+                    "async": "true",
+                    "data-vendor": "acs",
+                    "data-role": "gateway"
+                };
+        for (var attr in aex) { am.setAttribute(attr,aex[attr]); }
+        h.appendChild(am);
+        g['acsReady'] = function () {var aT = '__acsReady__', args = Array.prototype.slice.call(arguments, 0),k = setInterval(function () {if (typeof g[aT] === 'function') {clearInterval(k);for (i = 0; i < args.length; i++) {g[aT].call(g, function(fn) { return function() { setTimeout(fn, 1) };}(args[i]));}}}, 50);};
+    })(window);
+    // DO NOT MODIFY ABOVE THIS LINE *****************************************
+</script>
+<div class="cclampFooter">
+	<div class="appLvl appLvlPlain colsuper clearfix">
+	<fieldset>
+		<div class="appHead clearfix">
+		<dl class="inline">
+				<dt><label>
+					Subscribe to UPS E-mail:
+				</label></dt>
+						<dd>
+	<form name="genericForm" action=
+"https://wwwapps.ups.com/emailEnrollment/signIn?loc=en_US&WT.svl=Footer" style="margin:0px:" method="post">
+		<input type="hidden" name="WT.svl" value="Footer">
+		<input type="text" name="emailAddress" id="emailAddress" value="Enter e-mail address" onFocus="javascript:clearText(this);" class="reqTxtInst formcol6">
+				<button type="submit" class="button btnGroup6 arrowIconRight" name="submitButton" onClick="javascript:checkInput()">Sign Up</button>
+	</form>
+	<script language="javascript" type="text/javascript">
+		/* This method checks if the value of input field equals the default text, if so then it clears its value. */
+		function checkInput() {
+			if (document.getElementById("emailAddress").value == 'Enter e-mail address') {
+				document.getElementById("emailAddress").value ="";
+			}
+		}
+		/* The following method uses jquery, which is included in CClamp wireframe */
+		function clearText(whichField) {
+			if($(whichField)[0].type == "text"){
+				$(whichField).attr("value","").removeAttr("onfocus");
+			}
+		};
+	</script>
+</dd>
+						<dd class=""><a href="javascript:popWrapper('https://www.ups.com/content/us/en/wep/emailcommunications.html?WT.svl=Footer','pop_up_3_col')">View Examples<img alt="" border="0" height="1" src="/img/1.gif" width="3"><img src="/img/icn_popup_white.gif" alt="" width="9" height="9" border="0"></a>						</dd>
+		</dl>
+	</div>
+	<div class="appBody clearfix">
+	<fieldset>
+		<div class="secLvl secLvlPlain seccol6 clearfix">
+		<fieldset>
+			<div class="secBody">
+				<div class="secLvl marginBegin clearfix ">
+				<fieldset>
+					<div class="secHead clearfix">
+						<h4>				<a href="https://www.ups.com/content/us/en/contact/index.html?WT.svl=Footer">Contact UPS</a>						</h4>
+					</div>
+					<div class="secBody">
+
+
+
+
+
+
+
+
+
+
+
+
+				<script language="JavaScript1.2" type="text/javascript">
+					function encode64(input) {
+						 var keyStr = "ABCDEFGHIJKLMNOP" +
+				       "QRSTUVWXYZabcdef" +
+				       "ghijklmnopqrstuv" +
+				       "wxyz0123456789+/" +
+				       "=";
+					      var output = "";
+					      var chr1, chr2, chr3 = "";
+					      var enc1, enc2, enc3, enc4 = "";
+					      var i = 0;
+					      do {
+					         chr1 = input.charCodeAt(i++);
+					         chr2 = input.charCodeAt(i++);
+					         chr3 = input.charCodeAt(i++);
+					         enc1 = chr1 >> 2;
+					         enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+					         enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+					         enc4 = chr3 & 63;
+					         if (isNaN(chr2)) {
+					            enc3 = enc4 = 64;
+					         } else if (isNaN(chr3)) {
+					            enc4 = 64;
+					         }
+					         output = output +
+					            keyStr.charAt(enc1) +
+					            keyStr.charAt(enc2) +
+					            keyStr.charAt(enc3) +
+					            keyStr.charAt(enc4);
+					         chr1 = chr2 = chr3 = "";
+					         enc1 = enc2 = enc3 = enc4 = "";
+					      } while (i < input.length);
+					      return output;
+					   }
+
+					$(document).ready(function(){
+				    	var str = "";
+				    	var chatHref = $('a#ChatLinkIdFooter').attr('href');
+				    	if (chatHref != undefined)
+				    	{
+				    		if ( $('meta[name="DCSext.pCC"]').attr("content") == undefined )
+				    			str = "?&p_country=" + "";
+				    		else
+				        		str = "?&p_country=" + $('meta[name="DCSext.pCC"]').attr("content");
+
+				    		if ( $('meta[name="DCSext.pPID"]').attr("content") == undefined )
+				    			str = str+ "&p_pageid=" + "";
+				    		else
+				        		str = str+ "&p_pageid=" + $('meta[name="DCSext.pPID"]').attr("content");
+
+				    		if ( $('meta[name="DCSext.pSU"]').attr("content") == undefined )
+				    			str = str+ "&p_appid=" + "";
+				    		else
+				        		str = str+ "&p_appid=" + $('meta[name="DCSext.pSU"]').attr("content");
+
+				    		if ( $('meta[name="DCSext.pLL"]').attr("content") == undefined )
+				    			str = str+ "&p_lang=" + "";
+				    		else
+				        		str = str+ "&p_lang=" + $('meta[name="DCSext.pLL"]').attr("content");
+
+				    		if ( $('input[name=trackNums]').val() == undefined )
+				    			str = str+ "&p_trk=" + "";
+				    		else
+				        		str = str+ "&p_trk=" + $('input[name=trackNums]').val();
+				    		str = encode64(str);
+							if (chatHref.indexOf("javascript:popWrapper") > -1 )
+							{
+								var the_char=chatHref.charAt(chatHref.indexOf(",")-1);
+								var strFirst = chatHref.substring(0,chatHref.indexOf("\("));
+								var strSecond = chatHref.substring(chatHref.indexOf("\("),chatHref.indexOf("?"));
+								var strThird = chatHref.substring(chatHref.indexOf(","));
+								strThird = strFirst + strSecond + str + the_char + strThird;
+								$('a#ChatLinkIdFooter').attr('href',strThird);
+							}
+							else
+							{
+								chatHref = chatHref + str;
+								$('a#ChatLinkIdFooter').attr('href',chatHref);
+							}
+				    	}
+				    });
+				</script>
+
+					<ul>
+								<li>
+<img src="/img/en/icon_magnifier_16.gif" width="16" height="16" alt="Browse Online Support" border="0" ><a href="https://www.ups.com/content/us/en/resources/index.html?WT.svl=Footer">Browse Online Support</a>
+								</li>
+								<li>
+<img src="/img/en/icon_mail_16.gif" width="16" height="16" alt="E-mail UPS" border="0" ><a href="https://www.ups.com/upsemail/input?loc=en_US&WT.svl=Footer">E-mail UPS</a>
+								</li>
+								<li>
+<img src="/img/en/icon_chat_bubble_16.gif" width="16" height="16" alt="" border="0" >
+<a id="ChatLinkIdFooter" href="javascript:popWrapper('https://ups6.custhelp.com/app/home/p_data/?WT.svl=Footer','pop_up_full_page')">Live Chat<img width="3" height="7" border="0" alt="" src="/img/1.gif"><img width="9" height="9" border="0" src="/img/icn_popup_blu.gif"></a></a>
+								</li>
+								<li>
+<img src="/img/en/icon_phone_16.gif" width="16" height="16" alt="Call Customer Service" border="0" ><a href="https://www.ups.com/content/us/en/contact/index.html?WT.svl=Footer">Call Customer Service</a>
+								</li>
+					</ul>
+						<dt><label><BR></label></dt>
+
+
+		<img src="/img/en/gb/solvers.png" width="112" height="15" alt="United Problem Solvers" border="0" >
+					</div>
+		        </fieldset>
+				</div>
+			</div>
+		</fieldset>
+		</div>
+		<div class="secLvl secLvlPlain seccol6 clearfix">
+		<fieldset>
+			<div class="secBody">
+				<div class="secLvl marginBegin clearfix ">
+				<fieldset>
+					<div class="secHead clearfix">
+						<h4>				<a href="https://www.ups.com/content/us/en/resources/index.html?WT.svl=Footer">Support</a>						</h4>
+					</div>
+					<div class="secBody">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					<ul>
+								<li><a href="https://www.ups.com/content/us/en/bussol/browse/get_started/index.html?WT.svl=Footer">Get Started</a>
+								</li>
+								<li><a href="https://www.ups.com/one-to-one/register?sysid=myups&mcp=true&loc=en_US&WT.svl=Footer">Register</a>
+								</li>
+								<li><a href="https://www.ups.com/account/us/start?loc=en_US&WT.svl=Footer">Open a Shipping Account<img align="bottom" alt="" border="0" src="/img/1.gif" height="7" width="0"><img align="bottom" alt="" border="0" src="/img/icn_lock_green.gif" height="8" width="12"></a>
+								</li>
+								<li><a href="https://www.ups.com/content/us/en/resources/service/delivery_change.html?WT.svl=Footer">Change Your Delivery</a>
+								</li>
+					</ul>
+					</div>
+		        </fieldset>
+				</div>
+			</div>
+		</fieldset>
+		</div>
+		<div class="secLvl secLvlPlain seccol6 clearfix">
+		<fieldset>
+			<div class="secBody">
+				<div class="secLvl marginBegin clearfix ">
+				<fieldset>
+					<div class="secHead clearfix">
+						<h4>				<a href="https://www.ups.com/content/us/en/bussol/browse/industries/industries.html?WT.svl=Footer">Solutions for:</a>						</h4>
+					</div>
+					<div class="secBody">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					<ul>
+								<li><a href="https://www.ups.com/content/us/en/bussol/browse/industries/cat/healthcare.html?WT.svl=Footer">Healthcare</a>
+								</li>
+								<li><a href="https://www.ups.com/content/us/en/bussol/browse/ups-small-business.html?WT.svl=Footer">Small Business</a>
+								</li>
+								<li><a href="https://www.ups.com/content/us/en/bussol/browse/industries/high_tech.html?WT.svl=Footer">High Tech</a>
+								</li>
+								<li><a href="https://www.ups.com/content/us/en/bussol/browse/industries/industries.html?WT.svl=Footer">More...</a>
+								</li>
+					</ul>
+					</div>
+		        </fieldset>
+				</div>
+			</div>
+		</fieldset>
+		</div>
+		<div class="secLvl secLvlPlain seccol6 clearfix">
+		<fieldset>
+			<div class="secBody">
+				<div class="secLvl marginBegin clearfix ">
+				<fieldset>
+					<div class="secHead clearfix">
+						<h4>
+						</h4>
+					</div>
+					<div class="secBody">
+
+
+					<h5><a href="https://www.ups.com/content/us/en/about/sites.html?WT.svl=Footer">Other UPS Sites:</a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					<select name="dropdownList" id="footer_dd_form_0" class="maxwidthFix" size="1" onChange="javascript:footerDropdownLinksHandler('footer_dd_form_0')">
+								<option value="">Select a website</option>
+<option value="http://upscapital.com">UPS Capital</option>
+
+
+<option value="http://compass.ups.com">UPS Compass</option>
+
+
+<option value="https://upsconnect.com?WT.mc_id=UPSFooter">UPS CONNECT</option>
+
+
+<option value="https://www.ups.com/content/us/en/bussol/browse/customer-solutions.html">Customer Solutions</option>
+
+
+<option value="http://www.upsexpresscritical.com/">UPS Express Critical</option>
+
+
+<option value="http://www.investors.ups.com">UPS Investor Relations</option>
+
+
+<option value="http://www.upsjobs.com/">UPS Jobs</option>
+
+
+<option value="http://longitudes.ups.com/">Longitudes</option>
+
+
+<option value="http://www.upsmailinnovations.com/">UPS Mail Innovations</option>
+
+
+<option value="http://www.ups-scs.com">UPS Supply Chain Solutions</option>
+
+
+<option value="http://www.sustainability.ups.com">UPS Sustainability</option>
+
+
+<option value="http://www.theupsstore.com">The UPS Store</option>
+
+
+					</select>
+					<script language="JavaScript1.2" type="text/javascript">
+					 function footerDropdownLinksHandler(formName){
+					 var dropdwnObj = document.getElementById(formName);
+					    if ( dropdwnObj.options[dropdwnObj.selectedIndex].value != "" ){
+					        window.open(dropdwnObj.options[dropdwnObj.selectedIndex].value,'_blank');
+					   }
+					 }
+					</script>
+						<dt><label><STRONG><BR>Follow us:</STRONG></BR></label></dt><a href="javascript:popWrapper('http://www.facebook.com/ups?WT.svl=Footer','pop_up_full_page')" style="null">
+
+
+		<img src="/img/icon_sm_facebook_32.png" width="33" height="32" alt="facebook" border="0" >
+</a><a href="javascript:popWrapper('https://twitter.com/UPS?WT.svl=Footer','pop_up_full_page')" style="null">
+
+
+		<img src="/img/icon_sm_twitterbird_32.png" width="33" height="32" alt="Twitter" border="0" >
+</a><a href="javascript:popWrapper('http://www.youtube.com/UPS?WT.svl=Footer','pop_up_full_page')" style="null">
+
+
+		<img src="/img/icon_sm_youtube_32.png" width="33" height="32" alt="YouTube" border="0" >
+</a><a href="javascript:popWrapper('https://plus.google.com/111195850504202690957?WT.svl=Footer','pop_up_full_page')" style="null">
+
+
+		<img src="/img/icon_sm_googleplus_32.png" width="33" height="32" alt="Google+" border="0" >
+</a><a href="javascript:popWrapper('http://www.linkedin.com/company/ups?WT.svl=Footer','pop_up_full_page')" style="null">
+
+
+		<img src="/img/icon_sm_linkedin_32.png" width="33" height="32" alt="LinkedIn" border="0" >
+</a>					</div>
+		        </fieldset>
+				</div>
+			</div>
+		</fieldset>
+		</div>
+	</fieldset>
+	</div>
+	<div class="appFooter">
+		<div class="alignCenter">
+
+
+				<ul class="inline">
+										<li><a href="https://www.ups.com/content/us/en/index.jsx?WT.svl=Footer">Home</a>										</li>
+										<li><a href="https://www.ups.com/content/us/en/about/index.html?WT.svl=Footer">About UPS</a>										</li>
+										<li><a href="https://www.ups.com/content/us/en/siteguide/index.html?WT.svl=Footer">Site Guide</a>										</li>
+										<li><a href="http://www.investors.ups.com?WT.svl=Footer">Investors</a>										</li>
+										<li><a href="http://www.upsjobs.com/?WT.svl=Footer">Careers</a>										</li>
+										<li><a href="http://www.pressroom.ups.com?WT.svl=Footer">Pressroom</a>										</li>
+										<li><a href="https://www.ups.com/content/global/index.jsx?WT.svl=Footer">UPS Global</a>										</li>
+										<li><a href="https://www.ups.com/content/us/en/bussol/browse/mobile_tracking.html?WT.svl=Footer">UPS Mobile</a>										</li>
+										<li><a href="http://blog.ups.com/?WT.svl=Footer">UPS Blog</a>										</li>
+						</ul>
+			<div class="hr"><img alt="" border="0" height="1" src="/img/1.gif" width="1"></div>
+
+
+				<ul class="inline">
+										<li><a href="https://www.ups.com/content/us/en/resources/ship/terms/shipping/index.html?WT.svl=Footer">Service Terms and Conditions</a>										</li>
+										<li><a href="https://www.ups.com/content/us/en/resources/ship/terms/use.html?WT.svl=Footer">Website Terms of Use</a>										</li>
+										<li><a href="javascript:popWrapper('https://www.ups.com/content/us/en/resources/ship/terms/privacy.html?WT.svl=Footer','pop_up_full_page')">Privacy Notice<img width="3" height="7" border="0" alt="" src="/img/1.gif"><img width="9" height="9" border="0" src="/img/icn_popup_blu.gif"></a></a>										</li>
+										<li><a href="javascript:popWrapper('https://www.ups.com/content/us/en/resources/ship/terms/california_privacy.html?WT.svl=Footer','pop_up_full_page')">Your California Privacy Rights<img width="3" height="7" border="0" alt="" src="/img/1.gif"><img width="9" height="9" border="0" src="/img/icn_popup_blu.gif"></a></a>										</li>
+										<li><a href="https://www.ups.com/content/us/en/resources/ship/fraud.html?WT.svl=Footer">Protect Against Fraud</a>										</li>
+						</ul>
+						<p>Copyright &copy; 1994-2016 United Parcel Service of America, Inc. All rights reserved.</p>
+		</div>
+	</div>
+	</fieldset>
+	</div>
+	</div>
+
+
+
+
+
+
+
+<script> var preferred=false; var national=false; var worldship=false; </script>
+
+
+
+
+<img alt="" border="0" src="/img/icp.gif">
+</body>
+
+</HTML>
+

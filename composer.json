@@ -1,0 +1,39 @@
+{
+  "name": "sauladam/shipment-tracker",
+  "description": "Parses tracking information for several carriers, like UPS, USPS, DHL and GLS by simply scraping the data. No need for any kind of API access.",
+  "license": "MIT",
+  "keywords": [
+    "shipment",
+    "parcel",
+    "tracking",
+    "ups",
+    "dhl",
+    "gls",
+    "usps",
+    "swiss post"
+  ],
+  "authors": [
+    {
+      "name": "Saulius Adamonis",
+      "email": "saulius.adamonis@gmx.de"
+    }
+  ],
+  "require": {
+    "guzzlehttp/guzzle": ">=3.9",
+    "nesbot/carbon": ">=1.20"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sauladam\\ShipmentTracker\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "files": [
+      "tests/TestCase.php",
+      "tests/UrlToFileMatcherClient.php"
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+# Common files types
+*.log
+*.bak
+
+# Development environment
+Guardfile
+nbproject
+.idea
+.vagrant
+Vagrantfile
+puphpet
+
+# Composer
+/vendor
+composer.phar
+composer.lock
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Misc
+/tests/_log/*
+index.php
+build.sh
