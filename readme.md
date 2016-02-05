@@ -2,6 +2,9 @@
 
 **A simple tool to scrape the parcel tracking data for DHL, GLS, UPS, USPS, and Swiss Post Service**
 
+[![Build Status](https://travis-ci.org/sauladam/shipment-tracker.svg?branch=master)](https://travis-ci.org/sauladam/shipment-tracker)
+[![Total Downloads](https://poser.pugx.org/sauladam/shipment-tracker/downloads.png)](https://packagist.org/packages/sauladam/shipment-tracker)
+
 Some parcel services give you a really hard time when it comes to registering some kind of merchant or developer account.
   All you actually want is to simply keep track of a shipment and have an eye on its status. Yes, you could keep refreshing
   the tracking pages, but sometimes you've just got better stuff to do. So here's a tool who does this automatically, without
