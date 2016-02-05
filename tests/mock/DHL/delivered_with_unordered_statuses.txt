@@ -1089,7 +1089,7 @@ function hideBanners() {
 										  <tr style="" id="tr_recipient_00340433924192991025">
 											<td><!-- IE8fix --></td>
 											<td class="mm_bold text-right">Zugestellt an</td>
-											<td colspan="2" id="recipient_00340433924192991025">Empfänger (orig.)</td>
+											<td colspan="2" id="recipient_00340433924192991025">Recipient (orig.)</td>
 										  </tr>
 
 

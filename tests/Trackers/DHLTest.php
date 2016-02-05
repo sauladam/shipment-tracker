@@ -77,7 +77,7 @@ class DHLTest extends TestCase
 
         $track = $tracker->track('00340433924192908894');
 
-        $this->assertSame('Empfänger (orig.)', $track->getRecipient());
+        $this->assertSame('Recipient (orig.)', $track->getRecipient());
     }
 
 
@@ -118,7 +118,7 @@ class DHLTest extends TestCase
 
         $this->assertNotSame(Track::STATUS_DELIVERED, $track->currentStatus());
         $this->assertTrue($track->delivered());
-        $this->assertSame($track->getRecipient(), 'Empfänger (orig.)');
+        $this->assertSame($track->getRecipient(), 'Recipient (orig.)');
         $this->assertCount(7, $track->events());
     }
 
