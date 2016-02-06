@@ -114,7 +114,7 @@ $url = $dhlTracker->trackingUrl('00340434127681930812', 'en', ['zip' => '12345']
 
 ## Other features
 ### Additional details
-Tracks and Events bot can hold additional information, accessible via e.g. `$track->getAdditionalInformation('parcelShop')`. Currently, this is only interesting for GLS, where `$track->getAdditionalInformation('parcelShop')` holds the address and the opening hours of the parcel shop if the parcel was delivered there.
+Tracks and Events bot can hold additional details, accessible via e.g. `$track->getAdditionalDetails('parcelShop')`. Currently, this is only interesting for GLS, where `$track->getAdditionalDetails('parcelShop')` holds the address and the opening hours of the parcel shop if the parcel was delivered there.
 
 ### Http Clients
 By default, this package uses Guzzle as well as the PHP Http client (a.k.a. `file_get_contents()`). You can pass your own client if you need to, just make sure that it implements `Sauladam\ShipmentTracker\HttpClient\HttpClientInterface`, which only requires a `get()` method.
@@ -135,5 +135,7 @@ Currently available clients are:
 
 ## Notes
 Please keep in mind that this is just a tool to make your life easier. I do not recommend using it in a critical environment, because, due to the way it works, it can break down as soon as the tracking website where the data is pulled from changes its structure or renames/rephrases the event descriptions. So please **use it at your own risk!**
+
+Also, there's always a chance that a status can not be resolved because the event description is not known by this package, even though the most common events should be resolved correctly.
 
 Also, the tracking data, therefore the data provided by this package, is the property of the carrier (I guess), so under no circumstances you should use it commercially (like selling it or integrating it in a commercial service). It is intended only for personal use.
