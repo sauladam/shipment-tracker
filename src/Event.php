@@ -137,17 +137,22 @@ class Event
     }
 
 
+    /**
+     * Create an event from the given array.
+     *
+     * @param array $data
+     *
+     * @return Event
+     */
     public static function fromArray(array $data)
     {
         $event = new self;
 
-        $knownFields = ['date', 'location', 'description', 'status'];
+        $eligibleKeys = ['date', 'location', 'description', 'status'];
+
+        $data = array_intersect_key($data, array_flip($eligibleKeys));
 
         foreach ($data as $key => $value) {
-            if (!in_array($key, $knownFields)) {
-                continue;
-            }
-
             $setter = 'set' . ucfirst($key);
 
             $event->{$setter}($value);
