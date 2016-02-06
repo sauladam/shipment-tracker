@@ -72,7 +72,7 @@ class GLS extends AbstractTracker
             $event->setLocation($this->getLocation($historyItem));
             $event->setDescription($historyItem['evtDscr']);
             $event->setDate($this->getDate($historyItem));
-            $event->addAdditionalInformation('eventNumber', $response['tuStatus'][0]['progressBar']['evtNos'][$index]);
+            $event->addAdditionalDetails('eventNumber', $response['tuStatus'][0]['progressBar']['evtNos'][$index]);
 
             $track->addEvent($event);
 
@@ -81,7 +81,7 @@ class GLS extends AbstractTracker
             }
 
             if ($status == Track::STATUS_PICKUP) {
-                $track->addAdditionalInformation('parcelShop', $this->getParcelShopDetails($response));
+                $track->addAdditionalDetails('parcelShop', $this->getParcelShopDetails($response));
             }
         }
 

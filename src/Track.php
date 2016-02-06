@@ -2,7 +2,7 @@
 
 namespace Sauladam\ShipmentTracker;
 
-use Sauladam\ShipmentTracker\Utils\AdditionalInformation;
+use Sauladam\ShipmentTracker\Utils\AdditionalDetails;
 use Sauladam\ShipmentTracker\Utils\Utils;
 
 class Track
@@ -14,7 +14,7 @@ class Track
     const STATUS_WARNING = 'warning';
     const STATUS_UNKNOWN = 'unknown';
 
-    use AdditionalInformation;
+    use AdditionalDetails;
 
     /**
      * @var Event[]

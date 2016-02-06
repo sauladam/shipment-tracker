@@ -2,7 +2,7 @@
 
 namespace Sauladam\ShipmentTracker\Utils;
 
-trait AdditionalInformation
+trait AdditionalDetails
 {
     /**
      * @var array
@@ -18,7 +18,7 @@ trait AdditionalInformation
      *
      * @return $this
      */
-    public function addAdditionalInformation($key, $data)
+    public function addAdditionalDetails($key, $data)
     {
         $this->additional[$key] = $data;
 
@@ -34,7 +34,7 @@ trait AdditionalInformation
      * @return array
      * @throws \Exception
      */
-    public function getAdditionalInformation($key = null)
+    public function getAdditionalDetails($key = null)
     {
         if (!$key) {
             return $this->additional;
@@ -53,7 +53,7 @@ trait AdditionalInformation
      *
      * @return bool
      */
-    public function hasAdditionalInformation()
+    public function hasAdditionalDetails()
     {
         return !empty($this->additional);
     }

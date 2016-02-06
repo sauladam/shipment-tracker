@@ -7,9 +7,9 @@ class AdditionalInformationTest extends TestCase
     {
         $testClass = new AdditionalTestClass;
 
-        $testClass->addAdditionalInformation('key', 'data');
+        $testClass->addAdditionalDetails('key', 'data');
 
-        $this->assertTrue($testClass->hasAdditionalInformation());
+        $this->assertTrue($testClass->hasAdditionalDetails());
     }
 
 
@@ -18,9 +18,9 @@ class AdditionalInformationTest extends TestCase
     {
         $testClass = new AdditionalTestClass;
 
-        $testClass->addAdditionalInformation('foo', 'bar');
+        $testClass->addAdditionalDetails('foo', 'bar');
 
-        $this->assertSame('bar', $testClass->getAdditionalInformation('foo'));
+        $this->assertSame('bar', $testClass->getAdditionalDetails('foo'));
     }
 
 
@@ -29,10 +29,10 @@ class AdditionalInformationTest extends TestCase
     {
         $testClass = new AdditionalTestClass;
 
-        $testClass->addAdditionalInformation('foo', 'bar');
-        $testClass->addAdditionalInformation('bar', 'baz');
+        $testClass->addAdditionalDetails('foo', 'bar');
+        $testClass->addAdditionalDetails('bar', 'baz');
 
-        $this->assertCount(2, $testClass->getAdditionalInformation());
+        $this->assertCount(2, $testClass->getAdditionalDetails());
     }
 
 
@@ -44,12 +44,12 @@ class AdditionalInformationTest extends TestCase
     {
         $testClass = new AdditionalTestClass;
 
-        $testClass->getAdditionalInformation('non-existent');
+        $testClass->getAdditionalDetails('non-existent');
     }
 }
 
 
 class AdditionalTestClass
 {
-    use \Sauladam\ShipmentTracker\Utils\AdditionalInformation;
+    use \Sauladam\ShipmentTracker\Utils\AdditionalDetails;
 }

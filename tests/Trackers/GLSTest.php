@@ -84,7 +84,7 @@ class GLSTest extends TestCase
 
         $track = $tracker->track('50346007538');
 
-        $this->assertNotEmpty($track->getAdditionalInformation('parcelShop'));
+        $this->assertNotEmpty($track->getAdditionalDetails('parcelShop'));
     }
 
 
@@ -99,7 +99,7 @@ class GLSTest extends TestCase
         $track = $tracker->track('50346007538');
 
         foreach ($track->events() as $event) {
-            $this->assertNotEmpty($event->getAdditionalInformation('eventNumber'));
+            $this->assertNotEmpty($event->getAdditionalDetails('eventNumber'));
         }
     }
 

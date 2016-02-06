@@ -69,10 +69,10 @@ class EventTest extends TestCase
     /** @test */
     public function it_can_access_additional_information()
     {
-        $this->event->addAdditionalInformation('foo', 'additional info');
+        $this->event->addAdditionalDetails('foo', 'additional info');
 
-        $this->assertTrue($this->event->hasAdditionalInformation());
-        $this->assertSame('additional info', $this->event->getAdditionalInformation('foo'));
+        $this->assertTrue($this->event->hasAdditionalDetails());
+        $this->assertSame('additional info', $this->event->getAdditionalDetails('foo'));
     }
 
 

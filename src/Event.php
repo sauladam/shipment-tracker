@@ -3,12 +3,12 @@
 namespace Sauladam\ShipmentTracker;
 
 use Carbon\Carbon;
-use Sauladam\ShipmentTracker\Utils\AdditionalInformation;
+use Sauladam\ShipmentTracker\Utils\AdditionalDetails;
 use Sauladam\ShipmentTracker\Utils\Utils;
 
 class Event
 {
-    use AdditionalInformation;
+    use AdditionalDetails;
 
     /**
      * @var string
@@ -77,9 +77,7 @@ class Event
      */
     public function setDate($date)
     {
-        $date = $date instanceof Carbon
-            ? $date
-            : Carbon::parse($date);
+        $date = $date instanceof Carbon ? $date : Carbon::parse($date);
 
         $this->date = $date;
 
