@@ -2,8 +2,8 @@
 
 namespace Sauladam\ShipmentTracker\Trackers;
 
-use Sauladam\ShipmentTracker\HttpClient\HttpClientInterface;
-use Sauladam\ShipmentTracker\HttpClient\Registry;
+use Sauladam\ShipmentTracker\DataProviders\DataProviderInterface;
+use Sauladam\ShipmentTracker\DataProviders\Registry;
 use Sauladam\ShipmentTracker\Track;
 
 abstract class AbstractTracker
@@ -11,12 +11,12 @@ abstract class AbstractTracker
     /**
      * @var Registry
      */
-    protected $httpClientRegistry;
+    protected $dataProviderRegistry;
 
     /**
      * @var string
      */
-    protected $defaultHttpClient = 'guzzle';
+    protected $defaultDataProvider = 'guzzle';
 
     /**
      * @var string
@@ -42,11 +42,11 @@ abstract class AbstractTracker
     /**
      * Create a new tracker instance.
      *
-     * @param Registry $clients
+     * @param Registry $providers
      */
-    public function __construct(Registry $clients)
+    public function __construct(Registry $providers)
     {
-        $this->httpClientRegistry = $clients;
+        $this->dataProviderRegistry = $providers;
     }
 
 
@@ -98,28 +98,28 @@ abstract class AbstractTracker
 
 
     /**
-     * Set the default http client.
+     * Set the default data provider.
      *
      * @param string $name
      *
      * @return $this
      */
-    public function useHttpClient($name)
+    public function useDataProvider($name)
     {
-        $this->defaultHttpClient = $name;
+        $this->defaultDataProvider = $name;
 
         return $this;
     }
 
 
     /**
-     * Get the currently set default http client.
+     * Get the currently set default data provider.
      *
      * @return string
      */
-    public function getDefaultHttpClient()
+    public function getDefaultDataProvider()
     {
-        return $this->defaultHttpClient;
+        return $this->defaultDataProvider;
     }
 
 
@@ -144,13 +144,13 @@ abstract class AbstractTracker
 
 
     /**
-     * Get the http client.
+     * Get the data provider.
      *
-     * @return HttpClientInterface
+     * @return DataProviderInterface
      */
-    protected function getClient()
+    protected function getDataProvider()
     {
-        return $this->httpClientRegistry->get($this->defaultHttpClient);
+        return $this->dataProviderRegistry->get($this->defaultDataProvider);
     }
 
 
@@ -163,7 +163,7 @@ abstract class AbstractTracker
      */
     protected function fetch($url)
     {
-        return $this->getClient()->get($url);
+        return $this->getDataProvider()->get($url);
     }
 
 

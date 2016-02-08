@@ -114,23 +114,23 @@ $url = $dhlTracker->trackingUrl('00340434127681930812', 'en', ['zip' => '12345']
 
 ## Other features
 ### Additional details
-Tracks and Events bot can hold additional details, accessible via e.g. `$track->getAdditionalDetails('parcelShop')`. Currently, this is only interesting for GLS, where `$track->getAdditionalDetails('parcelShop')` holds the address and the opening hours of the parcel shop if the parcel was delivered there.
+Tracks and Events both can hold additional details, accessible via e.g. `$track->getAdditionalDetails('parcelShop')`. Currently, this is only interesting for GLS, where `$track->getAdditionalDetails('parcelShop')` holds the address and the opening hours of the parcel shop if the parcel was delivered there.
 
-### Http Clients
-By default, this package uses Guzzle as well as the PHP Http client (a.k.a. `file_get_contents()`). You can pass your own client if you need to, just make sure that it implements `Sauladam\ShipmentTracker\HttpClient\HttpClientInterface`, which only requires a `get()` method.
+### Data Providers
+By default, this package uses Guzzle as well as the PHP Http client (a.k.a. `file_get_contents()`) to fetch the data. You can pass your own provider if you need to, e.g. if you have the page contents chillin' somewhere in a cache. Just make sure that it implements `Sauladam\ShipmentTracker\DataProviders\DataProviderInterface`, which only requires a `get()` method.
 
-Then, you can just pass it to the factory: `$dhlTracker = ShipmentTracker::get('DHL', new MyHttpClient);`
+Then, you can just pass it to the factory: `$dhlTracker = ShipmentTracker::get('DHL', new CacheDataProvider);`
 
-If you pass your own client, it's used by default, but you can swap it out later if you want:
+If you pass your data provider, it's used by default, but you can swap it out later if you want:
 
 ```php
-$dhlTracker->useHttpClient('guzzle');
+$dhlTracker->useDataProvider('guzzle');
 ```
 
-Currently available clients are:
+Currently available providers are:
 - guzzle
 - php
-- custom (referring to the client that you've passed)
+- custom (referring to the provider that you've passed)
 
 
 ## Notes

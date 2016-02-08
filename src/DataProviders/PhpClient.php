@@ -1,8 +1,8 @@
 <?php
 
-namespace Sauladam\ShipmentTracker\HttpClient;
+namespace Sauladam\ShipmentTracker\DataProviders;
 
-class PhpClient implements HttpClientInterface
+class PhpClient implements DataProviderInterface
 {
     /**
      * Request the given url.

@@ -17,7 +17,7 @@ class TestCase extends PHPUnit_Framework_TestCase
             return ShipmentTracker::get($carrier);
         }
 
-        $customClient = new UrlToFileMatcherClient($carrier, $fileName);
+        $customClient = new FileMapperDataProvider($carrier, $fileName);
 
         return ShipmentTracker::get($carrier, $customClient);
     }

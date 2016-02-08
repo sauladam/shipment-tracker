@@ -1,8 +1,8 @@
 <?php
 
-use Sauladam\ShipmentTracker\HttpClient\HttpClientInterface;
+use Sauladam\ShipmentTracker\DataProviders\DataProviderInterface;
 
-class UrlToFileMatcherClient implements HttpClientInterface
+class FileMapperDataProvider implements DataProviderInterface
 {
     /**
      * @var

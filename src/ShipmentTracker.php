@@ -2,10 +2,10 @@
 
 namespace Sauladam\ShipmentTracker;
 
-use Sauladam\ShipmentTracker\HttpClient\GuzzleClient;
-use Sauladam\ShipmentTracker\HttpClient\HttpClientInterface;
-use Sauladam\ShipmentTracker\HttpClient\PhpClient;
-use Sauladam\ShipmentTracker\HttpClient\Registry;
+use Sauladam\ShipmentTracker\DataProviders\GuzzleClient;
+use Sauladam\ShipmentTracker\DataProviders\DataProviderInterface;
+use Sauladam\ShipmentTracker\DataProviders\PhpClient;
+use Sauladam\ShipmentTracker\DataProviders\Registry;
 use Sauladam\ShipmentTracker\Trackers\AbstractTracker;
 
 class ShipmentTracker
@@ -19,44 +19,44 @@ class ShipmentTracker
     /**
      * Get the tracker for the given carrier name.
      *
-     * @param string              $carrier
-     * @param HttpClientInterface $httpClient
+     * @param string                $carrier
+     * @param DataProviderInterface $customDataProvider
      *
      * @return AbstractTracker
      * @throws \Exception
      */
-    public static function get($carrier, HttpClientInterface $httpClient = null)
+    public static function get($carrier, DataProviderInterface $customDataProvider = null)
     {
         if (!static::isValidCarrier($carrier)) {
-            throw new \Exception("Unknwon carrier [{$carrier}]");
+            throw new \Exception("Unknown carrier [{$carrier}]");
         }
 
-        $httpClientRegistry = self::getHttpClientRegistry($httpClient);
+        $dataProviderRegistry = self::getDataProviderRegistry($customDataProvider);
 
         $className = self::$carriersNamespace . '\\' . $carrier;
 
-        $tracker = new $className($httpClientRegistry);
+        $tracker = new $className($dataProviderRegistry);
 
-        return $httpClient ? $tracker->useHttpClient('custom') : $tracker;
+        return $customDataProvider ? $tracker->useDataProvider('custom') : $tracker;
     }
 
 
     /**
-     * Get the registry for http clients.
+     * Get the registry for the data providers.
      *
-     * @param HttpClientInterface $customClient
+     * @param DataProviderInterface $customProvider
      *
      * @return Registry
      */
-    protected static function getHttpClientRegistry(HttpClientInterface $customClient = null)
+    protected static function getDataProviderRegistry(DataProviderInterface $customProvider = null)
     {
         $registry = new Registry;
 
         $registry->register('guzzle', new GuzzleClient);
         $registry->register('php', new PhpClient);
 
-        if ($customClient) {
-            $registry->register('custom', $customClient);
+        if ($customProvider) {
+            $registry->register('custom', $customProvider);
         }
 
         return $registry;

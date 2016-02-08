@@ -22,7 +22,7 @@ class USPS extends AbstractTracker
     /**
      * @var string
      */
-    protected $defaultHttpClient = 'php';
+    protected $defaultDataProvider = 'php';
 
 
     /**

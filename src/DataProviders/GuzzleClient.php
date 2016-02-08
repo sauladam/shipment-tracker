@@ -1,10 +1,10 @@
 <?php
 
-namespace Sauladam\ShipmentTracker\HttpClient;
+namespace Sauladam\ShipmentTracker\DataProviders;
 
 use GuzzleHttp\Client;
 
-class GuzzleClient implements HttpClientInterface
+class GuzzleClient implements DataProviderInterface
 {
     /**
      * @var Client
