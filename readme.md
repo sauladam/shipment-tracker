@@ -19,7 +19,7 @@ Just pull this package in through composer by adding it to your `composer.json` 
 ```json
 {
     "require": {
-        "sauladam/shipment-tracker": "~0.1"
+        "sauladam/shipment-tracker": "~0.2"
     }
 }
 ```
