@@ -49,7 +49,7 @@ class GLSTest extends TestCase
     {
         $tracker = $this->getTracker([
             'https://gls-group.eu/app/service/open/rest/DE/de/rstt001?match=50346007538' => 'delivered.txt',
-            'https://api.customlocation.nokia.com/v1/search/attribute?jsonpCallback=C&appId=s0Ej52VXrLa6AUJEenti&layerId=48&query=%5Blike%5D%2Fname3%2F2760236908&rangeQuery%3D=&limit=1&_1372940610913=' => 'parcel_shop_details.txt'
+            'http://api.customlocation.nokia.com/v1/search/attribute?jsonpCallback=C&appId=s0Ej52VXrLa6AUJEenti&layerId=48&query=%5Blike%5D%2Fname3%2F2760236908&rangeQuery%3D=&limit=1&_1372940610913=' => 'parcel_shop_details.txt'
         ]);
 
         $track = $tracker->track('50346007538');
@@ -65,7 +65,7 @@ class GLSTest extends TestCase
     {
         $tracker = $this->getTracker([
             'https://gls-group.eu/app/service/open/rest/DE/de/rstt001?match=50346007538' => 'delivered.txt',
-            'https://api.customlocation.nokia.com/v1/search/attribute?jsonpCallback=C&appId=s0Ej52VXrLa6AUJEenti&layerId=48&query=%5Blike%5D%2Fname3%2F2760236908&rangeQuery%3D=&limit=1&_1372940610913=' => 'parcel_shop_details.txt'
+            'http://api.customlocation.nokia.com/v1/search/attribute?jsonpCallback=C&appId=s0Ej52VXrLa6AUJEenti&layerId=48&query=%5Blike%5D%2Fname3%2F2760236908&rangeQuery%3D=&limit=1&_1372940610913=' => 'parcel_shop_details.txt'
         ]);
 
         $track = $tracker->track('50346007538');
@@ -79,7 +79,7 @@ class GLSTest extends TestCase
     {
         $tracker = $this->getTracker([
             'https://gls-group.eu/app/service/open/rest/DE/de/rstt001?match=50346007538' => 'delivered.txt',
-            'https://api.customlocation.nokia.com/v1/search/attribute?jsonpCallback=C&appId=s0Ej52VXrLa6AUJEenti&layerId=48&query=%5Blike%5D%2Fname3%2F2760236908&rangeQuery%3D=&limit=1&_1372940610913=' => 'parcel_shop_details.txt'
+            'http://api.customlocation.nokia.com/v1/search/attribute?jsonpCallback=C&appId=s0Ej52VXrLa6AUJEenti&layerId=48&query=%5Blike%5D%2Fname3%2F2760236908&rangeQuery%3D=&limit=1&_1372940610913=' => 'parcel_shop_details.txt'
         ]);
 
         $track = $tracker->track('50346007538');
@@ -93,7 +93,7 @@ class GLSTest extends TestCase
     {
         $tracker = $this->getTracker([
             'https://gls-group.eu/app/service/open/rest/DE/de/rstt001?match=50346007538' => 'delivered.txt',
-            'https://api.customlocation.nokia.com/v1/search/attribute?jsonpCallback=C&appId=s0Ej52VXrLa6AUJEenti&layerId=48&query=%5Blike%5D%2Fname3%2F2760236908&rangeQuery%3D=&limit=1&_1372940610913=' => 'parcel_shop_details.txt'
+            'http://api.customlocation.nokia.com/v1/search/attribute?jsonpCallback=C&appId=s0Ej52VXrLa6AUJEenti&layerId=48&query=%5Blike%5D%2Fname3%2F2760236908&rangeQuery%3D=&limit=1&_1372940610913=' => 'parcel_shop_details.txt'
         ]);
 
         $track = $tracker->track('50346007538');
