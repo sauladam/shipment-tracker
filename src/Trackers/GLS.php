@@ -23,7 +23,7 @@ class GLS extends AbstractTracker
     /**
      * @var string
      */
-    protected $parcelShopDetailsUrl = 'https://api.customlocation.nokia.com/v1/search/attribute';
+    protected $parcelShopDetailsUrl = 'http://api.customlocation.nokia.com/v1/search/attribute';
 
     /**
      * @var string
