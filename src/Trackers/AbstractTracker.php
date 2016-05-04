@@ -201,7 +201,8 @@ abstract class AbstractTracker
      *
      * @param string $response
      *
-     * @return array
+     * @return Track
+     * @throws \Exception
      */
     abstract protected function buildResponse($response);
 }
