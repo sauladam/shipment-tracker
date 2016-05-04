@@ -32,18 +32,40 @@ class DachserTest extends TestCase
         $this->assertInstanceOf(AbstractTracker::class, $this->tracker);
     }
 
+
     /**
      * @test
      */
-    public function The_NVE_is_contained_in_the_response() {
+    public function Delivered_State_is_parsed_correctly() {
+        $tracker = $this->getTracker('delivered.xml');
+
+        $track = $tracker->track('00342604164600000899');
+
+        $this->assertSame(Track::STATUS_DELIVERED, $track->currentStatus());
+        $this->assertTrue($track->delivered());
+
+        $this->assertCount(1, $track->events());
+        $this->assertSame('Dachser Rheine(Rheine, Germany)', $track->latestEvent()->getLocation());
+        $this->assertSame('00342604164600000899', $track->getAdditionalDetails('nve'));
+        $this->assertEquals(\Carbon\Carbon::create(2016, 5, 4, 17, 8, 0), $track->latestEvent()->getDate());
+
+    }
+
+    /**
+     * @test
+     */
+    public function VerladeTerminal_State_is_parsed_correctly() {
         $tracker = $this->getTracker('verladeterminal.xml');
 
         $track = $tracker->track('00342604164600000899');
 
         $this->assertSame(Track::STATUS_IN_TRANSIT, $track->currentStatus());
         $this->assertFalse($track->delivered());
-        $this->assertNull($track->getRecipient());
+
         $this->assertCount(1, $track->events());
+        $this->assertSame('Dachser Bremen(Bremen, Germany)', $track->latestEvent()->getLocation());
+
+        $this->assertEquals(\Carbon\Carbon::create(2016, 5, 3, 0, 0, 0), $track->latestEvent()->getDate());
 
     }
 
