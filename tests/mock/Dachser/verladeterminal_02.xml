@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><ajax-response><component id="id3b" ><![CDATA[<div id="id3b">
+	
+		 
+	
+	 	 
+		
+		<div id="id3d">
+		<div class="position resultPage detail">
+
+		<form id="id3e" method="post" action="?wicket:interface=:11:ctnResults:pnlDetail:form::IFormSubmitListener::"><div style="width:0px;height:0px;position:absolute;left:-100px;top:-100px;overflow:hidden"><input type="hidden" name="id3e_hf_0" id="id3e_hf_0" /></div>
+			<h1>
+				<div class="fw_floatLeft">
+				<span>Details</span>
+				</div>
+				
+			</h1>
+
+			<!-- current State -->
+			<fieldset>
+				<legend>
+					<span>Aktueller Status</span>
+				</legend>
+				
+				<table width="100%" border="0" cellspacing="2" cellpadding="3" class="">
+				  <tr>
+					<th align="left" width="50"><span>Datum</span></th>
+					<th align="left"><span>Uhrzeit</span></th>
+					<th align="left"><span>Status</span></th>
+					<th align="left"><span>Via</span></th>
+					<th align="left"><span>Info</span></th>
+				  </tr>
+				  <tr class="odd"> 
+					<td><span>04.05.2016</span></td>
+					<td><span>---</span></td>
+					<td><img class="imgDetail" src="img/outbound.png"></img>&nbsp;<strong><span>Ausgang Verladeterminal</span></strong><br></td>
+					<td><span>Dachser Bremen<br/>(Bremen, Germany)<br/></span></td>
+					<td><span>---<br/></span></td>
+				  </tr>
+				</table>
+			
+			</fieldset>
+
+			<!-- Shipment -->
+			<fieldset>
+				<legend>
+					<span>Sendung</span>
+				</legend>
+				
+				<table width="100%" border="0" cellspacing="2" cellpadding="3" class="">
+				  <tr class="odd"> 
+					<td><span>NVE/SSCC</span></td>
+					<td><span>00342604164600000929</span></td>
+					<td><span>Sendungs-Nummer</span></td>
+					<td><span>04319663156</span></td>
+				  </tr>
+				  <tr class="even"> 
+					<td><span>Auftragsdatum</span></td>
+					<td><span>04.05.2016</span></td>
+					<td><span>PLZ Empfänger</span></td>
+					<td><span>1***8</span></td>
+				  </tr>
+				   <tr class="odd"> 
+					<td><span>Gewicht</span></td>
+					<td><span>40 kg</span></td>
+					<td></td>
+					<td></td>
+				  </tr>
+				</table>
+			</fieldset>
+			
+			<!-- References -->
+		<div id="id3f">
+
+	<fieldset id="references">
+        <legend><span>Referenzen</span></legend>
+        <table class="" width="100%" border="0" cellspacing="2" cellpadding="3">
+          	<tr>
+            	<th width="250px" align="left"><span>Referenzart</span></th>
+            	<th align="left"><span>Referenzen</span></th>
+          	</tr>
+          	<tr class="odd">
+          		<td width="180"><span>Auftrags-Nummer</span></td>
+				<td><div class="shippingNoDetail"><span>1526724</span></div></td>
+          	</tr><tr class="even">
+          		<td width="180"><span>Lieferschein-Nummern</span></td>
+				<td><div class="shippingNoDetail"><span>1526724</span></div></td>
+          	</tr><tr class="odd">
+          		<td width="180"><span>Bestell-Nummern</span></td>
+				<td><div class="shippingNoDetail"><span> ---</span></div></td>
+          	</tr>
+        </table>
+	</fieldset>
+</div>
+
+			
+				
+		
+
+	</form>
+		</div>
+<div id="helpUrl" style="visibility:hidden">http://partner.dachser.com/help/de/shp.html</div>
+</div>
+		
+	</div>]]></component><header-contribution><![CDATA[<head xmlns:wicket="http://wicket.apache.org"><script type="text/javascript" src="resources/org.apache.wicket.markup.html.WicketEventReference/wicket-event.js?w:lm=1429427652"></script>
+<script type="text/javascript" src="resources/org.apache.wicket.ajax.WicketAjaxReference/wicket-ajax.js?w:lm=1429427652"></script>
+</head>]]></header-contribution><component id="id36" ><![CDATA[<div id="id36">
+	<form id="id37" method="post" action="?wicket:interface=:11:pnlHead:frmHead::IFormSubmitListener::"><div style="width:0px;height:0px;position:absolute;left:-100px;top:-100px;overflow:hidden"><input type="hidden" name="id37_hf_0" id="id37_hf_0" /></div>
+	<div class="tab-row tabpanel">
+		<div class="tab selected">
+			<span>Shipment Pointer</span>
+		</div>
+	</div>
+	
+	<div class="fw_search_header topContent">
+		<span>Such-Kriterium</span>
+		<br>
+	
+	<table cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+				<input type="text" maxlength="35" class="large textInput" value="00342604164600000929" name="tfiSearch" id="id38"></input>
+				
+				<!-- IE will not submit forms with only one input, the following fixes this -->
+				<div style="display:none">
+					<input type="text" name="hiddenTextField">
+				</div>
+				
+			</td>
+			<td>
+				 <div class="topButton search">
+			         <span class="button"><input hidefocus="true" value="Suchen" type="submit" class="fw_lightButton" name="btnSearch" id="id39" onclick="var wcall=wicketSubmitFormById('id37', '?wicket:interface=:11:pnlHead:frmHead:btnSearch::IActivePageBehaviorListener:0:-1&amp;wicket:ignoreIfNotActive=true', 'btnSearch' ,function() { }.bind(this),function() { }.bind(this), function() {return Wicket.$$(this)&amp;&amp;Wicket.$$('id37')}.bind(this));;; return false;"></span>
+				 </div>
+			</td>
+		</tr>
+	 </table>
+		
+	<div id="id3a">
+  
+</div>
+	</div>
+	</form>
+</div>]]></component></ajax-response>

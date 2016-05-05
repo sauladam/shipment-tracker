@@ -64,8 +64,7 @@ class DachserTest extends TestCase
         $tracker = $this->getTracker($xml);
 
         $track = $tracker->track('faked');
-        $this->assertSame(45, $track->getAdditionalDetails('weight'));
-
+        $this->assertSame($expectedWeight, $track->getAdditionalDetails('weight'));
 
     }
 
@@ -73,7 +72,7 @@ class DachserTest extends TestCase
         return [
             ['delivered.xml', 45],
             ['verladeterminal.xml', 45],
-
+            ['verladeterminal_02.xml', 40],
         ];
     }
 

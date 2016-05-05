@@ -57,9 +57,10 @@ class Dachser extends AbstractTracker
     private function parseStatusArray($dataString)
     {
 
-        $re = '/<\/th> *<\/tr>(.*?)<\/tab/u';
+        $re = '/<\/th>.*?<\/tr>(.*?)<\/tab/u';
         preg_match($re, $dataString, $matches);
         if (!$matches) {
+            var_dump($dataString);
             throw new \RuntimeException("Could not parse status");
         }
 
@@ -180,20 +181,24 @@ class Dachser extends AbstractTracker
      */
     protected function extractResponseTextFromXml($response)
     {
+
+        // Remove new lines to allow simpler regex patterns:
+        $response = preg_replace('/[\t\r\n]/', '', $response);
+
         $dom = new \DOMDocument();
         $dom->loadXML($response);
         $htmlContent = '';
         $components = $dom->getElementsByTagName('component');
+
         foreach ($components as $component) {
+
             /** @var \DOMElement $component */
             if ($component->hasAttribute('id')) {
-                if ($component->getAttribute('id') == 'ide') {
-                    $htmlContent .= $component->textContent;
-                }
+                $htmlContent .= $component->textContent;
+
             }
         }
-        // Remove new lines to allow simpler regex patterns:
-        $htmlContent = preg_replace('/[\t\r\n]/', '', $htmlContent);
+
 
         return $htmlContent;
     }
