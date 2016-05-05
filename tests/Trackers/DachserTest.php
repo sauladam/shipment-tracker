@@ -43,12 +43,38 @@ class DachserTest extends TestCase
 
         $this->assertSame(Track::STATUS_DELIVERED, $track->currentStatus());
         $this->assertTrue($track->delivered());
+        $this->assertSame(45, $track->getAdditionalDetails('weight'));
 
         $this->assertCount(1, $track->events());
         $this->assertSame('Dachser Rheine(Rheine, Germany)', $track->latestEvent()->getLocation());
         $this->assertSame('00342604164600000899', $track->getAdditionalDetails('nve'));
         $this->assertEquals(\Carbon\Carbon::create(2016, 5, 4, 17, 8, 0), $track->latestEvent()->getDate());
 
+    }
+
+    /**
+     * @test
+     * @dataProvider expectedWeightMap
+     *
+     * @param $xml
+     * @param $expectedWeight
+     */
+    public function Weights_are_parsed_correctly($xml, $expectedWeight) {
+
+        $tracker = $this->getTracker($xml);
+
+        $track = $tracker->track('faked');
+        $this->assertSame(45, $track->getAdditionalDetails('weight'));
+
+
+    }
+
+    public function expectedWeightMap() {
+        return [
+            ['delivered.xml', 45],
+            ['verladeterminal.xml', 45],
+
+        ];
     }
 
     /**

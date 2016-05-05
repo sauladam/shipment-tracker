@@ -66,6 +66,7 @@ class Dachser extends AbstractTracker
         $event->setLocation($this->parseLocation($htmlContent));
 
         $track->addEvent($event);
+        $track->addAdditionalDetails('weight', $this->parseWeight($htmlContent));
         foreach ($this->parseDetails($htmlContent) as $key => $value )
         {
             $track->addAdditionalDetails($key, $value);
@@ -182,4 +183,25 @@ class Dachser extends AbstractTracker
         }
         return $time;
     }
+
+
+    /**
+     * Parses the approximate shipment weight
+     *
+     * @param $htmlContent
+     * @return int|null
+     */
+    private function parseWeight($htmlContent)
+    {
+
+        $weight = null;
+        $re = '/<td><span>(Weight|Gewicht)<\/span><\/td>.*?<td><span>(\d+) kg/';
+
+        if (preg_match($re, $htmlContent, $weightMatches)) {
+            $weight = (int)$weightMatches[2];
+        }
+
+        return $weight;
+    }
+
 }
