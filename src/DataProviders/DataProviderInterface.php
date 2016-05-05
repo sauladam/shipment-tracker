@@ -2,6 +2,9 @@
 
 namespace Sauladam\ShipmentTracker\DataProviders;
 
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Response;
+
 interface DataProviderInterface
 {
     /**
@@ -12,4 +15,10 @@ interface DataProviderInterface
      * @return string
      */
     public function get($url);
+
+    /**
+     * @param Request $request
+     * @return Response
+     */
+    public function request(Request $request);
 }

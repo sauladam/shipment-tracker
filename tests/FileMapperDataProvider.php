@@ -1,5 +1,6 @@
 <?php
 
+use GuzzleHttp\Psr7\Request;
 use Sauladam\ShipmentTracker\DataProviders\DataProviderInterface;
 
 class FileMapperDataProvider implements DataProviderInterface
@@ -48,6 +49,18 @@ class FileMapperDataProvider implements DataProviderInterface
     public function get($url)
     {
         return file_get_contents($this->mapToFile($url));
+    }
+
+    /**
+     * Request the given url.
+     *
+     * @param Request $request
+     *
+     * @return string
+     */
+    public function request(Request $request)
+    {
+        return file_get_contents($this->mapToFile($request->getUri()));
     }
 
 

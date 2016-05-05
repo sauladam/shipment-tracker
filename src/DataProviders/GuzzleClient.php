@@ -3,6 +3,7 @@
 namespace Sauladam\ShipmentTracker\DataProviders;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\Request;
 
 class GuzzleClient implements DataProviderInterface
 {
@@ -30,6 +31,11 @@ class GuzzleClient implements DataProviderInterface
      */
     public function get($url)
     {
-        return $this->client->get($url)->getBody()->getContents();
+        return $this->request(new Request('GET', $url))->getBody()->getContents();
+    }
+
+    public function request(Request $request)
+    {
+        return $this->client->send($request);
     }
 }
