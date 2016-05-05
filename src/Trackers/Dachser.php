@@ -1,15 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: malte
- * Date: 03.05.2016
- * Time: 22:58
- */
 
 namespace Sauladam\ShipmentTracker\Trackers;
 
-
 use Carbon\Carbon;
+use GuzzleHttp\Psr7\Request;
 use Sauladam\ShipmentTracker\Event;
 use Sauladam\ShipmentTracker\Track;
 
@@ -42,22 +36,7 @@ class Dachser extends AbstractTracker
      */
     protected function buildResponse($response)
     {
-        $dom = new \DOMDocument();
-        $dom->loadXML($response);
-        $htmlContent = '';
-
-        $components = $dom->getElementsByTagName('component');
-
-        foreach ($components as $component) {
-            /** @var \DOMElement $component */
-            if ($component->hasAttribute('id')) {
-                if ($component->getAttribute('id') == 'ide') {
-                    $htmlContent .= $component->textContent;
-                }
-            }
-        }
-        $htmlContent = preg_replace('/[\t\r\n]/', '', $htmlContent);
-
+        $htmlContent = $this->extractResponseTextFromXml($response);
 
         $track = new Track();
         $event = new Event();
@@ -78,30 +57,21 @@ class Dachser extends AbstractTracker
     private function parseStatusArray($dataString)
     {
 
-        $re = "/<\\/th> *<\\/tr>(.*?)<\\/tab/u";
+        $re = '/<\/th> *<\/tr>(.*?)<\/tab/u';
         preg_match($re, $dataString, $matches);
-
         if (!$matches) {
             throw new \RuntimeException("Could not parse status");
         }
 
-        $re = "/<td>(.*?)<\\/td><td>(.*?)<\\/td><td>(.*?)<\\/td><td>(.*?)<\\/td><td>(.*?)<\\/td>/u";
+        $re = '/<td>(.*?)<\/td><td>(.*?)<\/td><td>(.*?)<\/td><td>(.*?)<\/td><td>(.*?)<\/td>/u';
         preg_match($re, $matches[1], $statusItems);
-
         $strippedTags = array_map(function ($element) {
             return strip_tags($element);
         }, $statusItems);
 
-        $time = $this->extractTimeString($strippedTags[2]);
-
-        if (strpos($strippedTags[1], '/')) {
-            $parsedDate = Carbon::createFromFormat('m/d/Y H:i:s', $strippedTags[1] . $time . ":00");
-        } else {
-            $parsedDate = Carbon::createFromFormat('d.m.Y H:i:s', $strippedTags[1] . $time . ":00");
-        }
-
+        $carbonDate = $this->extractCarbonDate($strippedTags);
         $statusArray = [
-            'date' => $parsedDate,
+            'date' => $carbonDate,
             'via' => $strippedTags[4],
             'status' => $this->mapStatus($strippedTags[3])
         ];
@@ -204,4 +174,55 @@ class Dachser extends AbstractTracker
         return $weight;
     }
 
+    /**
+     * @param $response
+     * @return string
+     */
+    protected function extractResponseTextFromXml($response)
+    {
+        $dom = new \DOMDocument();
+        $dom->loadXML($response);
+        $htmlContent = '';
+        $components = $dom->getElementsByTagName('component');
+        foreach ($components as $component) {
+            /** @var \DOMElement $component */
+            if ($component->hasAttribute('id')) {
+                if ($component->getAttribute('id') == 'ide') {
+                    $htmlContent .= $component->textContent;
+                }
+            }
+        }
+        // Remove new lines to allow simpler regex patterns:
+        $htmlContent = preg_replace('/[\t\r\n]/', '', $htmlContent);
+
+        return $htmlContent;
+    }
+
+    /**
+     * @param $strippedTags
+     * @return static
+     */
+    private function extractCarbonDate($strippedTags)
+    {
+        $time = $this->extractTimeString($strippedTags[2]);
+        if (strpos($strippedTags[1], '/')) {
+            $parsedDate = Carbon::createFromFormat('m/d/Y H:i:s', $strippedTags[1] . $time . ":00");
+            return $parsedDate;
+        } else {
+            $parsedDate = Carbon::createFromFormat('d.m.Y H:i:s', $strippedTags[1] . $time . ":00");
+            return $parsedDate;
+        }
+    }
+
+    /**
+     * Get the contents of the given url.
+     *
+     * @param string $url
+     *
+     * @return string
+     */
+    protected function fetch($url)
+    {
+        return $this->getDataProvider()->request(new Request('POST', $url));
+    }
 }
