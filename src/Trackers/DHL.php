@@ -52,7 +52,7 @@ class DHL extends AbstractTracker
      */
     protected function getTrack(DOMXPath $xpath)
     {
-        $rows = $xpath->query("//div[@id='collapse-events-{$this->parcelNumber}_1']/div/table/tbody/tr");
+        $rows = $xpath->query("//div[@id='pieceEvents0']/div/div/div/table/tbody/tr");
 
         if (!$rows) {
             throw new \Exception("Unable to parse DHL tracking data for [{$this->parcelNumber}].");
@@ -145,15 +145,15 @@ class DHL extends AbstractTracker
     protected function getDate($dateString)
     {
         // The date comes in a format like
-        // Sa, 18.07.2015 12:21 Uhr or
-        // Sat, 18.07.2015 12:21 h
+        // Sa, 18.07.16 12:21 Uhr or
+        // Sat, 18.07.16 12:21 h
         // so we have to strip all characters in order to
         // let Carbon parse it and then convert it to the
         // standard format Y-m-d H:i:s
         $dateString = preg_replace('/[a-z]|[A-Z]|,/', '', $dateString);
         $dateString = trim($dateString);
 
-        return Carbon::parse($dateString);
+        return Carbon::createFromFormat('d.m.y H:i', $dateString);
     }
 
 
@@ -166,10 +166,10 @@ class DHL extends AbstractTracker
      */
     protected function getRecipient(DOMXPath $xpath)
     {
-        $node = $xpath->query("//td[@id='recipient_{$this->parcelNumber}']");
+        $node = $xpath->query("//div[contains(@class,'parcel-details')]/dl/dd");
 
-        if ($node) {
-            return $this->getNodeValue($node->item(0));
+        if ($node && $node->length > 1) {
+            return $this->getNodeValue($node->item(1));
         }
 
         return null;
@@ -205,6 +205,7 @@ class DHL extends AbstractTracker
                 'im Paketzentrum bearbeitet',
                 'Auftragsdaten zu dieser Sendung wurden vom Absender elektronisch an DHL',
                 'auf dem Weg zur PACKSTATION',
+                'wird in eine PACKSTATION weitergeleitet',
                 'Die Sendung wurde abgeholt',
                 'im Export-Paketzentrum bearbeitet',
                 'Sendung wird ins Zielland transportiert und dort an die Zustellorganisation',
@@ -217,6 +218,7 @@ class DHL extends AbstractTracker
                 'hipment has been loaded onto the delivery vehicle',
                 'A 2nd attempt at delivery is being made',
                 'shipment is on its way to the PACKSTATION',
+                'forwarded to a PACKSTATION',
                 'shipment could not be delivered to the PACKSTATION and has been forwarded to a retail outlet',
                 'A 2nd attempt at delivery is being made',
                 'Es erfolgt ein 2. Zustellversuch',
