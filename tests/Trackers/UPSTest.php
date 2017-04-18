@@ -100,6 +100,7 @@ class UPSTest extends TestCase
         $this->assertFalse($track->delivered());
     }
 
+
     /** @test */
     public function it_resolves_a_shipment_that_has_to_be_picked_up()
     {
