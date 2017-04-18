@@ -100,6 +100,19 @@ class UPSTest extends TestCase
         $this->assertFalse($track->delivered());
     }
 
+    /** @test */
+    public function it_resolves_a_shipment_that_has_to_be_picked_up()
+    {
+        $tracker = $this->getTracker('pickup.txt');
+
+        $track = $tracker->track('1ZW5244V6870294478');
+
+        $this->assertSame(Track::STATUS_PICKUP, $track->currentStatus());
+        $this->assertFalse($track->delivered());
+        $this->assertNull($track->getRecipient());
+        $this->assertCount(10, $track->events());
+    }
+
 
     /**
      * Build the tracker with a custom test client.

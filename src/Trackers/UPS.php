@@ -286,6 +286,12 @@ class UPS extends AbstractTracker
     protected function resolveState($statusDescription)
     {
         $statuses = [
+            Track::STATUS_PICKUP => [
+                'UPS Access Point™ possession',
+                'Beim UPS Access Point™',
+                'Delivered to UPS Access Point™',
+                'An UPS Access Point™ zugestellt'
+            ],
             Track::STATUS_DELIVERED => [
                 'Delivered',
                 'Zugestellt'
@@ -303,7 +309,8 @@ class UPS extends AbstractTracker
                 'A final attempt will be made',
                 'ltiger Versuch erfolgt',
                 'Will deliver to a nearby UPS Access Point™ for customer pick up',
-                'Zustellung wird zur Abholung durch Kunden an nahem UPS Access Point™ abgegeben'
+                'Zustellung wird zur Abholung durch Kunden an nahem UPS Access Point™ abgegeben',
+                'Customer was not available when UPS attempted delivery',
             ],
             Track::STATUS_WARNING => [
                 'attempting to obtain a new delivery address',
