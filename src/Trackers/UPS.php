@@ -92,7 +92,7 @@ class UPS extends AbstractTracker
      * Parse the row of the history table.
      *
      * @param DOMElement $row
-     * @param DOMXPath   $xpath
+     * @param DOMXPath $xpath
      *
      * @return array
      */
@@ -174,7 +174,21 @@ class UPS extends AbstractTracker
      */
     protected function getDate($date, $time)
     {
+        $time = $this->removeTimeZone($time);
+
         return Carbon::parse("$date $time");
+    }
+
+
+    /**
+     * Remove timezone indications like "(ET)".
+     *
+     * @param string $time
+     * @return string
+     */
+    protected function removeTimeZone($time)
+    {
+        return preg_replace('/\([A-Z]+\)/i', '', $time);
     }
 
 
@@ -187,13 +201,77 @@ class UPS extends AbstractTracker
      */
     protected function getRecipient(DOMXPath $xpath)
     {
-        $nodes = $xpath->query("//fieldset//dl/dt");
+        $nodes = $xpath->query("//fieldset//dl");
 
-        if ($nodes) {
-            return $this->getNodeValue($nodes->item(3));
+        foreach ($nodes as $node) {
+            $descriptionTerm = $this->getFirstNonEmptyChildNodeValue($node);
+
+            $describesRecipient = $this->startsWith('Received By:', $descriptionTerm)
+                || $this->startsWith('Entgegengenommen von:', $descriptionTerm);
+
+            if ($describesRecipient) {
+                return $this->getLastNonEmptyChildNodeValue($node);
+            }
         }
 
         return null;
+    }
+
+
+    /**
+     * Get the first non empty child node value of the given element.
+     *
+     * @param DOMElement $element
+     * @return null|string
+     */
+    protected function getFirstNonEmptyChildNodeValue(DOMElement $element)
+    {
+        foreach ($element->childNodes as $cn) {
+            $value = $this->getNodeValue($cn);
+
+            if (!empty($value)) {
+                return $value;
+            }
+        }
+
+        return null;
+    }
+
+
+    /**
+     * Get the last non empty child node value of the given element.
+     *
+     * @param DOMElement $element
+     * @return null|string
+     */
+    protected function getLastNonEmptyChildNodeValue(DOMElement $element)
+    {
+        if (!$element->hasChildNodes()) {
+            return null;
+        }
+
+        $value = $this->getNodeValue($element->lastChild);
+
+        if (!empty($value)) {
+            return $value;
+        }
+
+        $element->removeChild($element->lastChild);
+
+        return $this->getLastNonEmptyChildNodeValue($element);
+    }
+
+
+    /**
+     * Check if the subject starts with the given string.
+     *
+     * @param string $start
+     * @param string $subject
+     * @return bool
+     */
+    protected function startsWith($start, $subject)
+    {
+        return strpos($subject, $start) === 0;
     }
 
 
@@ -223,6 +301,8 @@ class UPS extends AbstractTracker
                 'The address has been corrected',
                 'A final attempt will be made',
                 'ltiger Versuch erfolgt',
+                'Will deliver to a nearby UPS Access Point™ for customer pick up',
+                'Zustellung wird zur Abholung durch Kunden an nahem UPS Access Point™ abgegeben'
             ],
             Track::STATUS_WARNING => [
                 'attempting to obtain a new delivery address',
@@ -259,8 +339,8 @@ class UPS extends AbstractTracker
      * Build the url for the given tracking number.
      *
      * @param string $trackingNumber
-     * @param null   $language
-     * @param array  $params
+     * @param null $language
+     * @param array $params
      *
      * @return string
      */
