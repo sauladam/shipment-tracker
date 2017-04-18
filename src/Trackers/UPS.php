@@ -207,6 +207,7 @@ class UPS extends AbstractTracker
             $descriptionTerm = $this->getFirstNonEmptyChildNodeValue($node);
 
             $describesRecipient = $this->startsWith('Received By:', $descriptionTerm)
+                || $this->startsWith('Signed By:', $descriptionTerm)
                 || $this->startsWith('Entgegengenommen von:', $descriptionTerm);
 
             if ($describesRecipient) {
