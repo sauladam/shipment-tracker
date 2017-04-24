@@ -82,6 +82,11 @@ class UPS extends AbstractTracker
             if (array_key_exists('recipient', $eventData)) {
                 $track->setRecipient($eventData['recipient']);
             }
+
+            if (array_key_exists('access_point_details', $eventData)) {
+                $track->addAdditionalDetails('accessPoint', $eventData['access_point_details']['location']);
+                $track->addAdditionalDetails('pickupDueDate', $eventData['access_point_details']['pick_up_due_date']);
+            }
         }
 
         return $track->sortEvents();
@@ -145,6 +150,10 @@ class UPS extends AbstractTracker
             $rowData['recipient'] = $recipient;
         }
 
+        if ($status == Track::STATUS_PICKUP && $accessPointDetails = $this->getAccessPointDetails($xpath)) {
+            $rowData['access_point_details'] = $accessPointDetails;
+        }
+
         return $rowData;
     }
 
@@ -153,14 +162,46 @@ class UPS extends AbstractTracker
      * Get the node value.
      *
      * @param DOMText|DOMNode $element
+     * @param bool $preserveLineBreaks
      *
      * @return string
      */
-    protected function getNodeValue($element)
+    protected function getNodeValue($element, $preserveLineBreaks = false)
     {
-        $value = trim($element->nodeValue);
+        $value = $preserveLineBreaks
+            ? $this->getNodeValueWithLineBreaks($element)
+            : $element->nodeValue;
+
+        $value = trim($value);
 
         return preg_replace('/\s\s+/', ' ', $value);
+    }
+
+
+    /**
+     * Get the node value but mark line breaks with a '|' (pipe).
+     *
+     * @param DOMText|DOMNode $element
+     * @return string
+     */
+    protected function getNodeValueWithLineBreaks($element)
+    {
+        if (!$element->hasChildNodes()) {
+            return $element->nodeValue;
+        }
+
+        $value = '';
+
+        foreach ($element->childNodes as $node) {
+            if ($node->nodeType != XML_ELEMENT_NODE || $node->nodeName != 'br') {
+                $value .= $this->getNodeValue($node);
+                continue;
+            }
+
+            $value .= "|";
+        }
+
+        return rtrim($value, '|');
     }
 
 
@@ -193,25 +234,99 @@ class UPS extends AbstractTracker
 
 
     /**
-     * Parse the recipient.
+     * Get the access point address and the pickup due date.
      *
      * @param DOMXPath $xpath
+     * @return array|null
+     */
+    protected function getAccessPointDetails(DOMXPath $xpath)
+    {
+        $location = $this->getDescriptionForTerm([
+            'UPS Access PointTM Location:',
+            'Standort des UPS Access PointTM:',
+        ], $xpath, true);
+
+        if (!$location) {
+            return null;
+        }
+
+        $pickUpDueDate = $this->getDescriptionForTerm([
+            'Paket muss abgeholt werden bis:',
+            'Package must be collected by:',
+        ], $xpath);
+
+        return [
+            'location' => $location,
+            'pick_up_due_date' => $this->dueDateAsCarbonOrAsIs($pickUpDueDate),
+        ];
+    }
+
+
+    /**
+     * Try to parse the pickup due date to a Carbon instance, otherwise return
+     * the original string.
      *
+     * @param $dueDateString
+     * @return \Carbon\Carbon|string
+     */
+    protected function dueDateAsCarbonOrAsIs($dueDateString)
+    {
+        $matched = preg_match("/\d{2}\.\d{2}\.\d{4}/", $dueDateString, $matches);
+
+        if (!$matched) {
+            return $dueDateString;
+        }
+
+        try {
+            return Carbon::createFromDate($matched['2'], $matched[1], $matched[0]);
+        } catch (\InvalidArgumentException $exception) {
+            return $dueDateString;
+        }
+    }
+
+
+    /**
+     * Get the recipient.
+     *
+     * @param DOMXPath $xpath
      * @return null|string
      */
     protected function getRecipient(DOMXPath $xpath)
     {
+        return $this->getDescriptionForTerm([
+            'Received By:',
+            'Signed By:',
+            'Entgegengenommen von:',
+        ], $xpath);
+    }
+
+
+    /**
+     * Get the description for the given terms.
+     *
+     * @param $term
+     * @param DOMXPath $xpath
+     * @param bool $withLineBreaks
+     *
+     * @return null|string
+     */
+    protected function getDescriptionForTerm($term, DOMXPath $xpath, $withLineBreaks = false)
+    {
+        $terms = is_array($term) ? $term : [$term];
+
         $nodes = $xpath->query("//fieldset//dl");
+
+        if (!$nodes) {
+            return null;
+        }
 
         foreach ($nodes as $node) {
             $descriptionTerm = $this->getFirstNonEmptyChildNodeValue($node);
 
-            $describesRecipient = $this->startsWith('Received By:', $descriptionTerm)
-                || $this->startsWith('Signed By:', $descriptionTerm)
-                || $this->startsWith('Entgegengenommen von:', $descriptionTerm);
-
-            if ($describesRecipient) {
-                return $this->getLastNonEmptyChildNodeValue($node);
+            foreach ($terms as $term) {
+                if ($this->startsWith($term, $descriptionTerm)) {
+                    return $this->getLastNonEmptyChildNodeValue($node, $withLineBreaks);
+                }
             }
         }
 
@@ -243,15 +358,17 @@ class UPS extends AbstractTracker
      * Get the last non empty child node value of the given element.
      *
      * @param DOMElement $element
+     * @param bool $withLineBreaks
+     *
      * @return null|string
      */
-    protected function getLastNonEmptyChildNodeValue(DOMElement $element)
+    protected function getLastNonEmptyChildNodeValue(DOMElement $element, $withLineBreaks = false)
     {
         if (!$element->hasChildNodes()) {
             return null;
         }
 
-        $value = $this->getNodeValue($element->lastChild);
+        $value = $this->getNodeValue($element->lastChild, $withLineBreaks);
 
         if (!empty($value)) {
             return $value;
@@ -259,7 +376,7 @@ class UPS extends AbstractTracker
 
         $element->removeChild($element->lastChild);
 
-        return $this->getLastNonEmptyChildNodeValue($element);
+        return $this->getLastNonEmptyChildNodeValue($element, $withLineBreaks);
     }
 
 

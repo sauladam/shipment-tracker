@@ -115,6 +115,19 @@ class UPSTest extends TestCase
     }
 
 
+    /** @test */
+    public function it_parses_the_access_point_details_and_the_pickup_due_date()
+    {
+        $tracker = $this->getTracker('pickup.txt');
+
+        $track = $tracker->track('1ZW5244V6870294478');
+
+        $this->assertSame('REITERSHOP|13 WEIMARER STRASSE|WIEN, 1180 AT', $track->getAdditionalDetails('accessPoint'));
+        $this->assertInstanceOf(\Carbon\Carbon::class, $track->getAdditionalDetails('pickupDueDate'));
+        $this->assertSame($track->getAdditionalDetails('pickupDueDate')->format('Y-m-d'), "2017-04-24");
+    }
+
+
     /**
      * Build the tracker with a custom test client.
      *

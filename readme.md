@@ -114,7 +114,13 @@ $url = $dhlTracker->trackingUrl('00340434127681930812', 'en', ['zip' => '12345']
 
 ## Other features
 ### Additional details
-Tracks and Events both can hold additional details, accessible via e.g. `$track->getAdditionalDetails('parcelShop')`. Currently, this is only interesting for GLS, where `$track->getAdditionalDetails('parcelShop')` holds the address and the opening hours of the parcel shop if the parcel was delivered there.
+Tracks and Events both can hold additional details, accessible via e.g. `$track->getAdditionalDetails('foo')`. Currently, this is only relevant for GLS and UPS:
+- **GLS:** 
+  - `$track->getAdditionalDetails('parcelShop')` gets the parcel shop details and the opening hours if the parcel was delivered to one
+  
+- **UPS:** 
+  - `$track->getAdditionalDetails('accessPoint')` gets the address of the access point if the parcel was delivered to one
+  - `$track->getAdditionalDetails('pickupDueDate')` gets the pickup due date as a Carbon instance
 
 ### Data Providers
 By default, this package uses Guzzle as well as the PHP Http client (a.k.a. `file_get_contents()`) to fetch the data. You can pass your own provider if you need to, e.g. if you have the page contents chillin' somewhere in a cache. Just make sure that it implements `Sauladam\ShipmentTracker\DataProviders\DataProviderInterface`, which only requires a `get()` method.
