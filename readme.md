@@ -14,14 +14,10 @@ Some parcel services give you a really hard time when it comes to registering so
 
 ## Installation
 
-Just pull this package in through composer by adding it to your `composer.json` file:
+Just pull this package in through composer or by adding it to your `composer.json` file:
 
-```json
-{
-    "require": {
-        "sauladam/shipment-tracker": "~0.2"
-    }
-}
+```bash
+$ composer require sauladam/shipment-tracker
 ```
 
 Don't forget to run 
