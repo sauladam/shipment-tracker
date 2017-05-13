@@ -124,7 +124,7 @@ class UPSTest extends TestCase
 
         $this->assertSame('REITERSHOP|13 WEIMARER STRASSE|WIEN, 1180 AT', $track->getAdditionalDetails('accessPoint'));
         $this->assertInstanceOf(\Carbon\Carbon::class, $track->getAdditionalDetails('pickupDueDate'));
-        $this->assertSame($track->getAdditionalDetails('pickupDueDate')->format('Y-m-d'), "2017-04-24");
+        $this->assertSame("2017-04-24", $track->getAdditionalDetails('pickupDueDate')->format('Y-m-d'));
     }
 
 

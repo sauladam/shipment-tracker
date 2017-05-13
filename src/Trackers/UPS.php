@@ -271,14 +271,14 @@ class UPS extends AbstractTracker
      */
     protected function dueDateAsCarbonOrAsIs($dueDateString)
     {
-        $matched = preg_match("/\d{2}\.\d{2}\.\d{4}/", $dueDateString, $matches);
+        $matched = preg_match("/(\d{2})\.(\d{2})\.(\d{4})/", $dueDateString, $matches);
 
         if (!$matched) {
             return $dueDateString;
         }
 
         try {
-            return Carbon::createFromDate($matched['2'], $matched[1], $matched[0]);
+            return Carbon::createFromDate($matches[3], $matches[2], $matches[1]);
         } catch (\InvalidArgumentException $exception) {
             return $dueDateString;
         }
