@@ -5,14 +5,15 @@ namespace Sauladam\ShipmentTracker\Trackers;
 use Carbon\Carbon;
 use DOMDocument;
 use DOMElement;
-use DOMNode;
-use DOMText;
 use DOMXPath;
 use Sauladam\ShipmentTracker\Event;
 use Sauladam\ShipmentTracker\Track;
+use Sauladam\ShipmentTracker\Utils\XmlHelpers;
 
 class DHL extends AbstractTracker
 {
+    use XmlHelpers;
+
     /**
      * @var string
      */
@@ -78,7 +79,7 @@ class DHL extends AbstractTracker
      * Parse the row of the history table.
      *
      * @param DOMElement $row
-     * @param DOMXPath   $xpath
+     * @param DOMXPath $xpath
      *
      * @return array
      */
@@ -121,21 +122,6 @@ class DHL extends AbstractTracker
 
 
     /**
-     * Get the node value.
-     *
-     * @param DOMText|DOMNode $element
-     *
-     * @return string
-     */
-    protected function getNodeValue($element)
-    {
-        $value = trim($element->nodeValue);
-
-        return preg_replace('/\s\s+/', ' ', $value);
-    }
-
-
-    /**
      * Parse the date from the given string.
      *
      * @param string $dateString
@@ -167,7 +153,7 @@ class DHL extends AbstractTracker
     protected function getRecipient(DOMXPath $xpath)
     {
         $node = $xpath->query("//div[contains(@class,'parcel-details')]/dl/dd");
-    
+
         if ($node && $node->length >= 1) {
             return $this->getNodeValue($node->item($node->length - 1));
         }
@@ -262,9 +248,9 @@ class DHL extends AbstractTracker
     /**
      * Build the url for the given tracking number.
      *
-     * @param string      $trackingNumber
+     * @param string $trackingNumber
      * @param string|null $language
-     * @param array       $params
+     * @param array $params
      *
      * @return string
      */

@@ -10,9 +10,13 @@ use DOMText;
 use DOMXPath;
 use Sauladam\ShipmentTracker\Event;
 use Sauladam\ShipmentTracker\Track;
+use Sauladam\ShipmentTracker\Utils\XmlHelpers;
 
 class USPS extends AbstractTracker
 {
+    use XmlHelpers {
+        getNodeValue as normalizedNodeValue;
+    }
 
     /**
      * @var string
@@ -29,8 +33,8 @@ class USPS extends AbstractTracker
      * Build the url for the given tracking number.
      *
      * @param string $trackingNumber
-     * @param null   $language
-     * @param array  $params
+     * @param null $language
+     * @param array $params
      *
      * @return string
      */
@@ -162,18 +166,13 @@ class USPS extends AbstractTracker
      * Get the node value.
      *
      * @param DOMText|DOMNode $element
+     * @param bool $withLineBreaks
      *
      * @return string
      */
-    protected function getNodeValue($element)
+    protected function getNodeValue($element, $withLineBreaks = false)
     {
-        $value = trim($element->nodeValue);
-
-        $value = preg_replace('/\s\s+/', ' ', $value);
-
-        $value = preg_replace('/\s,/', ',', $value);
-
-        return $value;
+        return preg_replace('/\s,/', '', $this->normalizedNodeValue($element, $withLineBreaks));
     }
 
 

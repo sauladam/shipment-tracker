@@ -5,14 +5,15 @@ namespace Sauladam\ShipmentTracker\Trackers;
 use Carbon\Carbon;
 use DOMDocument;
 use DOMElement;
-use DOMNode;
-use DOMText;
 use DOMXPath;
 use Sauladam\ShipmentTracker\Event;
 use Sauladam\ShipmentTracker\Track;
+use Sauladam\ShipmentTracker\Utils\XmlHelpers;
 
 class UPS extends AbstractTracker
 {
+    use XmlHelpers;
+
     /**
      * @var string
      */
@@ -159,53 +160,6 @@ class UPS extends AbstractTracker
 
 
     /**
-     * Get the node value.
-     *
-     * @param DOMText|DOMNode $element
-     * @param bool $preserveLineBreaks
-     *
-     * @return string
-     */
-    protected function getNodeValue($element, $preserveLineBreaks = false)
-    {
-        $value = $preserveLineBreaks
-            ? $this->getNodeValueWithLineBreaks($element)
-            : $element->nodeValue;
-
-        $value = trim($value);
-
-        return preg_replace('/\s\s+/', ' ', $value);
-    }
-
-
-    /**
-     * Get the node value but mark line breaks with a '|' (pipe).
-     *
-     * @param DOMText|DOMNode $element
-     * @return string
-     */
-    protected function getNodeValueWithLineBreaks($element)
-    {
-        if (!$element->hasChildNodes()) {
-            return $element->nodeValue;
-        }
-
-        $value = '';
-
-        foreach ($element->childNodes as $node) {
-            if ($node->nodeType != XML_ELEMENT_NODE || $node->nodeName != 'br') {
-                $value .= $this->getNodeValue($node);
-                continue;
-            }
-
-            $value .= "|";
-        }
-
-        return rtrim($value, '|');
-    }
-
-
-    /**
      * Parse the date from the given strings.
      *
      * @param $date
@@ -298,98 +252,6 @@ class UPS extends AbstractTracker
             'Signed By:',
             'Entgegengenommen von:',
         ], $xpath);
-    }
-
-
-    /**
-     * Get the description for the given terms.
-     *
-     * @param $term
-     * @param DOMXPath $xpath
-     * @param bool $withLineBreaks
-     *
-     * @return null|string
-     */
-    protected function getDescriptionForTerm($term, DOMXPath $xpath, $withLineBreaks = false)
-    {
-        $terms = is_array($term) ? $term : [$term];
-
-        $nodes = $xpath->query("//fieldset//dl");
-
-        if (!$nodes) {
-            return null;
-        }
-
-        foreach ($nodes as $node) {
-            $descriptionTerm = $this->getFirstNonEmptyChildNodeValue($node);
-
-            foreach ($terms as $term) {
-                if ($this->startsWith($term, $descriptionTerm)) {
-                    return $this->getLastNonEmptyChildNodeValue($node, $withLineBreaks);
-                }
-            }
-        }
-
-        return null;
-    }
-
-
-    /**
-     * Get the first non empty child node value of the given element.
-     *
-     * @param DOMElement $element
-     * @return null|string
-     */
-    protected function getFirstNonEmptyChildNodeValue(DOMElement $element)
-    {
-        foreach ($element->childNodes as $cn) {
-            $value = $this->getNodeValue($cn);
-
-            if (!empty($value)) {
-                return $value;
-            }
-        }
-
-        return null;
-    }
-
-
-    /**
-     * Get the last non empty child node value of the given element.
-     *
-     * @param DOMElement $element
-     * @param bool $withLineBreaks
-     *
-     * @return null|string
-     */
-    protected function getLastNonEmptyChildNodeValue(DOMElement $element, $withLineBreaks = false)
-    {
-        if (!$element->hasChildNodes()) {
-            return null;
-        }
-
-        $value = $this->getNodeValue($element->lastChild, $withLineBreaks);
-
-        if (!empty($value)) {
-            return $value;
-        }
-
-        $element->removeChild($element->lastChild);
-
-        return $this->getLastNonEmptyChildNodeValue($element, $withLineBreaks);
-    }
-
-
-    /**
-     * Check if the subject starts with the given string.
-     *
-     * @param string $start
-     * @param string $subject
-     * @return bool
-     */
-    protected function startsWith($start, $subject)
-    {
-        return strpos($subject, $start) === 0;
     }
 
 
