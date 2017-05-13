@@ -66,11 +66,18 @@ trait XmlHelpers
      * @param $term
      * @param DOMXPath $xpath
      * @param bool $withLineBreaks
+     * @param string $termTag
+     * @param string $descriptionTag
      *
      * @return null|string
      */
-    protected function getDescriptionForTerm($term, DOMXPath $xpath, $withLineBreaks = false)
-    {
+    protected function getDescriptionForTerm(
+        $term,
+        DOMXPath $xpath,
+        $withLineBreaks = false,
+        $termTag = 'dt',
+        $descriptionTag = 'dd'
+    ) {
         $terms = is_array($term) ? $term : [$term];
 
         $listNodes = $xpath->query("//dl");
@@ -79,48 +86,30 @@ trait XmlHelpers
             return null;
         }
 
+        $descriptionPairBelongsToTerm = false;
+
         foreach ($listNodes as $list) {
-            $descriptionTerm = $this->getNodeValue($list->getElementsByTagName('dt')->item(0));
-
-            if (!$descriptionTerm) {
-                continue;
-            }
-
-            foreach ($terms as $term) {
-                if (!$this->startsWith($term, $descriptionTerm)) {
+            foreach ($list->childNodes as $descriptionNode) {
+                if (get_class($descriptionNode) != DOMElement::class) {
                     continue;
                 }
 
-                $descriptions = $list->getElementsByTagName('dd');
+                if ($descriptionNode->tagName == $descriptionTag && $descriptionPairBelongsToTerm) {
+                    return $this->getNodeValue($descriptionNode, $withLineBreaks);
+                }
 
-                return $descriptions->length > 0
-                    ? $this->getNodeValue($descriptions->item(0), $withLineBreaks)
-                    : $this->getFallbackDescription($list, $term, $withLineBreaks);
-            }
-        }
+                if ($descriptionNode->tagName != $termTag) {
+                    continue;
+                }
 
-        return null;
-    }
+                $descriptionTerm = $this->getNodeValue($descriptionNode);
 
-
-    /**
-     * If there was no dd-element in a description list (dl), check if there is a dt-element that does
-     * not start with the description term. This mainly concerns UPS' markup, where the dd-elements
-     * are missing and the descriptions are declared as dt-elements.
-     *
-     * @param DOMElement $list
-     * @param $term
-     * @param $withLineBreaks
-     *
-     * @return null|string
-     */
-    protected function getFallbackDescription(DOMElement $list, $term, $withLineBreaks)
-    {
-        foreach ($list->getElementsByTagName('dt') as $possibleDescriptionNode) {
-            $possibleDescription = $this->getNodeValue($possibleDescriptionNode, $withLineBreaks);
-
-            if ($possibleDescription && !$this->startsWith($term, $possibleDescription)) {
-                return $possibleDescription;
+                foreach ($terms as $term) {
+                    if ($this->startsWith($term, $descriptionTerm)) {
+                        $descriptionPairBelongsToTerm = true;
+                        break;
+                    }
+                }
             }
         }
 

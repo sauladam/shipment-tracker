@@ -251,7 +251,7 @@ class UPS extends AbstractTracker
             'Received By:',
             'Signed By:',
             'Entgegengenommen von:',
-        ], $xpath);
+        ], $xpath, false, 'dt', 'dt');
     }
 
 
