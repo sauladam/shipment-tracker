@@ -167,9 +167,9 @@ class DHL extends AbstractTracker
     protected function getRecipient(DOMXPath $xpath)
     {
         $node = $xpath->query("//div[contains(@class,'parcel-details')]/dl/dd");
-
-        if ($node && $node->length > 1) {
-            return $this->getNodeValue($node->item(1));
+    
+        if ($node && $node->length >= 1) {
+            return $this->getNodeValue($node->item($node->length - 1));
         }
 
         return null;
