@@ -115,6 +115,20 @@ class DHLExpressTest extends TestCase
 
 
     /** @test */
+    public function it_adds_the_pieces_ids_to_the_track()
+    {
+        $tracker = $this->getTracker('delivered.txt');
+
+        $track = $tracker->track('5765159960');
+
+        $pieces = $track->getAdditionalDetails('pieces');
+
+        $this->assertCount(1, $pieces);
+        $this->assertSame('JD014600004444917061', $pieces[0]);
+    }
+
+
+    /** @test */
     public function it_adds_the_pieces_ids_to_the_events()
     {
         $tracker = $this->getTracker('delivered.txt');

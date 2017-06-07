@@ -75,6 +75,10 @@ class DHLExpress extends AbstractTracker
             $track->setRecipient($this->getRecipient($shipment));
         }
 
+        if (isset($shipment->pieces) && isset($shipment->pieces->pIds)) {
+            $track->addAdditionalDetails('pieces', $shipment->pieces->pIds);
+        }
+
         return $track->sortEvents();
     }
 
