@@ -1,6 +1,6 @@
 # Shipment Tracker
 
-**A simple tool to scrape the parcel tracking data for DHL, GLS, UPS, USPS, and Swiss Post Service**
+**A simple tool to scrape the parcel tracking data for DHL, DHL Express, GLS, UPS, USPS, and Swiss Post Service**
 
 [![Build Status](https://travis-ci.org/sauladam/shipment-tracker.svg?branch=master)](https://travis-ci.org/sauladam/shipment-tracker)
 [![Total Downloads](https://poser.pugx.org/sauladam/shipment-tracker/downloads)](https://packagist.org/packages/sauladam/shipment-tracker)
@@ -30,6 +30,7 @@ after that.
 The following carriers and languages are currently supported by this package:
 
 - DHL (de, en)
+- DHL Express (de, en) (so far only for waybill numbers, not for shipment numbers of the individual pieces)
 - GLS (de, en)
 - UPS (de, en)
 - USPS (en)
@@ -117,6 +118,10 @@ Tracks and Events both can hold additional details, accessible via e.g. `$track-
 - **UPS:** 
   - `$track->getAdditionalDetails('accessPoint')` gets the address of the access point if the parcel was delivered to one
   - `$track->getAdditionalDetails('pickupDueDate')` gets the pickup due date as a Carbon instance
+  
+- **DHL Express (waybills):** 
+  - `$track->getAdditionalDetails('pieces')` gets the tracking numbers of the individual pieces that belong to this shipment 
+  - `$event->getAdditionalDetails('pieces')` gets the tracking numbers of the individual pieces to which this event applies
 
 ### Data Providers
 By default, this package uses Guzzle as well as the PHP Http client (a.k.a. `file_get_contents()`) to fetch the data. You can pass your own provider if you need to, e.g. if you have the page contents chillin' somewhere in a cache. Just make sure that it implements `Sauladam\ShipmentTracker\DataProviders\DataProviderInterface`, which only requires a `get()` method.
