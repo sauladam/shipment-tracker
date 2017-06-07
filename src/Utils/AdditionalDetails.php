@@ -30,21 +30,19 @@ trait AdditionalDetails
      * Get additional information.
      *
      * @param string|null $key
+     * @param null $default
      *
      * @return array
-     * @throws \Exception
      */
-    public function getAdditionalDetails($key = null)
+    public function getAdditionalDetails($key = null, $default = null)
     {
         if (!$key) {
             return $this->additional;
         }
 
-        if (!array_key_exists($key, $this->additional)) {
-            throw  new \Exception("No additional data set for [{$key}].");
-        }
-
-        return $this->additional[$key];
+        return array_key_exists($key, $this->additional)
+            ? $this->additional[$key]
+            : $default;
     }
 
 

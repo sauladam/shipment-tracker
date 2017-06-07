@@ -1,6 +1,6 @@
 <?php
 
-class AdditionalInformationTest extends TestCase
+class AdditionalDetailsTest extends TestCase
 {
     /** @test */
     public function it_adds_additional_information()
@@ -36,15 +36,12 @@ class AdditionalInformationTest extends TestCase
     }
 
 
-    /**
-     * @test
-     * @expectedException Exception
-     */
-    public function it_throws_an_exception_if_the_key_does_not_exist()
+    /** @test */
+    public function it_returns_the_default_value_if_the_given_key_does_not_exist()
     {
         $testClass = new AdditionalTestClass;
 
-        $testClass->getAdditionalDetails('non-existent');
+        $this->assertSame('foo', $testClass->getAdditionalDetails('non-existent', 'foo'));
     }
 }
 
