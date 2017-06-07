@@ -1,0 +1,171 @@
+
+{
+  "results" : [ {
+    "id" : "5765159960",
+    "label" : "Waybill",
+    "type" : "airwaybill",
+    "duplicate" : false,
+    "delivery" : {
+      "code" : "101",
+      "status" : "delivered"
+    },
+    "origin" : {
+      "value" : "ROTTERDAM - DEN HAAG - NETHERLANDS, THE",
+      "label" : "Origin Service Area",
+      "url" : "http://www.dhl.nl/en/country_profile.html"
+    },
+    "destination" : {
+      "value" : "SAN FRANCISCO, CA - San Francisco - USA",
+      "label" : "Destination Service Area",
+      "url" : "http://www.dhl-usa.com/en/country_profile.html"
+    },
+    "description" : "Signed for by: SDA Friday, May 26, 2017  at 14:23",
+    "hasDuplicateShipment" : false,
+    "signature" : {
+      "link" : {
+        "url" : "https://webpod.dhl.com/webPOD/DHLePODRequest?hwb=cYCJzMUFoiC%2BdPAZG4OgTQ%3D%3D&pudate=GVM71SQC%2Fb7tWrHfRQuSGw%3D%3D&appuid=0N0K7SHOIOS83AxRjX6MPg%3D%3D&language=en&country=G0",
+        "label" : "Get Signature Proof of Delivery"
+      },
+      "type" : "epod",
+      "description" : "Friday, May 26, 2017  at 14:23",
+      "signatory" : "SDA",
+      "label" : "Signed for by",
+      "help" : "help"
+    },
+    "pieces" : {
+      "value" : 1,
+      "label" : "Piece",
+      "showSummary" : true,
+      "pIds" : [ "JD014600004444917061" ]
+    },
+    "checkpoints" : [ {
+      "counter" : 16,
+      "description" : "Delivered - Signed for by : SDA",
+      "time" : "14:23",
+      "date" : "Friday, May 26, 2017 ",
+      "location" : "San Francisco                      ",
+      "totalPieces" : 1,
+      "pIds" : [ "JD014600004444917061" ]
+    }, {
+      "counter" : 15,
+      "description" : "With delivery courier",
+      "time" : "10:14",
+      "date" : "Friday, May 26, 2017 ",
+      "location" : "SAN FRANCISCO, CA - USA",
+      "totalPieces" : 1,
+      "pIds" : [ "JD014600004444917061" ]
+    }, {
+      "counter" : 14,
+      "description" : "Arrived at Delivery Facility in  SAN FRANCISCO - USA",
+      "time" : "07:55",
+      "date" : "Friday, May 26, 2017 ",
+      "location" : "SAN FRANCISCO, CA - USA",
+      "totalPieces" : 1,
+      "pIds" : [ "JD014600004444917061" ]
+    }, {
+      "counter" : 13,
+      "description" : "Departed Facility in  SAN FRANCISCO GATEWAY - USA",
+      "time" : "07:21",
+      "date" : "Friday, May 26, 2017 ",
+      "location" : "SAN FRANCISCO GATEWAY, CA - USA",
+      "totalPieces" : 1,
+      "pIds" : [ "JD014600004444917061" ]
+    }, {
+      "counter" : 12,
+      "description" : "Transferred through  SAN FRANCISCO GATEWAY - USA",
+      "time" : "07:17",
+      "date" : "Friday, May 26, 2017 ",
+      "location" : "SAN FRANCISCO GATEWAY, CA - USA",
+      "totalPieces" : 1,
+      "pIds" : [ "JD014600004444917061" ]
+    }, {
+      "counter" : 11,
+      "description" : "Arrived at Sort Facility  SAN FRANCISCO GATEWAY - USA",
+      "time" : "06:30",
+      "date" : "Friday, May 26, 2017 ",
+      "location" : "SAN FRANCISCO GATEWAY, CA - USA",
+      "totalPieces" : 1,
+      "pIds" : [ "JD014600004444917061" ]
+    }, {
+      "counter" : 10,
+      "description" : "Departed Facility in  LOS ANGELES GATEWAY - USA",
+      "time" : "05:21",
+      "date" : "Friday, May 26, 2017 ",
+      "location" : "LOS ANGELES GATEWAY, CA - USA",
+      "totalPieces" : 1,
+      "pIds" : [ "JD014600004444917061" ]
+    }, {
+      "counter" : 9,
+      "description" : "Processed at  LOS ANGELES GATEWAY - USA",
+      "time" : "05:08",
+      "date" : "Friday, May 26, 2017 ",
+      "location" : "LOS ANGELES GATEWAY, CA - USA",
+      "totalPieces" : 1,
+      "pIds" : [ "JD014600004444917061" ]
+    }, {
+      "counter" : 8,
+      "description" : "Clearance processing complete at  LOS ANGELES GATEWAY - USA",
+      "time" : "20:55",
+      "date" : "Thursday, May 25, 2017 ",
+      "location" : "LOS ANGELES GATEWAY, CA - USA",
+      "totalPieces" : 1,
+      "pIds" : [ "JD014600004444917061" ]
+    }, {
+      "counter" : 7,
+      "description" : "Arrived at Sort Facility  LOS ANGELES GATEWAY - USA",
+      "time" : "20:23",
+      "date" : "Thursday, May 25, 2017 ",
+      "location" : "LOS ANGELES GATEWAY, CA - USA",
+      "totalPieces" : 1,
+      "pIds" : [ "JD014600004444917061" ]
+    }, {
+      "counter" : 6,
+      "description" : "Customs status updated",
+      "time" : "07:43",
+      "date" : "Thursday, May 25, 2017 ",
+      "location" : "LOS ANGELES GATEWAY, CA - USA"
+    }, {
+      "counter" : 5,
+      "description" : "Departed Facility in  AMSTERDAM - NETHERLANDS, THE",
+      "time" : "08:50",
+      "date" : "Thursday, May 25, 2017 ",
+      "location" : "AMSTERDAM - NETHERLANDS, THE",
+      "totalPieces" : 1,
+      "pIds" : [ "JD014600004444917061" ]
+    }, {
+      "counter" : 4,
+      "description" : "Processed at  AMSTERDAM - NETHERLANDS, THE",
+      "time" : "05:22",
+      "date" : "Thursday, May 25, 2017 ",
+      "location" : "AMSTERDAM - NETHERLANDS, THE",
+      "totalPieces" : 1,
+      "pIds" : [ "JD014600004444917061" ]
+    }, {
+      "counter" : 3,
+      "description" : "Departed Facility in  ROTTERDAM - NETHERLANDS, THE",
+      "time" : "20:37",
+      "date" : "Wednesday, May 24, 2017 ",
+      "location" : "ROTTERDAM - NETHERLANDS, THE",
+      "totalPieces" : 1,
+      "pIds" : [ "JD014600004444917061" ]
+    }, {
+      "counter" : 2,
+      "description" : "Processed at  ROTTERDAM - NETHERLANDS, THE",
+      "time" : "20:37",
+      "date" : "Wednesday, May 24, 2017 ",
+      "location" : "ROTTERDAM - NETHERLANDS, THE",
+      "totalPieces" : 1,
+      "pIds" : [ "JD014600004444917061" ]
+    }, {
+      "counter" : 1,
+      "description" : "Shipment picked up",
+      "time" : "17:08",
+      "date" : "Wednesday, May 24, 2017 ",
+      "location" : "ROTTERDAM - NETHERLANDS, THE",
+      "totalPieces" : 1,
+      "pIds" : [ "JD014600004444917061" ]
+    } ],
+    "checkpointLocationLabel" : "Location",
+    "checkpointTimeLabel" : "Time"
+  } ]
+}
