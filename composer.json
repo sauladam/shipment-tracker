@@ -32,9 +32,8 @@
     }
   },
   "autoload-dev": {
-    "files": [
-      "tests/TestCase.php",
-      "tests/FileMapperDataProvider.php"
-    ]
+    "psr-4": {
+      "": "tests/"
+    }
   }
 }
