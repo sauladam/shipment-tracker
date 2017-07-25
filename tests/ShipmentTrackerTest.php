@@ -62,4 +62,30 @@ class ExampleTest extends TestCase
     {
         ShipmentTracker::get('some-nonexistent-tracker');
     }
+
+    /**
+     * @test
+     */
+    public function testSetCustomizeCarrier()
+    {
+        try {
+            ShipmentTracker::get('foo-carrier');
+            $this->fail();
+        } catch (\Exception $exception) {
+            $this->assertInstanceOf(Exception::class, $exception);
+            ShipmentTracker::set('foo-carrier', ValidTracker::class);
+            $tracker = ShipmentTracker::get('foo-carrier');
+            $this->assertInstanceOf(ValidTracker::class, $tracker);
+        }
+        try{
+            ShipmentTracker::set('bar-carrier', InvalidTracker::class);
+        } catch (\Exception $exception) {
+            $this->assertInstanceOf(\InvalidArgumentException::class, $exception);
+        }
+        try{
+            ShipmentTracker::set('baz-carrier', 'NotExistingCarrier');
+        } catch (\Exception $exception) {
+            $this->assertInstanceOf(\InvalidArgumentException::class, $exception);
+        }
+    }
 }
