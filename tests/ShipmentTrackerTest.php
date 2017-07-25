@@ -7,7 +7,7 @@ use Sauladam\ShipmentTracker\Trackers\PostCH;
 use Sauladam\ShipmentTracker\Trackers\UPS;
 use Sauladam\ShipmentTracker\Trackers\USPS;
 
-class ExampleTest extends TestCase
+class ShipmentTrackerTest extends TestCase
 {
     /** @test */
     public function it_resolves_the_dhl_tracker()
