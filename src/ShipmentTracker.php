@@ -15,6 +15,11 @@ class ShipmentTracker
      */
     protected static $carriersNamespace = "Sauladam\\ShipmentTracker\\Trackers";
 
+    /**
+     * Array of tracker classes
+     * @var array
+     */
+    protected static $customizeTrackerClasses = [];
 
     /**
      * Get the tracker for the given carrier name.
@@ -27,19 +32,38 @@ class ShipmentTracker
      */
     public static function get($carrier, DataProviderInterface $customDataProvider = null)
     {
-        if (!static::isValidCarrier($carrier)) {
-            throw new \Exception("Unknown carrier [{$carrier}]");
+        if (isset(static::$customizeTrackerClasses[$carrier])) {
+            $className = static::$customizeTrackerClasses[$carrier];
+        } else {
+            if (!static::isValidCarrier($carrier)) {
+                throw new \Exception("Unknown carrier [{$carrier}]");
+            }
+            $className = self::$carriersNamespace . '\\' . $carrier;
         }
 
         $dataProviderRegistry = self::getDataProviderRegistry($customDataProvider);
-
-        $className = self::$carriersNamespace . '\\' . $carrier;
-
         $tracker = new $className($dataProviderRegistry);
-
         return $customDataProvider ? $tracker->useDataProvider('custom') : $tracker;
     }
 
+    /**
+     * Registers a customize carrier class
+     * @param string $carrier
+     * @param string $carrierClass
+     * @throws \InvalidArgumentException
+     */
+    public static function set($carrier, $carrierClass)
+    {
+        if (!static::isValidCarrierClass($carrierClass)) {
+            throw new \InvalidArgumentException(sprintf('The carrer class "%s" is invalid', $carrierClass));
+        }
+        static::$customizeTrackerClasses[$carrier] = $carrierClass;
+    }
+
+    protected static function isValidCarrierClass($carrierClass)
+    {
+        return class_exists($carrierClass) && is_subclass_of($carrierClass, AbstractTracker::class);
+    }
 
     /**
      * Get the registry for the data providers.
@@ -61,7 +85,6 @@ class ShipmentTracker
 
         return $registry;
     }
-
 
     /**
      * Check if a tracker exists for the given carrier.

@@ -7,7 +7,7 @@ use Sauladam\ShipmentTracker\Trackers\PostCH;
 use Sauladam\ShipmentTracker\Trackers\UPS;
 use Sauladam\ShipmentTracker\Trackers\USPS;
 
-class ExampleTest extends TestCase
+class ShipmentTrackerTest extends TestCase
 {
     /** @test */
     public function it_resolves_the_dhl_tracker()
@@ -61,5 +61,31 @@ class ExampleTest extends TestCase
     public function it_throws_an_exception_if_the_carrier_is_unknown()
     {
         ShipmentTracker::get('some-nonexistent-tracker');
+    }
+
+    /**
+     * @test
+     */
+    public function testSetCustomizeCarrier()
+    {
+        try {
+            ShipmentTracker::get('foo-carrier');
+            $this->fail();
+        } catch (\Exception $exception) {
+            $this->assertInstanceOf(Exception::class, $exception);
+            ShipmentTracker::set('foo-carrier', ValidTracker::class);
+            $tracker = ShipmentTracker::get('foo-carrier');
+            $this->assertInstanceOf(ValidTracker::class, $tracker);
+        }
+        try{
+            ShipmentTracker::set('bar-carrier', InvalidTracker::class);
+        } catch (\Exception $exception) {
+            $this->assertInstanceOf(\InvalidArgumentException::class, $exception);
+        }
+        try{
+            ShipmentTracker::set('baz-carrier', 'NotExistingCarrier');
+        } catch (\Exception $exception) {
+            $this->assertInstanceOf(\InvalidArgumentException::class, $exception);
+        }
     }
 }
