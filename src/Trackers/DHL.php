@@ -179,7 +179,9 @@ class DHL extends AbstractTracker
                 'shipment has been successfully delivered',
                 'recipient has picked up the shipment from the retail outlet',
                 'recipient has picked up the shipment from the PACKSTATION',
-                'item has been sent'
+                'item has been sent',
+                'delivered from the delivery depot to the recipient by simplified company delivery',
+                'per vereinfachter Firmenzustellung ab Eingangspaketzentrum zugestellt',
             ],
             Track::STATUS_IN_TRANSIT => [
                 'in das Zustellfahrzeug geladen',
