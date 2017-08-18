@@ -229,6 +229,8 @@ class DHL extends AbstractTracker
                 'The address is incomplete',
                 'ist falsch',
                 'is incorrect',
+                'recipient has not picked up the shipment',
+                'nicht in der Filiale abgeholt',
             ],
         ];
 
