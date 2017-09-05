@@ -79,7 +79,7 @@ class USPS extends AbstractTracker
      */
     protected function getTrack(DOMXPath $xpath)
     {
-        $rows = $xpath->query("//table[@id='tc-hits']//tbody//tr[contains(@class,'detail-wrapper')]");
+        $rows = $xpath->query("//table//tbody//tr[not(contains(@class,'row_notification'))]");
 
         if (!$rows) {
             throw new \Exception("Unable to parse USPS tracking data for [{$this->parcelNumber}].");
