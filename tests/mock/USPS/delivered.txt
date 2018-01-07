@@ -2,21 +2,18 @@
 
 
 <!doctype html>
-<html lang="en">
-
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>USPS.com&reg; - USPS Tracking&reg; Results</title>
-    <link rel="stylesheet" href="/go/css/footer.css">
-    <link rel="stylesheet" href="/go/css/libs/bootstrap.min.css">
-    <link rel="stylesheet" href="/go/css/libs/datepicker3.css">
-	<link rel="stylesheet" href="/go/css/libs/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="/go/css/main.css">
-    <link rel="stylesheet" href="/go/css/tracking-reskin.css">
-    <link rel="stylesheet" href="/go/styles/ConditionalChatLink.css" type="text/css" media="all" />
-  </head>
-  <body class="tracking_reskin">
+ <html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>USPS.com&reg; - USPS Tracking&reg; Results</title>
+  <link rel="stylesheet" href="/go/css/footer.css">
+  <link rel="stylesheet" href="/go/css/libs/bootstrap.min.css">
+  <link rel="stylesheet" href="/go/css/libs/datepicker3.css">
+  <link rel="stylesheet" href="/go/css/main.css">
+</head>
+<body>
+  <div id="tracking_page_wrapper">
 
 <script src="/go/scripts/libs/jquery.min.js"></script>
 <script src="/go/js/modules/usps/metrics/metrics-all.js"></script>
@@ -24,13 +21,11 @@
 <script type="text/javascript">
 
 	var dataLayer = window.dataLayer = window.dataLayer || [];
-    dataLayer.push({"ecommerce":{"impressions":[{"dimension149":"Registered Mail","brand":"USPS Tools","position":1,"id":"RT654906222DE","category":"Delivered / Delivered /","list":"Tracking Tool Results"}]},"event":"ecomListImpression","loginStatus":"Not Logged In"})
+    dataLayer.push({"ecommerce":{"impressions":[{"dimension149":"Registered Mail","dimension151":"PDD Friday, December 29, 2017 by 8:00pm //","brand":"USPS Tools","position":1,"id":"RC301390345DE","category":"Delivered / Delivered, Left with Individual / BURLINGTON, NC  27215","list":"Tracking Tool Results"}]},"event":"ecomListImpression","loginStatus":"Not Logged In"})
 </script>
 
 
 
-
-    <div id="tracking_page_wrapper">
 
       <!-- GLOBAL HEADER  -->
 
@@ -152,8 +147,9 @@ form#trackPackage .tracking-btn.disabled {
     cursor: pointer;
     filter: alpha(opacity=100);
 }
-
-
+.mobile-quicktools .quicktools-full .shortcut.sc-pobox {
+    border-left: 0px !important;
+}
 		@media only screen and (max-width:958px){
 			.alert-bar{}
 			.menu.active .menu--tier-one-link span:first-of-type {
@@ -194,6 +190,10 @@ form#trackPackage .tracking-btn.disabled {
 					display: none !important;
 				}
 		}
+#utility-header a#link-myusps:before {
+    background-image: url(/global-elements/header/images/utility-header/mailman.svg) !important;
+}
+
 </style>
      <div id="utility-header">
         <style type="text/css">
@@ -228,7 +228,7 @@ form#trackPackage .tracking-btn.disabled {
             </div>
 
             <a id="link-customer" href="https://www.usps.com/help/welcome.htm">Customer &nbsp;Service</a>
-            <a id="link-myusps" href="https://www.usps.com/myusps/welcome.htm">My &nbsp;USPS</a>
+            <a id="link-myusps" href="https://informeddelivery.usps.com/">Informed Delivery</a>
             <a id="login-register-header" class="link-reg" href="https://reg.usps.com/entreg/LoginAction_input?app=Phoenix&amp;appURL=https://www.usps.com/"><span>Register / Sign in</span></a>
             <div id="link-cart" style="display: inline-block;"></div>
         </div>
@@ -294,6 +294,9 @@ form#trackPackage .tracking-btn.disabled {
                                     <a href="https://tools.usps.com/go/POLocatorAction!input.action" class="menu--tier-two-link">Find USPS Locations</a>
                                 </li>
                                 <li>
+                                    <a href="https://www.usps.com/help/welcome.htm" class="menu--tier-two-link">Claims &amp; Refunds</a>
+                                </li>
+                                <li>
                                     <a href="https://www.usps.com/ship/welcome.htm" class="menu--tier-two-link">Learn about Mail &amp; Shipping</a>
                                 </li>
                             </ol>
@@ -308,7 +311,7 @@ form#trackPackage .tracking-btn.disabled {
                                     <a href="https://tools.usps.com/go/TrackConfirmAction_input" class="menu--tier-two-link">Tracking</a>
                                 </li>
                                 <li>
-                                    <a href="https://my.usps.com/" class="menu--tier-two-link">My USPS</a>
+                                    <a href="https://informeddelivery.usps.com/" class="menu--tier-two-link">Informed Delivery</a>
                                 </li>
                                 <li>
                                     <a href="https://retail-pi.usps.com/retailpi/actions/index.action" class="menu--tier-two-link">Intercept a Package</a>
@@ -477,20 +480,31 @@ form#trackPackage .tracking-btn.disabled {
             failures. We apologize for the inconvenience. <a href="#"><span style="">Read&nbsp;more</span></a></p>
     </div>
 
+
+    <div class="alert-bar" style="">
+        <p><a href="http://about.usps.com/news/service-alerts/welcome.htm">Due to Winter Storm Stella, postal services may be interrupted in impacted areas. The Postal Service will continue to monitor. <span style="">Read&nbsp;more</span></a></p>
+    </div>
+
 <div class="alert-bar" style="">
 	<p>Some of our applications are undergoing maintenance from 7 AM ET through 11 AM ET, Wednesday, April 19. We apologize for any  inconvenience.</p>
 </div>
 
-<div class="alert-bar" style="">
-	<p>Tracking was unavailable due to network issues on August 21, 2017.  Problems are now resolved. Search results may not have the latest scan, but will refresh soon. Sorry for any inconvenience and thank you for your patience.</p>
-</div>
+    <div class="alert-bar" style="">
+        <p><a style="font-size: 14px;" href="http://about.usps.com/news/service-alerts/welcome.htm">Alert: USPS is currently restoring service across Hurricane Irma affected areas. <span style="">Read&nbsp;more</span></a></p>
+    </div>
 
+	<div class="alert-bar" style="">
+		<p>Alert: Some of our applications are undergoing maintenance from 7 PM ET through 10 PM ET, Sunday, September 17. We apologize for any inconvenience.</p>
+	</div>
+
+    <div class="alert-bar" style="">
+        <p><a style="font-size: 14px;" href="https://www.usps.com/holiday/holiday-schedule.htm">Alert:&nbsp;Get Post Office&trade; holiday hours, deadlines, and tips, plus mail service alerts for US Virgin Islands and Puerto Rico. <span style="white-space:nowrap;">Read&nbsp;more</span></a></p>
+    </div>
 -->
 
     <div class="alert-bar" style="">
-        <p><a href="http://about.usps.com/news/service-alerts/welcome.htm">Hurricane Harvey Update: USPS open for business in areas where safe to do so. <span style="">Read&nbsp;more</span></a></p>
+        <p><a style="font-size: 14px;" href="http://about.usps.com/news/service-alerts/welcome.htm">Service Updates due to Winter Storm Grayson. <span style="white-space:nowrap;">Read&nbsp;more</span></a></p>
     </div>
-
 
 <script src="/global-elements/lib/script/requirejs/require.js"></script>
 <script type="text/javascript" src="/global-elements/header/script/login.js"></script>
@@ -538,9 +552,9 @@ form#trackPackage .tracking-btn.disabled {
                             <br />Package
                         </a>
                     </div>
-                    <div class="shortcut sc-myusps">
-                        <a href="https://my.usps.com/">
-                            <span></span> My USPS </a>
+                    <div class="shortcut sc-informed">
+                        <a href="https://informeddelivery.usps.com/">
+                            <span></span> Informed Delivery</a>
                     </div>
                     <div class="shortcut sc-loc">
                         <a href="https://tools.usps.com/go/POLocatorAction!input.action">
@@ -608,11 +622,10 @@ form#trackPackage .tracking-btn.disabled {
           </span>
                             </form>
                         </div>
-                        <div class="shortcut sc-myusps">
-                            <a href="https://my.usps.com/">
-                                <span></span> My USPS
-                            </a>
-                        </div>
+                    <div class="shortcut sc-informed">
+                        <a href="https://informeddelivery.usps.com/">
+                            <span></span> Informed Delivery</a>
+                    </div>
                         <div class="shortcut sc-buy">
                             <a href="https://store.usps.com/store/browse/category.jsp?categoryId=buy-stamps">
                                 <span></span> Buy Stamps </a>
@@ -1020,6 +1033,7 @@ form#trackPackage .tracking-btn.disabled {
         });
 
 
+
 //change to js contained in the header file
 
 
@@ -1088,6 +1102,7 @@ if (GlobalJQueryv1_11(window).width()<=959){
                 //GlobalJQueryv1_11(".search--wrapper-hidden").removeClass('active');
             });
         }
+
 
         GlobalJQueryv1_11("#ge-overlay, .search--wrapper-hidden").bind(
             'touchmove',
@@ -1342,13 +1357,13 @@ if (GlobalJQueryv1_11(window).width()<=959){
 
       <!-- END GLOBAL HEADER -->
 
-      <div class="container-fluid full-subheader"> <!-- Subheader -->
-      <h1>USPS Tracking<sup>&reg;</sup> Results</h1>
-      <div class="subheader_links" style="margin-top:8px;">
+    <div class="container-fluid full-subheader"> <!-- Subheader -->
+      <h1>USPS Tracking<sup>&reg;</sup></h1>
+      <div class="subheader_links">
         <a href="#" class="active">Tracking <i class="icon-carat_right"></i></a>
         <a href="http://faq.usps.com/?articleId=220900" class="" target="_blank">FAQs <i class="icon-carat_right"></i></a>
       </div>
-      </div><!-- End Subheader -->
+    </div><!-- End Subheader -->
       <div class="container-fluid tracking_form_container"> <!-- Track another package, tracking number entry form -->
       <div class="row">
         <div class="col-sm-10">
@@ -1378,11 +1393,8 @@ if (GlobalJQueryv1_11(window).width()<=959){
 
       </div>
       </div><!-- END Track another package, tracking number entry form -->
-<div id="tracked-numbers"> <!-- Container for all tracking numbers, includes available actions  -->
 
-
-<!-- removed iteration, not needed? -->
-
+    <div id="tracked-numbers"> <!-- Container for all tracking numbers, includes available actions  -->
 
 
 
@@ -1397,308 +1409,182 @@ if (GlobalJQueryv1_11(window).width()<=959){
 
 
 
-  <div class="track-bar-container"> <!-- Tracking bar with available actions underneath -->
-    <div class="container-fluid">
-      <a class="remove-span" href="#">Remove <i class="icon-cancel"></i></a>
-      <div class="row">
-        <div class="col-sm-10 col-sm-offset-1">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="track-bar-container"> <!-- Tracking bar with available actions underneath -->
+
+	<!-- .container-fluid -->
+        <div class="container-fluid">
+          <a class="remove-span" href="#">Remove <i class="icon-cancel"></i></a>
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
 
 		<!-- ADP -->
 
+
+
+
+
+
+
 		<!-- End ADP -->
 
-
-
-		<h3>Tracking Number: <span class="tracking-number"> RT654906222DE</span></h3>
-
-
-
-		<!-- start status bar logic -->
-
-
-		<div class="tracking-graphic-column shipped">
-		  <div class="track-bar-holder">
-		  <div class="track-status-bar">
-			<div class="status-rectangle">
-			</div>
-			<div class="status-rectangle">
-			</div>
-			<div class="status-rectangle">
-			</div>
-		  </div>
-		  <div class="tracking-checkmark">
-		  </div>
-		  </div>
-		  <span class="delivery-status-text status-green">Delivered</span>
-		</div>
+              <div class="product_summary delivery_delivered">
 
 
 
+                <h3 class="tracking_number">
+                  Tracking Number:
+                  <span class="tracking-number"> RC301390345DE</span>
+               </h3>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-		<!-- end status bar logic -->
 
 		<!-- START pdd, edd, gdd, etc. -->
+		<div class="expected_delivery">
+
+		<!-- Start status summary -->
 
 
 
 
 
+		<!-- end status summary -->
+
+		<!-- begin -->
 
 
 
 
+			<h3>
+			  Expected Delivery on<span class="colon">:</span>
+			</h3>
+
+			  <h2>
+				<span class="eta_wrap">
+				  <span class="eta_snip">
+					<em class="day">Friday</em>
+					<strong class="date">29</strong>
+					<span class="month_year">
+					  <span>December</span> 2017<span role="button" class="hint">
+						<i class="icon-tooltip"></i>
+						<span class="speech_bubble">
+						  <a tabindex="0" href="#" class="closeX" role="button" aria-label="Close modal" data-dismiss="modal"><span class="icon-cancel" aria-hidden="true"></span></a>
+						  <span class="tool_tip_text">Expected delivery on the date provided is the latest information on when the Postal Service&trade; expects to deliver your package.</span>
+						</span>
+					  </span>
+					</span>
+				  </span>
+				  <span class="eta_snip">
+
+
+					<span class="descriptor">by<br />
+					<strong class="time">
+					  8:00pm<span role="button" class="hint">
+						  <i class="icon-tooltip"></i>
+						  <span class="speech_bubble ">
+							<a tabindex="0" href="#" class="closeX" role="button" aria-label="Close modal" data-dismiss="modal"><span class="icon-cancel" aria-hidden="true"></span></a>
+							<span class="tool_tip_text">Expected delivery on the date provided is the latest information on when the Postal Service&trade; expects to deliver your package.</span>
+						  </span>
+						</span>
+					</strong>
+				  </span>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		<!-- END pdd, edd, gdd, etc. -->
-
-
-		<div class="product_additional_information">
-            <div class="product_tracking_header">
-              <h2>Product &amp; Tracking Information</h2>
-              <a href="#" class="avail_actions">See Available Actions</a>
-              <table class="product_info">
-                <tr style="vertical-align:top;">
-                  <td class="postalproduct"><strong>Postal Product:</strong> </td>
-                  <td class="postalfeatures"><strong>Features:</strong>
-
-
-
-
-
-
-								Registered Mail<SUP>&#153;</SUP><br />
-
-
-
-				  </td>
-                  <td><strong>&nbsp;</strong> </td>
-                </tr>
-                <tr>
-                  <td></td>
-
-                </tr>
-              </table>
-            </div>
-            <div class="product_tracking_header_mobile mobileOnly">
-              <p>Your item was delivered at 1:15 pm on January 7, 2016 in ANAHEIM, CA 92812.</p>
-            </div>
-            <div class="product_tracking_details">
-              <div class="tracking_history_container">
-
-
-
-
-
-
-<h3 class="mobileOnly">Tracking History</h3>
-<table class="tracking_history">
-	<thead>
-		<tr>
-			<th>Date &amp; Time</th>
-			<th>Status of Item</th>
-			<th>Location</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr class="row_top">
-			<td>
-				January 7, 2016,
-				1:15 pm
-			</td>
-			<td>
-				Delivered
-			</td>
-			<td>
-				ANAHEIM,&nbsp;CA&nbsp;92812&nbsp;
-			</td>
-		</tr>
-		<tr class="row_notification">
-			<td colspan="3">
-				<span class="callout">
-					Your item was delivered at 1:15 pm on January 7, 2016 in ANAHEIM, CA 92812.
 				</span>
-			</td>
-		</tr>
-
-			<tr>
-				<td>
-					January 6, 2016,
-					1:58 pm
-				</td>
-				<td>
-					Notice Left (No Authorized Recipient Available)
-				</td>
-				<td>
-					ANAHEIM,&nbsp;CA&nbsp;92802&nbsp;
-				</td>
-			</tr>
-
-			<tr>
-				<td>
-					January 6, 2016,
-					7:50 am
-				</td>
-				<td>
-					Out for Delivery
-				</td>
-				<td>
-					ANAHEIM,&nbsp;CA&nbsp;92812&nbsp;
-				</td>
-			</tr>
-
-			<tr>
-				<td>
-					January 6, 2016,
-					7:40 am
-				</td>
-				<td>
-					Sorting Complete
-				</td>
-				<td>
-					ANAHEIM,&nbsp;CA&nbsp;92812&nbsp;
-				</td>
-			</tr>
-
-			<tr>
-				<td>
-					January 6, 2016,
-					5:55 am
-				</td>
-				<td>
-					Arrived at Unit
-				</td>
-				<td>
-					ANAHEIM,&nbsp;CA&nbsp;92812&nbsp;
-				</td>
-			</tr>
-
-			<tr>
-				<td>
-					January 5, 2016,
-					9:07 pm
-				</td>
-				<td>
-					Arrived at USPS Regional Facility
-				</td>
-				<td>
-					LOS ANGELES CA NETWORK DISTRIBUTION CENTER&nbsp;
-				</td>
-			</tr>
-
-			<tr>
-				<td>
-					January 4, 2016,
-					10:03 am
-				</td>
-				<td>
-					Arrived at USPS Regional Facility
-				</td>
-				<td>
-					BETHPAGE NY DISTRIBUTION CENTER&nbsp;
-				</td>
-			</tr>
-
-			<tr>
-				<td>
-					January 3, 2016,
-					10:44 am
-				</td>
-				<td>
-					Processed Through Facility
-				</td>
-				<td>
-					ISC NEW YORK NY(USPS)&nbsp;
-				</td>
-			</tr>
-
-			<tr>
-				<td>
+				</span>
+			  </h2><br />
 
 
-				</td>
-				<td>
-					Origin Post is Preparing Shipment
-				</td>
-				<td>
-
-				</td>
-			</tr>
-
-			<tr>
-				<td>
-					December 28, 2015,
-					11:49 pm
-				</td>
-				<td>
-					Processed Through Facility
-				</td>
-				<td>
-					FRANKFURT/FLUGHAFEN,&nbsp;GERMANY
-				</td>
-			</tr>
-
-			<tr>
-				<td>
-					December 28, 2015,
-					2:07 pm
-				</td>
-				<td>
-					Acceptance
-				</td>
-				<td>
-					GERMANY
-				</td>
-			</tr>
-
-	</tbody>
-</table>
-<div class="more_rows"><a href="#" class="tracking-history-collapser">See More <i class="icon-carat_down"></i></a>
-</div>
 
 
-              </div>
-            </div>
 
-			<!-- start available actions -->
-			<!-- This is the parent container for the available actions accordion menu -->
 
-			<div class="available-actions-menu-container">
 
-                <h2 class="actions-header">Available Actions</h2>
-                <div class="actions_contain">
-                  <div class="panel-group" id="accordion-actions-1" role="tablist" aria-multiselectable="true">
+
+	</div>
+	<!-- END pdd, edd, gdd, etc. -->
+
+		<div class="delivery_status">
+                  <h3>
+                    Status<span class="colon">:</span>
+                  </h3>
+                  <h2>
+
+
+					<strong>Delivered</strong>
 
 
 
@@ -1710,85 +1596,930 @@ if (GlobalJQueryv1_11(window).width()<=959){
 
 
 
-					<!-- END Return Receipt Email -->
-					</div>
+
+
+
+
+
+
+
+
+
+                  </h2>
+
+                  <div class="status_feed">
+
+                    <p>December 29, 2017 at 1:41 pm</p>
+
+                    <p class="important">Delivered, Left with Individual</p>
+                    <p>BURLINGTON,&nbsp;NC&nbsp;27215&nbsp;</p>
+
+
+
+
+
+
+
+					<!-- Anchor links -->
+					<!-- Get text and email updates -->
+
+
+					      <a href="#" class="action_jump" data-action="get-updates">Get Updates <i class="icon-carat_down"></i></a><br />
+
+
+
+					<!-- Change Delivery Instructions -->
+
+
+
+
+					<!-- schedule redelivery -->
+
+
+                  </div>
+
+
+
+
+
+
+
+
+
                 </div>
-              </div>
 
-			<!-- END of Available Actions Menu Container-->
-			<!-- end available actions -->
+
+
+					<div class="status_bar status_6">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  <!-- Can be status_0 through status_6 -->
+                  <!-- Everything else in the bar happens automatically -->
+                  <div class="bar_third bar_third_1"><span></span></div>
+                  <div class="bar_third bar_third_2"><span></span></div>
+                  <div class="bar_third bar_third_3"><span></span></div>
+
+
+
+					<span class="text_explanation">Delivered</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+              </div> <!-- END Product Summary -->
+
+
+              <!-- Product Tracking Information -->
+              <div class="product_additional_information">
+
+                <!-- Product Tracking Details -->
+                <div class="product_tracking_details">
+
+
+                  <!-- AVAILABLE ACTIONS -->
+                  <!-- This is the parent container for the available actions accordion menu -->
+                  <div class="actions_contain">
+
+                    <!-- Accordion Actions -->
+                    <div class="panel-group" id="accordion-actions-1" role="tablist" aria-multiselectable="true">
+
+
+	                   <div class="panel panel-default get-updates-anchor"><!-- Text and Email Updates -->
+
+
+
+
+ <div class="panel-heading collapser" role="tab" data-parent="#accordion-actions" aria-expanded="true" aria-contro>
+	<h4 class="panel-title">
+	 <a href="#" role="button" data-parent="#accordion-actions" aria-expanded="true" aria-controls="collapseTwo" class="collapsed" id="">
+		<span class="panel-word">Text & Email Updates</span>
+		<span class="carat-group"><span role="button" data-parent="#accordion-actions" aria-expanded="true" aria-controls="collapseTwo" class="down-arr" ><span class="icon-carat_down"></span></span><span role="button" data-parent="#accordion-actions" aria-expanded="true" aria-controls="collapseTwo" class="up-arr" ><span class="icon-carat_up"></span></span></span>
+	 </a>
+	</h4>
+ </div>
+ <div id="textAndEmailUpdatesPanel_1" class="panel-collapse collapse textAndEmailUpdatesPanel" role="tabpanel" aria-labelledby="headingOne">
+	<div class="panel-body euPanalAction"> <!-- Body content for third panel, 'Email Updates' -->
+	  <form action="/go/TrackConfirmRequestUpdateAJAXAction.action" id="textAndEmailUpdate_1" class="actions_form actions_email_updates textAndEmailUpdate" data-toggle="validator" role="form" novalidate="true">
+
+	  <input type="hidden" name="label" value="RC301390345DE" />
+
+		<div class="row">
+		 <div class="panel-actions-content">
+			<p style="font-size: 14px;"><strong>Select what types of updates you'd like to receive and how. Send me a notification for:</strong></p>
+			<div class="row">
+				<div class="col-sm-12">
+					<div id="checkbox-wrapper_1" class="actions-priced" style="margin-left:0px;">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-xs-2 col-sm-1">
+									<div>
+										<p id="text-update-label"><strong>Text</strong></p>
+									</div>
+								</div>
+								<div class="col-xs-10 col-sm-11">
+									<div style="margin-left:-25px;">
+										<p id="email-update-label"><strong>Email</strong></p>
+									</div>
+								</div>
+							</div><!--row-->
+						</div>
+
+						<div class="form-group">
+							<div class="row">
+								<div class="col-xs-2 col-sm-1">
+									<div class="checkbox checkbox-group textallbelowupdates" style="margin-top:10px;margin-bottom:0px;">
+										<label style="font-size: 14px;" for="textAll_1" class="specific-check-label specific-label check-label label-choice">
+										<input id="textAll_1" type="checkbox" class="text-updates-label textallbelowupdates textupdates_1" name="textAll" data-error="You must select an option in order to submit this form" class="form-control" />
+											<span></span>
+											<!--All Below Updates-->
+										</label>
+										<div class="help-block with-errors"></div>
+									</div>
+								</div>
+								<div class="col-xs-10 col-sm-11">
+									<div style="float:left;margin-left:-25px;" class="checkbox checkbox-group  emailallbelowupdates">
+										<label for="emailAll_1" class="specific-check-label specific-label check-label label-choice" style="font-size:12.5px;font-weight:normal;">
+										<input id="emailAll_1" type="checkbox" class="email-updates-label emailallbelowupdates emailupdates_1" name="emailAll" data-error="You must select an option in order to submit this form" class="form-control" />
+									 <span></span>
+									 <!--All Below Updates-->
+									</label>
+									<div class="help-block with-errors"></div>
+									</div>
+								<div style="float:left;margin-top:10px;">
+									<span>All Below Updates</span>
+								</div>
+								</div>
+							</div><!--row-->
+						</div>
+
+							<div class="form-group">
+								<div class="row">
+									<div class="col-xs-2 col-sm-1">
+
+											<div class="checkbox checkbox-group textexpecteddeliveryupdates">
+												<label style="font-size: 14px;" for="textFuture_1" class="specific-check-label specific-label check-label label-choice">
+												<input id="textFuture_1" type="checkbox" class="text-updates-label textexpecteddeliveryupdates text-enabled-option textupdates_1" name="textFuture" data-error="You must select an option in order to submit this form" class="form-control" />
+												<span></span>
+												<!--Expected Delivery Updates-->
+												</label>
+											</div>
+
+								</div>
+								<div class="col-xs-10 col-sm-11">
+
+										<div style="float:left;margin-left:-25px;" class="checkbox checkbox-group emailexpecteddeliveryupdates">
+											<label for="emailFuture_1" class="specific-check-label specific-label check-label label-choice" style="font-size:12.5px;font-weight:normal;">
+											<input id="emailFuture_1" type="checkbox" class="email-updates-label emailexpecteddeliveryupdates email-enabled-option emailupdates_1" name="emailFuture" data-error="You must select an option in order to submit this form" class="form-control" />
+											 <span></span>
+											 <!--Expected Delivery Updates-->
+											</label>
+										</div>
+
+									<div style="float:left;margin-top:10px;">
+										<span>Expected Delivery Updates</span>
+										<span role="button" href="#" class="hint">
+										 <i class="icon-tooltip"></i>
+										 <span class="speech_bubble tool_tip_text" data-toggle="tooltip">
+											<p style="margin-bottom:0px;">Receive a message when the expected delivery date is available or changes or your package is out for delivery. If available, a delivery time window will be provided.</p>
+										 </span>
+										</span>
+									</div>
+								</div>
+								</div><!--row-->
+							</div>
+
+
+							<div class="form-group">
+								<div class="row">
+								<div class="col-xs-2 col-sm-1">
+
+										<div class="checkbox checkbox-group textdayofdeliveryupdates">
+											<label style="font-size: 14px;" for="textToday_1" class="specific-check-label specific-label check-label label-choice">
+											<input id="textToday_1" type="checkbox" class="text-updates-label textdayofdeliveryupdates text-enabled-option textupdates_1" name="textToday" data-error="You must select an option in order to submit this form" class="form-control" />
+												<span></span>
+												<!--Day of Delivery Updates-->
+											</label>
+											<span role="button" href="#" class="hint">
+											</span>
+										</div>
+
+								</div>
+								<div class="col-xs-10 col-sm-11">
+
+										<div style="float:left;margin-left:-25px;" class="checkbox checkbox-group emaildayofdeliveryupdates">
+											<label for="emailToday_1" class="specific-check-label specific-label check-label label-choice" style="font-size:12.5px;font-weight:normal;">
+											<input id="emailToday_1" type="checkbox" class="email-updates-label emaildayofdeliveryupdates email-enabled-option emailupdates_1" name="emailToday" data-error="You must select an option in order to submit this form" class="form-control" />
+											 <span></span>
+											 <!--Day of Delivery Updates-->
+											</label>
+											<div class="help-block with-errors"></div>
+										</div>
+
+									<div style="float:left;margin-top:10px;">
+										<span>Day of Delivery Updates</span>
+										<span role="button" href="#" class="hint">
+										 <i class="icon-tooltip"></i>
+										 <span class="speech_bubble tool_tip_text" data-toggle="tooltip">
+											<p style="margin-bottom:0px;">Receive a message on the day your package is out for delivery. If available, a delivery time window will be provided.</p>
+										 </span>
+										</span>
+									</div>
+								</div>
+								</div><!--row-->
+							</div>
+
+
+							<div class="form-group">
+							<div class="row">
+								<div class="col-xs-2 col-sm-1">
+
+										<div class="checkbox checkbox-group textpackagedeliveredtoaddress">
+											<label style="font-size: 14px;" for="textDnd_1" class="specific-check-label specific-label check-label label-choice">
+											<input id="textDnd_1" type="checkbox" class="text-updates-label textpackagedeliveredtoaddress text-enabled-option textupdates_1" name="textDnd" data-error="You must select an option in order to submit this form" class="form-control" />
+												<span></span>
+												<!--Package Delivered to Address-->
+											</label>
+											<span role="button" href="#" class="hint">
+											</span>
+										</div>
+
+								</div>
+								<div class="col-xs-10 col-sm-11">
+
+										<div style="float:left;margin-left:-25px;" class="checkbox checkbox-group emailpackagedeliveredtoaddress">
+											<label for="emailDnd_1" class="specific-check-label specific-label check-label label-choice" style="font-size:12.5px;font-weight:normal;">
+											<input id="emailDnd_1" type="checkbox" class="email-updates-label emailpackagedeliveredtoaddress email-enabled-option emailupdates_1" name="emailDnd" data-error="You must select an option in order to submit this form" class="form-control" />
+											 <span></span>
+											 <!--Package Delivered to Address-->
+											</label>
+										</div>
+
+									<div style="float:left;margin-top:10px;">
+										<span>Package Delivered</span>
+										<span role="button" href="#" class="hint">
+										 <i class="icon-tooltip"></i>
+										 <span class="speech_bubble tool_tip_text" data-toggle="tooltip">
+											<p style="margin-bottom:0px;">Receive a message when package has been delivered to the recipient's address or when it's been delivered to a delivery partner (if applicable).</p>
+										 </span>
+										</span>
+									</div>
+								</div>
+							</div><!--row-->
+							</div>
+
+
+							<div class="form-group">
+							<div class="row">
+								<div class="col-xs-2 col-sm-1">
+
+										<div class="checkbox checkbox-group textavailableforpickup">
+											<label style="font-size: 14px;" for="textPickup_1" class="specific-check-label specific-label check-label label-choice">
+											<input id="textPickup_1" type="checkbox" class="text-updates-label textavailableforpickup text-enabled-option textupdates_1" name="textPickup" data-error="You must select an option in order to submit this form" class="form-control" />
+												<span></span>
+												<!--Available for Pickup-->
+											</label>
+											<span role="button" href="#" class="hint">
+											</span>
+										</div>
+
+								</div>
+								<div class="col-xs-10 col-sm-11">
+
+										<div style="float:left;margin-left:-25px;" class="checkbox checkbox-group emailavailableforpickup">
+											<label for="emailPickup_1" class="specific-check-label specific-label check-label label-choice" style="font-size:12.5px;font-weight:normal;">
+											<input id="emailPickup_1" type="checkbox" class="email-updates-label emailavailableforpickup email-enabled-option emailupdates_1" name="emailPickup" data-error="You must select an option in order to submit this form" class="form-control" />
+											 <span></span>
+											 <!--Available for Pickup-->
+											</label>
+										</div>
+
+									<div style="float:left;margin-top:10px;">
+										<span>Available for Pickup</span>
+										<span role="button" href="#" class="hint">
+										 <i class="icon-tooltip"></i>
+										 <span class="speech_bubble tool_tip_text" data-toggle="tooltip">
+											<p style="margin-bottom:0px;">Receive a message when your package is ready to be picked up at your local Post Office location.</p>
+										 </span>
+										</span>
+									</div>
+								</div>
+							</div><!--row-->
+							</div>
+
+
+							<div class="form-group">
+							<div class="row">
+								<div class="col-xs-2 col-sm-1">
+
+										<div class="checkbox checkbox-group textalertsandotherupdates">
+											<label style="font-size: 14px;" for="textAlert_1" class="specific-check-label specific-label check-label label-choice">
+											<input id="textAlert_1" type="checkbox" class="text-updates-label textalertsandotherupdates text-enabled-option textupdates_1" name="textAlert" data-error="You must select an option in order to submit this form" class="form-control" />
+												<span></span>
+												<!--Delivery Exception Updates-->
+											</label>
+											<span role="button" href="#" class="hint">
+											</span>
+										</div>
+
+								</div>
+								<div class="col-xs-10 col-sm-11">
+
+										<div style="float:left;margin-left:-25px;" class="checkbox checkbox-group emailalertsandotherupdates">
+											<label for="emailAlert_1" class="specific-check-label specific-label check-label label-choice" style="font-size:12.5px;font-weight:normal;">
+											<input id="emailAlert_1" type="checkbox" class="email-updates-label emailalertsandotherupdates email-enabled-option emailupdates_1" name="emailAlert" data-error="You must select an option in order to submit this form" class="form-control" />
+											 <span></span>
+											 <!--Delivery Exception Updates-->
+											</label>
+										</div>
+
+									<div style="float:left;margin-top:10px;">
+										<span>Delivery Exception Updates</span>
+										<span role="button" href="#" class="hint">
+										 <i class="icon-tooltip"></i>
+										 <span class="speech_bubble tool_tip_text" data-toggle="tooltip">
+											<p style="margin-bottom:0px;">Receive a message when there are other delivery updates, alerts about potential delays (including weather-related delays), or actions needed (e.g., Schedule Redelivery) related to your package.</p>
+										 </span>
+										</span>
+									</div>
+								</div>
+							</div><!--row-->
+							</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="row hidden" id="text-updates-wrapper_1" style="margin-left:20px;">
+			 <div style="margin-left:0px;" class="col-sm-8">
+
+				<div class="actions_priced">
+				 <div class="form-group">
+					<p style="font-size:14px;font-weight:bold;" for="textUpdatePhoneNumber_1">Enter the phone number where you'd like to receive updates on your package:</p>
+					<input id="textUpdatePhoneNumber_1" type="tel" name="smsNumber" class="form-control phone textRequired" placeholder="000-000-0000" pattern="^[\w\-_&.,`#@!\s]+.{11,}$" required data-pattern-error="Please enter a valid phone number" data-required-error="Please enter a valid phone number" data-validate="true">
+					<div class="help-block with-errors"></div>
+					<div><sup>*Phone number (US or Canadian only, valid text message enabled number)</sup></div>
+				 </div>
+				</div>
+			 </div>
+		  </div>
+
+			<div class="row hidden" id="text-updates-messages_1">
+				<div class="panel-actions-content" style="padding-bottom: 0;">
+				<p style="font-size: 14px;">Message frequency is based on the request type; packages may have up to 11 tracking events. Standard Message and Data rates may apply.</p>
+				<p style="font-size: 14px;">For additional information, text HELP to 2USPS (28777). Text STOP to 2USPS to opt out.</p>
+				<p style="font-size: 14px;">Read more about <a href="https://www.usps.com/texttracking" target="new">Text Tracking </a><img src="images/USPS_Red_Caret_8x12.svg"></p>
 
 				</div>
+			</div>
 
+			<div class="row hidden" id="email-updates-wrapper_1" style="margin-top: 20px;margin-left:20px;">
+				<p style="font-size:14px;margin-left:16px;"><strong>Enter the name and email address where you'd like to receive updates on your package:</strong></p>
+
+			 <div style="margin-left:0px;" class="col-sm-6">
+				<div class="form-group">
+				 <label for="emailUpdate_name1_1">*Name</label>
+				 <input type="text" class="form-control emailRequired" id="emailUpdate_name1_1" name="name1" placeholder="First Last" pattern="^[\w\-_&.,`#@!\s]+$" required data-pattern-error="Please enter a name" data-required-error="Please enter a name" data-validate="true">
+				 <div class="help-block with-errors"></div>
+				</div>
+				<div class="form-group">
+				 <label>*Email Address</label>
+				 <input type="email" id="emailUpdate_email1_1" name="email1" class="form-control euEmailInput emailRequired" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required data-pattern-error="Please enter a valid e-mail address" data-required-error="Please enter a valid e-mail address" placeholder="email123@mail.com" data-validate="true">
+				 <div class="help-block with-errors"></div>
+				</div>
+				<a id="euAddEmailLink_1" class="add-another-email with-name icon_add">Add Another Email <i class="icon_add">+</i></a>
 			 </div>
-		   </div>
+			</div>
+
+			<div class="row hidden" id="update-text-tac_1" style="margin-top:20px;">
+			 <div class="col-sm-6">
+				<div class="form-group">
+				 <div class="checkbox">
+					<label for="agreedTextUpdates_1"><input id="agreedTextUpdates_1" type="checkbox" name="confirmSms" class="textRequired" required="" data-error="You must read and agree to the Terms &amp; Conditions to submit your request." data-validate="true"><span></span>I have read, understand, and agree to the <a href="#" data-toggle="modal" data-target="#modalTextUpdatesTerms">Terms and Conditions</a></label>
+					<div class="help-block with-errors"></div>
+				 </div>
+				</div>
+			 </div>
+			</div>
+
+			<button id="teuButton_1" class="button getTextAndEmailUpdates hidden" style="margin:20px auto 20px">Get Updates</button>
+		 </div>
+		</div>
+	 </form>
+	</div><!-- End Body content for 'Email Updates' -->
+
+	<!-- start response messages -->
+
+	<div class="panel-actions-content text-updates-content success hidden">
+		<label class="response-ok"><img src="images/USPS_Green_Check.svg"> Confirmation</label>
+		<div class="text-updates-success-number"></div><br />
+		<div class="text-updates-success">
+			Your Text Updates messages will be sent to:
+		</div><br />
+		<div class="text-updates-success-phone text-updates-success"></div><br />
+		<div class="response-bold-text">
+			To complete your request, you must reply YES to the welcome message.<br />
+			For additional information, text <strong>HELP</strong> to 2USPS (28777). You may opt out by texting <strong>STOP</strong> to 2USPS.
+		</div>
+	</div>
+
+	<div class="panel-actions-content text-updates-content error hidden">
+		<label class="response-error"><img src="images/USPS_Red_X.svg"> Unable to Complete Request</label>
+		<div class="text-updates-error-number"></div><br />
+		<br />
+		<div class="text-updates-error">
+			<div class="response-text">Your Text Updates request will not
+				be sent to</div>
+			<div class="text-updates-error-phone"></div>
+			<div class="response-text">
+				<div class="response-sms data-error-div-result"></div>
+			</div>
+			<div class="response-text">Please try again later.</div>
+			<div class="response-text">For additional information, text
+				<strong>HELP</strong> to 2USPS (28777). You may opt out by texting <strong>STOP</strong> to 2USPS</div>
+		</div>
+		<br />
+		<br />
+	</div>
+
+	<div class="panel-actions-content email-updates-content success hidden" id="email-page-success-div_1">
+		<label class="response-ok"><img src="images/USPS_Green_Check.svg"> Confirmation</label>
+		<div class="email-updates-success-number"></div>
+		<br/>
+		<div class="response-email response-text">
+			Your request will be processed as soon as there is tracking activity consistent with your request.
+		</div>
+		<br/>
+		<div class="response-email">
+			Your confirmation will be sent to the following:
+		</div>
+		<div class="email-updates-success-email response-data"></div>
+	</div>
+
+	<div class="panel-actions-content email-updates-content error hidden" id="email-page-error-div_1">
+		<label class="response-error errorMsg"><img src="images/USPS_Red_X.svg"> Unable to Complete Request</label>
+		<div class="email-updates-error-number"></div>
+		<br />
+		<div class="email-updates-error">
+			<div class="response-email email-error-address">Your email Updates request will not
+				be sent to</div>
+			<div class="response-email">
+				<div class="email-updates-error-email data-error-div-result"></div>
+			</div>
+			<div class="response-email email-error-address">Please try again later.</div>
+		</div>
+		<br />
+		<br />
+	</div>
+
+	<!-- end response messages -->
+
+ </div>
+	                   </div>
+
+
+
+
+
+
+
+
+					<div class="panel panel-default "><!-- Tracking History -->
+
+
+
+
+
+
+			  <!-- Panel Heading -->
+			  <div class="panel-heading collapser" role="tab" data-parent="#accordion-actions" aria-expanded="true" aria-controls>
+				<h4 class="panel-title">
+				  <a href="#" role="button" data-parent="#accordion-actions" aria-expanded="true" aria-controls="collapseFive" class="collapsed" id="">
+					<span class="panel-word">Tracking History</span>
+					<span class="carat-group">
+					<span role="button" data-parent="#accordion-actions" aria-expanded="true" aria-controls="collapseFive" class="down-arr">
+					<span class="icon-carat_down"></span>
+					</span>
+					<span role="button" data-parent="#accordion-actions" aria-expanded="true" aria-controls="collapseFive" class="up-arr"><span class="icon-carat_up"></span>
+					</span>
+					</span>
+				  </a>
+				</h4>
+			  </div>
+			<!-- End of panel heading -->
+
+			<div id="trackingHistory_1" class="panel-collapse collapse thPanel" role="tabpanel" >
+				<div class="panel-body">
+					<!-- Body content for 'Return Receipt Email'  -->
+					<div class="row">
+						<div class="panel-actions-content thPanalAction" style="">
+							<h3 class="mobileOnly">Tracking History</h3>
+							<span>
+								<strong>
+									December 29, 2017,
+									1:41 pm
+								</strong>
+							</span>
+							<br />
+							<span>
+								Delivered, Left with Individual
+							</span>
+							<br />
+							<span>
+								BURLINGTON,&nbsp;NC&nbsp;27215&nbsp;
+							</span>
+							<br />
+							<span>
+								Your item was delivered to an individual at the address at 1:41 pm on December 29, 2017 in BURLINGTON, NC 27215.
+							</span>
+							<br />
+							<hr>
+
+									<span>
+										<strong>
+											December 29, 2017,
+											6:09 am
+										</strong>
+									</span>
+									<br />
+									Arrived at Unit
+								</span><br />
+								BURLINGTON,&nbsp;NC&nbsp;27215&nbsp;
+							</span>
+							<br />
+							<hr>
+
+									<span>
+										<strong>
+											December 19, 2017,
+											10:18 pm
+										</strong>
+									</span>
+									<br />
+									Inbound Out of Customs
+								</span><br />
+
+							</span>
+							<br />
+							<hr>
+
+									<span>
+										<strong>
+
+
+										</strong>
+									</span>
+									<br />
+									Inbound Into Customs
+								</span><br />
+
+							</span>
+							<br />
+							<hr>
+
+									<span>
+										<strong>
+											December 18, 2017,
+											6:35 pm
+										</strong>
+									</span>
+									<br />
+									Processed Through Facility
+								</span><br />
+								ISC NEW YORK NY(USPS)&nbsp;
+							</span>
+							<br />
+							<hr>
+
+									<span>
+										<strong>
+
+
+										</strong>
+									</span>
+									<br />
+									Origin Post is Preparing Shipment
+								</span><br />
+
+							</span>
+							<br />
+							<hr>
+
+						</div>
+					</div>
+				</div>
+				<!-- END Body content for 'Tracking History' -->
+			</div>
+
+
+                    </div>
+
+
+                  <div class="panel panel-default "><!-- Product Information -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Panel Heading -->
+  <div class="panel-heading collapser" role="tab" data-parent="#accordion-actions" aria-expanded="true" aria-controls>
+	<h4 class="panel-title">
+	  <a href="#" role="button" data-parent="#accordion-actions" aria-expanded="true" aria-controls="collapseFive" class="collapsed" id="">
+		<span class="panel-word">Product Information</span>
+		<span class="carat-group">
+		<span role="button" data-parent="#accordion-actions" aria-expanded="true" aria-controls="collapseFive" class="down-arr">
+		<span class="icon-carat_down"></span>
+		</span>
+		<span role="button" data-parent="#accordion-actions" aria-expanded="true" aria-controls="collapseFive" class="up-arr"><span class="icon-carat_up"></span>
+		</span>
+		</span>
+	  </a>
+	</h4>
+  </div>
+<!-- End of panel heading -->
+
+  <div id="product-information_1" class="panel-collapse collapse piPanel" role="tabpanel">
+
+
+  <div class="panel-body sample-number-panels"> <!-- Body content for first panel, 'Product Information' -->
+	  <div class="row">
+		<div class="panel-actions-content product-information-content">
+
+			<ul class="product_info">
+			  <li>
+				<strong>Postal Product:</strong>
+
+			  </li>
+			  <li>
+				<dl>
+				  <dt>Features:</dt>
+				  <dd>
+
+
+
+
+
+
+
+					Registered Mail<SUP>&#153;</SUP><br />
+
+
+
+				  </dd>
+				</dl>
+			  </li>
+			  <li>
+				<!-- multiple delivery events, i.e. gdd, edd, pdd -->
+
+
+
+
+
+
+
+
+		</li>
+			</ul>
+
+		  </div> <!-- End Buttons Container -->
+		</div>
+	  </div>
+	</div> <!-- End body content for first panel  -->
+
+	<div class="panel-actions-content product-information-content success hidden">
+
+		<label class="response-ok"><img src="images/USPS_Green_Check.svg"> Authorization complete!</label>
+		<div>
+			<span>Thanks,&nbsp;<span class="firstName">[First Name]</span>. You will receive a confirmation email.</span><br />
+			<span>As outlined in the Terms &amp; Conditions, the postal carrier has the final discretion to leave your package at this address.</span>
+		</div>
+  </div>
+  <div class="panel-actions-content product-information-content error hidden">
+		<label class="response-error"><img src="images/USPS_Red_X.svg">
+			<span class="firstName">[first name]</span>, we're sorry we cannot proceed with your request because&nbsp;<span class="errorScenario">[error scenario]</span>
+		</label>
+  </div>
+</div>
+                  </div>
+					 <!-- END Product Information -->
+
+
+
+					</div> <!-- End #accordion-actions -->
+
+              </div> <!-- End .actions_contain -->
+
+            </div> <!-- END Product Tracking Details -->
+          </div> <!-- END Product Tracking Information -->
+
+
+        </div><!-- End col -->
 
 				  <a href="#" role="button" class="see-all show-less tracking-result-collapser">See Less <i class="icon-carat_up"></i></a>
 
-        </div>
 
-    <!-- </div></div>-->
+      </div><!-- End .row -->
+    </div>  <!-- End .container-fluid -->
   </div> <!-- END Tracking bar with available actions underneath -->
 
-<!-- Containers for tracking bar divs without available actions menu -->
-
-<!-- END Containers for tracking bar divs without available actions menu -->
+  <!-- Containers for tracking bar divs without available actions menu -->
 
 
+<!--
+      There are currently 5 states that get attached to "product_summary" div. These class names work independently of the "status_0" through "status_6" track bar. Copy changes to these sections are made separately.
 
-<div class="container-fluid find-FAQs"><!-- FAQs Link Callout row  -->
-<div class="row">
-  <div class="col-sm-12">
-    <h2>Can&rsquo;t find what you&rsquo;re looking for?</h2>
-    <p>Go to our FAQs section to find answers to your tracking questions.</p>
-    <a href="http://faq.usps.com/?articleId=220900" class="button" target="blank">FAQs</a>
-  </div>
-</div>
-</div> <!-- END FAQs container-->
+      delviery_na
+      delivery_onitsway
+      delivery_transit
+      delivery_attempted
+      delivery_delivered
+    -->
 
-
-</div> <!--End Tracking Numbers container -->
+      <!-- END Containers for tracking bar divs without available actions menu -->
 
 
-<div class="house_ad"><!--Sign up ad row -->
-  <div class="container-fluid">
-    <div class="row" >
-      <div class="col-xs-12 col-md-7 col-md-push-5 photo_area col-lg-8" style="background-image: url(/go/images/Tracking_DSKTP_Promo_Ad2_865x410.jpg)">
+    </div> <!--End Tracking Numbers container -->
+
+
+      <div class="container-fluid find-FAQs"><!-- FAQs Link Callout row  -->
+        <div class="row">
+          <div class="col-sm-12">
+            <h2>Can&rsquo;t find what you&rsquo;re looking for?</h2>
+            <p>Go to our <a href="http://faq.usps.com/?articleId=220900" target="_blank">FAQs</a> section to find answers to your tracking questions.</p>
+            <!-- <a href="#" class="button">FAQs</a> -->
+          </div>
+        </div>
+      </div> <!-- END FAQs container-->
+
+
+
+
+
+    <div class="house_ad"><!--Sign up ad row -->
+      <div class="container-fluid">
+        <div class="row" >
+          <div class="col-xs-12 col-md-7 col-md-push-5 photo_area col-lg-8" style="background-image: url(images/Tracking_DSKTP_Promo_Ad2_865x410.jpg)">
+          </div>
+          <div class="col-xs-12 col-md-5">
+            <section class="house_ad_text">
+              <h3>The easiest tracking number is the one you don't have to know.</h3>
+              <p>With Informed Delivery<sup>&reg;</sup>, you never have to type in another tracking number. Sign up to:</p>
+              <ul>
+                <li>See images* of incoming mail.</li>
+                <li>Automatically track the packages you're expecting.</li>
+                <li>Set up email and text alerts so you don't need to enter tracking numbers.</li>
+                <li>Enter USPS Delivery Instructions<sup>&trade;</sup> for your mail carrier.</li>
+              </ul>
+            </section>
+            <a href="https://reg.usps.com/entreg/RegistrationAction_input?app=UspsTools&appURL=https%3A%2F%2Ftools.usps.com%2Fgo%2FTrackConfirmAction%21input" class="button" tar>Sign Up</a>
+            <p>*NOTE: Black and white (grayscale) images show the outside, front of letter-sized envelopes and mailpieces that are processed through USPS automated equipment.</p>
+          </div>
+        </div>
       </div>
-      <div class="col-xs-12 col-md-5">
-        <section class="house_ad_text">
-          <h3>There&rsquo;s an easier way to track your packages.</h3>
-          <p>Why jump from page to page to track packages being sent to you? With My USPS&trade;, you can easily track all your packages in one place. Sign up to:</p>
-          <ul>
-            <li>Set up automatic email and text alerts, so you&rsquo;ll never have to manually track a package again</li>
-            <li>Provide delivery instructions, so your carrier knows where to leave packages</li>
-          </ul>
-        </section>
+    </div><!--End Sign up ad row -->
 
 
+  </div><!-- Closing tag for tracking page wrapper -->
+  <!--  END tracking id page container -->
 
 
+  <!-- Modal Markup -->
+  <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <a tabindex="0" href="#" class="closeX" role="button" aria-label="Close modal" data-dismiss="modal"><span class="icon-cancel" aria-hidden="true"></span></a>
+        <div id="modalLabel" style="display:none;"></div>
+        <div class="modal-body tool_tip_text">
 
-        <a href="https://reg.usps.com/entreg/RegistrationAction_input?app=UspsTools&amp;appURL=https%3A%2F%2Ftools.usps.com%2Fgo%2FTrackConfirmAction%21input%3FtRef%3Dfullpage%26tLc%3D2%26text28777%3D%26tLabels%3DRT654906222DE%252C" class="button">Sign Up</a>
+        </div>
       </div>
     </div>
   </div>
-</div><!--End Sign up ad row -->
-
-<!-- Store Cart Widget, added to ensure ATG cart is created before calls fetchcart -->
-<div class="global-header-cart-2" style="display: none;"></div>
-
-</div><!-- Closing tag for tracking page wrapper -->
-<!--  END tracking id page container -->
 
 
-<!-- Modal Markup -->
-<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+<div class="modal fade" id="modalTextUpdatesTerms" tabindex="-1" role="dialog" aria-labelledby="modalLabel3">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div id="modalLabel" style="display:none;"></div>
-      <div class="modal-body tool_tip_text">
+      <div id="modalLabel3" style="display:none;"></div>
 
+      <div class="modal-body tool_tip_text">
+		<h4 class="modal-header">Terms and Conditions of Use for Text Updates</h4>
+		<div class="modal-body">
+		<p>Your access to, and use of, USPS Text Tracking is subject to our website <a href="http://about.usps.com/termsofuse.htm" target="_new">Terms of Use</a> and all applicable laws and regulations.  By clicking "I Agree" or otherwise accessing and using USPS Text Tracking, you accept, without limitation or qualification, the <a href="http://about.usps.com/termsofuse.htm" target="_new">Terms of Use</a>.</p>
+		<p>
+		USPS Text Tracking provides you with text message updates, including the date and time of delivery, as your package moves through the USPS system.  Your telecommunications carrier may charge data usage fees (including additional charges when roaming) to receive TEXT messages.  Please contact your wireless carrier for complete pricing details.
+		</p>
+		<p>
+		After submitting your phone number to USPS you will receive a text message confirming your request to subscribe to USPS Text Tracking.  You must reply YES to the confirmation message to begin receiving tracking updates about your package.  You may opt out of receiving USPS Text Tracking updates at any time by sending <strong>STOP</strong> to 2USPS (28777).
+		</p>
+		</div><!-- /modal-body -->
+	  <!--<p>USPS Change Redelivery Terms and Conditions placeholder.</p>
+          <br>-->
+      </div>
+      <a tabindex="0" href="#" class="closeX" role="button" aria-label="Close modal" data-dismiss="modal"><span class="icon-cancel" aria-hidden="true"></span></a>
+    </div>
+  </div>
+</div>
+
+  <div class="modal fade" id="modalEmailTerms" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div id="modalLabel" style="display:none;"></div>
+        <div class="modal-body tool_tip_text">
+
+        </div>
+        <a tabindex="0" href="#" class="closeX" role="button" aria-label="Close modal" data-dismiss="modal"><span class="icon-cancel" aria-hidden="true"></span></a>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="modalRedeliveryTerms" tabindex="-1" role="dialog" aria-labelledby="modalLabel2">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div id="modalLabel2" style="display:none;"></div>
+      <div class="modal-body tool_tip_text">
+		<h4 class="modal-header">Terms and Conditions of Use for Schedule Redelivery</h4>
+		  <div class="modal-body">
+			<p>The person who prepares this form states that he or she is the person, executor, guardian, authorized officer, or agent of the person for whom mail would be redelivered under this order. Anyone submitting false or inaccurate information on this form is subject to punishment by fine or imprisonment or both under Sections 2, 1001, 1702 and 1708 of Title 18, United States Code.</p>
+		  </div>
       </div>
       <a tabindex="0" href="#" class="closeX" role="button" aria-label="Close modal" data-dismiss="modal"><span class="icon-cancel" aria-hidden="true"></span></a>
     </div>
@@ -1914,48 +2645,13 @@ if (GlobalJQueryv1_11(window).width()<=959){
   </div>
 </div>
 
-<div class="modal fade" id="modalRedeliveryTerms" tabindex="-1" role="dialog" aria-labelledby="modalLabel2">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div id="modalLabel2" style="display:none;"></div>
-      <div class="modal-body tool_tip_text">
-		<h4 class="modal-header">Terms and Conditions of Use for Schedule Redelivery</h4>
-		  <div class="modal-body">
-			<p>The person who prepares this form states that he or she is the person, executor, guardian, authorized officer, or agent of the person for whom mail would be redelivered under this order. Anyone submitting false or inaccurate information on this form is subject to punishment by fine or imprisonment or both under Sections 2, 1001, 1702 and 1708 of Title 18, United States Code.</p>
-		  </div>
-      </div>
-      <a tabindex="0" href="#" class="closeX" role="button" aria-label="Close modal" data-dismiss="modal"><span class="icon-cancel" aria-hidden="true"></span></a>
-    </div>
-  </div>
-</div>
 
-<div class="modal fade" id="modalTextUpdatesTerms" tabindex="-1" role="dialog" aria-labelledby="modalLabel3">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div id="modalLabel3" style="display:none;"></div>
 
-      <div class="modal-body tool_tip_text">
-		<h4 class="modal-header">Terms and Conditions of Use for Text Updates</h4>
-		<div class="modal-body">
-		<p>Your access to, and use of, USPS Text Tracking is subject to our website <a href="http://about.usps.com/termsofuse.htm" target="_new">Terms of Use</a> and all applicable laws and regulations.  By clicking "I Agree" or otherwise accessing and using USPS Text Tracking, you accept, without limitation or qualification, the <a href="http://about.usps.com/termsofuse.htm" target="_new">Terms of Use</a>.</p>
-		<p>
-		USPS Text Tracking provides you with text message updates, including the date and time of delivery, as your package moves through the USPS system.  Your telecommunications carrier may charge data usage fees (including additional charges when roaming) to receive TEXT messages.  Please contact your wireless carrier for complete pricing details.
-		</p>
-		<p>
-		After submitting your phone number to USPS you will receive a text message confirming your request to subscribe to USPS Text Tracking.  You must reply YES to the confirmation message to begin receiving tracking updates about your package.  You may opt out of receiving USPS Text Tracking updates at any time by sending <strong>STOP</strong> to 2USPS (28777).
-		</p>
-		</div><!-- /modal-body -->
-	  <!--<p>USPS Change Redelivery Terms and Conditions placeholder.</p>
-          <br>-->
-      </div>
-      <a tabindex="0" href="#" class="closeX" role="button" aria-label="Close modal" data-dismiss="modal"><span class="icon-cancel" aria-hidden="true"></span></a>
-    </div>
-  </div>
-</div>
 
-		<!--   -->
+  <!---  GLOBAL FOOTER - FOR REFRERENCE ONLY -->
+  <!-- <script src="http://www.w3schools.com/lib/w3data.js"></script> -->
 
-		<div id="global-footer--wrap" class="global-footer--wrap">
+   		<div id="global-footer--wrap" class="global-footer--wrap">
 <link type="text/css" rel="stylesheet" href="/global-elements/footer/css/main-sb.css">
 <link type="text/css" rel="stylesheet" href="/global-elements/footer/css/footer-sb.css">
 
@@ -2178,22 +2874,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-<script>
-//w3IncludeHTML();
-</script>
 
-<!-- Libraries -->
-<script src="/go/scripts/libs/moment.min.js"></script>
-<script src="/go/scripts/libs/jquery.min.js"></script>
-<script src="/go/scripts/libs/jquery.ui.js"></script>
-<script src="/go/scripts/libs/bootstrap.min.js"></script>
-<script src="/go/scripts/libs/bootstrap-datepicker.js"></script>
-<script src="/go/scripts/libs/jquery.keyboard-focus.js"></script>
-<script src="/go/scripts/libs/jquery.mask.min.js"></script>
-<script src="/go/scripts/libs/validator.min.js"></script>
-<!-- Data -->
-<script src="/go/data/data.js"></script>
-<!-- App scripts -->
+  <script>
+    // w3IncludeHTML();
+  </script>
+  <!-- Libraries -->
+  <script src="/go/scripts/libs/jquery.min.js"></script>
+
+  <script src="/go/scripts/libs/moment.min.js"></script>
+  <script src="/go/scripts/libs/bootstrap.min.js"></script>
+  <script src="/go/scripts/libs/bootstrap-datepicker.js"></script>
+  <script src="/go/scripts/libs/jquery.keyboard-focus.js"></script>
+  <script src="/go/scripts/libs/jquery.mask.min.js"></script>
+  <script src="/go/scripts/libs/validator.min.js"></script>
+  <!-- Data -->
+  <script src="/go/data/data.js"></script>
+  <!-- App scripts -->
 
 <script type="text/javascript">
 	var isUserLoggedIn = false;
@@ -2207,7 +2903,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 </script>
 
-<script src="/go/scripts/tracking.js"></script>
-<script src="/go/scripts/login-timeout.js"></script>
+  <script src="/go/scripts/tracking.js"></script>
+  <script src="/go/scripts/login-timeout.js"></script>
 </body>
 </html>

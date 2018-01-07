@@ -55,13 +55,16 @@ class USPSTest extends TestCase
         $this->assertSame(Track::STATUS_DELIVERED, $track->currentStatus());
         $this->assertTrue($track->delivered());
         $this->assertNull($track->getRecipient());
-        $this->assertCount(11, $track->events());
+        $this->assertCount(3, $track->events());
     }
 
 
     /** @test */
     public function it_resolves_an_an_in_transit_status_if_the_shipment_is_on_its_way()
     {
+        $this->markTestSkipped("No real world data available at the moment.");
+        return;
+
         $tracker = $this->getTracker('in_transit.txt');
 
         $track = $tracker->track('RT654907846DE');

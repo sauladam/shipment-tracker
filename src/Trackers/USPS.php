@@ -79,86 +79,47 @@ class USPS extends AbstractTracker
      */
     protected function getTrack(DOMXPath $xpath)
     {
-        $rows = $xpath->query("//table//tbody//tr[not(contains(@class,'row_notification'))]");
+        $rowsContainer = $xpath->query("//div[@id='trackingHistory_1']//div[contains(@class,'panel-actions-content')]")->item(0);
 
-        if (!$rows) {
-            throw new \Exception("Unable to parse USPS tracking data for [{$this->parcelNumber}].");
-        }
+        $items = [];
+        $index = 0;
 
-        $track = new Track;
-
-        $lastLocation = '';
-        $lastDate = '';
-
-        foreach ($rows as $row) {
-
-            $eventData = $this->parseRow($row);
-
-            if (!empty($eventData['location'])) {
-                $lastLocation = $eventData['location'];
-            } else {
-                $eventData['location'] = $lastLocation;
-            }
-
-            if (!empty($eventData['date'])) {
-                $lastDate = $eventData['date'];
-            } else {
-                $eventData['date'] = $lastDate;
-            }
-
-            $track->addEvent(Event::fromArray($eventData));
-        }
-
-        return $track->sortEvents();
-    }
-
-
-    /**
-     * Parse the row of the history table.
-     *
-     * @param DOMElement $row
-     *
-     * @return array
-     */
-    protected function parseRow(DOMElement $row)
-    {
-        $rowData = [];
-
-        $column = 0;
-
-        foreach ($row->childNodes as $tableCell) {
-
-            if ($tableCell->nodeName !== 'td') {
+        foreach ($rowsContainer->childNodes as $child) {
+            if (isset($child->tagName) && $child->tagName == 'h3') {
                 continue;
             }
 
-            $value = $this->getNodeValue($tableCell);
-
-            switch ($column) {
-                case 0:
-                    $rowData['date'] = $this->getDate($value);
-                    break;
-
-                case 1:
-                    $rowData['description'] = $value;
-                    break;
-
-                case 2:
-                    $rowData['location'] = $value;
-                    break;
-
-                default:
-                    break;
+            if (isset($child->tagName) && $child->tagName == 'hr') {
+                $index++;
+                continue;
             }
 
-            $column++;
+            $value = $this->getNodeValue($child);
+
+            if (!empty($value)) {
+                $items[$index][] = $value;
+            }
         }
 
-        $status = $this->resolveState($rowData['description']);
+        $realEvents = array_filter($items, function ($eventRows) {
+            // filter only those data-portions that are at least 3 lines long, i.e. contain the date,
+            // the location and a description. Otherwise it's not a real event, maybe just a short
+            // info text like "Inbound Into Customs" - not sure where to put that, so just leave it alone.
+            return count($eventRows) >= 3;
+        });
 
-        $rowData['status'] = $status;
+        $track = new Track;
 
-        return $rowData;
+        foreach ($realEvents as $eventData) {
+            $track->addEvent(Event::fromArray([
+                'date' => $this->getDate($eventData[0]),
+                'description' => $eventData[1],
+                'location' => $eventData[2],
+                'status' => $this->resolveState($eventData[1]),
+            ]));
+        }
+
+        return $track->sortEvents();
     }
 
 
@@ -172,7 +133,7 @@ class USPS extends AbstractTracker
      */
     protected function getNodeValue($element, $withLineBreaks = false)
     {
-        return preg_replace('/\s,/', '', $this->normalizedNodeValue($element, $withLineBreaks));
+        return $this->normalizedNodeValue($element, $withLineBreaks);
     }
 
 
@@ -187,10 +148,7 @@ class USPS extends AbstractTracker
     {
         // The date comes in a format like
         // November 9, 2015, 10:50 am
-        //
-        // Let Carbon parse it and then convert it to the
-        // standard format Y-m-d H:i:s
-        return empty($dateString) ? null : Carbon::parse($dateString)->toDateTimeString();
+        return empty($dateString) ? null : Carbon::parse($dateString);
     }
 
 
@@ -213,6 +171,7 @@ class USPS extends AbstractTracker
                 'Departed USPS Facility',
                 'Arrived at USPS Facility',
                 'Processed Through Sort Facility',
+                'Processed Through Facility',
                 'Origin Post is Preparing Shipment',
                 'Acceptance',
                 'Out for Delivery',
