@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!--[if IE 9]><html class="no-js ie lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="UTF-8">
+  <title>DHL Sendungsverfolgung</title>
+  <meta name="description" content="DHL Sendungsverfolgung">
+  <meta name="author" content="DHL">
+  <meta name="keywords" content="DHL">
+  <meta name="publisher" content="DHL">
+  <meta name="ROBOTS" content="NOINDEX">
+  <meta name="apple-itunes-app" content="app-id=329315203, app-argument=http://m.dhl.de">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="/nextt-online-public/de/static/v600/img/DHLPaket_AppIcon_72x72.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/nextt-online-public/de/static/v600/assets/img/DHLPaket_AppIcon_120x120.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/nextt-online-public/de/static/v600/assets/img/DHLPaket_AppIcon_152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/nextt-online-public/de/static/v600/assets/img/DHLPaket_AppIcon_180x180.png">
+  <!-- NOLP Frontend Version 6.0.0 -->
+  <link rel="shortcut icon" type="image/x-icon" href="/nextt-online-public/de/static/v600/assets/img/favicon.ico">
+
+
+
+
+
+
+    <link rel="stylesheet" href="/nextt-online-public/de/static/v600/assets/css/dhl.min.css"/>
+    <link rel="stylesheet" href="/nextt-online-public/de/static/v600/assets/css/verfolgen.min.css"/>
+
+
+
+
+
+
+
+</head>
+<body>
+<div id="content">
+
+
+	<div class="container">
+		<!-- start: header -->
+		<header class="dhl redesign header">
+			<div class="header__secondaryNavigation">
+				<ul>
+					<li><a href="https://www.dhl.de/de/privatkunden.html" class="active">Privatkunden</a></li>
+					<li><a href="https://www.dhl.de/de/geschaeftskunden.html">Geschäftskunden</a></li>
+				</ul>
+			</div>
+			<div class="header__primaryNavigation">
+				<div class="header__logoWrapper">
+					<a href="https://www.dhl.de">
+						<img src="/nextt-online-public/de/static/v600/assets/img/dhl-official.svg" class="header__logo" />
+					</a>
+				</div>
+				<div class="header__navigationWrapper">
+					<ul>
+						<li>
+							<li><a href="https://www.dhl.de/de/privatkunden/pakete-versenden.html" class="header__linkPrimary">Pakete versenden</a>
+						</li>
+						<li>
+							<li><a href="https://www.dhl.de/de/privatkunden/pakete-empfangen.html" class="header__linkPrimary">Pakete empfangen</a>
+						</li>
+						<li>
+							<li><a href="https://www.dhl.de/de/privatkunden/hilfe-kundenservice.html" class="header__linkPrimary">Hilfe &amp; Kontakt</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<!-- end: header -->
+	</div>
+
+
+
+  <div data-verfolgen-version="v600">
+
+<main class="dhl redesign verfolgen container" data-recaptchakey="6Lc0oAUTAAAAAL1ivpQh46dqYtT0iSx6kZvK9DV4" data-currentlang="de" data-initialqueryparameters="zip=35633&amp;idc=00340434162530533851" data-reload-url="set_identcodes.do?zip=35633&amp;idc=00340434162530533851" data-verfolgen-wg="0" data-merge-possible="true">
+
+<div class="row">
+  <div class="col-xs-12 mm_shipment-detail-header text-center">
+    <h3>Suchergebnis</h3>
+    <p>Hier finden Sie die Informationen zu Ihren gesuchten Sendungen.</p>
+    <p class="hidden-xs">Haben Sie <a href=http://www.dhl.de/de/paket/hilfe-kundenservice/sendungsverfolgung.html class=arrowLink target=_blank> Fragen </a> zur DHL Sendungsverfolgung?</p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+  <div class="mm_shipmentHeader" data-shipment-header data-shipment-number="00340434162530533851">
+    <div class="row">
+      <div class="hidden-xs hidden-sm col-md-2 mm_senderIconWrapper">
+        <div class="mm_senderIcon">
+          <div class="circleIcon">
+							<span class="icon shipper">
+                </img>
+							  <svg role="img" xmlns="http://www.w3.org/2000/svg" version="1.1" class="package">
+									<use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icons-verfolgen.svg#package"></use>
+								</svg>
+							</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-10">
+        <div class="mm_flexEqualColHeight">
+          <div class="mm_senderIconWrapper hidden-md hidden-lg">
+            <div class="mm_senderIcon">
+              <div class="circleIcon">
+									<span class="icon shipper">
+                    </img>
+                    <svg role="img" xmlns="http://www.w3.org/2000/svg" version="1.1" class="package">
+                      <use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icons-verfolgen.svg#package"></use>
+                    </svg>
+									</span>
+              </div>
+            </div>
+          </div>
+          <div class="mm_shipmentReference mm_shipmentName">
+            <dl>
+              <dt>
+
+                <span data-shipment-name-label>DHL Paket</span>
+
+                <div class="dropdown hidden">
+                  <span class="icon" data-toggle="dropdown">
+                    <svg role="img" xmlns="http://www.w3.org/2000/svg" version="1.1" class="icon-options">
+                      <use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icons-verfolgen.svg#options"></use>
+                    </svg>
+                  </span>
+
+                  <ul class="dropdown-menu">
+
+                    <li><a href="#" data-print-shipment>Drucken</a></li>
+
+
+                  </ul>
+                </div>
+                <div data-shipment-rename-controls class="mm_shipment-rename-controls hidden">
+                  <input type="text" value="DHL Paket" data-shipment-name-input
+                        pattern=".{3,100}" minlength="3" maxlength="100" required
+                        title="Der Sendungsname muss zwischen 3 und 100 Zeichen lang sein.">
+                  <a href="#" data-shipment-rename-apply>
+                    <span class="icon">
+                      <svg role="img" xmlns="http://www.w3.org/2000/svg" version="1.1" class="check">
+                        <use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icon-sprite.svg#check"></use>
+                      </svg>
+                    </span>
+                  </a>
+                  <a href="#" data-shipment-rename-abort>
+                    <span class="icon">
+                      <svg role="img" xmlns="http://www.w3.org/2000/svg" version="1.1" class="close-bold">
+                        <use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icon-sprite.svg#close-bold"></use>
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </dt>
+              <dd class="mm_shipment-name-error hidden" data-shipment-name-error>Fehler</dd>
+
+
+  <dd class="hidden-md hidden-lg mm_shipment-number">Sendungsnummer 00340434162530533851</dd>
+
+
+
+
+
+            </dl>
+          </div>
+
+        </div>
+        <div class="row mm_shipmentDetailsRow">
+          <div class="col-xs-12 col-md-6 mm_shipmentReference">
+            <div class="row">
+              <div class="hidden-xs hidden-sm col-md-12">
+                <dl>
+
+
+  <dd class="mm_shipment-number">Sendungsnummer 00340434162530533851</dd>
+
+
+
+
+
+                </dl>
+              </div>
+              <div class="col-xs-12 col-md-12">
+
+                <div class="mm_deliveryProgress mm_deliveryProgress-yellow">
+                  <div class="mm_deliveryStep mm_deliveryStep-done"></div>
+                  <div class="mm_deliveryStep mm_deliveryStep-done"></div>
+                  <div class="mm_deliveryStep mm_deliveryStep-done"></div>
+                  <div class="mm_deliveryStep mm_deliveryStep-done"></div>
+                  <div class="mm_deliveryStep mm_deliveryStep"></div>
+                </div>
+
+              </div>
+
+
+
+
+
+
+                      <div class="col-xs-12 col-md-12">
+                        <div class="mm_deliveryTimeLabel">Voraussichtliche Zustellung</div>
+                        <div class="mm_deliveryTime">
+                            <span class="highlighted">Mi, 21.02.18 </span>
+                            <span class="highlighted">09:00 - 13:00 Uhr</span>
+                        </div>
+                      </div>
+
+
+                    <div class="col-xs-12 col-md-12">
+
+
+
+                    </div>
+
+
+
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-6 mm_shipmentStatusContainer">
+            <div class="mm_shipmentStatusInnerContainer">
+              <div class="mm_shipmentStatus">
+                <div class="mm_shipmentStatusText">
+                  <div class="row mm_flexNoGrow">
+                    <div class="col-xs-12">
+                      <dl>
+
+                        <dd>Status: Rücksendung: Unbekannt verzogen</dd>
+                        <dd>Nächster Schritt: Die Sendung wird an den Absender zurückgesandt.</dd>
+
+                      </dl>
+                    </div>
+
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+  </div>
+
+
+
+
+  <div data-shipment-details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="row">
+      <div class="col-xs-12 col-md-offset-2 col-md-8">
+
+        <div class="dhl redesign verfolgen mm_collapsiblePanel mm_shipmentDetailsView">
+          <div class="panel-group" id="events" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default verfolgen">
+              <a role="button" data-toggle="collapse" data-parent="#events"
+                 href="#events-content" aria-expanded="true"
+                 aria-controls="events-content">
+                <div class="verfolgen panel-heading" role="tab" id="events-heading">
+                  <div class="panel-title">
+                    <p class="panel-headline">Detaillierter Sendungsverlauf</p>
+                  </div>
+                  <div class="panel-indicator">
+											<span class="icon icon-expand">
+												<svg role="img" xmlns="http://www.w3.org/2000/svg" version="1.1" class="plus">
+													<use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icon-sprite.svg#plus"></use>
+												</svg>
+											</span>
+                    <span class="icon icon-collapse">
+												<svg role="img" xmlns="http://www.w3.org/2000/svg" version="1.1" class="minus">
+													<use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icon-sprite.svg#minus"></use>
+												</svg>
+											</span>
+                  </div>
+                </div>
+              </a>
+              <div id="events-content"
+                   class="panel-collapse collapse in"
+                   role="tabpanel" aria-labelledby="events-heading">
+
+                <div class="verfolgen panel-body mm_verfolgen-info">
+                  <dl>
+
+
+
+                          <dt data-label-date="Datum/Uhrzeit" data-label-location="Ort">Mi, 21.02.18 08:18 Deutschland</dt>
+
+
+                          <dd data-label-status="Status">Es erfolgt eine Rücksendung, da der Empfänger nicht zu ermitteln ist (unbekannt verzogen). Eine Adressprüfung findet nicht statt.</dd>
+
+
+
+
+
+
+                          <dt data-label-date="Datum/Uhrzeit" data-label-location="Ort">Mi, 21.02.18 08:17 </dt>
+
+
+                          <dd data-label-status="Status">Die Sendung wurde in das Zustellfahrzeug geladen.</dd>
+
+
+
+
+
+
+                          <dt data-label-date="Datum/Uhrzeit" data-label-location="Ort">Di, 20.02.18 05:45 Obertshausen, Deutschland</dt>
+
+
+                          <dd data-label-status="Status">Die Sendung wurde im Ziel-Paketzentrum bearbeitet.</dd>
+
+
+
+
+
+
+                          <dt data-label-date="Datum/Uhrzeit" data-label-location="Ort">Mo, 19.02.18 17:08 Köln, Deutschland</dt>
+
+
+                          <dd data-label-status="Status">Die Sendung wurde im Start-Paketzentrum bearbeitet.</dd>
+
+
+
+
+
+
+                          <dt data-label-date="Datum/Uhrzeit" data-label-location="Ort">Mo, 19.02.18 16:06 </dt>
+
+
+                          <dd data-label-status="Status">Die Auftragsdaten zu dieser Sendung wurden vom Absender elektronisch an DHL übermittelt.</dd>
+
+
+
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+      <div class="row">
+        <div class="col-xs-12 col-md-offset-2 col-md-8">
+
+          <div class="dhl redesign verfolgen mm_collapsiblePanel">
+            <div class="panel-group" id="benachrichtigung" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default verfolgen">
+                <a role="button" class="collapsed" data-toggle="collapse" data-parent="#benachrichtigung"
+                   href="#benachrichtigung-content" aria-expanded="false"
+                   aria-controls="benachrichtigung-content">
+                  <div class="verfolgen panel-heading" role="tab" id="benachrichtigung-heading">
+                    <div class="panel-title">
+                      <p class="panel-headline">Informationen zu Ihrem Paket per E-Mail erhalten</p>
+                    </div>
+                    <div class="panel-indicator">
+											<span class="icon icon-expand">
+												<svg role="img" xmlns="http://www.w3.org/2000/svg" version="1.1" class="plus">
+													<use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icon-sprite.svg#plus"></use>
+												</svg>
+											</span>
+                      <span class="icon icon-collapse">
+												<svg role="img" xmlns="http://www.w3.org/2000/svg" version="1.1" class="minus">
+													<use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icon-sprite.svg#minus"></use>
+												</svg>
+											</span>
+                    </div>
+                  </div>
+                </a>
+                <div id="benachrichtigung-content"
+                     class="panel-collapse collapse"
+                     role="tabpanel" aria-labelledby="benachrichtigung-heading">
+                  <div class="verfolgen panel-body">
+                    <form class="packageNotificationForm" id='packageNotificationForm0' name='packageNotificationForm0' action='javascript:grecaptcha.getResponse(dhlNolp.recaptcha.widget2[0]);' data-packageNotificationIndex="0">
+                      <input type="hidden" name="pieceCode" value="00340434162530533851">
+  										<input type="hidden" id="packageNotificationIndex0" value="0">
+                      <fieldset>
+                        <div class="form-group">
+                          <div class="form-checkbox">
+                            <label>
+                              <input type="checkbox" name="estimatedDeliveryNotificationChosen"
+                                     id='estimatedDeliveryNotificationChosen' checked>
+                              <span class="input-dummy">
+																<span class="icon">
+																	<svg role="img" class="check">
+																		<use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icon-sprite.svg#check"></use>
+																	</svg>
+																</span>
+															</span>
+                              <span>Benachrichtigung über den geplanten Zustelltag und ggf. das geplante Zustellzeitfenster.</span>
+
+                            </label>
+                          </div>
+                          <div class="form-checkbox">
+                            <label>
+                              <input type="checkbox" name="deliveredNotificationChosen" id='deliveredNotificationChosen'>
+                              <span class="input-dummy">
+																<span class="icon">
+																	<svg role="img" class="check">
+																		<use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icon-sprite.svg#check"></use>
+																	</svg>
+																</span>
+															</span>
+                              <span>Benachrichtigung über die erfolgte Zustellung der Sendung.</span>
+
+                            </label>
+                          </div>
+                          <div class="form-checkbox">
+                            <label>
+                              <input type="checkbox" name="currentStateChosen" id='currentState'>
+                              <span class="input-dummy">
+																<span class="icon">
+																	<svg role="img" class="check">
+																		<use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icon-sprite.svg#check"></use>
+																	</svg>
+																</span>
+															</span>
+                              <span>Einmalige Benachrichtigung über den aktuellen Status der Sendung.</span>
+
+                            </label>
+                          </div>
+                          <span id="checkbox_error0" class="help-block hidden">Bitte wählen Sie eine Applikation aus</span>
+                        </div>
+                        <div class="form-group">
+                          <input id="shipmentname" name="shipmentname" type="text"
+                                 placeholder="Vergeben Sie einen Namen für Ihre Sendung"
+                                 maxlength="50" class="form-control" value="">
+                          <span id="name_length_error0" class="help-block hidden">Der Name darf nicht länger als 50 Zeichen sein.</span>
+                        </div>
+                        <div class="form-group">
+  												<input id="email1" name="email1" type="email"
+                                 placeholder="E-Mail Adresse"
+                                 class="form-control" required value="">
+                          <span id="email1_error0" class="help-block hidden">Bitte geben sie eine korrekte Email Adresse an.</span>
+  											</div>
+                        <div class="form-group">
+  												<input id="email2" name="email2" type="email"
+                                 placeholder="Weitere E-Mail Adresse"
+                                 class="form-control">
+                          <span id="email2_error0" class="help-block hidden">Bitte geben sie eine korrekte Email Adresse an.</span>
+  											</div>
+                        <div class="form-group">
+                          <div class="captcha packageNotificationCaptcha" id="packageNotificationCaptcha0" data-captcha-index="0"></div>
+                          <span id="captcha_error0" class="help-block hidden">Bitte füllen sie das Captcha aus.</span>
+                          <div class="mm_captcha-load-error hidden">Leider steht die Sicherheitsabfrage zur Zeit nicht zur Verfügung.</div>
+                        </div>
+                        <div class="form-group">
+                          <button type="submit" class="btn btn-primary">Benachrichtigung(en) aktivieren</button>
+                          <p class="help-block">*Pflichtfelder</p>
+                        </div>
+                      </fieldset>
+                    </form>
+                    <div id="packageNotificationSuccess0" class="mm_packagenotification_success hidden">
+                      <div class="alert alert-success mm_alert mm_alert-with-icon">
+                        <div class="mm_alert-content">
+                          Die Paketbenachrichtigung ist aktiviert.
+                        </div>
+                        <div class="mm_alert-icon">
+                          <span class="icon check">
+                            <svg role="img" xmlns="http://www.w3.org/2000/svg" version="1.1" class="check">
+                              <use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icon-sprite.svg#check"></use>
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="ajax_error_message0" class="hidden">
+                      <div class="alert alert-warning mm_alert mm_alert-with-icon">
+                        <div class="mm_alert-content">
+                          Leider konnte Ihre Abfrage aus technischen Gründen nicht bearbeitet werden. Bitte versuchen Sie es zu einem späteren Zeitpunkt erneut.
+                        </div>
+                        <div class="mm_alert-icon">
+                          <span class="icon close-bold">
+                            <svg role="img" xmlns="http://www.w3.org/2000/svg" version="1.1" class="close-bold">
+                              <use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icon-sprite.svg#close-bold"></use>
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
+  </div>
+
+
+
+
+
+<div class="dhl redesign linkbutton">
+  <div class="center">
+    <form>
+      <button formaction="/nextt-online-public/de/" type="submit" class="btn btn-primary">neue Suche</button>
+    </form>
+  </div>
+</div>
+
+
+
+<div id="modal_confirm_merge" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="text-center">Sendungen übernehmen</h4>
+      </div>
+      <div class="modal-body">
+        <p>Sendungen übernehmen?</p>
+      </div>
+      <div class="modal-footer">
+        <div class="mm_buttons mm_buttons-full-width">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Nein</button>
+          <button type="submit" class="btn btn-primary">Ja</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+
+	</div>
+
+
+		<footer class="dhl redesign verfolgen footer">
+			<div class="container">
+				<div class="row footer__row footer__rowNavigation">
+					<div class="col-xs-12 col-sm-6 col-lg-3">
+						<h4 class="h4">
+							<a href="http://www.dhl.de/dhl-paket">DHL Paket</a>
+						</h4>
+						<ul class="footer__navigationItems">
+							<li>
+								<a href="http://www.dhl.de/">DHL Deutschland</a>
+							</li>
+							<li>
+								<a href="http://www.dhl.de/express">DHL Express</a>
+							</li>
+							<li>
+								<a href="http://www.dhl.de/logistik">DHL Logistik</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-lg-3">
+						<h4 class="h4">
+							<a href="http://www.dhl.de/kontaktformular-sendungsstatus">Kontakt</a>
+						</h4>
+						<ul class="footer__navigationItems">
+							<li>
+								<a href="http://www.dhl.de/kundenservice">Hilfe &amp; Kundenservice</a>
+							</li>
+							<li>
+								<a href="http://www.dhl.de/trackandtrace">So funktionierts</a>
+							</li>
+							<li>
+								<a href="http://www.dhl.de/mobil">Mobile Apps</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-lg-3">
+						<h4 class="h4">
+							<a href="http://www.dpdhl.de/about">Über uns</a>
+						</h4>
+						<ul class="footer__navigationItems">
+							<li>
+								<a href="http://www.dpdhl.de">Deutsche Post DHL</a>
+							</li>
+							<li>
+								<a href="http://www.dpdhl.de/verantwortung">Verantwortung</a>
+							</li>
+							<li>
+								<a href="http://www.dpdhl.de/presse">Presse</a>
+							</li>
+							<li>
+								<a href="http://www.dpdhl.de/karriere">Karriere</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-lg-3" itemscope="itemscope" itemtype="http://schema.org/Organization">
+						<h4 class="h4">
+							<a itemscope="itemscope" itemtype="http://schema.org/Organization">Social</a>
+						</h4>
+						<link itemprop="url" href="https://www.dhl.de"/>
+						<ul class="footer__navigationIcons">
+							<li>
+								<a href="https://www.facebook.com/DHLPaket/">
+									<div class="circleIcon circleIcon--highlight">
+										<span class="icon">
+											<svg role="img" xmlns="http://www.w3.org/2000/svg" version="1.1" class="facebook">
+												<use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icon-sprite.svg#facebook"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.youtube.com/user/dhl">
+									<div class="circleIcon circleIcon--highlight">
+										<span class="icon">
+											<svg role="img" xmlns="http://www.w3.org/2000/svg" version="1.1" class="youtube">
+												<use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icon-sprite.svg#youtube"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.linkedin.com/company/dhl">
+									<div class="circleIcon circleIcon--highlight">
+										<span class="icon">
+											<svg role="img" xmlns="http://www.w3.org/2000/svg" version="1.1" class="linkedin">
+												<use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icon-sprite.svg#linkedin"></use>
+											</svg>
+										</span>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row footer__row footer__rowLanguage">
+					<div class="col-xs-12">
+						<div class="footerLanguages" data-nol-languages>
+
+								<a href="/nextt-online-public/de/">
+									<span class="icon">
+										<svg role="img" xmlns="http://www.w3.org/2000/svg" version="1.1" class="flag">
+											<use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icons-nepal.svg#flag-de">
+											</use>
+										</svg>
+									</span>
+									Deutsch</a>
+
+
+								<a href="/nextt-online-public/en/">
+									<span class="icon">
+										<svg role="img" xmlns="http://www.w3.org/2000/svg" version="1.1" class="flag">
+											<use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icons-nepal.svg#flag-en">
+											</use>
+										</svg>
+									</span>
+									Englisch</a>
+
+
+								<a href="/nextt-online-public/fr/">
+									<span class="icon">
+										<svg role="img" xmlns="http://www.w3.org/2000/svg" version="1.1" class="flag">
+											<use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icons-nepal.svg#flag-fr">
+											</use>
+										</svg>
+									</span>
+									Französisch</a>
+
+
+								<a href="/nextt-online-public/es/">
+									<span class="icon">
+										<svg role="img" xmlns="http://www.w3.org/2000/svg" version="1.1" class="flag">
+											<use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icons-nepal.svg#flag-es">
+											</use>
+										</svg>
+									</span>
+									Spanisch</a>
+
+
+								<a href="/nextt-online-public/cs/">
+									<span class="icon">
+										<svg role="img" xmlns="http://www.w3.org/2000/svg" version="1.1" class="flag">
+											<use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icons-nepal.svg#flag-cs">
+											</use>
+										</svg>
+									</span>
+									Tschechisch</a>
+
+
+								<a href="/nextt-online-public/pl/">
+									<span class="icon">
+										<svg role="img" xmlns="http://www.w3.org/2000/svg" version="1.1" class="flag">
+											<use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icons-nepal.svg#flag-pl">
+											</use>
+										</svg>
+									</span>
+									Polnisch</a>
+
+
+								<a href="/nextt-online-public/nl/">
+									<span class="icon">
+										<svg role="img" xmlns="http://www.w3.org/2000/svg" version="1.1" class="flag">
+											<use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icons-nepal.svg#flag-nl">
+											</use>
+										</svg>
+									</span>
+									Niederländisch</a>
+
+
+								<a href="/nextt-online-public/it/">
+									<span class="icon">
+										<svg role="img" xmlns="http://www.w3.org/2000/svg" version="1.1" class="flag">
+											<use xlink:href="/nextt-online-public/de/static/v600/assets/icons/icons-nepal.svg#flag-it">
+											</use>
+										</svg>
+									</span>
+									Italienisch</a>
+
+						</div>
+					</div>
+				</div>
+				<div class="row footer__row footer__rowLegal">
+					<div class="col-xs-12">
+						<h4 class="h4">
+						<img src="/nextt-online-public/de/static/v600/assets/img/dhl-group.svg" alt="Deutsche Post DHL Group"/></h4>
+						<ul class="footer__navigationLegal">
+							<li>
+								<a href="https://www.dhl.de/de/toolbar/footer/sicherheitshinweise.html">Sicherheitshinweise</a>
+							</li>
+							<li>
+								<a href="http://www.dhl.de/de/toolbar/footer/impressum/deutsche-post-ag.html">Impressum</a>
+							</li>
+							<li>
+								<a href="http://www.dhl.de/de/toolbar/footer/datenschutz.html">Datenschutz</a>
+							</li>
+						</ul>
+						<p class="footer__copyright">© 2018 DHL International GmbH - Alle Rechte vorbehalten.</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/nextt-online-public/de/static/v600/libs/vendor.min.js"></script>
+  <script src="/nextt-online-public/de/static/v600/app/client.verfolgen.min.js"></script>
+
+
+
+</body>
+</html>

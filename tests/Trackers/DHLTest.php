@@ -110,6 +110,20 @@ class DHLTest extends TestCase
 
 
     /** @test */
+    public function it_resolves_a_shipment_with_an_exception()
+    {
+        $tracker = $this->getTracker('exception.txt');
+
+        $track = $tracker->track('00340434162530533851');
+
+        $this->assertSame(Track::STATUS_EXCEPTION, $track->currentStatus());
+        $this->assertFalse($track->delivered());
+        $this->assertNull($track->getRecipient());
+        $this->assertCount(5, $track->events());
+    }
+
+
+    /** @test */
     public function it_resolves_a_shipment_as_delivered_even_if_the_statuses_are_not_in_chronological_order()
     {
         $this->markTestSkipped("No data for testing available yet.");
