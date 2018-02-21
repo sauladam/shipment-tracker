@@ -4,7 +4,6 @@ namespace Sauladam\ShipmentTracker\Trackers;
 
 use Carbon\Carbon;
 use DOMDocument;
-use DOMElement;
 use DOMXPath;
 use Sauladam\ShipmentTracker\Event;
 use Sauladam\ShipmentTracker\Track;
@@ -53,21 +52,18 @@ class DHL extends AbstractTracker
      */
     protected function getTrack(DOMXPath $xpath)
     {
-        $rows = $xpath->query("//div[@id='pieceEvents0']/div/div/div/table/tbody/tr");
-
-        if (!$rows) {
-            throw new \Exception("Unable to parse DHL tracking data for [{$this->parcelNumber}].");
-        }
-
         $track = new Track;
 
-        foreach ($rows as $row) {
-            $eventData = $this->parseEvent($row, $xpath);
+        foreach ($this->termDescriptionPairs($xpath) as $dateAndLocation => $description) {
+            $eventData = array_merge([
+                'description' => $description,
+                'status' => $status = $this->resolveStatus($description),
+            ], $this->splitDateAndLocation($dateAndLocation));
 
             $track->addEvent(Event::fromArray($eventData));
 
-            if (array_key_exists('recipient', $eventData)) {
-                $track->setRecipient($eventData['recipient']);
+            if ($status == Track::STATUS_DELIVERED && $recipient = $this->getRecipient($xpath)) {
+                $track->setRecipient($recipient);
             }
         }
 
@@ -76,70 +72,59 @@ class DHL extends AbstractTracker
 
 
     /**
-     * Parse the row of the history table.
+     * The event details ar split into a dt/dd list where the dt is ne date and location
+     * and the dd holds the description. So we have to match them.
      *
-     * @param DOMElement $row
      * @param DOMXPath $xpath
      *
      * @return array
+     * @throws \Exception
      */
-    protected function parseEvent(DOMElement $row, DOMXPath $xpath)
+    protected function termDescriptionPairs(DOMXPath $xpath)
     {
-        $rowData = [];
+        $descriptionList = $xpath->query("//div[@id='events-content']//dl");
 
-        foreach ($row->childNodes as $column => $tableCell) {
-            $value = $this->getNodeValue($tableCell);
-
-            // skip every other cell
-            switch ($column) {
-                case 0:
-                    $rowData['date'] = $this->getDate($value);
-                    break;
-
-                case 2:
-                    $rowData['location'] = $value;
-                    break;
-
-                case 4:
-                    $rowData['description'] = $value;
-                    break;
-
-                default:
-                    break;
-            }
+        if (!$descriptionList || $descriptionList->length === 0) {
+            throw new \Exception("Unable to parse DHL tracking data for [{$this->parcelNumber}].");
         }
 
-        $status = $this->resolveStatus($rowData['description']);
+        $terms = [];
+        $descriptions = [];
 
-        $rowData['status'] = $status;
-
-        if ($status == Track::STATUS_DELIVERED && $recipient = $this->getRecipient($xpath)) {
-            $rowData['recipient'] = $recipient;
+        foreach ($xpath->query("//div[@id='events-content']//dl//dt") as $term) {
+            $terms[] = $this->getNodeValue($term);
         }
 
-        return $rowData;
+        foreach ($xpath->query("//div[@id='events-content']//dl//dd") as $description) {
+            $descriptions[] = $this->getNodeValue($description);
+        }
+
+        return array_combine($terms, $descriptions);
     }
 
 
     /**
-     * Parse the date from the given string.
+     * Parse the date and the location from the given string.
      *
-     * @param string $dateString
+     * @param string $string
      *
-     * @return string
+     * @return array
      */
-    protected function getDate($dateString)
+    protected function splitDateAndLocation($string)
     {
         // The date comes in a format like
         // Sa, 18.07.16 12:21 Uhr or
         // Sat, 18.07.16 12:21 h
-        // so we have to strip all characters in order to
-        // let Carbon parse it and then convert it to the
-        // standard format Y-m-d H:i:s
-        $dateString = preg_replace('/[a-z]|[A-Z]|,/', '', $dateString);
-        $dateString = trim($dateString);
+        // so we have to strip all characters in order to let Carbon parse it and then
+        // convert it to the standard format Y-m-d H:i:s.
+        // Everything after that is considered the location.
 
-        return Carbon::createFromFormat('d.m.y H:i', $dateString);
+        preg_match('/^[a-z]+, (\d{2}\.\d{2}\.\d{2} \d{2}:\d{2})\s?(.+)?$/i', $string, $matches);
+
+        return [
+            'date' => Carbon::createFromFormat('d.m.y H:i', $matches[1]),
+            'location' => isset($matches[2]) ? $matches[2] : '',
+        ];
     }
 
 
@@ -152,10 +137,30 @@ class DHL extends AbstractTracker
      */
     protected function getRecipient(DOMXPath $xpath)
     {
-        return $this->getDescriptionForTerm([
-            'Zugestellt an',
-            'Delivered to',
-        ], $xpath);
+        $recipientDetailsNode = $xpath->query("//div[contains(@class, 'recipientDetails')]");
+
+        if (!$recipientDetailsNode || $recipientDetailsNode->length === 0) {
+            return null;
+        }
+
+        $texts = [];
+
+        foreach ($recipientDetailsNode->item(0)->childNodes as $node) {
+
+            if ($node->nodeType !== XML_TEXT_NODE) {
+                continue;
+            }
+
+            if (empty($nodeValue = $this->getNodeValue($node))) {
+                continue;
+            }
+
+            $texts[] = strpos($nodeValue, ':') !== false
+                ? trim(explode(':', $nodeValue)[1])
+                : $nodeValue;
+        }
+
+        return empty($texts) ? false : $texts[0];
     }
 
 
@@ -215,8 +220,12 @@ class DHL extends AbstractTracker
                 'Uhrzeit der Abholung kann der Benachrichtigungskarte entnommen werden',
                 'earliest time when it can be picked up can be found on the notification card',
                 'shipment is ready for pick-up at the PACKSTATION',
+                'Sendung wird zur Abholung in die',
+                'The shipment is being brought to',
             ],
             Track::STATUS_WARNING => [
+                'Sendung konnte nicht zugestellt werden',
+                'shipment could not be delivered',
                 'attempting to obtain a new delivery address',
                 'eine neue Zustelladresse für den Empf',
                 'Sendung wurde fehlgeleitet und konnte nicht zugestellt werden. Die Sendung wird umadressiert und an den',

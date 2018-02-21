@@ -62,7 +62,7 @@ class DHLTest extends TestCase
     {
         $tracker = $this->getTracker('delivered.txt');
 
-        $track = $tracker->track('00340433924192908894');
+        $track = $tracker->track('00340434162530533196');
 
         $this->assertSame(Track::STATUS_DELIVERED, $track->currentStatus());
         $this->assertTrue($track->delivered());
@@ -75,9 +75,9 @@ class DHLTest extends TestCase
     {
         $tracker = $this->getTracker('delivered.txt');
 
-        $track = $tracker->track('00340433924192908894');
+        $track = $tracker->track('00340434162530533196');
 
-        $this->assertSame('Neighbor', $track->getRecipient());
+        $this->assertSame('Empfänger (orig.)', $track->getRecipient());
     }
 
 
@@ -86,12 +86,12 @@ class DHLTest extends TestCase
     {
         $tracker = $this->getTracker('pickup.txt');
 
-        $track = $tracker->track('00340433924192908764');
+        $track = $tracker->track('00340434162530531062');
 
         $this->assertSame(Track::STATUS_PICKUP, $track->currentStatus());
         $this->assertFalse($track->delivered());
         $this->assertNull($track->getRecipient());
-        $this->assertCount(8, $track->events());
+        $this->assertCount(7, $track->events());
     }
 
 
@@ -100,18 +100,20 @@ class DHLTest extends TestCase
     {
         $tracker = $this->getTracker('in_transit.txt');
 
-        $track = $tracker->track('00340433924192908283');
+        $track = $tracker->track('00340434162530534551');
 
         $this->assertSame(Track::STATUS_IN_TRANSIT, $track->currentStatus());
         $this->assertFalse($track->delivered());
         $this->assertNull($track->getRecipient());
-        $this->assertCount(7, $track->events());
+        $this->assertCount(4, $track->events());
     }
 
 
     /** @test */
     public function it_resolves_a_shipment_as_delivered_even_if_the_statuses_are_not_in_chronological_order()
     {
+        $this->markTestSkipped("No data for testing available yet.");
+
         $tracker = $this->getTracker('delivered_with_unordered_statuses.txt');
 
         $track = $tracker->track('00340433924192991025');
