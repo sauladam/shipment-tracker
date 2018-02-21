@@ -240,6 +240,8 @@ class DHL extends AbstractTracker
                 'is incorrect',
                 'recipient has not picked up the shipment',
                 'nicht in der Filiale abgeholt',
+                'The shipment is being returned',
+                'Es erfolgt eine Rücksendung',
             ],
         ];
 
