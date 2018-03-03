@@ -305,7 +305,7 @@
                   </div>
                 </div>
               </a>
-              <div id="events-content"
+              <div id="events-content-0"
                    class="panel-collapse collapse in"
                    role="tabpanel" aria-labelledby="events-heading">
 

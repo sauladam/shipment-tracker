@@ -82,7 +82,7 @@ class DHL extends AbstractTracker
      */
     protected function termDescriptionPairs(DOMXPath $xpath)
     {
-        $descriptionList = $xpath->query("//div[@id='events-content']//dl");
+        $descriptionList = $xpath->query("//div[@id='events-content-0']//dl");
 
         if (!$descriptionList || $descriptionList->length === 0) {
             throw new \Exception("Unable to parse DHL tracking data for [{$this->parcelNumber}].");
@@ -91,11 +91,11 @@ class DHL extends AbstractTracker
         $terms = [];
         $descriptions = [];
 
-        foreach ($xpath->query("//div[@id='events-content']//dl//dt") as $term) {
+        foreach ($xpath->query("//div[@id='events-content-0']//dl//dt") as $term) {
             $terms[] = $this->getNodeValue($term);
         }
 
-        foreach ($xpath->query("//div[@id='events-content']//dl//dd") as $description) {
+        foreach ($xpath->query("//div[@id='events-content-0']//dl//dd") as $description) {
             $descriptions[] = $this->getNodeValue($description);
         }
 
