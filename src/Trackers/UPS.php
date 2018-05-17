@@ -312,7 +312,7 @@ class UPS extends AbstractTracker
 
         foreach ($statuses as $status => $needles) {
             foreach ($needles as $needle) {
-                if (strpos($statusDescription, $needle) !== false) {
+                if (stripos($statusDescription, $needle) !== false) {
                     return $status;
                 }
             }
