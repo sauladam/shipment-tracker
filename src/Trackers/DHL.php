@@ -23,6 +23,11 @@ class DHL extends AbstractTracker
      */
     protected $language = 'de';
 
+    /**
+     * @var object
+     */
+    protected $parsedJson;
+
 
     /**
      * @param string $contents
@@ -54,13 +59,14 @@ class DHL extends AbstractTracker
     {
         $track = new Track;
 
-        foreach ($this->termDescriptionPairs($xpath) as $dateAndLocation => $description) {
-            $eventData = array_merge([
-                'description' => $description,
-                'status' => $status = $this->resolveStatus($description),
-            ], $this->splitDateAndLocation($dateAndLocation));
 
-            $track->addEvent(Event::fromArray($eventData));
+        foreach ($this->getEvents($xpath) as $event) {
+            $track->addEvent(Event::fromArray([
+                'description' => strip_tags($event->status),
+                'status' => $status = $this->resolveStatus(strip_tags($event->status)),
+                'date' => Carbon::parse($event->datum),
+                'location' => isset($event->ort) ? $event->ort : '',
+            ]));
 
             if ($status == Track::STATUS_DELIVERED && $recipient = $this->getRecipient($xpath)) {
                 $track->setRecipient($recipient);
@@ -72,59 +78,15 @@ class DHL extends AbstractTracker
 
 
     /**
-     * The event details ar split into a dt/dd list where the dt is ne date and location
-     * and the dd holds the description. So we have to match them.
+     * Get the events.
      *
      * @param DOMXPath $xpath
-     *
-     * @return array
+     * @return mixed
      * @throws \Exception
      */
-    protected function termDescriptionPairs(DOMXPath $xpath)
+    protected function getEvents(DOMXPath $xpath)
     {
-        $descriptionList = $xpath->query("//div[@id='events-content-0']//dl");
-
-        if (!$descriptionList || $descriptionList->length === 0) {
-            throw new \Exception("Unable to parse DHL tracking data for [{$this->parcelNumber}].");
-        }
-
-        $terms = [];
-        $descriptions = [];
-
-        foreach ($xpath->query("//div[@id='events-content-0']//dl//dt") as $term) {
-            $terms[] = $this->getNodeValue($term);
-        }
-
-        foreach ($xpath->query("//div[@id='events-content-0']//dl//dd") as $description) {
-            $descriptions[] = $this->getNodeValue($description);
-        }
-
-        return array_combine($terms, $descriptions);
-    }
-
-
-    /**
-     * Parse the date and the location from the given string.
-     *
-     * @param string $string
-     *
-     * @return array
-     */
-    protected function splitDateAndLocation($string)
-    {
-        // The date comes in a format like
-        // Sa, 18.07.16 12:21 Uhr or
-        // Sat, 18.07.16 12:21 h
-        // so we have to strip all characters in order to let Carbon parse it and then
-        // convert it to the standard format Y-m-d H:i:s.
-        // Everything after that is considered the location.
-
-        preg_match('/^[a-z]+, (\d{2}\.\d{2}\.\d{2} \d{2}:\d{2})\s?(.+)?$/i', $string, $matches);
-
-        return [
-            'date' => Carbon::createFromFormat('d.m.y H:i', $matches[1]),
-            'location' => isset($matches[2]) ? $matches[2] : '',
-        ];
+        return $this->parseJson($xpath)->sendungen[0]->sendungsdetails->sendungsverlauf->events;
     }
 
 
@@ -134,33 +96,48 @@ class DHL extends AbstractTracker
      * @param DOMXPath $xpath
      *
      * @return null|string
+     * @throws \Exception
      */
     protected function getRecipient(DOMXPath $xpath)
     {
-        $recipientDetailsNode = $xpath->query("//div[contains(@class, 'recipientDetails')]");
+        $deliveryDetails = $this->parseJson($xpath)->sendungen[0]->sendungsdetails->zustellung;
 
-        if (!$recipientDetailsNode || $recipientDetailsNode->length === 0) {
-            return null;
+        return isset($deliveryDetails->empfaenger) && isset($deliveryDetails->empfaenger->name)
+            ? $deliveryDetails->empfaenger->name
+            : null;
+    }
+
+
+    /**
+     * Parse the JSON from the script tag.
+     *
+     * @param DOMXPath $xpath
+     * @return mixed|object
+     * @throws \Exception
+     */
+    protected function parseJson(DOMXPath $xpath)
+    {
+        if ($this->parsedJson) {
+            return $this->parsedJson;
         }
 
-        $texts = [];
+        $scriptTags = $xpath->query("//script");
 
-        foreach ($recipientDetailsNode->item(0)->childNodes as $node) {
-
-            if ($node->nodeType !== XML_TEXT_NODE) {
-                continue;
-            }
-
-            if (empty($nodeValue = $this->getNodeValue($node))) {
-                continue;
-            }
-
-            $texts[] = strpos($nodeValue, ':') !== false
-                ? trim(explode(':', $nodeValue)[1])
-                : $nodeValue;
+        if ($scriptTags->length === 0) {
+            throw new \Exception("Unable to parse DHL tracking data for [{$this->parcelNumber}].");
         }
 
-        return empty($texts) ? false : $texts[0];
+        $scriptContent = $scriptTags->item(0)->nodeValue;
+
+        $matched = preg_match("/initialState: JSON.parse\((.*)\)\,/m", $scriptContent, $matches);
+
+        if ($matched !== 1) {
+            throw new \Exception("Unable to parse DHL tracking data for [{$this->parcelNumber}].");
+        }
+
+        $this->parsedJson = json_decode(json_decode($matches[1]));
+
+        return $this->parsedJson;
     }
 
 

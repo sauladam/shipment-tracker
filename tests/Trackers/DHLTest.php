@@ -91,7 +91,7 @@ class DHLTest extends TestCase
         $this->assertSame(Track::STATUS_PICKUP, $track->currentStatus());
         $this->assertFalse($track->delivered());
         $this->assertNull($track->getRecipient());
-        $this->assertCount(7, $track->events());
+        $this->assertCount(6, $track->events());
     }
 
 
@@ -108,10 +108,24 @@ class DHLTest extends TestCase
         $this->assertCount(4, $track->events());
     }
 
+    /** @test */
+    public function it_resolves_a_shipment_with_a_warning()
+    {
+        $tracker = $this->getTracker('warning.txt');
+
+        $track = $tracker->track('00340434162530584006');
+
+        $this->assertSame(Track::STATUS_WARNING, $track->currentStatus());
+        $this->assertFalse($track->delivered());
+        $this->assertNull($track->getRecipient());
+        $this->assertCount(5, $track->events());
+    }
 
     /** @test */
     public function it_resolves_a_shipment_with_an_exception()
     {
+        $this->markTestSkipped("No data for testing available yet.");
+
         $tracker = $this->getTracker('exception.txt');
 
         $track = $tracker->track('00340434162530533851');
