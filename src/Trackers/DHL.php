@@ -59,7 +59,6 @@ class DHL extends AbstractTracker
     {
         $track = new Track;
 
-
         foreach ($this->getEvents($xpath) as $event) {
             $track->addEvent(Event::fromArray([
                 'description' => strip_tags($event->status),
@@ -127,21 +126,19 @@ class DHL extends AbstractTracker
 
         $scriptTags = $xpath->query("//script");
 
-        if ($scriptTags->length === 0) {
+        if ($scriptTags->length < 1) {
             throw new \Exception("Unable to parse DHL tracking data for [{$this->parcelNumber}].");
         }
 
-        $scriptContent = $scriptTags->item(0)->nodeValue;
-
-        $matched = preg_match("/initialState: JSON.parse\((.*)\)\,/m", $scriptContent, $matches);
+        $matched = preg_match(
+            "/initialState: JSON\.parse\((.*)\)\,/m", $scriptTags->item(0)->nodeValue, $matches
+        );
 
         if ($matched !== 1) {
             throw new \Exception("Unable to parse DHL tracking data for [{$this->parcelNumber}].");
         }
 
-        $this->parsedJson = json_decode(json_decode($matches[1]));
-
-        return $this->parsedJson;
+        return $this->parsedJson = json_decode(json_decode($matches[1]));
     }
 
 
