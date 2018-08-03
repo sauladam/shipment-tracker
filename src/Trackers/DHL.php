@@ -81,12 +81,16 @@ class DHL extends AbstractTracker
      * Get the events.
      *
      * @param DOMXPath $xpath
-     * @return mixed
+     * @return array
      * @throws \Exception
      */
     protected function getEvents(DOMXPath $xpath)
     {
-        return $this->parseJson($xpath)->sendungen[0]->sendungsdetails->sendungsverlauf->events;
+        $progress = $this->parseJson($xpath)->sendungen[0]->sendungsdetails->sendungsverlauf;
+
+        return $progress->fortschritt > 0
+            ? (array)$progress->events
+            : [];
     }
 
 
