@@ -3,26 +3,49 @@
 namespace Sauladam\ShipmentTracker\Trackers;
 
 use Carbon\Carbon;
-use DOMDocument;
-use DOMElement;
-use DOMXPath;
 use Sauladam\ShipmentTracker\Event;
 use Sauladam\ShipmentTracker\Track;
-use Sauladam\ShipmentTracker\Utils\XmlHelpers;
 
 class UPS extends AbstractTracker
 {
-    use XmlHelpers;
-
     /**
      * @var string
      */
-    protected $serviceEndpoint = 'http://wwwapps.ups.com/WebTracking/track';
+    protected $serviceEndpoint = 'https://www.ups.com/track/api/Track/GetStatus';
+
+    protected $descriptionLookupEndpoint = 'https://www.ups.com/track/api/WemsData/GetLookupData';
+
+    /**
+     * @var null|array
+     */
+    protected $descriptionLookup;
 
     /**
      * @var string
      */
     protected $language = 'de';
+
+
+    protected function fetch($url)
+    {
+        try {
+            $response = $this->getDataProvider()->client->post('https://www.ups.com/track/api/Track/GetStatus', [
+                'headers' => [
+                    'Content-Type' => 'application/json',
+                ],
+                'json' => [
+                    'Locale' => $this->getLanguageQueryParam($this->language),
+                    'TrackingNumber' => [
+                        $this->parcelNumber,
+                    ],
+                ],
+            ])->getBody()->getContents();
+
+            return json_decode($response, true);
+        } catch (\Exception $e) {
+            throw new \Exception("Could not fetch tracking data for [{$this->parcelNumber}].");
+        }
+    }
 
 
     /**
@@ -33,225 +56,88 @@ class UPS extends AbstractTracker
      */
     protected function buildResponse($contents)
     {
-        $dom = new DOMDocument;
-        @$dom->loadHTML($contents);
-        $dom->preserveWhiteSpace = false;
-
-        $domxpath = new DOMXPath($dom);
-
-        return $this->getTrack($domxpath);
-    }
-
-
-    /**
-     * Get the shipment status history.
-     *
-     * @param DOMXPath $xpath
-     *
-     * @return Track
-     * @throws \Exception
-     */
-    protected function getTrack(DOMXPath $xpath)
-    {
-        $rows = $xpath->query("//table[@class='dataTable']//tr");
-
-        if (!$rows) {
-            throw new \Exception("Unable to parse UPS tracking data for [{$this->parcelNumber}].");
-        }
-
         $track = new Track;
 
-        $lastLocation = '';
+        foreach ($contents['trackDetails'][0]['shipmentProgressActivities'] as $progressActivity) {
+            $track->addEvent(Event::fromArray([
+                'location' => $progressActivity['location'],
+                'description' => $progressActivity['activityScan'], //$this->getDescription($progressActivity),
+                'date' => $this->getDate($progressActivity),
+                'status' => $status = $this->resolveState($progressActivity['activityScan'])
+            ]));
 
-        foreach ($rows as $index => $row) {
-            if ($index == 0) {
-                continue; // skip the heading row
+            if ($status == Track::STATUS_DELIVERED && isset($contents['trackDetails'][0]['receivedBy'])) {
+                $track->setRecipient($contents['trackDetails'][0]['receivedBy']);
             }
 
-            $eventData = $this->parseRow($row, $xpath);
-
-            if (!empty($eventData['location'])) {
-                $lastLocation = $eventData['location'];
-            } else {
-                $eventData['location'] = $lastLocation;
-            }
-
-            $event = Event::fromArray($eventData);
-
-            $track->addEvent($event);
-
-            if (array_key_exists('recipient', $eventData)) {
-                $track->setRecipient($eventData['recipient']);
-            }
-
-            if (array_key_exists('access_point_details', $eventData)) {
-                $track->addAdditionalDetails('accessPoint', $eventData['access_point_details']['location']);
-                $track->addAdditionalDetails('pickupDueDate', $eventData['access_point_details']['pick_up_due_date']);
+            if ($status == Track::STATUS_PICKUP && isset($contents['trackDetails'][0]['upsAccessPoint'])) {
+                // $track->addAdditionalDetails('accessPoint', ...);
+                $track->addAdditionalDetails('pickupDueDate', $contents['trackDetails'][0]['upsAccessPoint']['pickupPackageByDate']);
             }
         }
 
         return $track->sortEvents();
     }
 
-
-    /**
-     * Parse the row of the history table.
-     *
-     * @param DOMElement $row
-     * @param DOMXPath $xpath
-     *
-     * @return array
-     */
-    protected function parseRow(DOMElement $row, DOMXPath $xpath)
+    protected function getDescription($activity)
     {
-        $rowData = [];
+        if (!isset($activity['milestone'])) {
+            return null;
+        }
 
-        $date = $time = '';
-        $column = 0;
+        if (!$this->descriptionLookup) {
+            $this->loadDescriptionLookup();
+        }
 
-        foreach ($row->childNodes as $tableCell) {
+        return array_key_exists($activity['milestone']['name'], $this->descriptionLookup)
+            ? $this->descriptionLookup[$activity['milestone']['name']]
+            : null;
+    }
 
-            if ($tableCell->nodeName !== 'td') {
-                continue;
+
+    protected function loadDescriptionLookup()
+    {
+        try {
+            $url = $this->descriptionLookupEndpoint
+                . '?'
+                . http_build_query(['loc' => $this->getLanguageQueryParam($this->language)]);
+
+            $response = $this->getDataProvider()->get($url);
+
+            $this->descriptionLookup = $this->extractKeysAndValues(json_decode($response, true));
+        } catch (\Exception $e) {
+            $this->descriptionLookup = [];
+        }
+    }
+
+    protected function extractKeysAndValues($array)
+    {
+        return array_reduce((array)$array, function ($lookups, $value) {
+            if (!is_array($value)) {
+                return $lookups;
             }
 
-            $value = $this->getNodeValue($tableCell);
-
-            switch ($column) {
-                case 0:
-                    $rowData['location'] = $value;
-                    break;
-
-                case 1:
-                    $date = $value;
-                    break;
-
-                case 2:
-                    $time = $value;
-                    break;
-
-                case 3:
-                    $rowData['description'] = $value;
-                    break;
-
-                default:
-                    break;
+            if (!array_key_exists('key', $value) && !array_key_exists('value', $value)) {
+                return array_merge($lookups, $this->extractKeysAndValues($value));
             }
 
-            $column++;
-        }
+            $lookups[$value['key']] = $value['value'];
 
-        $rowData['date'] = $this->getDate($date, $time);
-
-        $status = $this->resolveState($rowData['description']);
-
-        $rowData['status'] = $status;
-
-        if ($status == Track::STATUS_DELIVERED && $recipient = $this->getRecipient($xpath)) {
-            $rowData['recipient'] = $recipient;
-        }
-
-        if ($status == Track::STATUS_PICKUP && $accessPointDetails = $this->getAccessPointDetails($xpath)) {
-            $rowData['access_point_details'] = $accessPointDetails;
-        }
-
-        return $rowData;
+            return $lookups;
+        }, []);
     }
 
 
     /**
      * Parse the date from the given strings.
      *
-     * @param $date
-     * @param $time
+     * @param array $activity
      *
      * @return Carbon
      */
-    protected function getDate($date, $time)
+    protected function getDate($activity)
     {
-        $time = $this->removeTimeZone($time);
-
-        return Carbon::parse("$date $time");
-    }
-
-
-    /**
-     * Remove timezone indications like "(ET)".
-     *
-     * @param string $time
-     * @return string
-     */
-    protected function removeTimeZone($time)
-    {
-        return preg_replace('/\([A-Z]+\)/i', '', $time);
-    }
-
-
-    /**
-     * Get the access point address and the pickup due date.
-     *
-     * @param DOMXPath $xpath
-     * @return array|null
-     */
-    protected function getAccessPointDetails(DOMXPath $xpath)
-    {
-        $location = $this->getDescriptionForTerm([
-            'UPS Access PointTM Location:',
-            'Standort des UPS Access PointTM:',
-        ], $xpath, true);
-
-        if (!$location) {
-            return null;
-        }
-
-        $pickUpDueDate = $this->getDescriptionForTerm([
-            'Paket muss abgeholt werden bis:',
-            'Package must be collected by:',
-        ], $xpath);
-
-        return [
-            'location' => $location,
-            'pick_up_due_date' => $this->dueDateAsCarbonOrAsIs($pickUpDueDate),
-        ];
-    }
-
-
-    /**
-     * Try to parse the pickup due date to a Carbon instance, otherwise return
-     * the original string.
-     *
-     * @param $dueDateString
-     * @return \Carbon\Carbon|string
-     */
-    protected function dueDateAsCarbonOrAsIs($dueDateString)
-    {
-        $matched = preg_match("/(\d{2})\.(\d{2})\.(\d{4})/", $dueDateString, $matches);
-
-        if (!$matched) {
-            return $dueDateString;
-        }
-
-        try {
-            return Carbon::createFromDate($matches[3], $matches[2], $matches[1]);
-        } catch (\InvalidArgumentException $exception) {
-            return $dueDateString;
-        }
-    }
-
-
-    /**
-     * Get the recipient.
-     *
-     * @param DOMXPath $xpath
-     * @return null|string
-     */
-    protected function getRecipient(DOMXPath $xpath)
-    {
-        return $this->getDescriptionForTerm([
-            'Received By:',
-            'Signed By:',
-            'Entgegengenommen von:',
-        ], $xpath, false, 'dt', 'dt');
+        return Carbon::parse("{$activity['date']} {$activity['time']}");
     }
 
 

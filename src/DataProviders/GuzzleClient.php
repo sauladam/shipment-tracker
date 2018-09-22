@@ -9,7 +9,7 @@ class GuzzleClient implements DataProviderInterface
     /**
      * @var Client
      */
-    protected $client;
+    public $client;
 
 
     /**
