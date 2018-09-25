@@ -3,6 +3,7 @@
 namespace Sauladam\ShipmentTracker\Trackers;
 
 use Carbon\Carbon;
+use phpDocumentor\Reflection\Types\ContextFactory;
 use Sauladam\ShipmentTracker\Event;
 use Sauladam\ShipmentTracker\Track;
 
@@ -59,6 +60,10 @@ class UPS extends AbstractTracker
         $track = new Track;
 
         foreach ($contents['trackDetails'][0]['shipmentProgressActivities'] as $progressActivity) {
+            if (null === $progressActivity['activityScan']) {
+                continue;
+            }
+
             $track->addEvent(Event::fromArray([
                 'location' => $progressActivity['location'],
                 'description' => $progressActivity['activityScan'], //$this->getDescription($progressActivity),
