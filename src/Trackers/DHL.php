@@ -28,6 +28,21 @@ class DHL extends AbstractTracker
      */
     protected $parsedJson;
 
+    /**
+     * Hook into the parent method to clear the cache before calling it.
+     *
+     * @param string $number
+     * @param null $language
+     * @param array $params
+     *
+     * @return Track
+     */
+    public function track($number, $language = null, $params = [])
+    {
+        $this->parsedJson = null;
+
+        return parent::track($number, $language, $params);
+    }
 
     /**
      * @param string $contents
