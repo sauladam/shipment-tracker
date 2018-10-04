@@ -15,6 +15,8 @@ class UPS extends AbstractTracker
 
     protected $descriptionLookupEndpoint = 'https://www.ups.com/track/api/WemsData/GetLookupData';
 
+    protected $trackingUrl = 'https://www.ups.com/track';
+
     /**
      * @var null|array
      */
@@ -229,11 +231,10 @@ class UPS extends AbstractTracker
 
         $qry = http_build_query(array_merge([
             'loc' => $this->getLanguageQueryParam($language),
-            'track' => 'yes',
-            'trackNums' => $trackingNumber,
+            'tracknum' => $trackingNumber,
         ], $additionalParams));
 
-        return $this->serviceEndpoint . '?' . $qry;
+        return $this->trackingUrl . '?' . $qry;
     }
 
 
