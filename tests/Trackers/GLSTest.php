@@ -45,12 +45,22 @@ class GLSTest extends TestCase
 
 
     /** @test */
+    public function it_resolves_an_in_transit_shipment()
+    {
+        $tracker = $this->getTracker('in_transit.txt');
+
+        $track = $tracker->track('Z51UTO2B');
+
+        $this->assertSame(\Sauladam\ShipmentTracker\Track::STATUS_IN_TRANSIT, $track->currentStatus());
+        $this->assertFalse($track->delivered());
+        $this->assertCount(10, $track->events());
+    }
+
+
+    /** @test */
     public function it_resolves_a_delivered_shipment()
     {
-        $tracker = $this->getTracker([
-            'https://gls-group.eu/app/service/open/rest/DE/de/rstt001?match=50346007538' => 'delivered.txt',
-            'http://api.customlocation.nokia.com/v1/search/attribute?jsonpCallback=C&appId=s0Ej52VXrLa6AUJEenti&layerId=48&query=%5Blike%5D%2Fname3%2F2760236908&rangeQuery%3D=&limit=1&_1372940610913=' => 'parcel_shop_details.txt'
-        ]);
+        $tracker = $this->getTracker('delivered.txt');
 
         $track = $tracker->track('50346007538');
 
@@ -63,10 +73,7 @@ class GLSTest extends TestCase
     /** @test */
     public function it_resolves_the_recipient_for_a_delivered_shipment()
     {
-        $tracker = $this->getTracker([
-            'https://gls-group.eu/app/service/open/rest/DE/de/rstt001?match=50346007538' => 'delivered.txt',
-            'http://api.customlocation.nokia.com/v1/search/attribute?jsonpCallback=C&appId=s0Ej52VXrLa6AUJEenti&layerId=48&query=%5Blike%5D%2Fname3%2F2760236908&rangeQuery%3D=&limit=1&_1372940610913=' => 'parcel_shop_details.txt'
-        ]);
+        $tracker = $this->getTracker('delivered.txt');
 
         $track = $tracker->track('50346007538');
 
@@ -77,10 +84,7 @@ class GLSTest extends TestCase
     /** @test */
     public function it_sets_the_parcel_shop_details_if_it_the_parcel_was_or_is_delivered_to_a_parcel_shop()
     {
-        $tracker = $this->getTracker([
-            'https://gls-group.eu/app/service/open/rest/DE/de/rstt001?match=50346007538' => 'delivered.txt',
-            'http://api.customlocation.nokia.com/v1/search/attribute?jsonpCallback=C&appId=s0Ej52VXrLa6AUJEenti&layerId=48&query=%5Blike%5D%2Fname3%2F2760236908&rangeQuery%3D=&limit=1&_1372940610913=' => 'parcel_shop_details.txt'
-        ]);
+        $tracker = $this->getTracker('pick_up.txt');
 
         $track = $tracker->track('50346007538');
 
@@ -91,10 +95,7 @@ class GLSTest extends TestCase
     /** @test */
     public function it_stores_the_gls_event_number_for_each_event()
     {
-        $tracker = $this->getTracker([
-            'https://gls-group.eu/app/service/open/rest/DE/de/rstt001?match=50346007538' => 'delivered.txt',
-            'http://api.customlocation.nokia.com/v1/search/attribute?jsonpCallback=C&appId=s0Ej52VXrLa6AUJEenti&layerId=48&query=%5Blike%5D%2Fname3%2F2760236908&rangeQuery%3D=&limit=1&_1372940610913=' => 'parcel_shop_details.txt'
-        ]);
+        $tracker = $this->getTracker('delivered.txt');
 
         $track = $tracker->track('50346007538');
 

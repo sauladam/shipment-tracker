@@ -23,11 +23,6 @@ class GLS extends AbstractTracker
     /**
      * @var string
      */
-    protected $parcelShopDetailsUrl = 'http://api.customlocation.nokia.com/v1/search/attribute';
-
-    /**
-     * @var string
-     */
     protected $language = 'de';
 
 
@@ -132,7 +127,7 @@ class GLS extends AbstractTracker
      * Match a shipping status from the given description.
      *
      * @param array $response
-     * @param int   $historyItemIndex
+     * @param int $historyItemIndex
      *
      * @return string
      *
@@ -160,6 +155,7 @@ class GLS extends AbstractTracker
                 '6.211',
             ],
             Track::STATUS_PICKUP => [
+                '2.124',
                 '3.124',
             ],
             Track::STATUS_EXCEPTION => [
@@ -167,9 +163,15 @@ class GLS extends AbstractTracker
         ];
 
         $eventNumber = $response['tuStatus'][0]['progressBar']['evtNos'][$historyItemIndex];
+        $progressStatusInfo = $response['tuStatus'][0]['progressBar']['statusInfo']; // DELIVERED | DELIVEREDPS | INTRANSIT
 
         foreach ($statuses as $status => $eventNumbers) {
             if (in_array($eventNumber, $eventNumbers)) {
+                // if the event status is delivered but the whole shipment status is not delivered yet, override it with IN_TRANSIT
+                if (($status === Track::STATUS_DELIVERED) && ($progressStatusInfo !== 'DELIVERED')) {
+                    return Track::STATUS_IN_TRANSIT;
+                }
+
                 return $status;
             }
         }
@@ -187,115 +189,9 @@ class GLS extends AbstractTracker
      */
     protected function getParcelShopDetails(array $response)
     {
-        $parcelShopId = $this->getParcelShopId($response);
-
-        $url = $this->buildParcelShopDetailsUrl($parcelShopId);
-
-        $parcelShopDetailsResponse = $this->fetch($url);
-
-        return $this->parseParcelShopDetailsFromResponse($parcelShopDetailsResponse);
-    }
-
-
-    /**
-     * Build the url for the parcel shop details resource.
-     *
-     * @param $shopId
-     *
-     * @return string
-     */
-    protected function buildParcelShopDetailsUrl($shopId)
-    {
-        $qry = http_build_query([
-            'jsonpCallback' => 'C',
-            'appId' => 's0Ej52VXrLa6AUJEenti',
-            'layerId' => '48',
-            'query' => '[like]/name3/' . $shopId,
-            'rangeQuery=' => '',
-            'limit' => '1',
-            '_1372940610913' => '',
-        ]);
-
-        return $this->parcelShopDetailsUrl . '?' . $qry;
-    }
-
-
-    /**
-     * Get the parcel shop id.
-     *
-     * @param array $response
-     *
-     * @return mixed
-     */
-    protected function getParcelShopId(array $response)
-    {
-        return $response['tuStatus'][0]['parcelShop']['psID'];
-    }
-
-
-    protected function parseParcelShopDetailsFromResponse($response)
-    {
-        $response = trim($response);
-
-        $jsonString = substr($response, 2, -2);
-
-        $response = $this->jsonToArray($jsonString);
-
-        if (!isset($response['locations']) || empty($response['locations'])) {
-            return [];
-        }
-
-        $location = $response['locations'][0];
-
-        $details = [
-            'name' => $location['name1'],
-            'street' => $location['street'],
-            'zip' => $location['postalCode'],
-            'city' => $location['city'],
-            'phone' => isset($location['phone']) ? $location['phone'] : '',
-            'workingHours' => $this->getParcelShopWorkingHours($location['description']),
-        ];
-
-        if ($additional = $this->getAdditionalInfo($location)) {
-            $details['additionalInfo'] = $additional;
-        }
-
-        return $details;
-    }
-
-
-    /**
-     * Get the parcel shop working hours.
-     *
-     * @param string $string
-     *
-     * @return array
-     */
-    protected function getParcelShopWorkingHours($string)
-    {
-        $workingHours = str_replace('|#', '; ', $string);
-        $workingHours = str_replace('#', '', $workingHours);
-
-        return explode('|', $workingHours);
-    }
-
-
-    /**
-     * Get the additional information for a parcel shop.
-     *
-     * @param array $location
-     *
-     * @return string|null
-     */
-    protected function getAdditionalInfo(array $location)
-    {
-        foreach ($location['customAttributes'] as $attribute) {
-            if ($attribute['name'] == 'ADDITIONAL_INFO') {
-                return $attribute['value'];
-            }
-        }
-
-        return null;
+        return isset($response['tuStatus'][0]['parcelShop']) && isset($response['tuStatus'][0]['parcelShop']['address'])
+            ? $response['tuStatus'][0]['parcelShop']['address']
+            : [];
     }
 
 
@@ -323,8 +219,8 @@ class GLS extends AbstractTracker
      * Build the user friendly url for the given tracking number.
      *
      * @param string $trackingNumber
-     * @param null   $language
-     * @param array  $params
+     * @param null $language
+     * @param array $params
      *
      * @return string
      */
@@ -351,8 +247,8 @@ class GLS extends AbstractTracker
      * Get the endpoint url.
      *
      * @param string $trackingNumber
-     * @param null   $language
-     * @param array  $params
+     * @param null $language
+     * @param array $params
      *
      * @return string
      */
