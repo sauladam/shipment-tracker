@@ -2,6 +2,7 @@
 
 use Sauladam\ShipmentTracker\ShipmentTracker;
 use Sauladam\ShipmentTracker\Trackers\DHL;
+use Sauladam\ShipmentTracker\Trackers\Fedex;
 use Sauladam\ShipmentTracker\Trackers\GLS;
 use Sauladam\ShipmentTracker\Trackers\PostCH;
 use Sauladam\ShipmentTracker\Trackers\UPS;
@@ -51,6 +52,14 @@ class ShipmentTrackerTest extends TestCase
         $tracker = ShipmentTracker::get('PostCH');
 
         $this->assertInstanceOf(PostCH::class, $tracker);
+    }
+
+    /** @test */
+    public function it_resolves_the_fedex_tracker()
+    {
+        $tracker = ShipmentTracker::get('fedex');
+
+        $this->assertInstanceOf(Fedex::class, $tracker);
     }
 
 

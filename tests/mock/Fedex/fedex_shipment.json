@@ -1,0 +1,653 @@
+{
+  "TrackPackagesResponse": {
+    "successful": true,
+    "passedLoggedInCheck": false,
+    "errorList": [
+      {
+        "code": "0",
+        "message": "Request was successfully processed.",
+        "source": null,
+        "rootCause": null
+      }
+    ],
+    "packageList": [
+      {
+        "trackingNbr": "746965179400",
+        "trackingQualifier": "12018\u007e746965179400\u007eFDEG",
+        "trackingCarrierCd": "FDXG",
+        "trackingCarrierDesc": "FedEx Ground",
+        "displayTrackingNbr": "746965179400",
+        "shipperCmpnyName": "",
+        "shipperName": "",
+        "shipperAddr1": "",
+        "shipperAddr2": "",
+        "shipperCity": "NICHOLS",
+        "shipperStateCD": "NY",
+        "shipperZip": "",
+        "shipperCntryCD": "US",
+        "shipperPhoneNbr": "",
+        "shippedBy": "",
+        "recipientCmpnyName": "",
+        "recipientName": "",
+        "recipientAddr1": "",
+        "recipientAddr2": "",
+        "recipientCity": "WILMINGTON",
+        "recipientStateCD": "DE",
+        "recipientZip": "",
+        "recipientCntryCD": "US",
+        "recipientPhoneNbr": "",
+        "shippedTo": "",
+        "keyStatus": "Delivered",
+        "keyStatusCD": "DL",
+        "lastScanStatus": "",
+        "lastScanDateTime": "",
+        "receivedByNm": "Signature not required",
+        "subStatus": "Signature not required",
+        "mainStatus": "",
+        "statusBarCD": "DL",
+        "shortStatus": "",
+        "shortStatusCD": "",
+        "statusLocationAddr1": "",
+        "statusLocationAddr2": "",
+        "statusLocationCity": "Wilmington",
+        "statusLocationStateCD": "DE",
+        "statusLocationZip": "",
+        "statusLocationCntryCD": "US",
+        "statusWithDetails": "Delivered\u003a 10\u002f19\u002f2018 11\u003a41 am Signed for by\u003aSignature not required\u003b Wilmington, DE\u003b Given to customer.Signature Service not requested.",
+        "halType": "",
+        "halCmpnyName": "",
+        "isHALAddress": false,
+        "shipDt": "2018\u002d10\u002d18T00\u003a00\u003a00\u002d06\u003a00",
+        "displayShipDt": "10\u002f18\u002f2018",
+        "displayShipTm": "",
+        "displayShipDateTime": "10\u002f18\u002f2018",
+        "pickupDt": "2018\u002d10\u002d18T00\u003a00\u003a00\u002d06\u003a00",
+        "displayPickupDt": "10\u002f18\u002f2018",
+        "displayPickupTm": "",
+        "displayPickupDateTime": "10\u002f18\u002f2018",
+        "estDeliveryDt": "",
+        "estDeliveryTm": "",
+        "displayEstDeliveryDt": "",
+        "displayEstDeliveryTm": "",
+        "displayEstDeliveryDateTime": "",
+        "actDeliveryDt": "2018\u002d10\u002d19T11\u003a41\u003a04\u002d04\u003a00",
+        "displayActDeliveryDt": "10\u002f19\u002f2018",
+        "displayActDeliveryTm": "11\u003a41 am",
+        "displayActDeliveryDateTime": "10\u002f19\u002f2018 11\u003a41 am",
+        "tenderedDt": "2018\u002d10\u002d18T00\u003a00\u003a00\u002d06\u003a00",
+        "displayTenderedDt": "10\u002f18\u002f2018",
+        "displayTenderedTm": "",
+        "displayTenderedDateTime": "10\u002f18\u002f2018",
+        "apptDeliveryDt": "",
+        "displayApptDeliveryDt": "",
+        "displayApptDeliveryTm": "",
+        "displayApptDeliveryDateTime": "",
+        "nickName": "",
+        "note": "",
+        "matchedAccountList": [
+          ""
+        ],
+        "fxfAdvanceETA": "",
+        "fxfAdvanceReason": "",
+        "fxfAdvanceStatusCode": "",
+        "fxfAdvanceStatusDesc": "",
+        "destLink": "",
+        "originLink": "",
+        "hasBillOfLadingImage": false,
+        "hasBillPresentment": false,
+        "signatureRequired": 0,
+        "totalKgsWgt": "",
+        "displayTotalKgsWgt": "",
+        "totalLbsWgt": "",
+        "displayTotalLbsWgt": "",
+        "displayTotalWgt": "",
+        "pkgKgsWgt": "1.72",
+        "displayPkgKgsWgt": "1.72 kgs",
+        "pkgLbsWgt": "3.8",
+        "displayPkgLbsWgt": "3.8 lbs",
+        "displayPkgWgt": "3.8 lbs \u002f 1.72 kgs",
+        "totalDIMLbsWgt": "",
+        "displayTotalDIMLbsWgt": "",
+        "totalDIMKgsWgt": "",
+        "displayTotalDIMKgsWgt": "",
+        "displayTotalDIMWgt": "",
+        "dimensions": "",
+        "masterTrackingNbr": "",
+        "masterQualifier": "",
+        "masterCarrierCD": "",
+        "originalOutboundTrackingNbr": null,
+        "originalOutboundQualifier": "",
+        "originalOutboundCarrierCD": "",
+        "invoiceNbrList": [
+          "0781221592632"
+        ],
+        "referenceList": [
+          "EC"
+        ],
+        "doorTagNbrList": [
+          ""
+        ],
+        "referenceDescList": [
+          ""
+        ],
+        "purchaseOrderNbrList": [
+          "BBY01\u002d805571519099"
+        ],
+        "billofLadingNbrList": [
+          ""
+        ],
+        "shipperRefList": [
+          ""
+        ],
+        "rmaList": [
+          ""
+        ],
+        "deptNbrList": [
+          "1592632"
+        ],
+        "shipmentIdList": [
+          "1592632"
+        ],
+        "tcnList": [
+          ""
+        ],
+        "partnerCarrierNbrList": [
+          ""
+        ],
+        "hasAssociatedShipments": false,
+        "hasAssociatedReturnShipments": false,
+        "assocShpGrp": 0,
+        "drTgGrp": [
+          "0"
+        ],
+        "associationInfoList": [
+          {
+            "trackingNumberInfo": {
+              "trackingNumber": "",
+              "trackingQualifier": "",
+              "trackingCarrier": "",
+              "processingParameters": null
+            },
+            "associatedType": ""
+          }
+        ],
+        "returnReason": "",
+        "returnRelationship": null,
+        "skuItemUpcCdList": [
+          ""
+        ],
+        "receiveQtyList": [
+          ""
+        ],
+        "itemDescList": [
+          ""
+        ],
+        "partNbrList": [
+          ""
+        ],
+        "serviceCD": "FEDEX\u005fGROUND",
+        "serviceDesc": "FedEx Ground",
+        "serviceShortDesc": "FG",
+        "packageType": "PACKAGE",
+        "packaging": "Package",
+        "clearanceDetailLink": "",
+        "showClearanceDetailLink": false,
+        "manufactureCountryCDList": [
+          ""
+        ],
+        "commodityCDList": [
+          ""
+        ],
+        "commodityDescList": [
+          ""
+        ],
+        "cerNbrList": [
+          ""
+        ],
+        "cerComplaintCDList": [
+          ""
+        ],
+        "cerComplaintDescList": [
+          ""
+        ],
+        "cerEventDateList": [
+          ""
+        ],
+        "displayCerEventDateList": [
+          ""
+        ],
+        "totalPieces": "1",
+        "specialHandlingServicesList": [
+          ""
+        ],
+        "shipmentType": "",
+        "pkgContentDesc1": "",
+        "pkgContentDesc2": "",
+        "docAWBNbr": "",
+        "originalCharges": "",
+        "transportationCD": "",
+        "transportationDesc": "",
+        "dutiesAndTaxesCD": "",
+        "dutiesAndTaxesDesc": "",
+        "origPieceCount": "",
+        "destPieceCount": "",
+        "billNoteMsg": "",
+        "goodsClassificationCD": "",
+        "receipientAddrQty": "0",
+        "deliveryAttempt": "0",
+        "codReturnTrackNbr": "",
+        "returnMovementStatus": null,
+        "scanEventList": [
+          {
+            "date": "2018\u002d10\u002d19",
+            "time": "11\u003a41\u003a04",
+            "gmtOffset": "\u002d04\u003a00",
+            "status": "Delivered",
+            "statusCD": "DL",
+            "scanLocation": "Wilmington, DE",
+            "scanDetails": "Given to customer. Signature Service not requested.",
+            "scanDetailsHtml": "",
+            "rtrnShprTrkNbr": "",
+            "isException": false,
+            "isClearanceDelay": false,
+            "isDelivered": true,
+            "isDelException": false
+          },
+          {
+            "date": "2018\u002d10\u002d19",
+            "time": "07\u003a19\u003a00",
+            "gmtOffset": "\u002d04\u003a00",
+            "status": "On FedEx vehicle for delivery",
+            "statusCD": "OD",
+            "scanLocation": "NEW CASTLE, DE",
+            "scanDetails": "",
+            "scanDetailsHtml": "",
+            "rtrnShprTrkNbr": "",
+            "isException": false,
+            "isClearanceDelay": false,
+            "isDelivered": false,
+            "isDelException": false
+          },
+          {
+            "date": "2018\u002d10\u002d19",
+            "time": "07\u003a10\u003a00",
+            "gmtOffset": "\u002d04\u003a00",
+            "status": "At local FedEx facility",
+            "statusCD": "AR",
+            "scanLocation": "NEW CASTLE, DE",
+            "scanDetails": "",
+            "scanDetailsHtml": "",
+            "rtrnShprTrkNbr": "",
+            "isException": false,
+            "isClearanceDelay": false,
+            "isDelivered": false,
+            "isDelException": false
+          },
+          {
+            "date": "2018\u002d10\u002d19",
+            "time": "02\u003a22\u003a45",
+            "gmtOffset": "\u002d04\u003a00",
+            "status": "Departed FedEx location",
+            "statusCD": "DP",
+            "scanLocation": "LEWISBERRY, PA",
+            "scanDetails": "",
+            "scanDetailsHtml": "",
+            "rtrnShprTrkNbr": "",
+            "isException": false,
+            "isClearanceDelay": false,
+            "isDelivered": false,
+            "isDelException": false
+          },
+          {
+            "date": "2018\u002d10\u002d19",
+            "time": "00\u003a17\u003a00",
+            "gmtOffset": "\u002d04\u003a00",
+            "status": "Arrived at FedEx location",
+            "statusCD": "AR",
+            "scanLocation": "LEWISBERRY, PA",
+            "scanDetails": "",
+            "scanDetailsHtml": "",
+            "rtrnShprTrkNbr": "",
+            "isException": false,
+            "isClearanceDelay": false,
+            "isDelivered": false,
+            "isDelException": false
+          },
+          {
+            "date": "2018\u002d10\u002d18",
+            "time": "20\u003a06\u003a48",
+            "gmtOffset": "\u002d04\u003a00",
+            "status": "Left FedEx origin facility",
+            "statusCD": "DP",
+            "scanLocation": "CONKLIN, NY",
+            "scanDetails": "",
+            "scanDetailsHtml": "",
+            "rtrnShprTrkNbr": "",
+            "isException": false,
+            "isClearanceDelay": false,
+            "isDelivered": false,
+            "isDelException": false
+          },
+          {
+            "date": "2018\u002d10\u002d18",
+            "time": "18\u003a30\u003a00",
+            "gmtOffset": "\u002d04\u003a00",
+            "status": "Arrived at FedEx location",
+            "statusCD": "AR",
+            "scanLocation": "CONKLIN, NY",
+            "scanDetails": "",
+            "scanDetailsHtml": "",
+            "rtrnShprTrkNbr": "",
+            "isException": false,
+            "isClearanceDelay": false,
+            "isDelivered": false,
+            "isDelException": false
+          },
+          {
+            "date": "2018\u002d10\u002d18",
+            "time": "14\u003a56\u003a00",
+            "gmtOffset": "\u002d04\u003a00",
+            "status": "Shipment information sent to FedEx",
+            "statusCD": "OC",
+            "scanLocation": "",
+            "scanDetails": "",
+            "scanDetailsHtml": "",
+            "rtrnShprTrkNbr": "",
+            "isException": false,
+            "isClearanceDelay": false,
+            "isDelivered": false,
+            "isDelException": false
+          },
+          {
+            "date": "2018\u002d10\u002d18",
+            "time": "00\u003a00\u003a00",
+            "gmtOffset": "",
+            "status": "Picked up",
+            "statusCD": "PU",
+            "scanLocation": "CONKLIN, NY",
+            "scanDetails": "",
+            "scanDetailsHtml": "",
+            "rtrnShprTrkNbr": "",
+            "isException": false,
+            "isClearanceDelay": false,
+            "isDelivered": false,
+            "isDelException": false
+          }
+        ],
+        "originAddr1": "",
+        "originAddr2": "",
+        "originCity": "CONKLIN",
+        "originStateCD": "NY",
+        "originZip": "",
+        "originCntryCD": "US",
+        "originLocationID": "",
+        "originTermCity": "CONKLIN",
+        "originTermStateCD": "NY",
+        "destLocationAddr1": "",
+        "destLocationAddr2": "",
+        "destLocationCity": "",
+        "destLocationStateCD": "",
+        "destLocationZip": "",
+        "destLocationCntryCD": "",
+        "destLocationID": "",
+        "destLocationTermCity": "",
+        "destLocationTermStateCD": "",
+        "destAddr1": "",
+        "destAddr2": "",
+        "destCity": "WILMINGTON",
+        "destStateCD": "DE",
+        "destZip": "",
+        "destCntryCD": "US",
+        "halAddr1": "",
+        "halAddr2": "",
+        "halCity": "",
+        "halStateCD": "",
+        "halZipCD": "",
+        "halCntryCD": "",
+        "actualDelAddrCity": "Wilmington",
+        "actualDelAddrStateCD": "DE",
+        "actualDelAddrZipCD": "",
+        "actualDelAddrCntryCD": "US",
+        "totalTransitMiles": "",
+        "excepReasonList": [
+          ""
+        ],
+        "excepActionList": [
+          ""
+        ],
+        "exceptionReason": "",
+        "exceptionAction": "",
+        "statusDetailsList": [
+          "Given to customer.Signature Service not requested."
+        ],
+        "trackErrCD": "",
+        "destTZ": "\u002d04\u003a00",
+        "originTZ": "",
+        "isMultiStat": "0",
+        "multiStatList": [
+          {
+            "multiPiec": "",
+            "multiTm": "",
+            "multiDispTm": "",
+            "multiSta": ""
+          }
+        ],
+        "maskMessage": "",
+        "deliveryService": "",
+        "milestoDestination": "",
+        "terms": "Shipper",
+        "payorAcctNbr": "",
+        "meterNumber": "",
+        "originUbanizationCode": "",
+        "originCountryName": "",
+        "isOriginResidential": false,
+        "halUrbanizationCD": "",
+        "halCountryName": "",
+        "actualDelAddrUrbanizationCD": "",
+        "actualDelAddrCountryName": "",
+        "destUrbanizationCD": "",
+        "destCountryName": "",
+        "delToDesc": "",
+        "recpShareID": "6c7ydwhuxl9h3oeia6blkv154",
+        "shprShareID": "51x6kovhyqj2i0x5q871hnzf4",
+        "requestedAppointmentInfoList": [
+          {
+            "spclInstructDesc": "",
+            "delivOptn": "",
+            "delivOptnStatus": "",
+            "reqApptWdw": "",
+            "reqApptDesc": "",
+            "rerouteTRKNbr": "",
+            "beginTm": "",
+            "endTm": ""
+          }
+        ],
+        "defaultCDOType": "CDO",
+        "returnAuthorizationName": "",
+        "totalCustomsValueAmount": "",
+        "totalCustomsValueCurrency": "",
+        "packageInsuredValueAmount": "",
+        "packageInsuredValueCurrency": "",
+        "estDelTimeWindow": {
+          "estDelTmWindowStart": "",
+          "estDelTmWindowEnd": "",
+          "displayEstDelTmWindowTmStart": "",
+          "displayEstDelTmWindowTmEnd": ""
+        },
+        "standardTransitTimeWindow": {
+          "stdTransitTimeStart": "",
+          "displayStdTransitTimeStart": "",
+          "stdTransitTimeEnd": "2018\u002d10\u002d19T00\u003a00\u003a00\u002d06\u003a00",
+          "displayStdTransitTimeEnd": ""
+        },
+        "standardTransitDate": {
+          "stdTransitDate": "2018\u002d10\u002d19T00\u003a00\u003a00\u002d06\u003a00",
+          "displayStdTransitDate": "10\u002f19\u002f2018"
+        },
+        "pkgDimIn": "",
+        "pkgDimCm": "",
+        "returnedToShipperTrackNbr": "",
+        "commodityInfoList": [
+          {
+            "countryOfManufacture": "",
+            "harmonizedCode": "",
+            "description": ""
+          }
+        ],
+        "statusActionDesc": "",
+        "destinationGeoCoordinate": null,
+        "serviceCommitMessage": "",
+        "serviceCommitMessageType": "",
+        "lastUpdateDestinationAddress": {
+          "streetLineList": [],
+          "city": "WILMINGTON",
+          "stateOrProvinceCode": "DE",
+          "postalCode": "",
+          "countryCode": "US",
+          "residential": false,
+          "addressVerificationId": "6c7ydwhuxl9h3oeia6blkv154",
+          "shareId": null,
+          "addressClassification": null,
+          "addressClassificationConfidence": null,
+          "classification": null,
+          "urbanizationCode": null,
+          "countryName": "United States",
+          "geographicCoordinates": null,
+          "processingParameters": null
+        },
+        "halAddressLocationId": null,
+        "streetGeoCoordinate": null,
+        "isIndirectSignatureReleaseEligible": false,
+        "isRerouteEligible": false,
+        "isRescheduleEligible": false,
+        "brokerName": "",
+        "brokerCompanyName": "",
+        "buyerSoldToPartyName": "",
+        "buyerSoldToPartyCompanyName": "",
+        "importerOfRecordCompanyName": "",
+        "importerOfRecordName": "",
+        "consolidationDetails": null,
+        "exclusionReasonDetails": null,
+        "piecesPerShipment": "0",
+        "totalPiecesPerMPSShipment": "0",
+        "fxfAdvanceNotice": true,
+        "codrequired": false,
+        "matched": false,
+        "excepReasonListNoInit": [
+          ""
+        ],
+        "excepActionListNoInit": [
+          ""
+        ],
+        "statusDetailsListNoInit": [
+          "Given to customer.Signature Service not requested."
+        ],
+        "rthavailableCD": "",
+        "mpstype": "",
+        "isException": false,
+        "isDroppedOff": false,
+        "isPrePickup": false,
+        "isPickup": false,
+        "isClearanceDelay": false,
+        "isDelivered": true,
+        "isPending": false,
+        "isShipmentException": false,
+        "isInFedExPossession": false,
+        "isExpiring": false,
+        "isSuccessful": true,
+        "isWatch": false,
+        "isHistorical": false,
+        "isFSM": false,
+        "isOutboundDirection": false,
+        "isInboundDirection": false,
+        "isThirdpartyDirection": false,
+        "isUnknownDirection": false,
+        "isFreight": false,
+        "isSpod": true,
+        "isSignatureThumbnailAvailable": false,
+        "isDocumentAvailable": false,
+        "isMPS": false,
+        "isGMPS": false,
+        "isOriginalOutBound": false,
+        "isReturn": false,
+        "isCommodityInfoAvail": false,
+        "isDestResidential": true,
+        "isDuplicate": false,
+        "isSave": false,
+        "isMtchdByRecShrID": false,
+        "isMtchdByShiprShrID": false,
+        "CDOExists": false,
+        "isCDOEligible": false,
+        "isHalEligible": false,
+        "isReqEstDelDt": false,
+        "CDOInfoList": [
+          {
+            "spclInstructDesc": "",
+            "delivOptn": "",
+            "delivOptnStatus": "",
+            "reqApptWdw": "",
+            "reqApptDesc": "",
+            "rerouteTRKNbr": "",
+            "beginTm": "",
+            "endTm": ""
+          }
+        ],
+        "isEstDelTmWindowLabel": false,
+        "isHistoricalEDTW": false,
+        "isNonHistoricalEDTW": false,
+        "isTargetedMsg": false,
+        "isStreetMapEligible": false,
+        "isConsolidationDetail": false,
+        "isExclusionReason": false,
+        "isNotFound": false,
+        "isInvalid": false,
+        "isMultipleStop": false,
+        "isCustomCritical": false,
+        "isFedexOfficeOnlineOrders": false,
+        "isFedexOfficeInStoreOrders": false,
+        "isOnSchedule": false,
+        "isShipPickupDtLabel": true,
+        "isEstimatedDeliveryDtLabel": false,
+        "isAnticipatedShipDtLabel": false,
+        "isActualPickupLabel": false,
+        "isActualDeliveryDtLabel": true,
+        "isDeliveryDtLabel": false,
+        "isOrderReceivedLabel": false,
+        "isOrderCompleteLabel": false,
+        "isDeliveryToday": false,
+        "isBeforePossessionStatus": false,
+        "isResidential": false,
+        "isInProgress": true,
+        "isDelException": false,
+        "isHAL": false,
+        "isExpired": false,
+        "isInTransit": false,
+        "isSignatureAvailable": false,
+        "isShipDtLabel": false,
+        "isTenderedDtLabel": false,
+        "isTenderedNotification": false,
+        "isDeliveredNotification": true,
+        "isExceptionNotification": false,
+        "isEstimatedDeliveryDateChangeNotification": false,
+        "isCurrentStatusNotification": false,
+        "isCanceled": false,
+        "errorList": [
+          {
+            "code": "",
+            "message": "",
+            "source": null,
+            "rootCause": null
+          }
+        ],
+        "isHALResidential": false,
+        "isActualDelAddrResidential": false,
+        "isChildPackage": false,
+        "isParentPackage": false,
+        "isReclassifiedAsSingleShipment": false,
+        "isMaskShipper": false
+      }
+    ],
+    "alerts": null,
+    "cxsalerts": null
+  }
+}
