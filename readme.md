@@ -1,6 +1,6 @@
 # Shipment Tracker
 
-**A simple tool to scrape the parcel tracking data for DHL, DHL Express, GLS, UPS, USPS, and Swiss Post Service**
+**A simple tool to scrape the parcel tracking data for DHL, DHL Express, GLS, UPS, FedEx USPS, Swiss Post Service and Austria Post Service**
 
 [![Build Status](https://travis-ci.org/sauladam/shipment-tracker.svg?branch=master)](https://travis-ci.org/sauladam/shipment-tracker)
 [![Total Downloads](https://poser.pugx.org/sauladam/shipment-tracker/downloads)](https://packagist.org/packages/sauladam/shipment-tracker)
@@ -33,8 +33,10 @@ The following carriers and languages are currently supported by this package:
 - DHL Express (de, en) (so far only for waybill numbers, not for shipment numbers of the individual pieces)
 - GLS (de, en)
 - UPS (de, en)
+- Fedex (en) (hat tip to [@avrahamappel](https://github.com/avrahamappel))
 - USPS (en)
 - PostCH (Swiss Post Service) (de, en)
+- PostAT (Austria Post Service) (de, en)
 
 ## Basic Usage
 
