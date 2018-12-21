@@ -2,8 +2,10 @@
 
 namespace Sauladam\ShipmentTracker\Utils;
 
+use DOMDocument;
 use DOMElement;
 use DOMNode;
+use DOMNodeList;
 use DOMText;
 use DOMXPath;
 
@@ -29,7 +31,7 @@ trait XmlHelpers
 
         $value = trim($value);
 
-        return preg_replace('/\s\s+/', ' ', $value);
+        return preg_replace(['/\s\s+/', '/\p{Zs}/u'], ' ', $value);
     }
 
 
@@ -77,7 +79,8 @@ trait XmlHelpers
         $withLineBreaks = false,
         $termTag = 'dt',
         $descriptionTag = 'dd'
-    ) {
+    )
+    {
         $terms = is_array($term) ? $term : [$term];
 
         $listNodes = $xpath->query("//dl");
@@ -127,5 +130,33 @@ trait XmlHelpers
     protected function startsWith($start, $subject)
     {
         return strpos($subject, $start) === 0;
+    }
+
+
+    /**
+     * Create an XPath instance from the given string.
+     *
+     * @param $string
+     * @return DOMXPath
+     */
+    public function toXpath($string)
+    {
+        $dom = new DOMDocument;
+        @$dom->loadHTML($string);
+        $dom->preserveWhiteSpace = false;
+
+        return new DOMXPath($dom);
+    }
+
+
+    /**
+     * Convert the DomNodeList to an array.
+     *
+     * @param DOMNodeList $list
+     * @return array|DOMNodeList
+     */
+    public function nodeListToArray(DOMNodeList $list)
+    {
+        return iterator_to_array($list);
     }
 }
