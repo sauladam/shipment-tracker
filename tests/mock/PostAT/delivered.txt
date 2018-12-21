@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+
+<!--[if IE 7]><html class="lt-ie9 lt-ie8" lang="de"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="de"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="de"><!--<![endif]-->
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="Unternehmenswebseite der Österreichischen Post für Privat- und Geschäftskunden" />
+	<meta charset="utf-8"  />
+
+	<script type="text/javascript">(function(){var z=window;if(z.dT_){if(z.console)z.console.log('Duplicate agent injection detected, turning off redundant initConfig.');return;}//#NOWARN
+
+var a=window;a.dT_?a.console&&a.console.log("Duplicate agent injection detected, turning off redundant initConfig."):navigator.cookieEnabled&&(window.dT_||(window.dT_={cfg:"async=1|bandwidth=300|lastModification=1544525667238|tp=500,50,0,1|reportUrl=dynaTraceMonitor|agentUri=/dtagent_A23STVbpqrx_7000200031030.js|auto=1|domain=post.at|rid=RID_748638847|rpid=-987681355|app=Default Application"}));
+})();(function(){var z=window;if(!z.dT_ || !z.dT_['cfg'] || typeof z.dT_['cfg'] != 'string' || z.dT_['initialized']){if(z.console)z.console.log('Initconfig not found or agent already initialized! This is an injection issue.');return;}//#NOWARN
+if(navigator.userAgent && navigator.userAgent.indexOf("RuxitSynthetic") >= 0){return;}
+(function(){function vb(){try{wb.apply(e.parent,arguments)}catch(a){}}function xb(){try{yb.apply(e.top,arguments)}catch(a){}}function zb(a){var b=Array.prototype.slice.call(arguments,1);try{Ab.apply(a,b)}catch(c){}}function Bb(a){var b=Array.prototype.slice.call(arguments,1);try{Cb.apply(a,b)}catch(c){}}function r(){var a=0;try{a=e.performance.timing.navigationStart+Math.floor(e.performance.now())}catch(b){}return 0>=a||isNaN(a)||!isFinite(a)?(new Date).getTime():a}function ua(a,b){for(var c=2;c<
+arguments.length;c++);return"apply"in J?J.apply(e,arguments):J(a,b)}function l(a){for(var b=[],c=1;c<arguments.length;c++)b[c-1]=arguments[c];a.push.apply(a,b)}function Pa(a){l(W,a)}function Db(){return W}function Eb(a,b){return Fb(a,b)}function Gb(a,b){a=new Hb([a],{type:b});return Ib(a)}function Jb(a,b){return new Kb(a,b)}function Lb(a){"function"===typeof a&&l(fa,a)}function Mb(){return fa}function Nb(){return va}function Ob(){return K}function ga(){var a="currentCookie: "+w(x),b=(0===g?-1*X(2,
+21)+"$":"")+wa(32);e.JSAgentTestFrameworkAPI&&e.JSAgentTestFrameworkAPI.notifyAssertOK("Created dtCookie: "+(a+(", newCookie: "+b)));return b}function Pb(){return q}function Qb(){ha(function(){ia()||xa(ga());q=ja()})}function Qa(a,b){b=ka(b);for(var c=!1,d=0;d<b.length;d++)b[d].frameId===K&&(b[d].g=a,c=!0);c||l(b,{frameId:K,g:a});ya(b)}function ya(a,b){var c="";if(a){for(var c=[],d=0;d<a.length;d++)"-"!==a[d].g&&(0<d&&0<c.length&&l(c,"p"),0===g&&(l(c,q),l(c,"$")),l(c,a[d].frameId),l(c,"h"),l(c,a[d].g));
+0===g&&(c.length||(L&&(la(0,!0),za(!1)),q=ja(),l(c,q),l(c,"$"),l(c,K),l(c,"h-")),l(c,"v"),l(c,b||Aa()));c=c.join("")}c||(c="-",0===g&&(L&&(la(0,!0),za(!1)),q=ja(),c=q+"$"+K+"h-v"+(b||Aa())));a=c;try{"undefined"!==typeof e.DynatraceJsBridge&&"undefined"!==typeof e.DynatraceJsBridge.setDtPc&&e.DynatraceJsBridge.setDtPc(a)}catch(k){}M(N,a,void 0,m("ssc"))}function ka(a){var b=w(N),c=[];if(b&&"-"!==b)for(var b=b.split("p"),d=0;d<b.length;d++){var k=b[d].split("h");if(2===k.length&&k[0]&&k[1]){var e=k[0];
+if(0===g&&(e&&0<=h(e,"$")&&(e=e.split("$")[1]),0<=h(k[1],"v"))){var f=k[1].split("v");if(2===f.length){var m=f[1];k[1]=f[0]}}if(!(f=a)){var f=O(e.split("_")[0]),n=r()%Ba;n<f&&(n+=Ba);f=f+9E5>n}f&&l(c,{frameId:e,g:k[1]})}}if(0===g)for(a=0;a<c.length;a++)c[a].visitId=m;return c}function Aa(){return Ca()||la(0,!0)}function Ca(){var a=ka(!0);if(!(P()<=r())){ma(!1);if(a&&1<=a.length)return a[0].visitId;(a=Da(E))||(a=na(E));return a}return null}function ma(a){var b=r(),c=Ra().j;a&&(c=b);Sa(b+Ta+"|"+c);
+Ua()}function Va(a){a||(a=X(1,1E6));var b=ia();b||(b=ga(),xa(b),b=ia(b));a=""+a;for(var c=a.length,d=[],e=0;e<b.length;e++)d[e]=String.fromCharCode(65+Math.abs((b.charCodeAt(e)^a.charCodeAt(e%c))%26));b=d.join("");for(a=0;a<Q.length;a++)Q[a](b);return b}function Ea(a){var b=ka(!1);ya(b,a);Y(E,a);ma(!0)}function la(a,b){b&&(R=!0);a=Va(r());Ea(a);return a}function Rb(a){Q.push(a)}function Ua(){Z&&clearTimeout(Z);Z=ua(Wa,P()-r())}function Wa(){if(P()<=r()&&S()){var a=Va(r());Ea(a);return!0}ha(Ua);return!1}
+function Sa(a){M(y,a,void 0,m("ssc"));Y(y,a)}function Y(a,b){if(m("dpvc")||m("pVO"))oa(a,b),Xa(a);else{try{e.localStorage&&e.localStorage.setItem(a,b)}catch(c){}Fa(a)}}function Ya(a){var b=w(a);b||(b=Da(a))||(b=na(a));return b}function Za(){var a=Ca();Y(E,a);a=Ya(y);Sa(a)}function Ra(){var a={m:0,j:0},b=Ya(y);if(b)try{var c=b.split("|");2===c.length&&(a.m=parseInt(c[0],10),a.j=parseInt(c[1],10))}catch(d){}return a}function P(){var a=Ra();return Math.min(a.m,a.j+$a)}function Sb(a){Ta=a}function za(a){void 0===
+a&&(a=!0);L=a}function Tb(){var a=R;R=!1;return a}function Ub(){Wa()||ma(!1)}function Ga(){var a=w(p);if(!a||a.length&&a.length!==aa)a=na(p),a&&a.length===aa||(ab=!0,a=r()+"",a+=wa(aa-a.length));var b=a;if(!m("dpvc")&&!m("pVO")){var c=new Date;c.setFullYear(c.getFullYear()+2)}M(p,b,c,m("ssc"));oa(p,b);return a}function Vb(){return ab}function Wb(a){var b=w(p);t(p);Fa(p);M(p,b);f.pVO=!0;if(a)try{e.localStorage&&e.localStorage.setItem(Ha,"1")}catch(c){}Za()}function Xb(){Xa(Ha);m("pVO")&&(f.pVO=!1,
+Ga());Za()}function bb(){"undefined"===typeof ba&&(ba=navigator.userAgent&&0<=navigator.userAgent.indexOf("RuxitSynthetic"));return ba}function S(){return!m("coo")||m("cooO")||bb()}function ha(a){S()?a():(D||(D=[]),l(D,a))}function pa(a,b){if(S()&&(!z().v||bb()))return a.apply(this,b||[])}function Yb(a){return pa(a)}function Zb(){for(var a=0;a<D.length;a++)ua(D[a],0);D=[];f.cooO=1}function $b(){f.cooO=0;t(x);t(N);t(qa);t("dtSa");t(cb);0===g&&(t(p),t(y));try{0===g&&F.removeItem(p),F.removeItem(x),
+Ia.removeItem(Ja())}catch(a){}}function O(a,b){return parseInt(a,b||10)}function na(a){try{if(F)return F[a]}catch(b){}return null}function oa(a,b){try{F.setItem(a,b)}catch(c){}}function Fa(a){try{F.removeItem(a)}catch(b){}}function h(a,b){var c=-1;b&&a&&a.indexOf&&(c=a.indexOf(b));return c}function t(a){document.cookie=a+'="";path=/'+(n("domain")?";domain="+n("domain"):"")+"; expires=Thu, 01 Jan 1970 00:00:01 GMT;"}function db(a,b,c){var d=1,e=0;do document.cookie=a+'=""'+(b?";domain="+b:"")+";path="+
+c.substr(0,d)+"; expires=Thu, 01 Jan 1970 00:00:01 GMT;",d=c.indexOf("/",d),e++;while(-1!==d&&5>e)}function eb(a){a=encodeURIComponent(a);var b=[];if(a)for(var c=0;c<a.length;c++){var d=a.charAt(c);l(b,ac[d]||d)}return b.join("")}function M(a,b,c,d){pa(bc,[a,b,c,d])}function bc(a,b,c,d){b||0===b?(b=(""+b).replace(/[;\n\r]/g,"_"),b="DTSA"===a.toUpperCase()?eb(b):b,a=a+"="+b+";path=/"+(n("domain")?";domain="+n("domain"):""),c&&(a+=";expires="+c.toUTCString()),d&&(a+=";Secure"),document.cookie=a):t(a)}
+function w(a){for(var b=document.cookie.split(";"),c=0;c<b.length;c++){var d=h(b[c],"="),e=b[c].substring(0,d),d=b[c].substring(d+1),e=e.replace(/^\s+|\s+$/g,"");if(e===a)return"DTSA"===a.toUpperCase()?decodeURIComponent(d):d}return""}function fb(a){var b=/^[0-9A-Za-z_=:\$\+\/\.\-\*%\|]*$/.test(a);return 0===g&&(0>=h(a,"$")&&-1===h(a,"=srv=")||a&&2<a.split("$").length)?!1:b}function gb(){var a=w(x);return a&&fb(a)?a:""}function xa(a){M(x,a,void 0,m("ssc"))}function T(a){return 32===a.length||12>=
+a.length?a:null}function hb(a){return!isNaN(a)&&3>=a.length?a:null}function ib(a){var b={sessionId:null,b:null},c=h(a,"|"),d=a;-1!==c&&(d=a.substring(0,c));c=h(d,"$");-1!==c?(b.sessionId=T(d.substring(c+1)),b.b=hb(d.substring(0,c))):b.sessionId=T(d);return b}function jb(a){var b={sessionId:null,b:null};a=a.split("=");if(2<a.length&&!(a.length%2)){var c=Number(a[1]);if(isNaN(c)||3>c)return b;for(var c={},d=2;d<a.length;d++)c[a[d]]=a[d+1],d++;b.sessionId=T(c.sn);c.srv&&(b.b=hb(c.srv));"1"===c.ol&&(oa("dtDisabled",
+"true"),z().disabled=!0,z().v=!0)}return b}function kb(a){return(a=a||gb())?h(a,"=")?ib(a):jb(a):{sessionId:null,b:null}}function ja(a){try{if("undefined"!==typeof e.DynatraceJsBridge&&"undefined"!==typeof e.DynatraceJsBridge.getServerId())return e.DynatraceJsBridge.getServerId()}catch(b){}return kb(a).b}function ia(a){return kb(a).sessionId}function X(a,b){return Math.floor(Math.random()*(b-a+1))+a}function wa(a){var b=e.crypto||e.msCrypto;if(b){var c=new Int8Array(a);b.getRandomValues(c)}else for(c=
+[],b=0;b<a;b++)c.push(X(0,lb));a=[];for(b=0;b<c.length;b++){var d=Math.abs(c[b]%lb);a.push(String.fromCharCode(d+(9>=d?48:55)))}return a.join("")}function mb(a){return document.getElementsByTagName(a)}function nb(a){var b=a.length;if("number"===typeof b)a=b;else{for(var b=0,c=2048;a[c-1];)b=c,c+=c;for(var d=7;1<c-b;)d=(c+b)/2,a[d-1]?b=d:c=d;a=a[d]?c:b}return a}function Da(a){try{if(e.localStorage)return e.localStorage.getItem(a)}catch(b){}}function Xa(a){try{e.localStorage&&e.localStorage.removeItem(a)}catch(b){}}
+function ob(a){var b={};a=a.split("|");for(var c=0;c<a.length;c++){var d=a[c].split("=");2===d.length&&(b[d[0]]=decodeURIComponent(d[1].replace(/\+/g," ")))}return b}function Ja(){var a=n("csu");return(a.indexOf("dbg")===a.length-3?a.substr(0,a.length-3):a)+"_"+n("app")+"_Store"}function ca(a,b,c){b=b||{};a=a.split("|");for(var d=0;d<a.length;d++){var e=a[d],f=h(a[d],"=");-1===f?b[e]="1":(e=a[d].substring(0,f),b[e]=a[d].substring(f+1,a[d].length))}!c&&(c=b,a=c.spc)&&(d=document.createElement("textarea"),
+d.innerHTML=a,c.spc=d.value);return b}function da(a){return a in f?f[a]:ra[a]}function m(a){a=da(a);return"false"===a||"0"===a?!1:!!a}function sa(a){var b=O(da(a));isNaN(b)&&(b=ra[a]);return b}function n(a){return String(da(a)||"")}function cc(a,b){f[a]=b}function dc(a){return f=a}function pb(a){var b=location.hostname;return b&&a?b===a||-1!==b.indexOf("."+a,b.length-("."+a).length):!0}function ec(){return x}function fc(){return qb}function gc(){return rb}function hc(){return qa}function ic(){return cb}
+function jc(){return N}function Ka(a){f[a]=0>h(f[a],"#"+a.toUpperCase())?f[a]:""}function sb(a){var b=a.agentUri;b&&-1<h(b,"_")&&(b=/([a-zA-Z]*)[0-9]{0,4}_([a-zA-Z_0-9]*)_[0-9]+/g.exec(b),a.csu=b[1],a.featureHash=b[2])}function tb(a,b){pb(f.domain)||(f.domainOverride=location.hostname+","+f.domain,delete f.domain);f.pVO&&(a.pVO=f.pVO);b||(a.bp=a.bp||ra.bp,1===g&&a.bp1&&(a.bp=1),a.bp2&&(a.bp=2),4!==a.bp||e.JSON||(a.bp=1))}function kc(){return f}function A(a){var b=document.cookie?document.cookie.split(a).length-
+1:0;if(1<b){var c=n("domain")||e.location.hostname,d=e.location.hostname,f=e.location.pathname,g=0,l=0;B.push(a);do{var h=d.substr(g);if(h!==c||"/"!==f){db(a,h===c?void 0:h,f);var m=document.cookie?document.cookie.split(a).length-1:0;m<b&&(B.push(h),b=m)}g=d.indexOf(".",g)+1;l++}while(g&&10>l&&1<b);n("domain")&&1<b&&db(a,void 0,f)}}function lc(){A(N);A(x);A(qa);A(y);Pa(function(a,b,c,d){0<B.length&&!b&&(a.a(d,"dCN","duplicateCookieNames",function(){return B.join(",")},function(){return B.slice()}),
+B=[])})}function La(a,b,c,d){var e=document.createElement("script");e.setAttribute("src",a);b&&e.setAttribute("defer","true");c&&(e.onload=c);d&&(e.onerror=d);e.setAttribute("crossorigin","anonymous");a=document.getElementsByTagName("script")[0];a.parentElement.insertBefore(e,a)}function Ma(a,b){return U+"/"+(b||G)+"_"+a+"_"+(sa("buildNumber")||z().version)+".js"}function z(){return e.dT_}var u=window;if(!u.dT_||!u.dT_.cfg||"string"!=typeof u.dT_.cfg||u.dT_.initialized)u.console&&u.console.log("Initconfig not found or agent already initialized! This is an injection issue.");
+else if(!(navigator.userAgent&&0<=navigator.userAgent.indexOf("RuxitSynthetic"))){var e=window,J=e.setTimeout,Fb=e.setInterval,Ab=e.postMessage,Kb=e.Worker,Hb=e.Blob,Ib=e.URL&&e.URL.createObjectURL,Cb=e.Worker&&e.Worker.prototype.postMessage,wb=e.parent.postMessage,yb=e.top.postMessage,F=e.sessionStorage,W=[],fa=[],va,ra,K,Ba=6E8,q,E="rxvisitid",Z,Ta=18E5,$a=216E5,R=!1,Q=[],L=!1,p="rxVisitor",Ha="dt-pVO",aa=45,ab=!1,ba,D=[],lb=32,ac=new (function(){return function(){this["!"]="%21";this["~"]="%7E";
+this["*"]="%2A";this["("]="%28";this[")"]="%29";this["'"]="%27";this.$="%24";this[";"]="%3B";this[","]="%2C"}}()),f={},N="dtPC",x="dtCookie",qb="x-dtpc",rb="x-dtreferer",qa="dtLatC",y="rxvt",cb="dtAdk";try{var Ia=e.localStorage}catch(a){}var B=[],ub,U,G,mc={childList:!0,subtree:!0,attributes:!0,attributeOldValue:!0},nc=["_DT_RENDERING_"],g;(function(a){try{g=a;if(!navigator.cookieEnabled)return!1;e.dT_={version:"10151181127220140",cfg:e.dT_&&e.dT_.cfg||"",ica:1,disabled:!1,v:!1,mp:vb,mtp:xb,mi:zb,
+mw:Bb,gAST:Nb,ww:Jb,stu:Gb,nw:r,apush:l,st:ua,si:Eb,aBPSL:Pa,gBPSL:Db,aBPSCC:Lb,gBPSCC:Mb,buildType:0===g?"dynatrace":"appmon",gSSV:na,sSSV:oa,rSSV:Fa,pn:O,iVSC:fb,p3SC:jb,pLSC:ib,io:h,dC:t,sC:M,esc:eb,gSId:ja,gDtc:ia,gSC:gb,sSC:xa,gC:w,cRN:X,cRS:wa,gEL:nb,gEBTN:mb,gSCN:ec,gPCHN:fc,gRHN:gc,gPCCN:jc,gLCN:hc,gMSIDCN:ic,cfgO:kc,pCfg:ob,pCSAA:ca,cFHFAU:sb,sCD:tb,bcv:m,ncv:sa,scv:n,stcv:cc,rplC:dc,cLSCK:Ja,gFId:Ob,gBAU:Ma,iS:La,eWE:ha,oEIE:Yb,oEIEWA:pa,eA:Zb,dA:$b,gcSId:Pb,iNV:Vb,gVID:Ga,dPV:Wb,ePV:Xb,
+sVIdUP:za,sVTT:Sb,sVID:Ea,rVID:Ca,gVI:Aa,gNVId:la,gARnVF:Tb,cAUV:Ub,uVT:ma,aNVL:Rb,gPC:ka,cPC:Qa,sPC:ya};va=r();ra={ade:"",agentLocation:"",agentname:"",agentUri:"",app:"",async:!1,auto:!1,bandwidth:"300",bp1:!1,bp2:!1,bp:0===g?1:2,bs:!1,buildNumber:0,coo:!1,cooO:!1,cors:!1,csu:"",cux:!1,dataDtConfig:"",debugName:"",disableCookieManager:!1,disableLogging:!1,dmo:!1,dpvc:!1,disableXhrFailures:!1,domain:"",domainOverride:"",doNotDetect:"",dsndb:!1,dsss:!1,euf:!1,evl:"",extblacklist:"",exteventsoff:!1,
+fa:!1,featureHash:"",ffi:!1,hvt:216E5,imm:!1,initializedModules:"",ign:"",instr:"",lab:!1,legacy:!1,lmut:!0,lzwd:!1,lzwe:!1,md:"",name:"",mdn:5E3,mepp:10,moa:30,mrt:3,msl:3E4,mhl:4E3,ncw:!1,ntd:!1,oat:180,ote:!1,pui:!1,pVO:!1,rdnt:0,reportUrl:"dynaTraceMonitor",rid:"",ridPath:"",rpid:"",rt:0===g?1E4:0,rtl:0===g?0:100,rtp:0===g?2:1,rtt:1E3,rtu:200,rx_visitID:"",sl:100,sosi:!1,spc:"",srbw:!0,srad:!0,srmr:100,srsr:1E5,srtd:1,srtr:500,ssc:!1,st:3E3,svNB:!1,syntheticConfig:!1,tp:"500,50,3",tvc:3E3,uam:!1,
+useNewCookies:!1,vcfi:!1,WST:!1,xb:"",xmut:!0,xt:0};a:{f={reportUrl:"dynaTraceMonitor",initializedModules:"",csu:"dtagent",dataDtConfig:z().cfg};z().cfg=f;0===g&&(f.csu="ruxitagentjs");var b=f.dataDtConfig;b&&-1===h(b,"#CONFIGSTRING")&&(ca(b,f),Ka("domain"),Ka("auto"),Ka("app"),sb(f));var c=mb("script"),d=nb(c),k=-1===h(f.dataDtConfig,"#CONFIGSTRING")?f:null;if(0<d)for(a=0;a<d;a++)b:{var b=void 0,p=c[a],q=k;if(p.attributes){var y=f.csu+"_bootstrap.js",D=/.*\/jstag\/.*\/.*\/(.*)_bs.js$/,B=q,H=p.src,
+u=H&&H.indexOf(y),E=p.attributes.getNamedItem("data-dtconfig");if(E){var A=H,J=E.value,v={};f.legacy=!0;if(A){var V=/([a-zA-Z]*)[0-9]{0,4}_([a-zA-Z_0-9]*)_([0-9]+)/g.exec(A);V&&V.length&&(v.csu=V[1],v.featureHash=V[2],0===g&&(v.agentLocation=A.substr(0,h(A,V[1])-1),v.buildNumber=V[3]))}J&&ca(J,v,!0);pb(v.domain)||(v.domainOverride=location.hostname+","+v.domain,delete v.domain);b=v;if(!q)B=b;else if(!b.syntheticConfig){k=b;break b}}b||(b=f);if(u&&0<=u){var L=u+y.length+5;b.app=H.length>L?H.substr(L):
+"Default%20Application"}else if(H){var P=D.exec(H);P&&(b.app=P[1])}k=B}else k=q}if(k)for(var Q in k)k.hasOwnProperty(Q)&&(c=Q,f[c]=k[c]);f.rx_visitID&&(z().rx_visitID=f.rx_visitID);var Y=Ja();try{var R=Ia&&Ia.getItem(Y);if(R){var I=ob(R),Z=ca(I.config,I).lastModification||"",S=f.lastModification||"",aa=O(Z.substr(0,13)),ba=O(S.substr(0,13));if(!S||aa>=ba)for(var ta in I)I.hasOwnProperty(ta)&&(k=ta,"name"===ta?f.agentname=I[k]:"config"===ta?ca(I[k],f):f[k]=I[k])}}catch(Na){}tb(f);try{var T=f.ign;if(T&&
+(new RegExp(T)).test(e.location.href)){document.dT_=e.dT_=null;var ea=!1;break a}}catch(Na){}f.useNewCookies&&0===g&&(N="rxpc",x="rxsession",qa="rxlatency",qb="x-rxpc",rb="x-rxreferer");ea=!0}if(!ea)return!1;lc();K=va%Ba+"_"+O(X(0,1E3)+"");try{ub=z().disabled||F.getItem("dtDisabled")}catch(Na){}U=n("agentLocation");if(!U)if(document.currentScript){var C=document.currentScript.src;if(C){var da=-1===h(C,"_bs")&&-1===h(C,"_bootstrap")&&-1===h(C,"_complete")?1:2,Oa=C.lastIndexOf("/");for(ea=0;ea<da&&
+-1!==Oa;ea++)C=C.substr(0,Oa),Oa=C.lastIndexOf("/")}U=C}else U=null;G=n("agentname")||n("csu")||(0===g?"ruxitagentjs":"dtagent");"true"===w("dtUseDebugAgent")?0>G.indexOf("dbg")&&(G=n("debugName")||G+"dbg"):G=n("name")||G;if(!m("auto")&&!m("legacy")&&!ub){var W=n("agentUri")||Ma(n("featureHash"));m("async")?La(W,m("async")):document.write('<script type="text/javascript" src="'+W+'">\x3c/script>')}var fa=e.location.href;0===g&&-1!==h(fa,"_DT_RENDERING_")&&(z().RMOD={conf:mc,ignore:nc,ID:"_DT_RENDERING_"},
+U&&La(Ma("R"),!0));w(x)&&(f.cooO=1);Qb();if(0===g){var ga=Da(Ha);f.pVO=ga;ha(Ga)}0===g&&sa("hvt")&&($a=sa("hvt"));pa(Qa,[1])}catch(Na){return!1}return!0})(1)||(delete e.dT_,e.console&&e.console.log("JsAgent initCode initialization failed!"))}})();
+})();</script><script type="text/javascript" src="/dtagent_A23STVbpqrx_7000200031030.js" defer="defer"></script><link href="/css/libs.css?v=1.13.1" rel="stylesheet"  />
+	<link href="/css/post.css?v=1.13.1" rel="stylesheet"  />
+	<link href="/css/applikationen.css?v=1.13.1" rel="stylesheet"  />
+	<link href="/css/smart-app-banner.css" rel="stylesheet"  />
+	<!--[if lt IE 9]>
+		<script src="/js/html5shiv.js?v=1.13.1"></script>
+		<script src="/js/html5shiv-printshiv.js?v=1.13.1"></script>
+		<script src="/js/respond.js?v=1.13.1"></script>
+	<![endif]-->
+
+	<script src="/js/ready.js?v=1.13.1"></script>
+
+	<style type="text/css">
+/*<![CDATA[*/
+#tnt-loginbox { display:none; }
+/*]]>*/
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+			var w = window,
+			    d = document,
+			    e = d.documentElement,
+			    g = d.getElementsByTagName('body')[0],
+			    width = (w.innerWidth && e.clientWidth ? Math.min(w.innerWidth, e.clientWidth) : w.innerWidth || e.clientWidth || g.clientWidth); // http://stackoverflow.com/questions/6942785/browsers-think-differently-about-window-innerwidth-and-document-documentelement
+
+			var positions = [];
+			if (width > 1228) { positions.push('Middle1') }
+if (width > 897 && width <= 991) { positions.push('Left1') }
+if (width > 991) { positions.push('Top1') }
+if (width > 991) { positions.push('Top2') }
+if (width > 768 && width <= 991) { positions.push('Left2') }
+if (width > 768 && width <= 991) { positions.push('Left3') }
+if (width <= 768) { positions.push('Right1') }
+if (width <= 768) { positions.push('Right2') }
+if (width > 1535) { positions.push('Position1') };
+
+			var params = {"paketnummer":"RC320145342DE"};
+							function getPlatform() {
+					var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+					if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
+						return 'ios';
+					}
+					if (userAgent.match(/Android/i)) {
+						return 'android';
+					}
+					return 'web';
+				}
+
+				function getDevice() {
+					if (width < 768) {
+						return 'smartphone';
+					}
+					if (width < 991) {
+						return 'tablet';
+					}
+					return 'web';
+				}
+
+				params['width'] = width;
+				params['platform'] = getPlatform();
+				params['device'] = getDevice();
+
+			var query = Object.keys(params).map(function(k) {
+				return encodeURIComponent(k) + '=' + encodeURIComponent(params[k])
+			}).join('&');
+
+			var OAS_listpos = positions.join(',');
+			var OAS_sitepage = "www.post.at/tools/sendungsverfolgung";
+			var OAS_query = "?" + query;
+			document.write('<sc' + 'ript type="text/javascript" src="/assets/612a864e/adworx.js"><\/script>');
+
+			if(typeof OAS_AD === "undefined") {
+				var OAS_AD = function() {}
+			}
+/*]]>*/
+</script>
+<title>Post AG</title>
+</head>
+<body>
+<script>
+var dataLayer_post = window.dataLayer_post = window.dataLayer_post || [];
+dataLayer_post.push({"benutzerLoginStatus":"Nicht-Eingeloggt","benutzerRegistrierungslevel":"","benutzerHerkunft":"","benutzerTyp":""});
+</script><noscript><iframe src='//www.googletagmanager.com/ns.html?id="GTM-KM8QGJ"'
+		height='0' width='0' style='display:none;visibility:hidden'></iframe></noscript>
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer_post','GTM-KM8QGJ');</script><script>
+var dataLayer_post = window.dataLayer_post = window.dataLayer_post || [];
+</script>
+<!--googleoff: all-->
+
+
+<div class="cookieDisclaimer">
+	<div class="container">
+		<a href="#" class="js-acceptCookies"> <i class="pi pi-cancel"></i></a>
+		<div class="row">
+			<div class="col-xs-10 col-sm-11 col-md-12">
+				<p>
+		Diese Webseite nutzt Cookies, um das Angebot nutzerfreundlicher und effektiver zu machen. Durch Fortsetzung der
+		Navigation, ohne dabei die Einstellung für Cookies zu ändern, gehen wir davon aus, dass Sie der Verwendung
+		von Cookies zustimmen. Die Einstellungen können Sie unter <a href="https://www.post.at/footer_allgemein_rechtliche_hinweise.php" class="someClass">rechtliche Hinweise</a> ändern.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+	<nav role="navigation" class="navbar navbar-user navbar-static-top hidden-xs navbar-default">
+		<div class="container">
+			<ul class="nav navbar-nav">
+								<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="pi pi-basket pi-lg"></i>
+						<span class="hidden-xs hidden-sm">Meine Warenkörbe <b class="caret"></b></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="https://onlineshop.post.at/onlineshop/checkout">Warenkorb - Shop</a></li>
+						<li><a href="https://secure.post.at/online-services/checkout/warenkorb">Warenkorb - Online Services</a></li>
+					</ul>
+				</li>
+			</ul>
+						<form action="https://secure.post.at/sso/login/post?returnUrl=https%3A%2F%2Fwww.post.at%2Fsendungsverfolgung.php%2Fdetails%3Fpnum1%3DRC320145342DE" method="post" class="navbar-form navbar-right js-form-login">
+				<div class="form-group">
+					<div class="input-addon">
+						<input type="text" placeholder="Benutzername / E-Mail" class="form-control" name="LoginForm[username]">
+						<button tabindex="-1" type="button" data-html="true" data-placement="bottom" data-toggle="popover" data-content="<p><a class=&quot;underlinespan&quot; href=&quot;https://secure.post.at/sso/registrierung&quot;>»&nbsp;<span>Jetzt&nbsp;registrieren!</span></a></p>" class="btn js-popover-keep"><i class="pi pi-info"></i></button>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-addon">
+						<input type="password" placeholder="Passwort" class="form-control" name="LoginForm[password]">
+						<button tabindex="-1" type="button" data-html="true" data-placement="bottom" data-toggle="popover" data-trigger="click" data-content="<p><a class=&quot;underlinespan&quot; href=&quot;https://secure.post.at/sso/login/passwortvergessen&quot;>»&nbsp;<span>Passwort&nbsp;vergessen?</span></a></p><p><a class=&quot;underlinespan&quot; href=&quot;https://secure.post.at/sso/registrierung&quot;>»&nbsp;<span>Jetzt&nbsp;registrieren!</span></a></p>" class="btn js-popover-keep" data-original-title="" title=""><i class="pi pi-info"></i></button>
+					</div>
+				</div>
+				<button type="submit" data-html="true" data-placement="bottom" data-toggle="popover" data-trigger="manual" data-content="&lt;label class=&quot;checkbox-inline&quot;&gt;&lt;input type=&quot;checkbox&quot; name=&quot;LoginForm[remember_me]&quot; value=&quot;1&quot;&gt; Eingeloggt bleiben&lt;/label&gt;" class="btn btn-primary">Login</button>
+			</form>
+		</div>
+	</nav>
+
+<header id="header" class="js-site-header-wrapper">
+	<div class="site-header js-site-header">
+		<div class="container">
+			<div class="row">
+				<div class="header-left">
+					<a href="#mobile-left-nav" class="mobile-nav-left js-mobile-nav-left">
+						<i class="pi pi-menu pi-2x"></i>
+					</a>
+					<a href="#mobile-right-login" class="mobile-nav-right js-mobile-nav-right">
+						<i class="pi pi-user pi-2x"></i>
+					</a>
+					<a href="https://www.post.at/" class="logo">
+						<span class="sr-only">Die Österreichische Post AG</span>
+						<img src="/img/logo_responsive.png" alt="Die Österreichische Post AG">
+					</a>
+					<nav class="navbar navbar-main js-navbar-main hidden-xs">
+						<ul class="nav navbar-nav">
+							<li class="dropdown navprivat">
+								<a data-toggle="megamenu" data-overlay="#" href="//www.post.at/index.php">
+									Privat								</a>
+
+
+
+                <div class="dropdown-menu">
+                    <div class="container">
+                        <div class="row">
+
+                    <div class="col-xs-2 dropdown-menu-group">
+                        <a href="//www.post.at/yii_responsive_produktseiten/privat_versenden.php">
+                            <h5>Versenden </h5>
+                        </a>
+
+                        <ul class="dropdown-menu-group-list">
+
+                        <li><a href="//www.post.at/privat_versenden_brief.php">Brief     </a></li>
+
+                        <li><a href="//www.post.at/privat_versenden_paket.php">Paket </a></li>
+
+                        <li><a href="//www.post.at/privat_versenden_ems.php">EMS - Express Mail Service </a></li>
+
+                        <li><a href="//www.post.at/tarife_privat.php">Tarife im Überblick </a></li>
+
+                        <li><a href="//www.post.at/tarife-brief-paket.php">Tarife Brief und Paket</a></li>
+
+                        </ul>
+                        </div>
+
+                    <div class="col-xs-2 dropdown-menu-group">
+                        <a href="//www.post.at/yii_responsive_produktseiten/privat_empfangen.php">
+                            <h5>Empfangen</h5>
+                        </a>
+
+                        <ul class="dropdown-menu-group-list">
+
+                        <li><a href="//www.post.at/yii_responsive_produktseiten/privat_empfangen_brief.php">Brief </a></li>
+
+                        <li><a href="//www.post.at/yii_responsive_produktseiten/privat_empfangen_paket_ems.php">Paket</a></li>
+
+                        <li><a href="//www.post.at/yii_responsive_produktseiten/privat-empfangen-paket-flexibox.php">Post Flexibox</a></li>
+
+                        <li><a href="//www.post.at/yii_responsive_produktseiten/privat_empfangen_empfangsbox.php">Post Empfangsbox</a></li>
+
+                        </ul>
+                        </div>
+
+                    <div class="col-xs-2 dropdown-menu-group">
+                        <a href="//www.post.at/yii_responsive_produktseiten/privat_filialen.php">
+                            <h5>Filialen</h5>
+                        </a>
+
+                        <ul class="dropdown-menu-group-list">
+
+                        <li><a href="//www.post.at/privat_filialen_unser_filialnetz.php">Unser Filialnetz</a></li>
+
+                        <li><a href="//www.post.at/privat_filialen_sb_zone.php">SB-Zone</a></li>
+
+                        <li><a href="//www.post.at/privat_filialen_produkte_services.php">Produkte & Services </a></li>
+
+                        <li><a href="//www.post.at/privat-filialen-telekommunikation.php">Telekommunikation </a></li>
+
+                        <li><a href="//www.post.at/privat_filialen_bankdienstleistungen.php">Bankdienstleistungen</a></li>
+
+                        <li><a href="//www.post.at/privat_filialen_filialfinder.php">Filialfinder</a></li>
+
+                        <li><a href="//www.post.at/energiekosten">Energiekosten-Rechner</a></li>
+
+                        </ul>
+                        </div>
+
+                    <div class="col-xs-2 dropdown-menu-group">
+                        <a href="//www.post.at/yii_responsive_produktseiten/privat_briefmarken_und_philatelie.php">
+                            <h5>Briefmarken & Philatelie </h5>
+                        </a>
+
+                        <ul class="dropdown-menu-group-list">
+
+                        <li><a href="//www.post.at/yii_responsive_produktseiten/privat_briefmarken_und_philatelie_veranstaltungen.php">Veranstaltungen</a></li>
+
+                        <li><a href="//www.post.at/yii_responsive_produktseiten/privat_briefmarken_und_philatelie_news.php">News 2018</a></li>
+
+                        <li><a href="//www.post.at/yii_responsive_produktseiten/privat_briefmarken_und_philatelie_abonnements.php">Abonnements</a></li>
+
+                        <li><a href="//www.post.at/yii_responsive_produktseiten/privat_briefmarken_und_philatelie_ausgabeprogramme.php">Ausgabeprogramme</a></li>
+
+                        <li><a href="//www.post.at/yii_responsive_produktseiten/privat_briefmarken_und_philatelie_produkte.php">Produkte</a></li>
+
+                        <li><a href="//www.post.at/yii_responsive_produktseiten/privat_briefmarken_und_philatelie_philawiki.php">PhilaWiki</a></li>
+
+                        <li><a href="//www.post.at/yii_responsive_produktseiten/privat_briefmarken_und_philatelie_philatelie_shops.php">Philatelie-Shops</a></li>
+
+                        <li><a href="//www.post.at/yii_responsive_produktseiten/privat_briefmarken_und_philatelie_sammler_vereine.php">Sammler-Vereine</a></li>
+
+                        <li><a href="//www.post.at/yii_responsive_produktseiten/privat-postverkaufspunkt.php">Postverkaufspunkt</a></li>
+
+                        <li><a href="//www.post.at/yii_responsive_produktseiten/privat_kontakt_philatelie.php">Kontakt Philatelie</a></li>
+
+                        </ul>
+                        </div>
+
+                    <div class="col-xs-2 dropdown-menu-group">
+                        <a href="//www.post.at/yii_responsive_produktseiten/privat-filialen-Energiekosten-Rechner.php">
+                            <h5>Energiekosten-Rechner</h5>
+                        </a>
+
+                        </div>
+
+                        </div>
+                    </div>
+                    <div class="info"><div class="container"><strong>
+                    Kundenservice Telefon: 0800 010 100
+                </strong><i class="fa fa-times right close-mobile-megadropdown"></i></div></div>
+                </div>
+
+    															</li>
+							<li class="dropdown navgesch">
+								<a data-toggle="megamenu" data-overlay="#" href="//www.post.at/geschaeftlich.php">Geschäftlich</a>
+
+
+
+
+
+                <div class="dropdown-menu">
+                    <div class="container">
+                        <div class="row">
+
+                    <div class="col-xs-2 dropdown-menu-group">
+                        <a href="//www.post.at/yii_responsive_produktseiten/geschaeftlich_versenden.php">
+                            <h5>Versenden</h5>
+                        </a>
+
+                        <ul class="dropdown-menu-group-list">
+
+                        <li><a href="//www.post.at/geschaeftlich_versenden_brief_neu.php">Brief </a></li>
+
+                        <li><a href="//www.post.at/geschaeftlich_versenden_paket.php">Paket </a></li>
+
+                        <li><a href="//www.post.at/geschaeftlich_versenden_ems_express_mail_service.php">EMS - Express Mail Service</a></li>
+
+                        <li><a href="//www.post.at/geschaeftlich_versenden_logistik_loesungen.php">Logistik Lösungen </a></li>
+
+                        <li><a href="//www.post.at/geschaeftlich_versenden_zeitungen_zeitschriften.php">Zeitungen & Zeitschriften</a></li>
+
+                        <li><a href="//www.post.at/geschaeftlich_versenden_co2_neutral_zugestellt.php">CO2 NEUTRAL ZUGESTELLT</a></li>
+
+                        </ul>
+                        </div>
+
+                    <div class="col-xs-2 dropdown-menu-group">
+                        <a href="//www.post.at/yii_responsive_produktseiten/geschaeftlich_empfangen.php">
+                            <h5>Empfangen </h5>
+                        </a>
+
+                        <ul class="dropdown-menu-group-list">
+
+                        <li><a href="//www.post.at/yii_responsive_produktseiten/geschaeftlich_empfangen_brief.php">Brief</a></li>
+
+                        <li><a href="//www.post.at/yii_responsive_produktseiten/geschaeftlich_empfangen_paket_ems_express_mail_service.php">Paket / EMS - Express Mail Service</a></li>
+
+                        <li><a href="//www.post.at/yii_responsive_produktseiten/geschaeftlich_empfangen_logistik_loesungen.php">Logistik Lösungen</a></li>
+
+                        </ul>
+                        </div>
+
+                    <div class="col-xs-2 dropdown-menu-group">
+                        <a href="//www.post.at/yii_responsive_produktseiten/geschaeftlich_werben.php">
+                            <h5>Werben </h5>
+                        </a>
+
+                        <ul class="dropdown-menu-group-list">
+
+                        <li><a href="//www.post.at/geschaeftlich_werben_produkte_und_services.php">Produkte und Services </a></li>
+
+                        <li><a href="//www.post.at/geschaeftlich_werben_kunden_finden.php">Kunden finden</a></li>
+
+                        <li><a href="//www.post.at/geschaeftlich_werben_kunden_binden.php">Kunden binden</a></li>
+
+                        <li><a href="//www.post.at/geschaeftlich_werben_tarife.php">Tarife</a></li>
+
+                        <li><a href="//www.post.at/geschaeftlich_werben_post_business_app.php">Post Business App</a></li>
+
+                        </ul>
+                        </div>
+
+                    <div class="col-xs-2 dropdown-menu-group">
+                        <a href="//www.post.at/yii_responsive_produktseiten/geschaeftlich_branchenloesungen.php">
+                            <h5>Branchenlösungen </h5>
+                        </a>
+
+                        <ul class="dropdown-menu-group-list">
+
+                        <li><a href="//www.post.at/yii_responsive_produktseiten/geschaeftlich_branchenloesungen_branchenauswahl_loesungen.php">Branchenauswahl & Lösungen </a></li>
+
+                        <li><a href="//www.post.at/yii_responsive_produktseiten/geschaeftlich-branchenloesungen-mail-solutions.php">Mail Solutions</a></li>
+
+                        <li><a href="//www.post.at/yii_responsive_produktseiten/geschaeftlich_branchenloesungen_versandtools.php">Versandtools</a></li>
+
+                        <li><a href="//www.post.at/yii_responsive_produktseiten/geschaeftlich_branchenloesungen_mein_postauftrag.php">Mein Postauftrag </a></li>
+
+                        <li><a href="//www.post.at/yii_responsive_produktseiten/geschaeftlich_branchenloesungen_druck.php">Druck </a></li>
+
+                        <li><a href="//www.post.at/yii_responsive_produktseiten/geschaeftlich-branchenloesungen-e-commerce.php">E-Commerce </a></li>
+
+                        </ul>
+                        </div>
+
+                        </div>
+                    </div>
+                    <div class="info"><div class="container"><strong>
+                    Kundenservice Telefon: 0800 212 212
+                </strong><i class="fa fa-times right close-mobile-megadropdown"></i></div></div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    															</li>
+							<li class="dropdown navueber">
+								<a data-toggle="megamenu" data-overlay="#" href="//www.post.at/ueber_uns.php">Über Uns</a>
+
+
+
+
+
+
+                 <div class="dropdown-menu">
+                    <div class="container">
+                        <div class="row">
+
+                    <div class="col-xs-2 dropdown-menu-group">
+                        <a href="//www.post.at/footer_ueber_uns_konzerninformation.php">
+                            <h5>Konzern Information</h5>
+                        </a>
+
+                        <ul class="dropdown-menu-group-list">
+
+                        <li><a href="//www.post.at/footer_ueber_uns_konzerninformation_kurzdarstellung.php">Kurzdarstellung</a></li>
+
+                        <li><a href="//www.post.at/footer_ueber_uns_konzerninformation_vorstand.php">Vorstand</a></li>
+
+                        <li><a href="//www.post.at/ueber-uns-konzerninformationen-aufsichtsrat.php">Aufsichtsrat</a></li>
+
+                        <li><a href="//www.post.at/footer_ueber_uns_konzerninformation_mission.php">Mission</a></li>
+
+                        <li><a href="//www.post.at/footer_ueberuns_konzerninformationen_leitbild.php">Leitbild</a></li>
+
+                        <li><a href="//www.post.at/footer_ueberuns_konzerninformation_codeofconduct.php">Verhaltens-und Ethikkodex</a></li>
+
+                        <li><a href="//www.post.at/footer_ueber_uns_konzerninformation_beteiligungen.php">Beteiligungen</a></li>
+
+                        <li><a href="//www.post.at/footer_ueber_uns_konzerninformation_geschaeftsbericht.php">Geschäftsberichte</a></li>
+
+                        <li><a href="//www.post.at/footer_ueber_uns_konzerninformation_post_geschaeftsstellen.php">Post-Geschäftsstellen</a></li>
+
+                        <li><a href="//www.post.at/footer_ueber_uns_konzerninformationen_immobilien.php">Immobilien</a></li>
+
+                        <li><a href="//www.post.at/gefahren-im-internet.php">Gefahren im Internet</a></li>
+
+                        <li><a href="//www.post.at/footer_ueber_uns_konzerninformation_geschichte.php">Geschichte  </a></li>
+
+                        </ul>
+                        </div>
+
+                    <div class="col-xs-2 dropdown-menu-group">
+                        <a href="//www.post.at/ir.php">
+                            <h5>Investor Relations </h5>
+                        </a>
+
+                        <ul class="dropdown-menu-group-list">
+
+                        <li><a href="//www.post.at/ueber_uns_investor_relations_investment_story.php">Investment Story </a></li>
+
+                        <li><a href="//www.post.at/footer_ueber_uns_investor_relations_post_aktie.php">Post Aktie</a></li>
+
+                        <li><a href="//www.post.at/footer_ueber_uns_investor_relations_ad_hoc-mitteilungen.php">News/Veröffentlichung von Insiderinformationen</a></li>
+
+                        <li><a href="//www.post.at/footer_ueber_uns_investor_relations_publikationen.php">Reporting</a></li>
+
+                        <li><a href="//www.post.at/footer_ueber_uns_investor_relations_online_geschaeftsberichte.php">Geschäftsberichte</a></li>
+
+                        <li><a href="//www.post.at/footer_ueber_uns_investor_relations_finanzkalender.php">Termine & Veranstaltungen</a></li>
+
+                        <li><a href="//www.post.at/ueber-uns-hauptversammlung.php">Hauptversammlung 2018    </a></li>
+
+                        <li><a href="//www.post.at/footer_ueber_uns_investor_relations_corporate_governance.php">Corporate Governance</a></li>
+
+                        <li><a href="//www.post.at/footer_ueber_uns_konzerninformation_csr_nachhaltigkeit.php">CSR Nachhaltigkeit</a></li>
+
+                        <li><a href="//www.post.at/footer_ueber_uns_investor_relations_kontakt.php">Kontakt</a></li>
+
+                        <li><a href="//www.post.at/footer_ueber_uns_investor_relations_newsletter_bestellservice.php">Bestellservice </a></li>
+
+                        </ul>
+                        </div>
+
+                    <div class="col-xs-2 dropdown-menu-group">
+                        <a href="//www.post.at/footer_ueber_uns_presse.php">
+                            <h5>Presse  </h5>
+                        </a>
+
+                        <ul class="dropdown-menu-group-list">
+
+                        <li><a href="//www.post.at/footer_ueber_uns_presse_pressearchiv.php">Pressearchiv</a></li>
+
+                        <li><a href="//www.post.at/18239.php">Presse Newsletter</a></li>
+
+                        <li><a href="//www.post.at/footer_ueber_uns_presse_ansprechpartner.php">Kontakt </a></li>
+
+                        </ul>
+                        </div>
+
+                    <div class="col-xs-2 dropdown-menu-group">
+                        <a href="//www.post.at/ueber_uns_jobs_und_karriere.php">
+                            <h5>Jobs & Karriere </h5>
+                        </a>
+
+                        <ul class="dropdown-menu-group-list">
+
+                        <li><a href="//www.post.at/ueber_uns_jobs_und_karriere_postkarriere.php">Postkarriere</a></li>
+
+                        <li><a href="//www.post.at/ueber_uns_jobs_und_karriere_warum_post.php">Warum Post?</a></li>
+
+                        <li><a href="//www.post.at/ueber_uns_jobs_und_karriere_wir_bieten.php">Wir bieten</a></li>
+
+                        <li><a href="//www.post.at/ueber_uns_jobs_und_karriere_bewerbungsprozess.php">Bewerbungsprozess</a></li>
+
+                        <li><a href="//www.post.at/ueber_uns_jobs_und_karriere_jobboerse_jetzt_bewerben.php">Jobbörse - jetzt bewerben!</a></li>
+
+                        <li><a href="//www.post.at/ueber_uns_jobs_und_karriere_kontakt.php">Kontakt & Ansprechpersonen</a></li>
+
+                        </ul>
+                        </div>
+
+                    <div class="col-xs-2 dropdown-menu-group">
+                        <a href="//www.post.at/footer_ueber_uns_multimedia_archiv.php">
+                            <h5>Multimedia Archiv </h5>
+                        </a>
+
+                        <ul class="dropdown-menu-group-list">
+
+                        <li><a href="//www.post.at/footer_ueber_uns_multimedia_archiv_bilder.php">Bilder </a></li>
+
+                        <li><a href="//www.post.at/footer_ueber_uns_multimedia_archiv_audio.php">Audio</a></li>
+
+                        <li><a href="//www.post.at/footer_ueber_uns_multimedia_archiv_logos.php">Logos </a></li>
+
+                        <li><a href="//www.post.at/footer_ueber_uns_multimedia_archiv_video.php">Video</a></li>
+
+                        </ul>
+                        </div>
+
+                        </div>
+                    </div>
+                    <div class="info"><div class="container"><strong>
+                    Kundenservice Telefon: 0800 010 100
+                </strong><i class="fa fa-times right close-mobile-megadropdown"></i></div></div>
+                </div>
+
+
+
+
+
+
+    															</li>
+
+															<li class="dropdown">
+
+<a class="needsclick" data-toggle="dropdown" data-overlay="#" href="https://onlineshop.post.at/onlineshop/">
+                Shop
+            </a>
+            <div class="dropdown-menu">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-xs-6 col-md-5 dropdown-menu-group">
+                            <h5>Rubrik</h5>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <ul class="dropdown-menu-group-list">
+                                        <li><a href="https://onlineshop.post.at/onlineshop/briefmarken---philatelie_223">Briefmarken &amp; Philatelie</a></li><li><a href="https://onlineshop.post.at/onlineshop/versenden---verpacken_231">Versenden &amp; Verpacken</a></li><li><a href="https://onlineshop.post.at/onlineshop/buero---schreibwaren_236">Büro &amp; Schreibwaren</a></li><li><a href="http://www.post-foto.at/" target="_blank">Post Foto-Service</a></li><li><a href="/16416.htm" target="_blank"> </a></li><li><a href="/17170.htm" target="_blank"> </a></li><li><a href="/shoepping.php" target="_blank">shöpping.at</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-xs-6">
+                                    <ul class="dropdown-menu-group-list">
+                                        <li><a href="https://onlineshop.post.at/onlineshop/categories/284">Post Flexibox</a></li><li><a href="https://onlineshop.post.at/onlineshop/wassersprudler-und-zubehoer_384">Wassersprudler und Zubehör</a></li><li><a href="https://onlineshop.post.at/onlineshop/categories/284">Post Empfangsboxen</a></li><li><a href="https://onlineshop.post.at/onlineshop/content/show/15">Rund um Meine Marke</a></li><li><a href="https://onlineshop.post.at/onlineshop/gebrauchtwagen_346">Gebrauchtwagen</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-7 dropdown-menu-group">
+                            <h3>Top 3 Artikel</h3>
+                            <div class="row">
+                                <div class="col-xs-4">
+
+                                    <a href="https://onlineshop.post.at/onlineshop/geschenke---unterhaltung/cd---dvd/limitierte-edition-andreas-gabalier_16393" class="thumbnail thumbnail-product"><img src="https://www.post.at/img/Andreas-Gabalier-CD-Onlinehsop.jpg" alt="carousel-a">
+                                    <div class="labels">
+                                    <span class="label label-price-text">nur</span><br><span class="label label-price">€ 24,<span><small>99</small></span></span>
+                                </div>
+                                    <span class="caption">Andreas Gabalier</span>
+                                    </a>
+                                </div>
+                                <div class="col-xs-4">
+
+                                    <a href="https://onlineshop.post.at/onlineshop/categories/284" class="thumbnail thumbnail-product"><img src="https://www.post.at/img/Flexibox_2_205x180_CH.jpg" alt="carousel-a">
+                                    <div class="labels">
+                                    <span class="label label-price-text">nur</span><br><span class="label label-price">€ 124,<span><small>00</small></span></span>
+                                </div>
+                                    <span class="caption">Post Flexibox</span>
+                                    </a>
+                                </div>
+                                <div class="col-xs-4">
+
+                                    <a href="http://www.post-foto.at/fotobuecher/softcover" class="thumbnail thumbnail-product"><img src="https://www.post.at/img/Post_Fotobuch.jpg" alt="carousel-a">
+                                    <div class="labels">
+                                    <span class="label label-price-text">nur</span><br><span class="label label-price">€ 6,<span><small>90</small></span></span>
+                                </div>
+                                    <span class="caption">Fotobuch mit Spiralbindung A5 16 Seiten quer</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info">
+
+                        <div class="container"><strong>Kundenservice Telefon: 0800 010 100</strong><i class="fa fa-times right close-mobile-megadropdown"></i></div>
+                                </div>
+
+            </div>
+</li>
+
+ 														<li class="dropdown">
+	<a data-toggle="dropdown" class="needsclick" href="https://secure.post.at/sso/meinepost" id="accessible-megamenu-1406019301672-9" aria-haspopup="true" aria-owns="accessible-megamenu-1406019301672-10" aria-controls="accessible-megamenu-1406019301672-10" aria-expanded="false">
+		<img src="/img/avatar_icon.png" width="14" height="14" class="mbs">
+		Meine Post	</a>
+	<div class="dropdown-menu" id="accessible-megamenu-1406019301672-10" role="group" aria-expanded="false" aria-hidden="true" aria-labelledby="accessible-megamenu-1406019301672-9">
+		<div class="container prn">
+			<div class="row equal">
+				<div class="col-xs-3">
+					<div class="panel panel-gray">
+						<div class="panel-heading">
+							<h4 class="panel-title"><strong>Login</strong></h4>
+						</div>
+						<div class="panel-body">
+							<form role="form" action="https://secure.post.at/sso/login/post?returnUrl=https%3A%2F%2Fwww.post.at%2Fsendungsverfolgung.php%2Fdetails%3Fpnum1%3DRC320145342DE" method="POST" class="form-login sidr-background-light">
+		<div class="form-group">
+		<input type="text" placeholder="Benutzername / E-Mail" name="LoginForm[username]" class="form-control">
+	</div>
+	<div class="form-group">
+		<input type="password" placeholder="Passwort" name="LoginForm[password]" class="form-control">
+	</div>
+	<div class="checkbox">
+		<label>
+			<input type="checkbox" name="LoginForm[remember_me]">Eingeloggt bleiben		</label>
+	</div>
+	<div class="form-group">
+		<button class="btn btn-primary btn-full btn-arrow">Login</button>
+	</div>
+		<div class="form-group">
+		<a href="https://secure.post.at/sso/registrierung" class="arrow-link">
+			<span>Jetzt registrieren</span>
+		</a><br>
+		<a href="https://secure.post.at/sso/login/passwortvergessen?returnUrl=https%3A%2F%2Fwww.post.at%2Fsendungsverfolgung.php%2Fdetails%3Fpnum1%3DRC320145342DE" class="arrow-link">
+			<span>Passwort vergessen</span>
+		</a><br>
+		<a href="https://secure.post.at/sso/login/benutzernamevergessen" class="arrow-link">
+			<span>Benutzername vergessen</span>
+		</a>
+	</div>
+</form>						</div>
+					</div>
+				</div>
+				<div class="col-xs-5 dropdown-menu-group equal-middle">
+					<h2>
+						Neu hier? <br> Dann gleich registrieren!					</h2>
+					<p>
+						Mit MEINE POST haben unsere Privat- und Businesskunden eine einfache und sichere Möglichkeit, Postservices direkt online zu beauftragen. 24h auch Sonn- und Feiertags!					</p>
+					<a href="https://secure.post.at/sso/registrierung" class="btn btn-primary btn-arrow">
+						Jetzt registrieren					</a>
+				</div>
+				<div class="col-sm-4 dropdown-menu-group equal-middle bubble-grid-big prn pls">
+						<ul class="prn pls bubble-grid">
+			<li role="presentation">
+			<a href="https://www.post.at/sendungsverfolgung.php/meineSendungen" class="btn btn-bubble" role="menuitem" tabindex="-1">
+				<i class="pi pi-meinesendungen"></i>
+									<span>Meine Sendungen</span>
+							</a>
+		</li>
+			<li role="presentation">
+			<a href="https://secure.post.at/online-services/services/paketmarke" class="btn btn-bubble" role="menuitem" tabindex="-1">
+				<i class="pi pi-paketmarke"></i>
+									<span>Paketmarke</span>
+							</a>
+		</li>
+			<li role="presentation">
+			<a href="https://e-brief.post.at/" class="btn btn-bubble" role="menuitem" tabindex="-1">
+				<i class="pi pi-ebrieflaptop"></i>
+									<span>E-Brief</span>
+							</a>
+		</li>
+			<li role="presentation">
+			<a href="https://secure.post.at/online-services/services/nachsendeauftrag" class="btn btn-bubble" role="menuitem" tabindex="-1">
+				<i class="pi pi-nachsender"></i>
+									<span>Nachsenden</span>
+							</a>
+		</li>
+			<li role="presentation">
+			<a href="https://www.post.at/privat-filialen-Energiekosten-Rechner.php" class="btn btn-bubble" role="menuitem" tabindex="-1">
+				<i class="pi pi-energiekostenrechner"></i>
+									<span style="white-space: nowrap;">Energiekosten</span>
+					<span>Rechner</span>
+							</a>
+		</li>
+			<li role="presentation">
+			<a href="https://secure.post.at/online-services/services/abholservice" class="btn btn-bubble" role="menuitem" tabindex="-1">
+				<i class="pi pi-abholservice"></i>
+									<span>Abholservice</span>
+							</a>
+		</li>
+		</ul>
+				</div>
+			</div>
+		</div>
+		<div class="info">
+			<div class="container">
+				<strong>Kundenservice Telefon: 0800 010 100</strong><i class="fa fa-times right close-mobile-megadropdown"></i>
+			</div>
+		</div>
+	</div>
+</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="header-right hidden-xs">
+					<div class="row">
+						<ul class="meta-menu">
+							<li>
+								Hotline: <a href="tel:0800010100">0800 010 100</a>							</li>
+							<li>
+								<a href="https://www.post.at/footer_allgemein_inhaltsverzeichnis.php">Übersicht</a>
+							</li>
+														<li>
+								<a href="https://www.post.at/en/track_trace.php/details?pnum1=RC320145342DE">Englisch</a>
+							</li>
+														<li>
+								<a href="https://www.post.at/kundenservice.php">Zum Kundenservice</a>
+							</li>
+							<li>
+								<a href="javascript:window.print();"><i class="pi pi-print"></i></a>
+							</li>
+						</ul>
+					</div>
+					<div class="row">
+						<form role="search" action="https://www.post.at/suche" class="col-sm-6 col-sm-push-6 col-md-12 col-md-push-0 form-search js-form-search">
+							<div class="form-group">
+								<div class="input-addon">
+									<input type="text" placeholder="Suchbegriff / Sendungsnummer eingeben" name="suche_quick" value="" class="form-control">
+									<button type="submit" class="btn"><i class="pi pi-search"></i></button>
+								</div>
+							</div>
+						</form>
+						<div class="col-xs-12 col-sm-6 col-sm-pull-6 col-md-12 col-md-pull-0">
+							<ul class="nav nav-pills nav-header nav-justified js-nav-header">
+								<li class="dropdown"><a data-toggle="dropdown" href="#" data-overlay="#" class="dropdown-toggle">Sendungsverfolgung</a>
+									<div class="dropdown-menu">
+										<form method="GET" action=https://www.post.at/sendungsverfolgung.php role="search" class="form-search form-dropdown">
+											<div class="input-addon js-input-addon">
+												<input type="text" name="pnum1" placeholder="Bitte Sendungsnummer eingeben" class="form-control" style="padding-right: 187px;">
+												<div class="input-addon-group">
+													<button type="submit" class="btn"><i class="pi pi-search"></i></button>
+													<span class="divider"></span><a href="https://www.post.at/sendungsverfolgung.php/meineSendungen" class="btn">Meine Sendungen</a>
+												</div>
+											</div>
+										</form>
+									</div>
+								</li>
+								<li><a href="https://www.post.at/tarifrechner.php">Tarifrechner</a></li>
+								<li class="dropdown"><a data-toggle="dropdown" href="#" data-overlay="#" class="dropdown-toggle">Standorte</a>
+									<div class="dropdown-menu">
+										<form method="GET" action="https://www.post.at/suche/standortsuche.php" role="search" class="form-search form-dropdown">
+											<div class="input-addon">
+												<input type="text" placeholder="PLZ, Ort oder Adresse eingeben" class="form-control" name="suche_quick">
+												<button type="submit" class="btn"><i class="pi pi-search"></i></button>
+											</div>
+										</form>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<div class="banner js-banner banner-responsive is-unknown visible-xs-block">
+	<div class="banner-container">
+				<script type="text/javascript">
+		/*<![CDATA[*/
+			if (-1 !== positions.indexOf('Right1')) {
+				OAS_AD('Right1');
+			}
+		/*]]>*/
+		</script>	</div>
+</div><div class="content"><div class="row">	<div class="col-complementary" id="side-nav">
+			<ul class="nav nav-tree">
+			<li class="active open"><a href="/sendungsverfolgung.php">Sendungsverfolgung</a>		<ul class="nav nav-tree nav-tree-sub-1">
+			<li><a href="/sendungsverfolgung.php/meineSendungen">Meine Sendungen</a></li>
+			<li><a href="/sendungsverfolgung.php">Sendung Suche</a></li>
+		</ul>
+</li>
+		</ul>
+
+	<div class="js-no-copy">
+									<div class="banner js-banner banner-medium-rectangle is-unknown left">
+	<div class="banner-container">
+				<script type="text/javascript">
+		/*<![CDATA[*/
+			if (-1 !== positions.indexOf('Middle1')) {
+				OAS_AD('Middle1');
+			}
+		/*]]>*/
+		</script>	</div>
+</div>							<div class="banner js-banner banner-medium-rectangle is-unknown left">
+	<div class="banner-container">
+				<script type="text/javascript">
+		/*<![CDATA[*/
+			if (-1 !== positions.indexOf('Left1')) {
+				OAS_AD('Left1');
+			}
+		/*]]>*/
+		</script>	</div>
+</div>
+			</div>
+</div>
+
+<!--googleon: all-->
+<div class="col-main">
+
+<article class="post">
+	<h1 class="post-headline">Sendungsverfolgung</h1>
+<div id="tnt-loginbox">
+	<div class="alert alert-warning">
+
+<div class="row">
+	<div class="col-sm-12 col-md-4">
+		<form role="form" action="https://secure.post.at/sso/login/post?returnUrl=https%3A%2F%2Fwww.post.at%2Fsendungsverfolgung.php%2Fdetails%3Fpnum1%3DRC320145342DE&app=sendungsverfolgung" method="POST" class="form-login sidr-background-light">
+		<div class="form-group">
+		<input type="text" placeholder="Benutzername / E-Mail" name="LoginForm[username]" class="form-control">
+	</div>
+	<div class="form-group">
+		<input type="password" placeholder="Passwort" name="LoginForm[password]" class="form-control">
+	</div>
+	<div class="checkbox">
+		<label>
+			<input type="checkbox" name="LoginForm[remember_me]">Eingeloggt bleiben		</label>
+	</div>
+	<div class="form-group">
+		<button class="btn btn-primary btn-full btn-arrow">Login</button>
+	</div>
+	</form>	</div>
+
+	<div class="col-sm-12 col-md-8">
+		<h4>Melden Sie sich an um diese Applikation benutzen zu können!</h4>
+
+
+		<p>Sie besitzen noch kein Benutzerkonto? Dann können Sie sich <a href="https://secure.post.at/sso/registrierung?app=sendungsverfolgung&amp;service=speichern&amp;returnUrl=https%3A%2F%2Fwww.post.at%2Fsendungsverfolgung.php%2FsendungSpeichern%3Fpnum1%3DRC320145342DE%26pid%3D36300000920624">hier</a> registrieren. Wenn Sie Fragen zur Registrierung haben, helfen wir Ihnen gerne im Post Kunden Service unter der Telefonnummer 0 800 010 100.</p>
+		<p>
+			<a class="arrow-link" href="https://secure.post.at/sso/registrierung?app=sendungsverfolgung&amp;service=speichern&amp;returnUrl=https%3A%2F%2Fwww.post.at%2Fsendungsverfolgung.php%2FsendungSpeichern%3Fpnum1%3DRC320145342DE%26pid%3D36300000920624"><span>Registrieren</span></a><br>
+			<a class="arrow-link" href="https://secure.post.at/sso/login/passwortvergessen?app=sendungsverfolgung&amp;service=speichern&amp;returnUrl=https%3A%2F%2Fwww.post.at%2Fsendungsverfolgung.php%2FsendungSpeichern%3Fpnum1%3DRC320145342DE%26pid%3D36300000920624"><span>Passwort vergessen</span></a>
+		</p>
+		</div>
+</div></div></div>
+			<section class="post-section">
+
+
+<form class=" form-horizontal" id="yw0" action="/sendungsverfolgung.php" method="post">
+<div style="display:none"><input type="hidden" value="db24789d67fa1990dad188b73f2891b76446e604" name="__CSRF_PROTECTION" /></div>
+	<div class="row">
+		<div class="col-md-5">
+			<label class="control-label" style="font-weight:bold;" for="SendungsverfolgungForm_pnum1">Neue Sendung verfolgen</label>
+<a data-html="1" data-placement="top" data-toggle="tooltip" title="Beispiele: Brief - RR123456789AT, &lt;br&gt;Paket - 1234567891234567891234&lt;br&gt;&lt;b&gt;ACHTUNG:&lt;/b&gt; Brief - RO, O = Buchstabe" class="js-tooltip">
+	<i class="pi pi-info"></i>
+</a>			<br><br>
+
+			<div class="input-group">
+				<input class="form-control typeahead form-control" name="SendungsverfolgungForm[pnum1]" id="SendungsverfolgungForm_pnum1" type="text" value="RC320145342DE" />				<span class="input-group-btn">
+					<button class="btn btn-primary" type="submit">
+						<i class="pi pi-search pi-lg"></i>
+					</button>
+				</span>
+			</div>
+
+
+		</div>
+		<div class="col-md-5"></div>
+	</div>
+
+</form>
+	<hr>
+
+
+	<div class="form-horizontal">
+		<div class="form-group">
+			<label class="col-xs-12 col-sm-12 col-md-4 control-label h4"><b>Ihre Sendung:</b></label>
+			<div class="col-xs-12 col-sm-12 col-md-8">
+
+				<span class="cut">
+				Sendungsnummer: <b>RC320145342DE</b>
+				</span>
+				<br>
+
+									Sendungsart: REKO<br>
+
+
+
+
+				<br>
+
+							</div>
+		</div>
+
+
+		<div class="form-group">
+
+<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-4">
+			<a onclick="$(&quot;#tnt-loginbox&quot;).css(&quot;display&quot;,&quot;block&quot;);" href="#tnt-loginbox"><b>Sendung speichern</b> <span class="pi pi-floppy"></span></a>	</div>
+		</div>
+	</div>
+
+	<div style="margin-bottom: 15px;"><hr aria-hidden="1" /><div class="row"><div class="col-xs-12 col-sm-8"><div style="width: 80px;float: left;margin-right: 5%;"><a class="btn btn-bubble btn-bubble-md text-left" data-promo-name="Paketmarke" href="https://secure.post.at/online-services/services/paketmarke/bestellen/start"><i class="pi pi-paketmarke" aria-hidden="1"></i></a></div><p class="text-left mtl">Sparen Sie beim Versand Ihres nächsten Packerls mit der Paketmarke Online.</p></div><div class="col-xs-12 col-sm-4"><div class="visible-sm visible-md visible-lg mtl"></div><a class="pull-right mtm" data-promo-name="Paketmarke" href="https://secure.post.at/online-services/services/paketmarke/bestellen/start"><b>Paketmarke erstellen</b></a></div></div></div>
+	<hr style="margin-top: 6px;">
+	<h4>Aktueller Sendungsstatus</h4>
+
+	<div class="sendungsstatus">
+		<ol class="sendungsstatus-progress">
+							<li class="sendungsstatus-progress-item complete">
+					<span class="sendungsstatus-progress-arrow"></span>
+					<span class="pi pi-icon_002 pi-3x js-tooltip" data-html="1" data-placement="top" data-toggle="tooltip" data-original-title="Sendungsannahme"></span><br>
+					<span class="sendungsstatus-progress-text">Sendungsannahme</span>
+				</li>
+							<li class="sendungsstatus-progress-item complete">
+					<span class="sendungsstatus-progress-arrow"></span>
+					<span class="pi pi-icon_003 pi-3x js-tooltip" data-html="1" data-placement="top" data-toggle="tooltip" data-original-title="Sendungstransport"></span><br>
+					<span class="sendungsstatus-progress-text">Sendungstransport</span>
+				</li>
+							<li class="sendungsstatus-progress-item complete">
+					<span class="sendungsstatus-progress-arrow"></span>
+					<span class="pi pi-icon_004 pi-3x js-tooltip" data-html="1" data-placement="top" data-toggle="tooltip" data-original-title="Anlieferung"></span><br>
+					<span class="sendungsstatus-progress-text">Anlieferung</span>
+				</li>
+							<li class="sendungsstatus-progress-item active">
+					<span class="sendungsstatus-progress-arrow"></span>
+					<span class="pi pi-icon_005 pi-3x js-tooltip" data-html="1" data-placement="top" data-toggle="tooltip" data-original-title="Sendung beim Empfänger"></span><br>
+					<span class="sendungsstatus-progress-text">Sendung beim Empfänger</span>
+				</li>
+					</ol>
+
+		<div class="sendungsstatus-content">
+			<h4 class="sendungsstatus-header">Zugestellt</h4>
+
+			<div class="form-horizontal">
+				<div class="form-group">
+					<label class="col-md-2 control-label">Zeitpunkt:</label>
+					<div class="col-md-10">
+						<p class="form-control-static">
+															19.12.2018 10:51:59													</p>
+					</div>
+				</div>
+
+
+							</div>
+		</div>
+
+					<div class="sendungsstatus-history">
+				<h4>Sendungsverlauf:</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<ul id="" class="media-list media-list-shipment">
+	<li>
+
+			<div class=" media">
+	<div class="media-object pull-left">
+		<i class="pi pi-icon_005 pi-3x"></i>	</div>
+	<div class="media-body">
+
+									<em><b>Datum: 19.12.2018&nbsp;10:51:59</b></em><br>
+
+				<b>Zugestellt; PLZ 5700</b>
+				<div class="media-object pull-right">
+								</div>
+
+
+				</div>
+</div>
+			</li>
+	<li>
+
+			<div class="complete media">
+	<div class="media-object pull-left">
+		<i class="pi pi-icon_004 pi-3x"></i>	</div>
+	<div class="media-body">
+
+									<em><b>Datum: 19.12.2018&nbsp;08:00:09</b></em><br>
+
+				<b>Sendung in Zustellung; PLZ 5700</b>
+				<div class="media-object pull-right">
+								</div>
+
+
+				</div>
+</div>
+			</li>
+	<li>
+
+			<div class="complete media">
+	<div class="media-object pull-left">
+		<i class="pi pi-icon_003 pi-3x"></i>	</div>
+	<div class="media-body">
+
+									<em><b>Datum: 18.12.2018&nbsp;17:04:04</b></em><br>
+
+				<b>Sendung in Bearbeitung Österreich; PLZ AT</b>
+				<div class="media-object pull-right">
+								</div>
+
+
+				</div>
+</div>
+			</li>
+	<li>
+
+			<div class="complete media">
+	<div class="media-object pull-left">
+		<i class="pi pi-icon_003 pi-3x"></i>	</div>
+	<div class="media-body">
+
+									<em><b>Datum: 18.12.2018&nbsp;17:04:02</b></em><br>
+
+				<b>Sendung in Österreich angekommen; PLZ AT</b>
+				<div class="media-object pull-right">
+								</div>
+
+
+				</div>
+</div>
+			</li>
+	<li>
+
+			<div class="complete media">
+	<div class="media-object pull-left">
+		<i class="pi pi-icon_003 pi-3x"></i>	</div>
+	<div class="media-body">
+
+									<em><b>Datum: 18.12.2018&nbsp;02:47:00</b></em><br>
+
+				<b>Sendung für Auslandstransport bereit; PLZ DE</b>
+				<div class="media-object pull-right">
+								</div>
+
+
+				</div>
+</div>
+			</li>
+	<li>
+
+			<div class="complete media">
+	<div class="media-object pull-left">
+		<i class="pi pi-icon_002 pi-3x"></i>	</div>
+	<div class="media-body">
+
+									<em><b>Datum: 17.12.2018&nbsp;15:04:00</b></em><br>
+
+				<b>Postaufgabe im Ausland; PLZ DE</b>
+				<div class="media-object pull-right">
+								</div>
+
+
+				</div>
+</div>
+			</li>
+</ul>
+			</div>
+			</div>
+
+	<div class="stepper stepper-md">
+		<div class="previous">
+			<p>
+							</p>
+		</div>
+		<div class="next">
+					</div>
+	</div>
+
+		</section>
+	</article>
+
+						<div class="banner js-banner banner-full is-unknown center">
+	<div class="banner-container">
+				<script type="text/javascript">
+		/*<![CDATA[*/
+			if (-1 !== positions.indexOf('Top1')) {
+				OAS_AD('Top1');
+			}
+		/*]]>*/
+		</script>	</div>
+</div>					<div class="banner js-banner banner-leaderboard is-unknown center">
+	<div class="banner-container">
+				<script type="text/javascript">
+		/*<![CDATA[*/
+			if (-1 !== positions.indexOf('Top2')) {
+				OAS_AD('Top2');
+			}
+		/*]]>*/
+		</script>	</div>
+</div>					<div class="banner js-banner banner-full is-unknown center">
+	<div class="banner-container">
+				<script type="text/javascript">
+		/*<![CDATA[*/
+			if (-1 !== positions.indexOf('Left2')) {
+				OAS_AD('Left2');
+			}
+		/*]]>*/
+		</script>	</div>
+</div>					<div class="banner js-banner banner-leaderboard hidden-xs is-unknown center">
+	<div class="banner-container">
+				<script type="text/javascript">
+		/*<![CDATA[*/
+			if (-1 !== positions.indexOf('Left3')) {
+				OAS_AD('Left3');
+			}
+		/*]]>*/
+		</script>	</div>
+</div>
+
+						<div class="banner js-banner banner-skyscraper js-affix is-unknown outside right">
+	<div class="banner-container">
+				<script type="text/javascript">
+		/*<![CDATA[*/
+			if (-1 !== positions.indexOf('Position1')) {
+				OAS_AD('Position1');
+			}
+		/*]]>*/
+		</script>	</div>
+</div>			</div>
+<!--googleoff: all-->
+
+</div></div><div class="banner js-banner banner-responsive is-unknown visible-xs-block">
+	<div class="banner-container">
+				<script type="text/javascript">
+		/*<![CDATA[*/
+			if (-1 !== positions.indexOf('Right2')) {
+				OAS_AD('Right2');
+			}
+		/*]]>*/
+		</script>	</div>
+</div>
+<div class="container visible-xs">
+	<div class="row">
+		<div class="col-xs-12">
+			<hr>
+			<p class="text-center">
+				Hotline: <a href="tel:0800010100">0800 010 100</a><br>
+				<a href="https://www.post.at/footer_allgemein_inhaltsverzeichnis.php">Übersicht |</a>
+								<a href="https://www.post.at/en/track_trace.php/details?pnum1=RC320145342DE">Englisch |</a>
+								<a href="https://www.post.at/kundenservice.php">Zum Kundenservice</a>
+			</p>
+		</div>
+	</div>
+</div>
+	<footer class="site-footer">
+		<div class="container">
+
+    <div class="row" id="footerlinks">
+    <div class="col-xs-12 col-sm-2">
+
+
+          <div class="panel panel-footer-menu">
+            <div class="panel-heading">
+                <h3 class="panel-title">Versandinfos</h3>
+            </div>
+            <ul class="list-group list-group-footer">
+
+        <li><a href="//www.post.at/sendungsverfolgung.php">Track und Trace</a></li>
+
+        <li><a href="//www.post.at/tarifrechner.php">Tarifrechner</a></li>
+
+        <li><a href="//www.post.at/privat_versenden_brief_oesterreich_masse_gewicht.php">Ma&szlig;e &amp; Gewicht</a></li>
+
+        <li><a href="//www.post.at/geschaeftlich-barfreimachung.php">Barfreimachung Brief</a></li>
+
+        </ul>
+    </div>
+</div>
+ <div class="col-xs-12 col-sm-2">
+
+
+          <div class="panel panel-footer-menu">
+            <div class="panel-heading">
+                <h3 class="panel-title">Standorte</h3>
+            </div>
+            <ul class="list-group list-group-footer">
+
+        <li><a href="//www.post.at/privat-filialen-telekommunikation.php">A1 Shop</a></li>
+
+        <li><a href="https://www.post.at/suche/standortsuche.php">Post Filiale suchen</a></li>
+
+        <li><a href="//www.post.at/post_subsite_postleitzahlfinder.php">Postleitzahlfinder</a></li>
+
+        <li><a href="//www.post.at/post_suche_briefkasten.php">Briefkastenfinder</a></li>
+
+<li>&nbsp;</li>
+        <li><a href="https://onlineshop.post.at/onlineshop/">Online Shop</a></li>
+
+        </ul>
+    </div>
+</div>
+ <div class="col-xs-12 col-sm-2">
+
+
+          <div class="panel panel-footer-menu">
+            <div class="panel-heading">
+                <h3 class="panel-title">Produkte </h3>
+            </div>
+            <ul class="list-group list-group-footer">
+
+        <li><a href="//www.post.at/privat_das_flugblatt.php">Das Flugblatt</a></li>
+
+        <li><a href="//www.post.at/privat_versenden_brief_postkarten_app.php">Postkarte versenden</a></li>
+
+        <li><a href="//www.post.at/privat_meine_sendung.php">Meine Sendung</a></li>
+
+        <li><a href="/produkte_services.php">Produkte von A - Z</a></li>
+
+<li>&nbsp;</li>
+        <li><a href="https://onlineshop.post.at/onlineshop/versenden---verpacken/briefmarken-fuer-den-versand_232">Briefmarken</a></li>
+
+        <li><a href="https://secure.post.at/online-services/services/paketmarke/bestellen/start">Paketmarken</a></li>
+
+        <li><a href="https://onlineshop.post.at/onlineshop/content/show/15">Meine Marke</a></li>
+
+<li>&nbsp;</li>
+        <li><a href="http://www.post-foto.at/">Post-Fotoservice</a></li>
+
+        </ul>
+    </div>
+</div>
+ <div class="col-xs-12 col-sm-2">
+
+
+          <div class="panel panel-footer-menu">
+            <div class="panel-heading">
+                <h3 class="panel-title">Services</h3>
+            </div>
+            <ul class="list-group list-group-footer">
+
+        <li><a href="//www.post.at/privat_versenden_paket.php">Paket versenden</a></li>
+
+        <li><a href="//www.post.at/privat_versenden_ems.php">Schnell versenden(EMS)</a></li>
+
+        <li><a href="//www.post.at/privat_empfangen_paket_ems.php">Paket empfangen</a></li>
+
+        <li><a href="//www.post.at/privat_versenden_brief.php">Brief versenden</a></li>
+
+        <li><a href="//www.post.at/privat_empfangen_brief.php">Brief empfangen</a></li>
+
+        <li><a href="//www.post.at/privat-recht-auf-rechnung.php">Recht auf Rechnung</a></li>
+
+        <li><a href="//www.post.at/privat_versenden_brief_postkarten_app.php">Postkarte versenden</a></li>
+
+        <li><a href="//www.post.at/geschaeftlich_versenden_logistik_loesungen_logistikleistungen_sensible_gueter.php">Gefahrgut versenden</a></li>
+
+        <li><a href="https://www.postsystemlogistik.at/">Kommissionierung</a></li>
+
+<li>&nbsp;</li>
+        <li><a href="https://secure.post.at/online-services/site/handysignatur">Handy-Signatur</a></li>
+
+        </ul>
+    </div>
+</div>
+ <div class="col-xs-12 col-sm-2">
+
+
+          <div class="panel panel-footer-menu">
+            <div class="panel-heading">
+                <h3 class="panel-title">&Uuml;ber uns</h3>
+            </div>
+            <ul class="list-group list-group-footer">
+
+        <li><a href="//www.post.at/footer_ueber_uns_konzerninformation.php">Konzern Information</a></li>
+
+        <li><a href="//www.post.at/ir.php">Investor Relations</a></li>
+
+        <li><a href="https://www.post.at/co2neutral/">CO2 NEUTRAL ZUGESTELLT</a></li>
+
+        <li><a href="//www.post.at/ueber_uns_jobs_und_karriere.php">Jobs &amp; Karriere</a></li>
+
+        <li><a href="//www.post.at/kundenservice.php">Kontakt</a></li>
+
+        <li><a href="https://www.post.at/newsletter">Newsletter Anmeldung</a></li>
+
+<li>&nbsp;</li>
+        <li><a href="//www.post.at/footer_allgemein_haeufige_fragen.php">FAQ - H&auml;ufige Fragen</a></li>
+
+        <li><a href="//www.post.at/footer_ueber_uns_konzerninformationen_immobilien.php">Immobilien</a></li>
+
+        <li><a href="//www.post.at/footer_allgemein_inhaltsverzeichnis.php">Inhaltsverzeichnis</a></li>
+
+        <li><a href="//www.post.at/footer_ueber_uns_multimedia_archiv.php">Multimedia Archiv</a></li>
+
+        <li><a href="//www.post.at/footer_ueber_uns_presse.php">Presse</a></li>
+
+        <li><a href="https://www.post.at/geschaeftlich-lieferantenportal.php">Lieferantenportal</a></li>
+
+        </ul>
+    </div>
+</div>
+ <div class="col-xs-12 col-sm-2">
+
+
+          <div class="panel panel-footer-menu">
+            <div class="panel-heading">
+                <h3 class="panel-title">Rechtliche Hinweise</h3>
+            </div>
+            <ul class="list-group list-group-footer">
+
+        <li><a href="//www.post.at/footer_ueber_uns_impressum.php">Impressum</a></li>
+
+        <li><a href="//www.post.at/footer_allgemein_rechtliche_hinweise.php">Rechtliche Hinweise / Datenschutzhinweise</a></li>
+
+        <li><a href="//www.post.at/alternative-streitbeilegung.php">Alternative Streitbeilegung</a></li>
+
+        <li><a href="//www.post.at/footer_ueber_uns_agb.php">AGB</a></li>
+
+        <li><a href="//www.post.at/geschaeftlich-avb.php">AVB</a></li>
+
+        </ul>
+    </div>
+</div>
+
+    </div>
+    <!-- SOCIAL MEDIA BAR -->
+    <div class="row">
+        <div class="col-sm-6 social-media">
+            <a href="http://www.facebook.com/unserepost" target="_blank"><i class="pi pi-facebook pi-3x"></i></a>
+            <a href="http://www.youtube.com/unserepost" target="_blank"><i class="pi pi-youtube pi-3x"></i></a>
+            <a href="https://plus.google.com/102211399647862888436/posts" target="_blank"><i class="pi pi-googleplus pi-3x"></i></a>
+        </div>
+        <div class="col-sm-6 footer-post">
+            <strong>© Österreichische Post Aktiengesellschaft</strong>
+            <p>Unternehmenszentrale: Rochusplatz 1, 1030 Wien</p>
+        </div>
+    </div>
+
+ 					</div>
+	</footer>
+
+		<a id="go-top" class="go-top"><i class="pi pi-angle-up pi-4x"></i></a>
+	<div id="side-nav-left" class="hidden">
+				<ul class="nav nav-tree">
+			<li class="active open"><a href="/sendungsverfolgung.php">Sendungsverfolgung</a>		<ul class="nav nav-tree nav-tree-sub-1">
+			<li><a href="/sendungsverfolgung.php/meineSendungen">Meine Sendungen</a></li>
+			<li><a href="/sendungsverfolgung.php">Sendung Suche</a></li>
+		</ul>
+</li>
+		</ul>
+
+	</div>
+	<div id="side-nav-right" class="hidden">
+		<div class="sidr-content">
+
+
+<div class="panel-group">
+		<div class="panel panel-secondary">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a class="block" data-toggle="collapse" href="#collapse-5c1cf8783141e-1">
+						<strong>Login</strong>						<i class="pi"></i>
+					</a>
+				</h4>
+			</div>
+			<div id="collapse-5c1cf8783141e-1" class="panel-collapse collapse in">
+				<div class="panel-body">
+					<form role="form" action="https://secure.post.at/sso/login/post?returnUrl=https%3A%2F%2Fwww.post.at%2Fsendungsverfolgung.php%2Fdetails%3Fpnum1%3DRC320145342DE" method="POST" class="form-login sidr-background-light">
+		<div class="form-group">
+		<input type="text" placeholder="Benutzername / E-Mail" name="LoginForm[username]" class="form-control">
+	</div>
+	<div class="form-group">
+		<input type="password" placeholder="Passwort" name="LoginForm[password]" class="form-control">
+	</div>
+	<div class="checkbox">
+		<label>
+			<input type="checkbox" name="LoginForm[remember_me]">Eingeloggt bleiben		</label>
+	</div>
+	<div class="form-group">
+		<button class="btn btn-primary btn-full btn-arrow">Login</button>
+	</div>
+		<div class="form-group">
+		<a href="https://secure.post.at/sso/registrierung" class="arrow-link">
+			<span>Jetzt registrieren</span>
+		</a><br>
+		<a href="https://secure.post.at/sso/login/passwortvergessen?returnUrl=https%3A%2F%2Fwww.post.at%2Fsendungsverfolgung.php%2Fdetails%3Fpnum1%3DRC320145342DE" class="arrow-link">
+			<span>Passwort vergessen</span>
+		</a><br>
+		<a href="https://secure.post.at/sso/login/benutzernamevergessen" class="arrow-link">
+			<span>Benutzername vergessen</span>
+		</a>
+	</div>
+</form>				</div>
+								<div class="prs pls panel-footer">
+							<p class="small plm prm">Eingeloggte Kunden können viele Services einfach, sicher und 24h nutzen</p>
+	<ul class="bubble-grid">
+			<li role="presentation">
+			<a href="https://www.post.at/sendungsverfolgung.php/meineSendungen" class="btn btn-bubble" role="menuitem" tabindex="-1">
+				<i class="pi pi-meinesendungen"></i>
+									<span>Meine Sendungen</span>
+							</a>
+		</li>
+			<li role="presentation">
+			<a href="https://secure.post.at/online-services/services/paketmarke" class="btn btn-bubble" role="menuitem" tabindex="-1">
+				<i class="pi pi-paketmarke"></i>
+									<span>Paketmarke</span>
+							</a>
+		</li>
+			<li role="presentation">
+			<a href="https://e-brief.post.at/" class="btn btn-bubble" role="menuitem" tabindex="-1">
+				<i class="pi pi-ebrieflaptop"></i>
+									<span>E-Brief</span>
+							</a>
+		</li>
+			<li role="presentation">
+			<a href="https://secure.post.at/online-services/services/nachsendeauftrag" class="btn btn-bubble" role="menuitem" tabindex="-1">
+				<i class="pi pi-nachsender"></i>
+									<span>Nachsenden</span>
+							</a>
+		</li>
+			<li role="presentation">
+			<a href="https://www.post.at/privat-filialen-Energiekosten-Rechner.php" class="btn btn-bubble" role="menuitem" tabindex="-1">
+				<i class="pi pi-energiekostenrechner"></i>
+									<span style="white-space: nowrap;">Energiekosten</span>
+					<span>Rechner</span>
+							</a>
+		</li>
+			<li role="presentation">
+			<a href="https://secure.post.at/online-services/services/abholservice" class="btn btn-bubble" role="menuitem" tabindex="-1">
+				<i class="pi pi-abholservice"></i>
+									<span>Abholservice</span>
+							</a>
+		</li>
+		</ul>
+<div class="post-on"><span class="sr-only">Die Österreichische Post AG - Services</span></div>
+<a href="https://secure.post.at/online-services/" class="arrow-link"><span>Weitere Services</span></a>					</div>
+							</div>
+		</div>
+	</div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script src="/js/js.cookie.js"></script>
+	<script src="/js/libs.js?v=1.13.1"></script>
+	<script src="/js/post.js?v=1.13.1"></script>
+	<script src="/js/applikationen.js?v=1.13.1"></script>
+	<script src="/javascript/smart-app-banner.js"></script>
+
+
+<script>
+
+$(".navprivat").hover(function(){
+	if($(".navprivat").find("div.dropdown-menu").length == 0 && $(".navprivat > a").attr('href') == '//www.post.at/index.php')
+	{
+		$.ajax({
+			url: "/snippets/megamenu-dropdown-ot-privat.php",
+			ifModified: true,
+			method: "GET",
+			cache: true,
+			success: function(result){
+						$(".navprivat").append(result);
+					}
+		});
+	}
+	else if($(".navprivat").find("div.dropdown-menu").length == 0)
+	{
+		$.ajax({
+			url: "/snippets/megamenu-dropdown-ot-privat-en.php",
+			ifModified: true,
+			method: "GET",
+			cache: true,
+			success: function(result){
+						$(".navprivat").append(result);
+					}
+		});
+	}
+});
+$(".navgesch").hover(function(){
+	if($(".navgesch").find("div.dropdown-menu").length == 0 && $(".navgesch > a").attr('href') == '//www.post.at/geschaeftlich.php')
+	{
+		$.ajax({
+			url: "/snippets/megamenu-dropdown-ot-geschaeftlich.php",
+			ifModified: true,
+			method: "GET",
+			cache: true,
+			success: function(result){
+						$(".navgesch").append(result);
+					}
+		});
+	}
+	else if($(".navgesch").find("div.dropdown-menu").length == 0)
+	{
+		$.ajax({
+			url: "/snippets/megamenu-dropdown-ot-geschaeftlich-en.php",
+			ifModified: true,
+			method: "GET",
+			cache: true,
+			success: function(result){
+						$(".navgesch").append(result);
+
+					}
+		});
+	}
+});
+$(".navueber").hover(function(){
+	if($(".navueber").find("div.dropdown-menu").length == 0 && $(".navueber > a").attr('href') == '//www.post.at/ueber_uns.php')
+	{
+		$.ajax({
+			url: "/snippets/megamenu-dropdown-ot-ueberuns.php",
+			ifModified: true,
+			method: "GET",
+			cache: true,
+			success: function(result){
+						$(".navueber").append(result);
+					}
+		});
+	}
+	else if($(".navueber").find("div.dropdown-menu").length == 0)
+	{
+		$.ajax({
+			url: "/snippets/megamenu-dropdown-ot-ueberuns-en.php",
+			ifModified: true,
+			method: "GET",
+			cache: true,
+			success: function(result){
+						$(".navueber").append(result);
+					}
+		});
+	}
+});
+</script>
+<script type="text/javascript">
+/*<![CDATA[*/
+
+function saveBeschreibung() {
+	$(".tnt-beschreibung-submit").each(function() {
+		var that = $(this);
+		var container = that.parents("div.tnt-beschreibung-container");
+
+		$("body").undelegate(that, "click")
+		that.click(function() {
+			$.ajax({
+				"url": "/sendungsverfolgung.php/beschreibungSpeichern",
+				"type": "post",
+				"success": function(response) {
+					if (response.view != "") {
+						container.html(response.view);
+					}
+
+					if (response.message != null && response.message != "") {
+						new PNotify({
+							title: response.success ? "Erfolgreich" : "Warnung",
+							text: response.message,
+							type: response.success ? "success" : "warning"
+						});
+					}
+				},
+				"cache": false,
+				"data": that.parents("form").serialize()
+			});
+		});
+	});
+}
+
+function editBeschreibung(that, pnum1, pid, name, brief) {
+	var data = {
+		"InteraktionForm" : {
+			"sendungsname" : name,
+		},
+		"pnum1" : pnum1,
+		"pid" : pid,
+		"brief" : brief,
+		"edit" : true,
+		"__CSRF_PROTECTION" : "db24789d67fa1990dad188b73f2891b76446e604"
+	}
+	var container = $(that).parents("div.tnt-beschreibung-container");
+
+	$.ajax({
+		"url": "/sendungsverfolgung.php/beschreibungSpeichern",
+		"type": "post",
+		"success": function(response) {
+			if (response.view != "") {
+				container.html(response.view);
+				saveBeschreibung();
+			}
+
+			if (response.message != null && response.message != "") {
+				new PNotify({
+					title: response.success ? "Erfolgreich" : "Warnung",
+					text: response.message,
+					type: response.success ? "success" : "warning"
+				});
+			}
+		},
+		"cache": false,
+		"data": data
+	});
+}
+
+$(document).ready(function() {
+	saveBeschreibung();
+});
+
+			if(navigator && navigator.appName && navigator.appName.indexOf("Internet Explorer")!=-1 && 0 < navigator.appVersion.indexOf("MSIE 9.0"))
+			{
+				var frame_counter = 0;
+
+				var $iframes = $('iframe[src^="https://ad.adworx.at"]');
+
+				var onLoadedFrames = function() {
+					if (0 == --frame_counter) {
+						window.setTimeout(function() {$(window).trigger("resize");},0);
+					}
+				}
+
+				$iframes.each(function(i) {
+					frame_counter++;
+					$(this).on('load', onLoadedFrames);
+				});
+
+				$iframes.each(function(i) {
+					$(this).attr('src', $(this).attr('src'));
+				});
+			}
+/*]]>*/
+</script>
+</body>
+</html>
