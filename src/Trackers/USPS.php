@@ -176,6 +176,8 @@ class USPS extends AbstractTracker
                 'Acceptance',
                 'Out for Delivery',
                 'Sorting Complete',
+                'Departed USPS Regional Facility',
+                'Arrived at USPS Regional Facility',
             ],
             Track::STATUS_WARNING => [],
             Track::STATUS_EXCEPTION => [],
