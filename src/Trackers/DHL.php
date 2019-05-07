@@ -207,6 +207,9 @@ class DHL extends AbstractTracker
                 'shipment could not be delivered, and the recipient has been notified',
                 'A 2nd attempt at delivery is being made',
                 'Es erfolgt ein 2. Zustellversuch',
+                'Sendung wurde elektronisch angekündigt',
+                'Sendung wurde an DHL übergeben',
+                'Sendung ist in der Region des Empfängers angekommen',
             ],
             Track::STATUS_PICKUP => [
                 'Die Sendung liegt in der PACKSTATION',
