@@ -75,17 +75,17 @@ class PostAT extends AbstractTracker
     protected function eventFromRow($row)
     {
         preg_match(
-            '/(date|datum): ([\d.:\s]+)(.*); (.*)$/i',
+            '/(date|datum): ([\d.:\s]+)(.*?)(?:; (.*)|$)/i',
             utf8_decode($this->getNodeValue($row)),
             $matches
         );
 
-        return count($matches) < 5
+        return count($matches) < 4
             ? new Event
             : Event::fromArray([
                 'date' => Carbon::parse($matches[2]),
                 'description' => $matches[3],
-                'location' => $matches[4],
+                'location' => isset($matches[4]) ? $matches[4] : '',
                 'status' => $this->resolveStatus($matches[3]),
             ]);
     }
