@@ -16,7 +16,12 @@ class DHL extends AbstractTracker
     /**
      * @var string
      */
-    protected $serviceEndpoint = 'http://nolp.dhl.de/nextt-online-public/set_identcodes.do';
+    protected $serviceEndpoint = 'https://www.dhl.de/int-verfolgen/search';
+
+    /**
+     * @var string
+     */
+    protected $trackingUrl = 'http://nolp.dhl.de/nextt-online-public/set_identcodes.do';
 
     /**
      * @var string
@@ -27,6 +32,7 @@ class DHL extends AbstractTracker
      * @var object
      */
     protected $parsedJson;
+
 
     /**
      * Hook into the parent method to clear the cache before calling it.
@@ -43,6 +49,7 @@ class DHL extends AbstractTracker
 
         return parent::track($number, $language, $params);
     }
+
 
     /**
      * @param string $contents
@@ -275,6 +282,32 @@ class DHL extends AbstractTracker
 
         $qry = http_build_query($urlParams);
 
-        return $this->serviceEndpoint . '?' . $qry;
+        return $this->trackingUrl . '?' . $qry;
+    }
+
+
+    /**
+     * Build the endpoint url
+     *
+     * @param string $trackingNumber
+     * @param string|null $language
+     * @param array $params
+     *
+     * @return string
+     */
+    protected function getEndpointUrl($trackingNumber, $language = null, $params = [])
+    {
+        $language = $language ?: $this->language;
+
+        $additionalParams = !empty($params) ? $params : $this->endpointUrlParams;
+
+        $urlParams = array_merge([
+            'lang' => $language,
+            'language' => $language,
+            'idc' => $trackingNumber,
+            'domain' => 'de',
+        ], $additionalParams);
+
+        return $this->serviceEndpoint . '?' . http_build_query($urlParams);
     }
 }
