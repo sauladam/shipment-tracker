@@ -78,7 +78,7 @@ class DHL extends AbstractTracker
             $track->addEvent(Event::fromArray([
                 'description' => isset($event->status) ? strip_tags($event->status) : '',
                 'status' => isset($event->status) ? $status = $this->resolveStatus(strip_tags($event->status)) : '',
-                'date' => Carbon::parse($event->datum),
+                'date' => isset($event->datum) ? Carbon::parse($event->datum) : null,
                 'location' => isset($event->ort) ? $event->ort : '',
             ]));
 
