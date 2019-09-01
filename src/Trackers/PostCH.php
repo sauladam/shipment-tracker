@@ -3,30 +3,66 @@
 namespace Sauladam\ShipmentTracker\Trackers;
 
 use Carbon\Carbon;
-use DOMDocument;
-use DOMElement;
-use DOMNode;
-use DOMText;
-use DOMXPath;
+use GuzzleHttp\Cookie\CookieJar;
 use Sauladam\ShipmentTracker\Event;
 use Sauladam\ShipmentTracker\Track;
-use Sauladam\ShipmentTracker\Utils\XmlHelpers;
 
 class PostCH extends AbstractTracker
 {
-    use XmlHelpers {
-        getNodeValue as normalizedNodeValue;
-    }
+    /**
+     * @var string
+     */
+    protected $trackingUrl = 'https://service.post.ch/EasyTrack/submitParcelData.do';
 
     /**
      * @var string
      */
-    protected $serviceEndpoint = 'https://service.post.ch/EasyTrack/submitParcelData.do';
+    protected $searchEndpoint = 'https://service.post.ch/ekp-web/api/history/not-included';
+
+    /**
+     * @var string
+     */
+    protected $serviceEndpoint = 'https://service.post.ch/ekp-web/api/shipment/id';
+
+    /**
+     * @var string
+     */
+    protected $messagesEndpoint = 'https://service.post.ch/ekp-web/core/rest/translations/{lang}/shipment-text-messages.json';
+
+    /**
+     * @var string
+     */
+    protected $apiUserEndpoint = 'https://service.post.ch/ekp-web/api/user';
+
+    /**
+     * @var string
+     */
+    protected $trackingNumberHashEndpoint = 'https://service.post.ch/ekp-web/api/history';
 
     /**
      * @var string
      */
     protected $language = 'de';
+
+    /**
+     * @var array
+     */
+    protected static $messageCodeLookup = [];
+
+    /**
+     * @var string
+     */
+    protected static $userId;
+
+    /**
+     * @var string
+     */
+    protected static $CSRFToken;
+
+    /**
+     * @var array
+     */
+    protected static $cookies = [];
 
 
     /**
@@ -49,7 +85,30 @@ class PostCH extends AbstractTracker
             'lang' => $language,
         ], $additionalParams));
 
-        return $this->serviceEndpoint . '?' . $qry;
+        return $this->trackingUrl . '?' . $qry;
+    }
+
+
+    /**
+     * Build the endpoint url
+     *
+     * @param string $trackingNumber
+     * @param string|null $language
+     * @param array $params
+     *
+     * @return string
+     */
+    public function getEndpointUrl($trackingNumber, $language = null, $params = [])
+    {
+        $this->createApiUser();
+
+        $results = json_decode(
+            $this->fetch($this->searchEndpoint . '/' . $this->getHashForTrackingNumber() . '?' . http_build_query([
+                    'userId' => static::$userId,
+                ]))
+        );
+
+        return $this->serviceEndpoint . '/' . $results[0]->identity . '/events';
     }
 
 
@@ -62,190 +121,179 @@ class PostCH extends AbstractTracker
      */
     protected function buildResponse($response)
     {
-        $dom = new DOMDocument;
-        @$dom->loadHTML($response);
-        $dom->preserveWhiteSpace = false;
+        $this->loadMessageCodeLookup();
 
-        $domxpath = new DOMXPath($dom);
+        return array_reduce(json_decode($response), function ($track, $event) {
+            $description = $this->getDescriptionByCode($event->eventCode);
 
-        return $this->getTrack($domxpath);
+            echo "{$event->eventCode} --> {$description} \n";
+
+            return $track->addEvent(Event::fromArray([
+                'location' => empty($event->city)
+                    ? ''
+                    : sprintf("%s-%s %s", $event->country, $event->zip, $event->city),
+                'description' => $this->getDescriptionByCode($event->eventCode),
+                'date' => Carbon::parse($event->timestamp),
+                'status' => $this->resolveStatus($event->eventCode),
+            ]));
+        }, new Track);
     }
 
 
     /**
-     * Get the shipment status history.
-     *
-     * @param DOMXPath $xpath
-     *
-     * @return Track
-     * @throws \Exception
+     * Load the message lookup array for the current language if
+     * it doesn't exist yet.
      */
-    protected function getTrack(DOMXPath $xpath)
+    protected function loadMessageCodeLookup()
     {
-        $rows = $xpath->query("//table[@class='events_view fullview_tabledata']//tbody//tr");
-
-        if (!$rows) {
-            throw new \Exception("Unable to parse Swiss Post tracking data for [{$this->parcelNumber}].");
+        if (array_key_exists($this->language, static::$messageCodeLookup)) {
+            return;
         }
 
-        $track = new Track;
-
-        $lastLocation = '';
-
-        foreach ($rows as $row) {
-            $eventData = $this->parseRow($row);
-
-            if (!empty($eventData['location'])) {
-                $lastLocation = $eventData['location'];
-            } else {
-                $eventData['location'] = $lastLocation;
-            }
-
-            $event = Event::fromArray($eventData);
-
-            $track->addEvent($event);
-        }
-
-        return $track->sortEvents();
+        static::$messageCodeLookup[$this->language] = json_decode($this->fetch(
+            str_replace('{lang}', $this->language, $this->messagesEndpoint)
+        ), true);
     }
 
 
     /**
-     * Parse the row of the history table.
-     *
-     * @param DOMElement $row
-     *
-     * @return array
+     * Create an API and get the user ID, the CSRF token and the session cookie.
+     * Those are required for subsequent requests against the API.
      */
-    protected function parseRow(DOMElement $row)
+    protected function createApiUser()
     {
-        $rowData = [];
-
-        $date = $time = '';
-        $column = 0;
-
-        foreach ($row->childNodes as $tableCell) {
-
-            if ($tableCell->nodeName !== 'td') {
-                continue;
-            }
-
-            $value = $this->getNodeValue($tableCell);
-
-            switch ($column) {
-                case 0:
-                    $date = $value;
-                    break;
-
-                case 1:
-                    $time = $value;
-                    break;
-
-                case 2:
-                    $rowData['description'] = $value;
-                    break;
-
-                case 3:
-                    $rowData['location'] = $value;
-                    break;
-
-                default:
-                    break;
-            }
-
-            $column++;
+        if (null !== static::$userId) {
+            return;
         }
 
-        $rowData['date'] = $this->getDate($date, $time);
+        $response = $this->getDataProvider()->client->request(
+            'GET', $this->apiUserEndpoint, [
+                'cookies' => $jar = new CookieJar,
+            ]
+        );
 
-        $status = $this->resolveStatus($rowData['description']);
+        foreach ($jar->toArray() as $cookie) {
+            static::$cookies[$cookie['Name']] = $cookie['Value'];
+        }
 
-        $rowData['status'] = $status;
+        $user = json_decode($response->getBody()->getContents());
 
-        return $rowData;
+
+        if (!$user) {
+            return;
+        }
+
+        static::$userId = $user->userIdentifier;
+        static::$CSRFToken = $response->getHeader('X-CSRF-TOKEN');
     }
 
 
     /**
-     * Get the node value.
+     * Get the search hash value for the tracking number. The hash will be used later
+     * to get the entity id for the tracking number.
      *
-     * @param DOMText|DOMNode $element
-     * @param bool $withLineBreaks
+     * @return mixed
+     */
+    protected function getHashForTrackingNumber()
+    {
+        $url = $this->trackingNumberHashEndpoint . '?' . http_build_query([
+                'userId' => static::$userId,
+            ]);
+
+        $response = $this->getDataProvider()->client->post($url, [
+            'headers' => [
+                'Content-Type' => 'application/json',
+                'x-csrf-token' => static::$CSRFToken,
+                'Cookie' => array_reduce(array_keys(static::$cookies), function ($string, $cookieName) {
+                    return $string .= $cookieName . '=' . static::$cookies[$cookieName];
+                }, ''),
+            ],
+            'json' => [
+                'searchQuery' => $this->parcelNumber,
+            ],
+        ]);
+
+        return json_decode($response->getBody()->getContents())->hash;
+    }
+
+
+    /**
+     * Look up the description for the given event code.
+     *
+     * @param $code
      *
      * @return string
      */
-    protected function getNodeValue($element, $withLineBreaks = false)
+    public function getDescriptionByCode($code)
     {
-        return preg_replace('/ITM_IMP_(.*?)\s/', '', $this->normalizedNodeValue($element, $withLineBreaks));
+        $haystack = static::$messageCodeLookup[$this->language]['shipment-text--'];
+
+        $pattern = $this->getRegexPattern($code);
+
+        $matches = array_filter(array_keys($haystack), function ($key) use ($pattern) {
+            return 1 === preg_match($pattern, $key);
+        });
+
+        return !empty($matches) ? $haystack[array_values($matches)[0]] : '';
     }
 
 
     /**
-     * Parse the date from the given string.
+     * Build a regex pattern for the code so it will match the exact code or wildcards.
+     * E. g. if the code is 'LETTER.*.88.912', it should also match with 'LETTER.*.*.912'
+     * or 'LETTER.*.88.912.*'
      *
-     * @param $dateString
-     * @param $timeString
+     * @param $code
      *
      * @return string
      */
-    protected function getDate($dateString, $timeString)
+    protected function getRegexPattern($code)
     {
-        // The date comes in a format like
-        // Wed 18.07.2015
-        // And the time looks something like
-        // 17:26
-        // So we strip all characters from the date and
-        // let Carbon parse it and then convert it to the
-        // standard format Y-m-d H:i:s
-        $dateString = preg_replace('/[a-z]|[A-Z]|,/', '', $dateString);
-        $dateString = trim($dateString);
-        $timeString = trim($timeString);
+        $pattern = array_reduce(explode('.', $code), function ($regex, $part) {
+            if (1 === preg_match('/[a-z]+/i', $part)) {
+                return $regex .= $part;
+            }
 
-        return Carbon::parse("{$dateString} {$timeString}");
+            if ($part === '*') {
+                return $regex .= "\.(\*|[a-z]+|-|_)";
+            }
+
+            return $regex .= "\.(\*|{$part})";
+        }, '');
+
+
+        return sprintf("/%s(\.\*)?/i", $pattern);
     }
 
 
     /**
-     * Match a shipping status from the given description.
+     * Match a shipping status from the given event code.
      *
-     * @param $statusDescription
+     * @param $eventCode
      *
      * @return string
      */
-    protected function resolveStatus($statusDescription)
+    protected function resolveStatus($eventCode)
     {
         $statuses = [
             Track::STATUS_DELIVERED => [
-                'Delivered',
-                'Zugestellt',
+                'LETTER.*.88.40',
             ],
             Track::STATUS_IN_TRANSIT => [
-                'Mailed',
-                'Aufgabe',
-                'Sorting',
-                'Sortierung',
-                'Postal customs clearance',
-                'Im Postverzollungsprozess',
-                'Handed to customs',
-                'An Zoll übergeben',
-                'Arrival at border point',
-                'Ankunft Grenzstelle Bestimmungsland',
-                'Departure from border point',
-                'Abgang Grenzstelle Aufgabeland',
-                'Registered for collection',
-                'Zur Abholung gemeldet',
-                'Arrival at delivery post office',
-                'Ankunft Zustellstelle',
+                'LETTER.*.88.912',
+                'LETTER.*.88.915',
+                'LETTER.*.88.818',
+                'LETTER.*.88.819',
+                'LETTER.*.88.803',
+                'LETTER.*.88.10',
             ],
             Track::STATUS_WARNING => [],
             Track::STATUS_EXCEPTION => [],
         ];
 
         foreach ($statuses as $status => $needles) {
-            foreach ($needles as $needle) {
-                if (strpos($statusDescription, $needle) !== false) {
-                    return $status;
-                }
+            if (in_array($eventCode, $needles)) {
+                return $status;
             }
         }
 
