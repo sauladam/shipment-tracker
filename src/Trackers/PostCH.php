@@ -124,10 +124,6 @@ class PostCH extends AbstractTracker
         $this->loadMessageCodeLookup();
 
         return array_reduce(json_decode($response), function ($track, $event) {
-            $description = $this->getDescriptionByCode($event->eventCode);
-
-            echo "{$event->eventCode} --> {$description} \n";
-
             return $track->addEvent(Event::fromArray([
                 'location' => empty($event->city)
                     ? ''
