@@ -257,8 +257,7 @@ class PostCH extends AbstractTracker
             return $regex .= "\.(\*|{$part})";
         }, '');
 
-
-        return sprintf("/%s(\.\*)?/i", $pattern);
+        return sprintf("/%s(\.\*)?$/i", $pattern);
     }
 
 
@@ -282,6 +281,12 @@ class PostCH extends AbstractTracker
                 'LETTER.*.88.819',
                 'LETTER.*.88.803',
                 'LETTER.*.88.10',
+                'LETTER.*.88.13',
+                'LETTER.*.88.18',
+                'LETTER.*.88.20',
+            ],
+            Track::STATUS_PICKUP => [
+                'LETTER.*.88.21',
             ],
             Track::STATUS_WARNING => [],
             Track::STATUS_EXCEPTION => [],
