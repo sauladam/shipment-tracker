@@ -174,7 +174,6 @@ class PostCH extends AbstractTracker
 
         $user = json_decode($response->getBody()->getContents());
 
-
         if (!$user) {
             return;
         }
@@ -273,6 +272,7 @@ class PostCH extends AbstractTracker
         $statuses = [
             Track::STATUS_DELIVERED => [
                 'LETTER.*.88.40',
+                'LETTER.*.88.20',
             ],
             Track::STATUS_IN_TRANSIT => [
                 'LETTER.*.88.912',
@@ -283,7 +283,6 @@ class PostCH extends AbstractTracker
                 'LETTER.*.88.10',
                 'LETTER.*.88.13',
                 'LETTER.*.88.18',
-                'LETTER.*.88.20',
             ],
             Track::STATUS_PICKUP => [
                 'LETTER.*.88.21',
