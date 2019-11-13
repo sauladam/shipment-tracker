@@ -125,6 +125,10 @@ Tracks and Events both can hold additional details, accessible via e.g. `$track-
   - `$track->getAdditionalDetails('pieces')` gets the tracking numbers of the individual pieces that belong to this shipment 
   - `$event->getAdditionalDetails('pieces')` gets the tracking numbers of the individual pieces to which this event applies
 
+- **FedEx:**
+  - `$track->getAdditionalDetails('totalKgsWgt')` gets the weight of the shipment in kgs if it's returned
+  - `$track->getAdditionalDetails('totalLbsWgt')` gets the weight of the shipment in lbs if it's returned
+
 ### Data Providers
 By default, this package uses Guzzle as well as the PHP Http client (a.k.a. `file_get_contents()`) to fetch the data. You can pass your own provider if you need to, e.g. if you have the page contents chillin' somewhere in a cache. Just make sure that it implements `Sauladam\ShipmentTracker\DataProviders\DataProviderInterface`, which only requires a `get()` method.
 
