@@ -111,6 +111,14 @@ class Fedex extends AbstractTracker
             }
         }
 
+        if (isset($contents['totalKgsWgt'])) {
+            $track->addAdditionalDetails('totalKgsWgt', $contents['totalKgsWgt']);
+        }
+
+        if (isset($contents['totalLbsWgt'])) {
+            $track->addAdditionalDetails('totalLbsWgt', $contents['totalLbsWgt']);
+        }
+
         return $track->sortEvents();
     }
 
