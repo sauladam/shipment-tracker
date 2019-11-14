@@ -57,7 +57,7 @@ class ShipmentTrackerTest extends TestCase
     /** @test */
     public function it_resolves_the_fedex_tracker()
     {
-        $tracker = ShipmentTracker::get('fedex');
+        $tracker = ShipmentTracker::get('Fedex');
 
         $this->assertInstanceOf(Fedex::class, $tracker);
     }
