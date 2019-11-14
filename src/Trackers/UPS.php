@@ -163,12 +163,9 @@ class UPS extends AbstractTracker
                 'Delivered to UPS Access Point™',
                 'An UPS Access Point™ zugestellt'
             ],
-            Track::STATUS_DELIVERED => [
-                'Delivered',
-                'Zugestellt'
-            ],
             Track::STATUS_IN_TRANSIT => [
                 'Auftrag verarbeitet',
+                'Wird zugestellt',
                 'Ready for UPS',
                 'Scan',
                 'Out For Delivery',
@@ -199,6 +196,10 @@ class UPS extends AbstractTracker
                 'is incorrect',
                 'ltigen Zustellversuch nicht anwesend',
                 'receiver was not available at the time of the final delivery attempt',
+            ],
+            Track::STATUS_DELIVERED => [
+                'Delivered',
+                'Zugestellt'
             ],
         ];
 
