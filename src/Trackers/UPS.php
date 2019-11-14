@@ -146,17 +146,9 @@ class UPS extends AbstractTracker
         return Carbon::parse("{$activity['date']} {$activity['time']}");
     }
 
-
-    /**
-     * Match a shipping status from the given description.
-     *
-     * @param $statusDescription
-     *
-     * @return string
-     */
-    protected function resolveState($statusDescription)
+    protected function getStatuses()
     {
-        $statuses = [
+        return [
             Track::STATUS_PICKUP => [
                 'UPS Access Point™ possession',
                 'Beim UPS Access Point™',
@@ -202,8 +194,18 @@ class UPS extends AbstractTracker
                 'Zugestellt'
             ],
         ];
+    }
 
-        foreach ($statuses as $status => $needles) {
+    /**
+     * Match a shipping status from the given description.
+     *
+     * @param $statusDescription
+     *
+     * @return string
+     */
+    protected function resolveState($statusDescription)
+    {
+        foreach ($this->getStatuses() as $status => $needles) {
             foreach ($needles as $needle) {
                 if (stripos($statusDescription, $needle) !== false) {
                     return $status;
