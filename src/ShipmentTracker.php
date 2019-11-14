@@ -55,7 +55,7 @@ class ShipmentTracker
     public static function set($carrier, $carrierClass)
     {
         if (!static::isValidCarrierClass($carrierClass)) {
-            throw new \InvalidArgumentException(sprintf('The carrer class "%s" is invalid', $carrierClass));
+            throw new \InvalidArgumentException(sprintf('The carrier class "%s" is invalid', $carrierClass));
         }
         static::$customizeTrackerClasses[$carrier] = $carrierClass;
     }
