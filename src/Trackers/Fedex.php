@@ -101,7 +101,7 @@ class Fedex extends AbstractTracker
         foreach ($contents['scanEventList'] as $scanEvent) {
             $track->addEvent(Event::fromArray([
                 'location'    => $scanEvent['scanLocation'],
-                'description' => $scanEvent['scanDetails'],
+                'description' => $scanEvent['status'],
                 'date'        => $this->getDate($scanEvent),
                 'status'      => $status = $this->resolveState($scanEvent)
             ]));
