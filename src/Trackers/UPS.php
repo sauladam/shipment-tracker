@@ -3,37 +3,45 @@
 namespace Sauladam\ShipmentTracker\Trackers;
 
 use Carbon\Carbon;
+use GuzzleHttp\Cookie\CookieJar;
 use Sauladam\ShipmentTracker\Event;
 use Sauladam\ShipmentTracker\Track;
 
 class UPS extends AbstractTracker
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     protected $serviceEndpoint = 'https://www.ups.com/track/api/Track/GetStatus';
 
+    /** @var string */
     protected $descriptionLookupEndpoint = 'https://www.ups.com/track/api/WemsData/GetLookupData';
 
+    /** @var string */
     protected $trackingUrl = 'https://www.ups.com/track';
 
-    /**
-     * @var null|array
-     */
+    /** @var array */
+    protected static $cookies = [];
+
+    /** @var null|array */
     protected $descriptionLookup;
 
-    /**
-     * @var string
-     */
+    /** @var string */
     protected $language = 'de';
 
 
     protected function fetch($url)
     {
+        if (empty(static::$cookies)) {
+            $this->getCookies();
+        }
+
         try {
-            $response = $this->getDataProvider()->client->post('https://www.ups.com/track/api/Track/GetStatus', [
+            $response = $this->getDataProvider()->client->post($this->serviceUrl(), [
                 'headers' => [
                     'Content-Type' => 'application/json',
+                    'X-XSRF-TOKEN' => static::$cookies['X-XSRF-TOKEN-ST'],
+                    'Cookie' => implode(';', array_map(function ($name) {
+                        return $name . '=' . static::$cookies[$name];
+                    }, array_keys(static::$cookies))),
                 ],
                 'json' => [
                     'Locale' => $this->getLanguageQueryParam($this->language),
@@ -46,6 +54,20 @@ class UPS extends AbstractTracker
             return json_decode($response, true);
         } catch (\Exception $e) {
             throw new \Exception("Could not fetch tracking data for [{$this->parcelNumber}].");
+        }
+    }
+
+
+    protected function getCookies()
+    {
+        $this->getDataProvider()->client->request(
+            'GET', $this->trackingUrl($this->parcelNumber), [
+                'cookies' => $jar = new CookieJar,
+            ]
+        );
+
+        foreach ($jar->toArray() as $cookie) {
+            static::$cookies[$cookie['Name']] = $cookie['Value'];
         }
     }
 
@@ -69,7 +91,7 @@ class UPS extends AbstractTracker
                 'location' => $progressActivity['location'],
                 'description' => $progressActivity['activityScan'], //$this->getDescription($progressActivity),
                 'date' => $this->getDate($progressActivity),
-                'status' => $status = $this->resolveState($progressActivity['activityScan'])
+                'status' => $status = $this->resolveState($progressActivity['activityScan']),
             ]));
 
             if ($status == Track::STATUS_DELIVERED && isset($contents['trackDetails'][0]['receivedBy'])) {
@@ -84,6 +106,7 @@ class UPS extends AbstractTracker
 
         return $track->sortEvents();
     }
+
 
     protected function getDescription($activity)
     {
@@ -116,6 +139,7 @@ class UPS extends AbstractTracker
         }
     }
 
+
     protected function extractKeysAndValues($array)
     {
         return array_reduce((array)$array, function ($lookups, $value) {
@@ -146,6 +170,7 @@ class UPS extends AbstractTracker
         return Carbon::parse("{$activity['date']} {$activity['time']}");
     }
 
+
     protected function getStatuses()
     {
         return [
@@ -153,7 +178,7 @@ class UPS extends AbstractTracker
                 'UPS Access Point™ possession',
                 'Beim UPS Access Point™',
                 'Delivered to UPS Access Point™',
-                'An UPS Access Point™ zugestellt'
+                'An UPS Access Point™ zugestellt',
             ],
             Track::STATUS_IN_TRANSIT => [
                 'Auftrag verarbeitet',
@@ -191,10 +216,11 @@ class UPS extends AbstractTracker
             ],
             Track::STATUS_DELIVERED => [
                 'Delivered',
-                'Zugestellt'
+                'Zugestellt',
             ],
         ];
     }
+
 
     /**
      * Match a shipping status from the given description.
@@ -238,6 +264,18 @@ class UPS extends AbstractTracker
         ], $additionalParams));
 
         return $this->trackingUrl . '?' . $qry;
+    }
+
+
+    public function serviceUrl($language = null)
+    {
+        $language = $language ?: $this->language;
+
+        return $this->serviceEndpoint
+            . '?'
+            . http_build_query([
+                'loc' => $this->getLanguageQueryParam($language),
+            ]);
     }
 
 
