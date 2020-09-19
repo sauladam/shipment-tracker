@@ -196,6 +196,13 @@ class UPS extends AbstractTracker
                 'Will deliver to a nearby UPS Access Point™ for customer pick up',
                 'Zustellung wird zur Abholung durch Kunden an nahem UPS Access Point™ abgegeben',
                 'Customer was not available when UPS attempted delivery',
+                'In Einrichtung eingetroffen',
+                'Arrived at Facility',
+                'In Einrichtung eingetroffen',
+                'Departed from Facility',
+                'Hat Einrichtung verlassen',
+                'Order Processed',
+                'Auftrag verarbeitet',
             ],
             Track::STATUS_WARNING => [
                 'attempting to obtain a new delivery address',
