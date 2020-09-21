@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><ajax-response><component id="ide" ><![CDATA[<div id="ide">
+
+
+
+
+
+		<div id="id10">
+		<div class="position resultPage detail">
+
+		<form id="id11" method="post" action="?wicket:interface=:5:ctnResults:pnlDetail:form::IFormSubmitListener::"><div style="width:0px;height:0px;position:absolute;left:-100px;top:-100px;overflow:hidden"><input type="hidden" name="id11_hf_0" id="id11_hf_0" /></div>
+			<h1>
+				<div class="fw_floatLeft">
+				<span>Details</span>
+				</div>
+
+			</h1>
+
+			<!-- current State -->
+			<fieldset>
+				<legend>
+					<span>Current status</span>
+				</legend>
+
+				<table width="100%" border="0" cellspacing="2" cellpadding="3" class="">
+				  <tr>
+					<th align="left" width="50"><span>Date</span></th>
+					<th align="left"><span>Time</span></th>
+					<th align="left"><span>Status</span></th>
+					<th align="left"><span>via</span></th>
+					<th align="left"><span>Info</span></th>
+				  </tr>
+				  <tr class="odd">
+					<td><span>5/4/2016</span></td>
+					<td><span>17:08</span></td>
+					<td><img class="imgDetail" src="img/delivered.png"></img>&nbsp;<strong><span>Delivered</span></strong><br></td>
+					<td><span>Dachser Rheine<br/>(Rheine, Germany)<br/></span></td>
+					<td><span>HR. VAN-DER-VEER<br/></span></td>
+				  </tr>
+				</table>
+
+			</fieldset>
+
+			<!-- Shipment -->
+			<fieldset>
+				<legend>
+					<span>Shipment</span>
+				</legend>
+
+				<table width="100%" border="0" cellspacing="2" cellpadding="3" class="">
+				  <tr class="odd">
+					<td><span>NVE/SSCC</span></td>
+					<td><span>00342604164600000899</span></td>
+					<td><span>Consignment number</span></td>
+					<td><span>04319579167</span></td>
+				  </tr>
+				  <tr class="even">
+					<td><span>Order date</span></td>
+					<td><span>5/3/2016</span></td>
+					<td><span>Consignee PCD</span></td>
+					<td><span>8****C</span></td>
+				  </tr>
+				   <tr class="odd">
+					<td><span>Weight</span></td>
+					<td><span>45 kg</span></td>
+					<td></td>
+					<td></td>
+				  </tr>
+				</table>
+			</fieldset>
+
+			<!-- References -->
+		<div id="id12">
+
+	<fieldset id="references">
+        <legend><span>References</span></legend>
+        <table class="" width="100%" border="0" cellspacing="2" cellpadding="3">
+          	<tr>
+            	<th width="250px" align="left"><span>Reference type</span></th>
+            	<th align="left"><span>References</span></th>
+          	</tr>
+          	<tr class="odd">
+          		<td width="180"><span>Order number</span></td>
+				<td><div class="shippingNoDetail"><span>1538578</span></div></td>
+          	</tr><tr class="even">
+          		<td width="180"><span>Delivery note numbers</span></td>
+				<td><div class="shippingNoDetail"><span>1538578</span></div></td>
+          	</tr><tr class="odd">
+          		<td width="180"><span>Purchase order numbers</span></td>
+				<td><div class="shippingNoDetail"><span> ---</span></div></td>
+          	</tr>
+        </table>
+	</fieldset>
+</div>
+
+
+
+
+
+	</form>
+		</div>
+<div id="helpUrl" style="visibility:hidden">http://partner.dachser.com/help/en/shp.html</div>
+</div>
+
+	</div>]]></component><header-contribution><![CDATA[<head xmlns:wicket="http://wicket.apache.org"><script type="text/javascript" src="resources/org.apache.wicket.markup.html.WicketEventReference/wicket-event.js?w:lm=1429427652"></script>
+<script type="text/javascript" src="resources/org.apache.wicket.ajax.WicketAjaxReference/wicket-ajax.js?w:lm=1429427652"></script>
+</head>]]></header-contribution><component id="id9" ><![CDATA[<div id="id9">
+	<form id="ida" method="post" action="?wicket:interface=:5:pnlHead:frmHead::IFormSubmitListener::"><div style="width:0px;height:0px;position:absolute;left:-100px;top:-100px;overflow:hidden"><input type="hidden" name="ida_hf_0" id="ida_hf_0" /></div>
+	<div class="tab-row tabpanel">
+		<div class="tab selected">
+			<span>Shipment Pointer</span>
+		</div>
+	</div>
+
+	<div class="fw_search_header topContent">
+		<span>Search criterion</span>
+		<br>
+
+	<table cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+				<input type="text" maxlength="35" class="large textInput" value="00342604164600000899" name="tfiSearch" id="idb"></input>
+
+				<!-- IE will not submit forms with only one input, the following fixes this -->
+				<div style="display:none">
+					<input type="text" name="hiddenTextField">
+				</div>
+
+			</td>
+			<td>
+				 <div class="topButton search">
+			         <span class="button"><input hidefocus="true" value="Search" type="submit" class="fw_lightButton" name="btnSearch" id="idc" onclick="var wcall=wicketSubmitFormById('ida', '?wicket:interface=:5:pnlHead:frmHead:btnSearch::IActivePageBehaviorListener:0:-1&amp;wicket:ignoreIfNotActive=true', 'btnSearch' ,function() { }.bind(this),function() { }.bind(this), function() {return Wicket.$$(this)&amp;&amp;Wicket.$$('ida')}.bind(this));;; return false;"></span>
+				 </div>
+			</td>
+		</tr>
+	 </table>
+
+	<div id="idd">
+
+</div>
+	</div>
+	</form>
+</div>]]></component></ajax-response>
