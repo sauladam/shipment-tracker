@@ -207,6 +207,7 @@ class DHLExpress extends AbstractTracker
             Track::STATUS_DELIVERED => [
                 'Delivered - Signed',
                 'Sendung zugestellt - übernommen',
+                'Sendung wurde zugestellt'
             ],
             Track::STATUS_IN_TRANSIT => [
                 'With delivery courier',
@@ -225,6 +226,9 @@ class DHLExpress extends AbstractTracker
                 'Verzollungsstatus aktualisiert',
                 'Shipment picked up',
                 'Sendung abgeholt',
+                'Sendung hat die DHL-Station verlassen',
+                'Zurück in DHL Station',
+                'Ankunft in DHL Station'
             ],
         ];
 
