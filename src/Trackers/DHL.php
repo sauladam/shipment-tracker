@@ -178,6 +178,7 @@ class DHL extends AbstractTracker
                 'aus der PACKSTATION abgeholt',
                 'erfolgreich zugestellt',
                 'Sendung wurde zugestellt',
+                'Sendung wurde an den Empfänger zugestellt',
                 'Zustellung erfolgreich',
                 'hat die Sendung in der Filiale abgeholt',
                 'des Nachnahme-Betrags an den Zahlungsempf',
