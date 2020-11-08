@@ -223,6 +223,12 @@ class DHL extends AbstractTracker
                 'The shipment was prepared for onward transport',
                 'The shipment has been processed in the parcel center of origin',
                 'für den Weitertransport in die Region',
+                ' Die Sendung wird zum Weitertransport vorbereitet',
+                 'Vorbereitung für Weitertransport',
+                 'Paket lagert und am gewünschten Liefertag zugestellt',
+                 'Zustellung heute leider nicht möglich',
+                 'Bearbeitung in der Zustellbasis ist erfolgt',
+                 'Paketzentrum',
             ],
             Track::STATUS_PICKUP => [
                 'Die Sendung liegt in der PACKSTATION',
@@ -231,6 +237,7 @@ class DHL extends AbstractTracker
                 'shipment is ready for pick-up at the PACKSTATION',
                 'Sendung wird zur Abholung in die',
                 'The shipment is being brought to',
+                'Die Sendung liegt ab sofort in der Filiale'
             ],
             Track::STATUS_WARNING => [
                 'Sendung konnte nicht zugestellt werden',
