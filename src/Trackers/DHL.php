@@ -177,6 +177,7 @@ class DHL extends AbstractTracker
             Track::STATUS_DELIVERED => [
                 'aus der PACKSTATION abgeholt',
                 'erfolgreich zugestellt',
+                'Zustellung erfolgreich',
                 'hat die Sendung in der Filiale abgeholt',
                 'des Nachnahme-Betrags an den Zahlungsempf',
                 'Sendung wurde zugestellt an',
@@ -232,7 +233,8 @@ class DHL extends AbstractTracker
                 'Paketzentrum',
                 'In Zustellung',
                 'Zustellung heute nicht möglich',
-                'Verzögerte Zustellung erfolgt vrs. am nächsten Werktag'
+                'Rückstellung auf Kundenwunsch',
+                'Verzögerte Zustellung'
             ],
             Track::STATUS_PICKUP => [
                 'Die Sendung liegt in der',
