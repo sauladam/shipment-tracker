@@ -236,8 +236,8 @@ class DHL extends AbstractTracker
                 'Zustellung heute nicht möglich',
                 'Rückstellung auf Kundenwunsch',
                 'Verzögerte Zustellung',
-                'Ankunft in DHL Station',
-                'Zurück in DHL Station',
+                'DHL Station',
+                'Sendung sortiert',
                 'Sendung hat die DHL-Station verlassen'
             ],
             Track::STATUS_PICKUP => [
