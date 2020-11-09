@@ -241,6 +241,7 @@ class DHL extends AbstractTracker
                 'Zustellung erfolgt vrs. am',
                 'Zustellung heute nicht',
                 'auf Kundenwunsch',
+                'Zustellung Ihrer Sendung heute nicht',
                 'wurde nicht angetroffen',
                 'Auslieferung durch Kurier',
                 'Die Sendung wurde leider fehlgeleitet',
@@ -250,6 +251,7 @@ class DHL extends AbstractTracker
                 'gerte Zustellung',
                 'DHL Station',
                 'Sendung sortiert',
+                'Die Sendung lagert bis zur weiteren Bearbeitung',
                 'Sendung hat die DHL-Station verlassen'
             ],
             Track::STATUS_PICKUP => [
