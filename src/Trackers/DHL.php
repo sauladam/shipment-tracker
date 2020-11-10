@@ -193,7 +193,7 @@ class DHL extends AbstractTracker
             ],
             Track::STATUS_IN_TRANSIT => [
                 'in das Zustellfahrzeug geladen',
-                'die Verladung ins Zustellfahrzeug'
+                'die Verladung ins Zustellfahrzeug',
                 'im Start-Paketzentrum bearbeitet',
                 'im Ziel-Paketzentrum bearbeitet',
                 'im Paketzentrum bearbeitet',
