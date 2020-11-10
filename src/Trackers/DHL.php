@@ -193,6 +193,7 @@ class DHL extends AbstractTracker
             ],
             Track::STATUS_IN_TRANSIT => [
                 'in das Zustellfahrzeug geladen',
+                'die Verladung ins Zustellfahrzeug'
                 'im Start-Paketzentrum bearbeitet',
                 'im Ziel-Paketzentrum bearbeitet',
                 'im Paketzentrum bearbeitet',
@@ -265,6 +266,7 @@ class DHL extends AbstractTracker
             ],
             Track::STATUS_WARNING => [
                 'Sendung konnte nicht zugestellt werden',
+                'Sendung wurde elektronisch',
                 'shipment could not be delivered',
                 'attempting to obtain a new delivery address',
                 'eine neue Zustelladresse',
