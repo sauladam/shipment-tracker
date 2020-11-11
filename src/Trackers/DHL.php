@@ -237,6 +237,7 @@ class DHL extends AbstractTracker
                 'In Zustellung',
                 'Zustellung erfolgt vrs. am',
                 'Zustellung heute nicht',
+                'Die Zustellung am',
                 'auf Kundenwunsch',
                 'Zustellung Ihrer Sendung heute nicht',
                 'wurde nicht angetroffen',
