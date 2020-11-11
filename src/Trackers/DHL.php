@@ -248,6 +248,7 @@ class DHL extends AbstractTracker
                 'Sendung ist im Zustell-Depot eingetroffen',
                 'gerte Zustellung',
                 'DHL Station',
+                'Hauspoststelle',
                 'Sendung sortiert',
                 'Die Sendung lagert bis zur weiteren Bearbeitung',
                 'Sendung hat die DHL-Station verlassen'
