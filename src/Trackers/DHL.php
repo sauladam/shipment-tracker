@@ -247,6 +247,7 @@ class DHL extends AbstractTracker
                 'Ankunft in der DHL Zustellstation',
                 'Sendung ist im Zustell-Depot eingetroffen',
                 'gerte Zustellung',
+                'Eine Packstation wurde als',
                 'DHL Station',
                 'Hauspoststelle',
                 'Sendung sortiert',
@@ -264,6 +265,7 @@ class DHL extends AbstractTracker
             ],
             Track::STATUS_WARNING => [
                 'Sendung konnte nicht zugestellt werden',
+                'kontaktieren Sie Ihren DHL Express',
                 'Sendung wurde elektronisch',
                 'shipment could not be delivered',
                 'attempting to obtain a new delivery address',
