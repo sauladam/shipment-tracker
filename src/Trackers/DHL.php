@@ -199,7 +199,7 @@ class DHL extends AbstractTracker
                 'im Paketzentrum bearbeitet',
                 'auf dem Weg zur PACKSTATION',
                 'wird in eine PACKSTATION weitergeleitet',
-                'Die Sendung wurde abgeholt',
+                'Sendung wurde abgeholt',
                 'im Export-Paketzentrum bearbeitet',
                 'Sendung wird ins Zielland transportiert und dort an die Zustellorganisation',
                 'vom Absender in der Filiale eingeliefert',
