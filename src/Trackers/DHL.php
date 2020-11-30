@@ -188,6 +188,8 @@ class DHL extends AbstractTracker
                 'recipient has picked up the shipment from the retail outlet',
                 'recipient has picked up the shipment from the PACKSTATION',
                 'item has been sent',
+                'kontaktlosen Zustellung',
+                'Kontaktlose Zustellung',
                 'delivered from the delivery depot to the recipient by simplified company delivery',
                 'per vereinfachter Firmenzustellung ab Eingangspaketzentrum zugestellt',
             ],
@@ -250,8 +252,6 @@ class DHL extends AbstractTracker
                 'Sendung ist im Zustell-Depot eingetroffen',
                 'gerte Zustellung',
                 'Eine Packstation wurde als',
-                'kontaktlosen Zustellung',
-                'kontaktlose Zustellung',
                 'DHL Station',
                 'wird in die Filiale gebracht',
                 'Sendung wird nachverpackt',
@@ -267,7 +267,7 @@ class DHL extends AbstractTracker
                 'shipment is ready for pick-up at the PACKSTATION',
                 'Sendung wird zur Abholung in die',
                 'The shipment is being brought to',
-                'Die Sendung liegt ab sofort in der Filiale'
+                'Die Sendung liegt ab sofort'
             ],
             Track::STATUS_WARNING => [
                 'Sendung konnte nicht zugestellt werden',
@@ -284,6 +284,7 @@ class DHL extends AbstractTracker
                 'Adressfehlers konnte die Sendung nicht zugestellt',
                 'nger ist unbekannt',
                 'The address is incomplete',
+                'Aufgrund fehlerhafter',
                 'ist falsch',
                 'is incorrect',
                 'recipient has not picked up the shipment',
