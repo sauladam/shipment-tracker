@@ -286,6 +286,7 @@ class DHL extends AbstractTracker
                 'The address is incomplete',
                 'Aufgrund fehlerhafter',
                 'ist falsch',
+                'Annahme der Sendung verweigert',
                 'is incorrect',
                 'recipient has not picked up the shipment',
                 'nicht in der Filiale abgeholt',
