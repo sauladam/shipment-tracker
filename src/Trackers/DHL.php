@@ -251,6 +251,7 @@ class DHL extends AbstractTracker
                 'gerte Zustellung',
                 'Eine Packstation wurde als',
                 'kontaktlosen Zustellung',
+                'kontaktlose Zustellung',
                 'DHL Station',
                 'wird in die Filiale gebracht',
                 'Sendung wird nachverpackt',
