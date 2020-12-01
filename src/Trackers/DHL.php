@@ -226,8 +226,7 @@ class DHL extends AbstractTracker
                 'wird in eine PACKSTATION weitergeleitet',
                 'Sendung wurde abgeholt',
                 'im Export-Paketzentrum bearbeitet',
-                'Sendung wird ins Zielland',
-                'will be transported to the destination country',
+                'Sendung wird ins Zielland transportiert und dort an die Zustellorganisation',
                 'vom Absender in der Filiale eingeliefert',
                 'Sendung konnte nicht in die PACKSTATION eingestellt werden und wurde in eine Filiale',
                 'Sendung konnte nicht zugestellt werden und wird jetzt zur Abholung in die Filiale/Agentur gebracht',
@@ -242,18 +241,10 @@ class DHL extends AbstractTracker
                 'shipment could not be delivered to the PACKSTATION and has been forwarded to a retail outlet',
                 'shipment could not be delivered, and the recipient has been notified',
                 'A 2nd attempt at delivery is being made',
-<<<<<<< HEAD
                 'Zustellversuch',
                 'Sendung wurde an DHL',
                 'Sendung ist in der Region des',
                 'Ablageort/Nachbarn wurde',
-=======
-                'Es erfolgt ein 2. Zustellversuch',
-                'Sendung wurde elektronisch angekündigt',
-                'sendung wurde an DHL übergeben',
-                'Sendung ist in der Region des Empfängers angekommen',
-                'Die Zustellung an einen gewünschten Ablageort/Nachbarn wurde gewählt',
->>>>>>> f1edc2e09e8ef61aa0ad6bf8d55247acfd357bc9
                 'There is a preferred location/neighbour for this item',
                 'Weitertransport',
                 'The shipment was prepared for onward transport',
@@ -323,15 +314,9 @@ class DHL extends AbstractTracker
                 'recipient has not picked up the shipment',
                 'nicht in der Filiale abgeholt',
                 'The shipment is being returned',
-<<<<<<< HEAD
                 'Es erfolgt eine R',
                 'Zustellung der Sendung nicht',
                 'recipient is unknown'
-=======
-                'Es erfolgt eine Rücksendung',
-                'Zustellung der Sendung nicht möglich',
-                'recipient is unknown',
->>>>>>> f1edc2e09e8ef61aa0ad6bf8d55247acfd357bc9
             ],
         ];
 
@@ -345,6 +330,7 @@ class DHL extends AbstractTracker
 
         return Track::STATUS_UNKNOWN;
     }
+
 
 
     /**
