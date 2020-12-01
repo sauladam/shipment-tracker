@@ -52,6 +52,29 @@ class DHL extends AbstractTracker
 
 
     /**
+     * Get the contents of the given url.
+     *
+     * @param string $url
+     *
+     * @return string
+     */
+    protected function fetch($url)
+    {
+        if ($this->defaultDataProvider !== 'guzzle') {
+            return $this->getDataProvider()->get($url);
+        }
+
+        return $this->getDataProvider()->get($url, [
+                'timeout' => 5,
+                'headers' => [
+                    'User-Agent' => 'tracking/1.0',
+                    'Accept' => 'text/html',
+                ]]
+        );
+    }
+
+
+    /**
      * @param string $contents
      *
      * @return Track
@@ -153,7 +176,7 @@ class DHL extends AbstractTracker
         }
 
         $matched = preg_match(
-            "/initialState: JSON\.parse\((.*)\)\,/m", $scriptTags->item(0)->nodeValue, $matches
+            "/initialState: JSON\.parse\((.*)\)\,/m", $scriptTags->item(2)->nodeValue, $matches
         );
 
         if ($matched !== 1) {
@@ -203,7 +226,8 @@ class DHL extends AbstractTracker
                 'wird in eine PACKSTATION weitergeleitet',
                 'Sendung wurde abgeholt',
                 'im Export-Paketzentrum bearbeitet',
-                'Sendung wird ins Zielland transportiert und dort an die Zustellorganisation',
+                'Sendung wird ins Zielland',
+                'will be transported to the destination country',
                 'vom Absender in der Filiale eingeliefert',
                 'Sendung konnte nicht in die PACKSTATION eingestellt werden und wurde in eine Filiale',
                 'Sendung konnte nicht zugestellt werden und wird jetzt zur Abholung in die Filiale/Agentur gebracht',
@@ -218,10 +242,18 @@ class DHL extends AbstractTracker
                 'shipment could not be delivered to the PACKSTATION and has been forwarded to a retail outlet',
                 'shipment could not be delivered, and the recipient has been notified',
                 'A 2nd attempt at delivery is being made',
+<<<<<<< HEAD
                 'Zustellversuch',
                 'Sendung wurde an DHL',
                 'Sendung ist in der Region des',
                 'Ablageort/Nachbarn wurde',
+=======
+                'Es erfolgt ein 2. Zustellversuch',
+                'Sendung wurde elektronisch angekündigt',
+                'sendung wurde an DHL übergeben',
+                'Sendung ist in der Region des Empfängers angekommen',
+                'Die Zustellung an einen gewünschten Ablageort/Nachbarn wurde gewählt',
+>>>>>>> f1edc2e09e8ef61aa0ad6bf8d55247acfd357bc9
                 'There is a preferred location/neighbour for this item',
                 'Weitertransport',
                 'The shipment was prepared for onward transport',
@@ -291,9 +323,15 @@ class DHL extends AbstractTracker
                 'recipient has not picked up the shipment',
                 'nicht in der Filiale abgeholt',
                 'The shipment is being returned',
+<<<<<<< HEAD
                 'Es erfolgt eine R',
                 'Zustellung der Sendung nicht',
                 'recipient is unknown'
+=======
+                'Es erfolgt eine Rücksendung',
+                'Zustellung der Sendung nicht möglich',
+                'recipient is unknown',
+>>>>>>> f1edc2e09e8ef61aa0ad6bf8d55247acfd357bc9
             ],
         ];
 
