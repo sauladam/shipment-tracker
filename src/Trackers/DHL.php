@@ -52,6 +52,29 @@ class DHL extends AbstractTracker
 
 
     /**
+     * Get the contents of the given url.
+     *
+     * @param string $url
+     *
+     * @return string
+     */
+    protected function fetch($url)
+    {
+        if ($this->defaultDataProvider !== 'guzzle') {
+            return $this->getDataProvider()->get($url);
+        }
+
+        return $this->getDataProvider()->get($url, [
+                'timeout' => 5,
+                'headers' => [
+                    'User-Agent' => 'tracking/1.0',
+                    'Accept' => 'text/html',
+                ]]
+        );
+    }
+
+
+    /**
      * @param string $contents
      *
      * @return Track
@@ -153,7 +176,7 @@ class DHL extends AbstractTracker
         }
 
         $matched = preg_match(
-            "/initialState: JSON\.parse\((.*)\)\,/m", $scriptTags->item(0)->nodeValue, $matches
+            "/initialState: JSON\.parse\((.*)\)\,/m", $scriptTags->item(2)->nodeValue, $matches
         );
 
         if ($matched !== 1) {
@@ -253,7 +276,7 @@ class DHL extends AbstractTracker
                 'The shipment is being returned',
                 'Es erfolgt eine Rücksendung',
                 'Zustellung der Sendung nicht möglich',
-                'recipient is unknown'
+                'recipient is unknown',
             ],
         ];
 

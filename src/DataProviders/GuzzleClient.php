@@ -25,11 +25,12 @@ class GuzzleClient implements DataProviderInterface
      * Request the given url.
      *
      * @param $url
+     * @param array $options
      *
      * @return string
      */
-    public function get($url)
+    public function get($url, $options = [])
     {
-        return $this->client->get($url)->getBody()->getContents();
+        return $this->client->get($url, $options)->getBody()->getContents();
     }
 }
