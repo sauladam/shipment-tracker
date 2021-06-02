@@ -210,6 +210,7 @@ class DHL extends AbstractTracker
                 'item has been sent',
                 'delivered from the delivery depot to the recipient by simplified company delivery',
                 'per vereinfachter Firmenzustellung ab Eingangspaketzentrum zugestellt',
+                'im Rahmen der kontaktlosen Zustellung zugestellt',
             ],
             Track::STATUS_IN_TRANSIT => [
                 'in das Zustellfahrzeug geladen',
