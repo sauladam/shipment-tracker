@@ -99,7 +99,6 @@ class UPS extends AbstractTracker
             }
 
             if ($status == Track::STATUS_PICKUP && isset($contents['trackDetails'][0]['upsAccessPoint'])) {
-                // $track->addAdditionalDetails('accessPoint', ...);
                 $track->addAdditionalDetails('pickupDueDate', $contents['trackDetails'][0]['upsAccessPoint']['pickupPackageByDate']);
             }
         }
@@ -203,6 +202,9 @@ class UPS extends AbstractTracker
                 'Hat Einrichtung verlassen',
                 'Order Processed',
                 'Auftrag verarbeitet',
+                'Wird heute zugestellt',
+                'Processing at UPS Facility',
+                'Bearbeitung in UPS Einrichtung',
             ],
             Track::STATUS_WARNING => [
                 'attempting to obtain a new delivery address',
@@ -220,6 +222,8 @@ class UPS extends AbstractTracker
                 'is incorrect',
                 'ltigen Zustellversuch nicht anwesend',
                 'receiver was not available at the time of the final delivery attempt',
+                'verweigerte die Annahme',
+                'refused the delivery',
             ],
             Track::STATUS_DELIVERED => [
                 'Delivered',
