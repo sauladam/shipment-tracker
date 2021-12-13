@@ -99,6 +99,7 @@ class UPS extends AbstractTracker
             }
 
             if ($status == Track::STATUS_PICKUP && isset($contents['trackDetails'][0]['upsAccessPoint'])) {
+                $track->addAdditionalDetails('location', $contents['trackDetails'][0]['upsAccessPoint']);
                 $track->addAdditionalDetails('pickupDueDate', $contents['trackDetails'][0]['upsAccessPoint']['pickupPackageByDate']);
             }
         }
