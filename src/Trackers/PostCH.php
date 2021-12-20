@@ -283,6 +283,11 @@ class PostCH extends AbstractTracker
                 'LETTER.*.88.10',
                 'LETTER.*.88.13',
                 'LETTER.*.88.18',
+                'LETTER.*.88.620',
+                'LETTER.*.88.820',
+                'LETTER.*.88.1300',
+                'LETTER.*.88.804',
+                'LETTER.*.103.620',
             ],
             Track::STATUS_PICKUP => [
                 'LETTER.*.88.21',
