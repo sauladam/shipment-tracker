@@ -81,8 +81,10 @@ class PostNord extends AbstractTracker
                 $location = $event['location']['city'];
             } else if (array_key_exists('displayName', $event['location'])) {
                 $location = $event['location']['displayName'];
-            } else {
+            } else if (array_key_exists('country', $event['location'])) {
                 $location = $event['location']['country'];
+            } else {
+                $location = $event['location']['locationType'];
             }
             $track->addEvent(Event::fromArray([
                 'location'    => $location,
