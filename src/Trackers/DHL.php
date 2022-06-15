@@ -64,12 +64,15 @@ class DHL extends AbstractTracker
             return $this->getDataProvider()->get($url);
         }
 
-        return $this->getDataProvider()->get($url, [
+        return $this->getDataProvider()->get(
+            $url,
+            [
                 'timeout' => 5,
                 'headers' => [
                     'User-Agent' => 'tracking/1.0',
                     'Accept' => 'text/html',
-                ]]
+                ]
+            ]
         );
     }
 
@@ -176,7 +179,9 @@ class DHL extends AbstractTracker
         }
 
         $matched = preg_match(
-            "/initialState: JSON\.parse\((.*)\)\,/m", $scriptTags->item(2)->nodeValue, $matches
+            "/initialState: JSON\.parse\((.*)\)\,/m",
+            $scriptTags->item(2)->nodeValue,
+            $matches
         );
 
         if ($matched !== 1) {
@@ -287,6 +292,8 @@ class DHL extends AbstractTracker
                 'The shipment has left the import parcel center in the destination country/destination area',
                 'Die Sendung wird im Zustell-Depot für die Zustellung vorbereitet',
                 'The shipment is being prepared for delivery in the delivery depot',
+                'The recipient was not present',
+                'wurde nicht angetroffen',
             ],
             Track::STATUS_PICKUP => [
                 'Die Sendung liegt in der PACKSTATION',
@@ -300,6 +307,8 @@ class DHL extends AbstractTracker
                 'The shipment is available for pick-up',
                 'Die Sendung liegt für den Empfänger zur Abholung bereit',
                 'The shipment is ready for pick-up by the recipient',
+                'Die Sendung liegt zur Abholung in',
+                'The shipment is ready for collection',
             ],
             Track::STATUS_WARNING => [
                 'Sendung konnte nicht zugestellt werden',
