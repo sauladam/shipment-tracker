@@ -168,7 +168,7 @@ class UPS extends AbstractTracker
     protected function getDate($activity)
     {
         if(!$activity['date']){
-            return new Carbon(0);
+            return new Carbon('0000-01-01');
         }
         return Carbon::parse("{$activity['date']} {$activity['time']}");
     }
