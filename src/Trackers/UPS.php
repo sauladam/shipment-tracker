@@ -167,6 +167,9 @@ class UPS extends AbstractTracker
      */
     protected function getDate($activity)
     {
+        if(!$activity['date']){
+            return new Carbon('0000-01-01');
+        }
         return Carbon::parse("{$activity['date']} {$activity['time']}");
     }
 
@@ -186,6 +189,7 @@ class UPS extends AbstractTracker
                 'Ready for UPS',
                 'Scan',
                 'Out For Delivery',
+                'Loaded on Delivery Vehicle',
                 'receiver requested a hold for a future delivery date',
                 'receiver was not available at the time of the first delivery attempt',
                 'war beim 1. Zustellversuch nicht anwesend',
