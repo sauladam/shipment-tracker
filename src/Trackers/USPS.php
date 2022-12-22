@@ -79,44 +79,57 @@ class USPS extends AbstractTracker
      */
     protected function getTrack(DOMXPath $xpath)
     {
-        $rowsContainer = $xpath->query("//div[@id='trackingHistory_1']//div[contains(@class,'panel-actions-content')]")->item(0);
-
-        $items = [];
-        $index = 0;
-
-        foreach ($rowsContainer->childNodes as $child) {
-            if (isset($child->tagName) && $child->tagName == 'h3') {
-                continue;
-            }
-
-            if (isset($child->tagName) && $child->tagName == 'hr') {
-                $index++;
-                continue;
-            }
-
-            $value = $this->getNodeValue($child);
-
-            if (!empty($value)) {
-                $items[$index][] = $value;
-            }
-        }
-
-        $realEvents = array_filter($items, function ($eventRows) {
-            // filter only those data-portions that are at least 3 lines long, i.e. contain the date,
-            // the location and a description. Otherwise it's not a real event, maybe just a short
-            // info text like "Inbound Into Customs" - not sure where to put that, so just leave it alone.
-            return count($eventRows) >= 3;
-        });
-
         $track = new Track;
 
-        foreach ($realEvents as $eventData) {
-            $track->addEvent(Event::fromArray([
-                'date' => $this->getDate($eventData[0]),
-                'description' => $eventData[1],
-                'location' => $eventData[2],
-                'status' => $this->resolveState($eventData[1]),
-            ]));
+        if($rowsContainer = $xpath->query("//div[@id='trackingHistory_1']//div[contains(@class,'panel-actions-content')]")->item(0)){
+
+            $items = [];
+            $index = 0;
+
+            foreach ($rowsContainer->childNodes as $child) {
+                if (isset($child->tagName) && $child->tagName == 'h3') {
+                    continue;
+                }
+
+                if (isset($child->tagName) && $child->tagName == 'hr') {
+                    $index++;
+                    continue;
+                }
+
+                $value = $this->getNodeValue($child);
+
+                if (!empty($value)) {
+                    $items[$index][] = $value;
+                }
+            }
+
+            $realEvents = array_filter($items, function ($eventRows) {
+                // filter only those data-portions that are at least 3 lines long, i.e. contain the date,
+                // the location and a description. Otherwise it's not a real event, maybe just a short
+                // info text like "Inbound Into Customs" - not sure where to put that, so just leave it alone.
+                return count($eventRows) >= 3;
+            });
+
+            foreach ($realEvents as $eventData) {
+                $track->addEvent(Event::fromArray([
+                    'date' => $this->getDate($eventData[0]),
+                    'description' => $eventData[1],
+                    'location' => $eventData[2],
+                    'status' => $this->resolveState($eventData[1]),
+                ]));
+            }
+
+        } else if ($steps = $xpath->evaluate("//div[contains(@class,'tracking-progress-bar-status-container')]/div[contains(@class,'tb-step')][not(contains(.,'See All Tracking History'))]")) {
+
+            foreach ($steps as $step) {
+                $text = trim($xpath->evaluate('./p[normalize-space(@class)="tb-status-detail"]', $step)[0]->textContent);
+                $track->addEvent(Event::fromArray([
+                    'date' => trim(preg_replace('/\s+/',' ', $xpath->evaluate('./p[normalize-space(@class)="tb-date"]', $step)[0]->textContent)),
+                    'description' => $text,
+                    'location' => trim($xpath->evaluate('./p[normalize-space(@class)="tb-location"]', $step)[0]->textContent),
+                    'status' => $this->resolveState($text),
+                ]));
+            }
         }
 
         return $track->sortEvents();
@@ -162,6 +175,9 @@ class USPS extends AbstractTracker
     protected function resolveState($statusDescription)
     {
         $statuses = [
+            Track::STATUS_INITIAL => [
+                'Shipping Label Created, USPS Awaiting Item',
+            ],
             Track::STATUS_DELIVERED => [
                 'Delivered',
             ],
@@ -178,6 +194,8 @@ class USPS extends AbstractTracker
                 'Sorting Complete',
                 'Departed USPS Regional Facility',
                 'Arrived at USPS Regional Facility',
+                'Arrived at USPS Regional Origin Facility',
+                'Accepted at USPS Origin Facility',
             ],
             Track::STATUS_WARNING => [],
             Track::STATUS_EXCEPTION => [],
